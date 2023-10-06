@@ -6,7 +6,7 @@
 
 <servlet-name>finad</servlet-name>
 
-<servlet-class></servlet-class>
+<servlet-class>com.finad23.control.FinAD</servlet-class>
 
 </servlet>
 

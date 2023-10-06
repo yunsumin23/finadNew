@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.finad23.DTO.CompanyBoardDTO" %>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,6 +98,64 @@
             </form>
         </div>
 	</div>
+	<table border="1">
+		<tr>
+			<th>글번호</th>
+			<th>글제목</th>
+			<th>회사명</th>
+			<th>마케팅 담당자 정보1</th>
+			<th>마케팅 담당자 정보2</th>
+			<th>마케팅 담당자 정보3</th>
+			<th>모집 시작</th>
+			<th>모집 종료</th>
+			<th>광고 시작</th>
+			<th>광고 종료</th>
+			<th>모집 인원</th>
+			<th>평균 시청자</th>
+			<th>최소 구독자</th>
+			<th>성별</th>
+			<th>미달 지원 가능</th>
+			<th>총 광고 진행비</th>
+			<th>광고 유형</th>
+			<th>이전 광고 사례1</th>
+			<th>이전 광고 사례2</th>
+			<th>이전 광고 사례3</th>
+			<th>내용</th>
+		</tr>
+	
+	<%	
+		List<CompanyBoardDTO> list = (List<CompanyBoardDTO>) request.getAttribute("List");
+		if (list != null) {
+			for (int i = 0; i < list.size(); i++) {
+				out.println("<tr>");
+				out.println("<td>"+list.get(i).getCompanyBoardNum()+"</td>");
+				out.println("<td>"+list.get(i).getTitle()+"</td>");
+				out.println("<td>"+list.get(i).getCompanyName()+"</td>");
+				out.println("<td>"+list.get(i).getCompanyInfo1()+"</td>");
+				out.println("<td>"+list.get(i).getCompanyInfo2()+"</td>");
+				out.println("<td>"+list.get(i).getCompanyInfo3()+"</td>");
+				out.println("<td>"+list.get(i).getRecruitmentDate1()+"</td>");
+				out.println("<td>"+list.get(i).getRecruitmentDate2()+"</td>");
+				out.println("<td>"+list.get(i).getPromotionDate1()+"</td>");
+				out.println("<td>"+list.get(i).getPromotionDate2()+"</td>");
+				out.println("<td>"+list.get(i).getRecruitmentNum()+"</td>");
+				out.println("<td>"+list.get(i).getAvgViewers()+"</td>");
+				out.println("<td>"+list.get(i).getSubscribers()+"</td>");
+				out.println("<td>"+list.get(i).getSex()+"</td>");
+				out.println("<td>"+list.get(i).getUnderachiever()+"</td>");
+				out.println("<td>"+list.get(i).getPromotionMoney()+"</td>");
+				out.println("<td>"+list.get(i).getPromotionType()+"</td>");
+				out.println("<td>"+list.get(i).getPreviousPromotion1()+"</td>");
+				out.println("<td>"+list.get(i).getPreviousPromotion2()+"</td>");
+				out.println("<td>"+list.get(i).getPreviousPromotion3()+"</td>");
+				out.println("<td>"+list.get(i).getText()+"</td>");
+				out.println("</tr>");
+				}
+		} else {
+			out.print("데이터가 없습니다.");
+		}
+	%>
+	</table>
 	
 	
 	
