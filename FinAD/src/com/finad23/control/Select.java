@@ -21,7 +21,7 @@ public class Select {
 	
 	public List<CompanyBoardDTO> dbSelect() {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<CompanyBoardDTO> list = sqlSession.selectList("student_select");
+		List<CompanyBoardDTO> list = sqlSession.selectList("companyWriteID");
 		sqlSession.close();
 		return list;
 				

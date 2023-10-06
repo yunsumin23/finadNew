@@ -26,7 +26,8 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			inter = CBoardExtr.instance();
 			try {
 				String n = inter.FinAD(rq, rs);
-				RequestDispatcher re = rq.getRequestDispatcher("companyBoard.jsp");
+				RequestDispatcher re = rq.getRequestDispatcher("company_board.jsp");
+				re.forward(rq, rs);
 			} catch (Exception e) {
 				System.out.println(e);
 			}
@@ -35,6 +36,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			try {
 				String category1 = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("category.jsp");
+				re.forward(rq, rs);
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="company_board.finad?companyBoardInput=select">print</a>
+ㅎㅇ
 </body>
 </html>

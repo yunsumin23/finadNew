@@ -16,7 +16,7 @@ public class SqlConnect { // 마이바티스로 sql연결하는 파일입니다.
 	
 	static {
 		try {
-			String resource = "com/finad23/mybatis/database.xml";
+			String resource = "com/finad23/mybatis/dbConnect.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
 			SqlSessionFactoryBuilder SqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
 			sqlSessionFactory = SqlSessionFactoryBuilder.build(reader);
