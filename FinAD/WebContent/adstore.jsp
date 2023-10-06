@@ -244,7 +244,7 @@
 					<div>
 						<%
 							out.println("<img class='product-img' src='img/" + jjj.get(6).getItemImage() + "' + alt=''>");
-						%>
+						%> 
 					</div>
 					<div class="product-contents">
 						<%
