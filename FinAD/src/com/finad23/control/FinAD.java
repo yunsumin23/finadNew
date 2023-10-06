@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FinAD extends HttpServlet { // ¼­ºí¸´ ÆäÀÌÁö ÀÔ´Ï´Ù.
+public class FinAD extends HttpServlet { // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½.
 
 	@Override
 	protected void service(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String category = rq.getParameter("type");
 		String companyBoard = rq.getParameter("companyBoardInput");
-		// Ä«Å×°í¸® ³Ñ¾î°¥ ¶§ ¾î¶² typeÀÎÁö¿¡ µû¶ó º¸¿©Áö´Â Å©¸®¿¡ÀÌÅÍ°¡ ´Ù¸£°Ô
-		// ¼³Á¤ ÇØµĞ°ÅÀÓ
+		// Ä«ï¿½×°ï¿½ ï¿½Ñ¾î°¥ ï¿½ï¿½ ï¿½î¶² typeï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ØµĞ°ï¿½ï¿½ï¿½
 
 		ConInter inter = null;
-		// ÀÎÅÍÆäÀÌ½º¿ë ÁÖ¸Ó´Ï ÀÔ´Ï´Ù. È®ÀÎÇÏ½Ã°í ¶Ç ´Ù½Ã ¸¸µéÁö ¸¶¿ä / ½ÈÀºµ¥¿ä?
-
+		// ì¸í„°í˜ì´ìŠ¤ìš© ì£¼ë¨¸ë‹ˆ ì…ë‹ˆë‹¤. í™•ì¸í•˜ì‹œê³  ë˜ ë‹¤ì‹œ ë§Œë“¤ì§€ ë§ˆìš” / ì‹«ì€ë°ìš”?
+		
 		// <form action="insert.Sql?companyBoardInput=select" method="POST">
 		if (companyBoard.equals("select")) {
 			inter = DBExtract.instance();

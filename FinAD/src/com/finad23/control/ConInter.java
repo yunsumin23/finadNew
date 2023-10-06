@@ -3,8 +3,9 @@ package com.finad23.control;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// юнемфДюл╫╨ ╦╦╣И╬Н ╣п╟еюс
-// ╦╦╬Ю юнемфДюл╫╨╟║ ©╘╥а╟Ё ╦╦╣И╬Н╬ъ го╦И ╩У╥н юнемфДюл╫╨╦╕ ╩Щ╪╨го╦И ╣й.
+// О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫п╟О©╫О©╫О©╫
+// О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫о╦О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫О©╫л╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫о╦О©╫ О©╫О©╫.
+// Л°╓Л┬≤К╞╪ К╧└Л²▒Л°╪Л°╪Л°╪Л°╪Л▀═
 public interface ConInter {
 	String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception;
 }
