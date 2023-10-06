@@ -20,10 +20,12 @@ public class CategoryExtr implements ConInter{// DB 처리 결과를 알려주�
 		// TODO Auto-generated method stub
 		CategoryConn conn = CategoryConn.instance();
 		
-		List<Influ_info> list = conn.sqlSelect();
+		String cate = rq.getParameter("url");
+		Influ_info inf = new Influ_info();
+		inf.setCategory(cate);
+		List<Influ_info> list = conn.sqlSelect(inf);
 //		select 쿼리문이 있는 클래스의 객체 매소드 호출
 //		setAttribute를 통해 list를 set 해준다.
-		
 		
 		rq.setAttribute("List", list);
 		return null;

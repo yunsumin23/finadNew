@@ -16,7 +16,8 @@
 		String id = (String) session.getAttribute("id");
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
-		String category = (String) request.getAttribute("category");
+		/* String category = (String) request.getAttribute("category"); */
+		String category = request.getParameter("url");
 		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
 		if (id == null && password == null) {
 	%>
@@ -28,8 +29,8 @@
 	<%
 		}
 		
-		if(category.equals("beauty")){
-			
+	 	if(category.equals("beauty")){
+			out.println(list.get(0).getId());
 		}
 		
 	%>

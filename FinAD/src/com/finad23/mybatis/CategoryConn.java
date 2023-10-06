@@ -16,9 +16,10 @@ public class CategoryConn { //DB 연결하는 파일
 	
 	SqlSessionFactory sqlsession = SqlConnect.getSqlSession();
 	
-	public List<Influ_info> sqlSelect() {
+	public List<Influ_info> sqlSelect(Influ_info inf) {
 		SqlSession session = sqlsession.openSession(); // openSession으로 session을 연다
-		List<Influ_info> list = session.selectList("categoryId");
+		
+		List<Influ_info> list = session.selectList("categoryId", inf);
 		session.close(); // session을 열였으니 닫아준다.
 		return list;
 	}

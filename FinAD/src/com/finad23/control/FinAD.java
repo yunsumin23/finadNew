@@ -18,7 +18,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 
 		ConInter inter = null;
 		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요 / 싫은데요?
-
+		
 		// <form action="insert.Sql?companyBoardInput=select" method="POST">
 		if (url.equals("select")) {
 			inter = CBoardExtr.instance();
@@ -31,7 +31,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			}
 		} else if(url.equals("beauty")) {
 			inter = CategoryExtr.instance();
-			rq.setAttribute("category", url);
+			/* rq.setAttribute("category", url); */
 			try {
 				String category1 = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("category.jsp");
@@ -41,7 +41,6 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				System.out.println(e);
 			}
 		}
-		
 	}
 
 }
