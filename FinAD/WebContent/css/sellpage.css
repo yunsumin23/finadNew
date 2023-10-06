@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: normal;
+}
+
+header {
+    position: relative;
+    height: 100px;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+header a,
+nav a {
+    text-decoration: none;
+}
+
+.top_button img {
+    height: 18px;
+    padding-left: 10px;
+}
+
+#main_logo {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 250px;
+    height: auto;
+}
+
+.top_button {
+    position: absolute;
+    top: 25px;
+    right: 0px;
+}
+
+.form-control {
+    width: 320px;
+    height: 30px;
+    font-size: 17px;
+    color: black;
+    display: grid;
+    place-items: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.header_search {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+}
+
+.nav_div {
+    display: flex;
+    width: 1300px;
+    margin: 30px auto;
+}
+
+.nav_div a {
+    text-decoration: none;
+    color: #014D81;
+}
+
+.gnbbox {
+    width: 870px;
+    height: 210px;
+    background: white;
+    position: absolute;
+    top: 180px;
+    border: 5px solid #014D81;
+    border-radius: 15px;
+}
+
+.nav_div li {
+    font-family: 'Do Hyeon', sans-serif;
+    list-style: none;
+    line-height: 40px;
+}
+
+.gnb li {
+    margin-right: 23px;
+}
+
+.gnb a {
+    color: #014D81;
+    font-size: 18px;
+}
+
+.gnb img {
+    height: 25px;
+}
+
+.category {
+    color: #014D81;
+    display: flex;
+    position: absolute;
+}
+
+.category_text {
+    font-size: 25px;
+    color: #014D81;
+    line-height: 40px;
+}
+
+.nav_ul {
+    display: flex;
+    font-size: 25px;
+    font-weight: 500;
+    justify-content: space-between;
+    width: 700px;
+    margin-left: 100px;
+}
+
+.category_div {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: flex;
+    width: 1000px;
+}
+
+.category_div li {
+    padding: 5px;
+}
+
+.gnb div {
+    display: flex;
+    align-items: center;
+}
+
+.li_text {
+    padding-left: 8px;
+}
+
+.category_div li:nth-child(1) {
+    margin-left: 15px;
+}
+
+.category_div li:nth-child(2) {
+    margin-left: 15px;
+}
+
+.category_div li:nth-child(3) {
+    margin-left: 15px;
+}
+
+.category_div li:nth-child(4) {
+    margin-left: 15px;
+}
+
+.category_div li:nth-child(5) {
+    margin-left: 15px;
+}
+
+.nav_ul li a:after {
+    display: block;
+    content: "";
+    width: 90px;
+    height: 10px;
+    border-bottom: 1px solid #000;
+    margin: -15px auto;
+    transform: scaleX(0);
+    transition: all 250ms ease-in-out;
+}
+
+nav ul li:hover a:after {
+    transform: scaleX(1);
+}
+
+nav ul li:nth-child(2) a:after {
+    width: 160px;
+}
+
+nav ul li:nth-child(3) a:after {
+    width: 90px;
+}
+
+nav ul li:nth-child(4) a:after {
+    width: 70px;
+}
+
+nav ul li:nth-child(5) a:after {
+    width: 83px;
+}
+
+.cart  {
+  
+    width: 130px;
+    height: 40px;
+    color: #346aff;
+    font-size: 20px;
+    border: 1px solid #346aff;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.order {
+    width: 130px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid #346aff;
+    border-radius: 3px;
+    background-color: #346aff;
+    cursor: pointer;
+}
+
+
+
+
+
+.info {
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+
+.section{
+  width: 1000px;
+  margin: 0px auto;
+  display: block;
+  padding: 20px;
+  margin-top: 100px;
+  
+}
+
+
+
+.summary{
+  width: 800px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+/* .product-img{
+  width: 460px;
+  height: 460px;
+  border-radius: 12px;
+  margin: 0 auto;
+} */
+
+.nike_slide {
+    width: 460px;
+    height: 460px;
+    overflow: hidden;
+}
+
+.nike_slide ul {
+    display: flex;
+}
+
+.nike_slide li {
+    list-style: none;
+}
+
+
+.nike_slide img {
+    width: 460px;
+    height: 460px;
+}
+
+
+.nikekr{
+    font-size: 25px;
+    color: #014D81;
+}
+#nikr{
+    color: rgb(1, 39, 255);
+}
+
+
+.total{
+  
+    color: rgb(170, 40, 40);
+    font-size: 30px;
+    padding: 5px;
+}
+
+
+.choose{
+    margin: 0 auto;
+    width: 55px;
+    height: 25px;
+    margin-left: 5px;
+    background-color: rgb(240, 240, 240);
+}
+.chs{
+    display: flex;
+    margin-top: 10px;
+
+}
+
+.yyy {
+    display: flex;
+   margin-right: 15px;
+}
+
+
+.org_price{
+    color: rgb(250, 105, 105);
+}
+
+.summary h5{
+    color: rgb(161, 161, 161);
+}
+
+.delivery{
+    font-size: 15px;
+    color: #A83A4F;
+
+}
+
+
+.arrival{
+    font-size: 15px;
+    color: #4d994d;
+}
+
+.origin{
+    font-size: 15px;
+    color: #666565;
+}
+
+
+.nike_2{
+  width: 860px;
+  height: 460px;
+  /* border: 2px solid rgb(17, 0, 0); */
+  border-radius: 12px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.nike_3{
+    width: 860px;
+    height: 460px;
+    /* border: 2px solid rgb(17, 0, 0); */
+    border-radius: 12px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+.detail{
+  font-size: 30px;
+}
+
+.detail img {
+    width: 960px;
+}
+
+.notice_last{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: rgb(92, 91, 91);
+}
+
+.review{
+    padding: 80px;
+    border: 2px solid rgb(85, 130, 255);
+    border-radius: 20px;
+}
+
+.ratingstar4{
+color: rgb(60, 60, 253);
+
+}
+.re_id{
+font-size: 20px;
+
+}
+
+.re_per{
+margin-top: 20px;
+}
+
+
+
+.re_re{
+    font-size: 50px;
+    color: rgb(255, 86, 86);
+}
+
+.re_text{
+    color: #666565;
+}
+
+
+
+.paging {
+    margin-top: 40px;
+    
+}
+
+.paging a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+    padding: 5px;
+    background-color: #ffffff;
+    color: rgb(83, 83, 83);
+   
+}
+
+.prev a, .next a{
+    color: rgb(117, 117, 117);
+     border-radius: 3px ;
+     border: 2px solid rgb(117, 117, 117);
+    background-color: rgb(248, 248, 248);
+}
+.num .on{
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: 2px solid rgb(54, 54, 54); 
+}
+
+
+/* 장바구니 */
+.cart_div img {
+    width: 64px;
+    position: fixed;
+    right: 200px;
+  bottom: 100px;
+    background-color: white;
+    border: 3px solid #A83A4F;
+    border-radius: 50%;
+}
+
+
+footer {
+  width: 100%;
+  margin-top: 200px;
+  background-color: #014D81;
+}
+
+.footer_class {
+  width: 1300px;
+  height: 200px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.footer_class a {
+  text-decoration: none;
+  color: #aaa;
+}
+
+.footer_class p {
+  color: #aaa;
+}

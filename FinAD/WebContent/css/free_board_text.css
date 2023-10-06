@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+
+/* free_board_text */
+#text_header {
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 80px;
+}
+
+#text_info td:nth-child(1){
+	width: 100px;
+}
+#text_info td:nth-child(2){
+	width: 100px;
+}
+#text_info td:nth-child(3){
+	width: 650px;
+	padding-left: 15px;
+}
+#text_info td:nth-child(4){
+	width: 50px;
+	text-align: center;
+}
+#text_info td:nth-child(5){
+	width: 50px;
+	text-align: center;
+}
+#text_info td:nth-child(6){
+	width: 50px;
+	text-align: center;
+}
+td{
+	border-bottom: 1px solid gray;
+	padding: 3px;
+}
+#text {
+	padding-bottom: 300px;
+}
+#text p {
+	word-break: break-word;
+}
+#free_board_btn{
+	margin-top: 10px;
+	margin-left: 955px;
+}
+#free_board_btn input {
+	width: 55px;
+	height: 25px;
+}
