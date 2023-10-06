@@ -69,6 +69,40 @@
 			</div>
 		</span>
 
+<div class="advertising_type">
+		<p class="advertising_type_p"></p>
+		<ul class="advertising_ul">
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
+				href="https://www.naver.com" target="_blank"><img
+					src="img/beautyicon.png" alt="뷰티">
+					<p class="lil_p">뷰티</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
+				href="#" target="_blank"><img src="img/campicon.png"
+					alt="여행">
+					<p class="lil_p">여행</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+			<a href="#ele">
+			<img src="img/electroicon.png" alt="가전">
+					<p class="lil_p">가전</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
+				href="#fash"><img src="img/fashionicon.png"
+					alt="패션">
+					<p class="lil_p">패션</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
+				href="#" target="_blank"><img src="img/foodicon.png"
+					alt="식품">
+					<p class="lil_p">식품</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
+				href="#" target="_blank"><img src="img/healthicon.png" alt="건강">
+					<p class="lil_p">건강</p> </a></li>
+					<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
+				href="#" target="_blank"><img src="img/kidicon.png" alt="키즈">
+					<p class="lil_p">키즈</p> </a></li>
+					<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
+				href="#" target="_blank"><img src="img/peticon.png" alt="애견">
+					<p class="lil_p">애견</p> </a></li>
+		</ul>
+	</div>
 
 
 		<h1 class="h1">오늘의 쇼핑 제안</h1>
@@ -303,7 +337,7 @@
 			</form>
 			<div class="mm">
 				<div class="right_div">
-					ADStore 가전관
+					<h1 id="ele">ADStore 가전관</h1>
 					<div class="right_div_div">
 						<ul>
 							<li><a href=""><img src="img/zflip.png" alt=""></a></li>
@@ -313,7 +347,7 @@
 					</div>
 				</div>
 				<div class="left_div">
-					ADStore 패션관
+					<h1 id="fash"> ADStore 패션관</h1>
 					<div class="m_div">
 						<div class="left_div_div01">
 							<a href=""><img src="img/coat.png" alt="옷"

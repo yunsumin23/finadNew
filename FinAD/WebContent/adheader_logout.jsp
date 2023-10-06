@@ -49,19 +49,6 @@
 				<input type="search" class="form-control" placeholder="search">
 			</div>
 		</header>
-	<div class="nav_div">
-		<nav>
-			<p class="gnbbox"></p>
-			<div class="category">
-				<div class="category_text"></div>
-				<ul class="nav_ul">
-						
-						<li class="nav_li05"><a href="adstore.jsp">ADStore</a></li>
-					</ul>
-				
-					</div>
-						</ul>
-					</div>
-		</nav>
+	
 </body>
 </html>
