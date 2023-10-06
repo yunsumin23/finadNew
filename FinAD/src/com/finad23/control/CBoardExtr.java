@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.DTO.CompanyBoardDTO;
 
-public class CBoardDBExtract implements ConInter { //광고게시판 Extract == 추출이라는 뜻
+public class CBoardExtr implements ConInter { //광고게시판 Extract == 추출이라는 뜻
 
-	static CBoardDBExtract dbExtract = new CBoardDBExtract();
-	public static CBoardDBExtract instance() {
+	static CBoardExtr dbExtract = new CBoardExtr();
+	public static CBoardExtr instance() {
 		return dbExtract;
 	}
 	@Override

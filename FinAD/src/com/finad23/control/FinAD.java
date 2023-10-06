@@ -23,7 +23,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 
 		// <form action="insert.Sql?companyBoardInput=select" method="POST">
 		if (companyBoard.equals("select")) {
-			inter = CBoardDBExtract.instance();
+			inter = CBoardExtr.instance();
 			try {
 				String n = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("companyBoard.jsp");
