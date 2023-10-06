@@ -19,6 +19,7 @@
 		/* String category = (String) request.getAttribute("category"); */
 		String category = request.getParameter("url");
 		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
+		int creatorNum = list.size();
 		if (id == null && password == null) {
 	%>
 	<jsp:include page="header_login.jsp"></jsp:include>
@@ -29,15 +30,14 @@
 	<%
 		}
 		
-	 	if(category.equals("beauty")){
-			out.println(list.get(0).getId());
-		}
-		
 	%>
 	<div class="rank_div">
 		<ul class="rank_ul">
 			<li class="rank_li01">크리에이터 랭킹</li>
-			<li class="rank_li02">총 0000명의 크리에이터 검색</li>
+			<%
+			out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
+			%>
+			
 		</ul>
 	</div>
 	<div class="container">
@@ -150,8 +150,16 @@
 							</p>
 						</div>
 						<div class="list_01_div02">
-							<a href="creator_page.html" target="_blank"><img
-								src="img/BJ.png" alt="">
+							<%
+								if(list != null) {
+									for(int i = 0; i < list.size(); i++) {
+										
+									}
+								}
+								out.println("<a href='creator_page.html' target='_blank'><img src='img/BJ.png'>");
+							%>
+							<!-- <a href="creator_page.html" target="_blank"><img
+								src="img/BJ.png" alt=""> -->
 								<div>
 									<span class="div_img">00TV</span>
 								</div> </a>
@@ -167,7 +175,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="list_02">
+<!-- 					<div class="list_02">
 						<div class="list_02_div01">
 							<input type="checkbox" name="list_name02" class="list_check"
 								width="20px">
@@ -409,7 +417,7 @@
 								<li>예상 광고 단가</li>
 							</ul>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</form>
 		</div>
