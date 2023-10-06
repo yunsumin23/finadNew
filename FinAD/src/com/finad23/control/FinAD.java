@@ -31,7 +31,14 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				System.out.println(e);
 			}
 		} else if (category.equals("beauty")) {
-
+			inter = CategoryExtr.instance();
+			try {
+				String category1 = inter.FinAD(rq, rs);
+				RequestDispatcher re = rq.getRequestDispatcher("category.jsp");
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println(e);
+			}
 		} else if (companyBoard.contentEquals("sel")) {
 
 		}

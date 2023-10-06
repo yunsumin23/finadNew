@@ -6,7 +6,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class SqlConnect {
+public class SqlConnect { // 마이바티스로 sql연결하는 파일입니다.
 	
 	private static SqlSessionFactory sqlSessionFactory; 
 	

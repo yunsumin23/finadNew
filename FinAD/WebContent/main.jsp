@@ -86,11 +86,11 @@
 		<div class="creator_type_div">
 			<ul class="creator_type_ul">
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="categori.jsp" target="_blank"><img
+					href="category.jsp" target="_blank"><img
 						src="img/beauty.png" alt="뷰티,패션">
 						<p>뷰티,패션</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="categori.jsp" target="_blank"><img src="img/food.png" alt="먹방">
+					href="category.jsp" target="_blank"><img src="img/food.png" alt="먹방">
 						<p>먹방</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
 					href="" target="_blank"><img src="img/BJ.png" alt="BJ,엔터테이너">
