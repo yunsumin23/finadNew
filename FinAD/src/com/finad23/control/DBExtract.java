@@ -1,4 +1,4 @@
-package com.finad23control;
+package com.finad23.control;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package com.finad23control;
+package com.finad23.control;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-// ?씤?꽣?럹?씠?뒪 留뚮뱾?뼱 ?몦嫄곗엫
-// 留뚯빟 ?씤?꽣?럹?씠?뒪媛? ?뿬?젮媛? 留뚮뱾?뼱?빞 ?븯硫? ?깉濡? ?씤?꽣?럹?씠?뒪瑜? ?깮?꽦?븯硫? ?맖.
+// 인터페이스 만들어 둔거임
+// 만약 인터페이스가 여려개 만들어야 하면 새로 인터페이스를 생성하면 됨.
 public interface ConInter {
 	String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception;
 }

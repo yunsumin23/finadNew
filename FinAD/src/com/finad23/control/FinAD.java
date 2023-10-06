@@ -1,4 +1,4 @@
-package com.finad23control;
+package com.finad23.control;
 
 import java.io.IOException;
 
@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FinAD extends HttpServlet { // ?꽌釉붾┸ ?럹?씠吏? ?엯?땲?떎.
+public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 
 	@Override
 	protected void service(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String category = rq.getParameter("type");
 		String companyBoard = rq.getParameter("companyBoardInput");
-		// 移댄뀒怨좊━ ?꽆?뼱媛? ?븣 ?뼱?뼡 type?씤吏??뿉 ?뵲?씪 蹂댁뿬吏??뒗 ?겕由ъ뿉?씠?꽣媛? ?떎瑜닿쾶
-		// ?꽕?젙 ?빐?몦嫄곗엫
+		// 카테고리 넘어갈 때 어떤 type인지에 따라 보여지는 크리에이터가 다르게
+		// 설정 해둔거임
 
 		ConInter inter = null;
-		// ?씤?꽣?럹?씠?뒪?슜 二쇰㉧?땲 ?엯?땲?떎. ?솗?씤?븯?떆怨? ?삉 ?떎?떆 留뚮뱾吏? 留덉슂 / ?떕???뜲?슂?
+		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요 / 싫은데요?
 
 		// <form action="insert.Sql?companyBoardInput=select" method="POST">
 		if (companyBoard.equals("select")) {

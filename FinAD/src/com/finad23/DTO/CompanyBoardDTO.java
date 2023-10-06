@@ -2,13 +2,13 @@ package com.finad23.DTO;
 
 public class CompanyBoardDTO {
 	private int companyBoardNum;
-	private String title, companyName, companyInfo1, companyInfo2, companyInfo3; //? œëª?, ë§ˆì??Œ… ?‹´?‹¹? ? •ë³?
-	private String recruitmentDate1, recruitmentDate2, promotionDate1, promotionDate2; //ëª¨ì§‘ ê¸°ê°„, ê´‘ê³ ê¸°ê°„
-	private String recruitmentNum, avgViewers, subscribers, sex; //ëª¨ì§‘?¸?›, ?‰ê·? ?‹œì²?? , ìµœì†Œ êµ¬ë…??ˆ˜
-	private Boolean underachiever; //ë¯¸ë‹¬? ì§??›
-	private int promotionMoney; //ì´? ê´‘ê³  ì§„í–‰ë¹?
-	private String promotionType, previousPromotion1, previousPromotion2, previousPromotion3; //ê´‘ê³  ?œ ?˜•, ?´? „ ê´‘ê³  ?‚¬ë¡?
-	private String text; //ê´‘ê³  ?‚´?š©
+	private String title, companyName, companyInfo1, companyInfo2, companyInfo3; //Á¦¸ñ, ¸¶ÄÉÆÃ ´ã´çÀÚ Á¤º¸
+	private String recruitmentDate1, recruitmentDate2, promotionDate1, promotionDate2; //¸ğÁı ±â°£, ±¤°í±â°£
+	private String recruitmentNum, avgViewers, subscribers, sex; //¸ğÁıÀÎ¿ø, Æò±Õ ½ÃÃ»ÀÚ , ÃÖ¼Ò ±¸µ¶ÀÚ¼ö
+	private Boolean underachiever; //¹Ì´ŞÀÚ Áö¿ø
+	private int promotionMoney; //ÃÑ ±¤°í ÁøÇàºñ
+	private String promotionType, previousPromotion1, previousPromotion2, previousPromotion3; //±¤°í À¯Çü, ÀÌÀü ±¤°í »ç·Ê
+	private String text; //±¤°í ³»¿ë
 	public int getCompanyBoardNum() {
 		return companyBoardNum;
 	}

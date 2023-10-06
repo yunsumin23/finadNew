@@ -16,7 +16,7 @@ public class SqlConnect {
 	
 	static {
 		try {
-			String resource = "com/finad23/mybatis/mybatis.xml";
+			String resource = "com/finad23/mybatis/database.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
 			SqlSessionFactoryBuilder SqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
 			sqlSessionFactory = SqlSessionFactoryBuilder.build(reader);
