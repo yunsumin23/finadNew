@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
-/*#banner {
-  background: url(../img/banner.jpg);
-  height: 300px;
-  width: 1300px;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  margin-top: 80px;
-}*/
 
 #contain {
 	width: 1300px;
@@ -70,14 +62,14 @@
     font-size: 35px;
     font-weight: 500;
     color: #FF766B;
+    text-decoration: none;
 }
 
 .lil_p {
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
     color: #014D81;
-   	text-decoration: none;
 }
 
 .advertising_type li {
@@ -94,7 +86,7 @@
     display: flex;
     justify-content: space-around;
     height: 250px;
-    margin-top: 10px;
+    margin-top: 5px;
     align-items: center;
 }
 
@@ -126,7 +118,6 @@
 }
 
 #product-list{
-  
   margin:12px;
   display: flex;
   flex-wrap: wrap;
@@ -265,7 +256,7 @@
 
 .left_div_div01 img {
   width: 310px;
-  height: 450px;
+  height: 520px;
 }
 
 .left_div_div01 strong {
@@ -286,4 +277,14 @@
 .left_div_div02 img {
   width: 300px;
   height: 140px;
+}
+
+#product-img{
+	width: 300px;
+	height: 250px;
+}
+
+.product-cardbt{
+  width: 180px;
+  height: 300px;
 }

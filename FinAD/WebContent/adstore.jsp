@@ -73,7 +73,7 @@
 		<p class="advertising_type_p"></p>
 		<ul class="advertising_ul">
 			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-				href="https://www.naver.com" target="_blank"><img
+				href=""><img
 					src="img/beautyicon.png" alt="뷰티">
 					<p class="lil_p">뷰티</p> </a></li>
 			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
@@ -329,12 +329,6 @@
 				</div>
 			</a>
 			</section>
-			<form action="">
-				<div class="product_div">
-					<input type="search" class="product_search"
-						placeholder="원하시는 상품을 검색해주세요" maxlength="20">
-				</div>
-			</form>
 			<div class="mm">
 				<div class="right_div">
 					<h1 id="ele">ADStore 가전관</h1>
@@ -346,6 +340,8 @@
 						</ul>
 					</div>
 				</div>
+				
+				
 				<div class="left_div">
 					<h1 id="fash"> ADStore 패션관</h1>
 					<div class="m_div">
@@ -356,12 +352,27 @@
 						</div>
 						<div class="left_div_div02">
 							<ul>
-								<li><a href=""><img src="img/nike_air.png" alt=""
-										onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"></a></li>
-								<li><a href=""><img src="img/nike_graey.png" alt=""
-										onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"></a></li>
-								<li><a href=""><img src="img/nike_super.png" alt=""
-										onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"></a></li>
+							<li><a href="sellpage.jsp">
+									<div id="product-bt">
+										<div class="product-cardbt">
+										<div>
+						<%
+							out.println("<img id='product-img' src='img/" + jjj.get(9).getItemImage() + "' + alt='' + onmouseenter='zoomIn(event)' onmouseleave='zoomOut(event)' >");
+						%>
+					</div>
+					</div>
+				</div>
+					<li><a href="sellpage.jsp">
+									<div id="product-bt">
+										<div class="product-cardbt">
+										<div>
+						<%
+							out.println("<img id='product-img' src='img/" + jjj.get(0).getItemImage() + "' + alt='' + onmouseenter='zoomIn(event)' onmouseleave='zoomOut(event)' >");
+						%>
+					</div>
+					</div>
+				</div>
+				</a></li>
 							</ul>
 						</div>
 					</div>
