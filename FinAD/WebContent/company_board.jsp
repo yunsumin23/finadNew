@@ -10,7 +10,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/company_board.js"></script>
-<title>company_write.jsp</title>
+<title>company_board.jsp</title>
 </head>
 <body>
 <%
@@ -27,7 +27,7 @@
 		<%
 	}
 %>
-	<div id="company_board_container">
+	<div id="company_board_category_container">
 		<h1>광고게시판</h1>
 		<div id="written_table">
             <table border="1">
@@ -98,29 +98,18 @@
             </form>
         </div>
 	</div>
-	<table border="1">
+	<div id="company_board_container">
+	<table>
 		<tr>
-			<th>글번호</th>
-			<th>글제목</th>
+			<th>번호</th>
+			<th>제목</th>
 			<th>회사명</th>
-			<th>마케팅 담당자 정보1</th>
-			<th>마케팅 담당자 정보2</th>
-			<th>마케팅 담당자 정보3</th>
 			<th>모집 시작</th>
 			<th>모집 종료</th>
 			<th>광고 시작</th>
 			<th>광고 종료</th>
-			<th>모집 인원</th>
-			<th>평균 시청자</th>
-			<th>최소 구독자</th>
-			<th>성별</th>
-			<th>미달 지원 가능</th>
-			<th>총 광고 진행비</th>
 			<th>광고 유형</th>
-			<th>이전 광고 사례1</th>
-			<th>이전 광고 사례2</th>
-			<th>이전 광고 사례3</th>
-			<th>내용</th>
+			<th>작성일</th>
 		</tr>
 	
 	<%	
@@ -131,24 +120,12 @@
 				out.println("<td>"+list.get(i).getCompanyBoardNum()+"</td>");
 				out.println("<td>"+list.get(i).getTitle()+"</td>");
 				out.println("<td>"+list.get(i).getCompanyName()+"</td>");
-				out.println("<td>"+list.get(i).getCompanyInfo1()+"</td>");
-				out.println("<td>"+list.get(i).getCompanyInfo2()+"</td>");
-				out.println("<td>"+list.get(i).getCompanyInfo3()+"</td>");
 				out.println("<td>"+list.get(i).getRecruitmentDate1()+"</td>");
 				out.println("<td>"+list.get(i).getRecruitmentDate2()+"</td>");
 				out.println("<td>"+list.get(i).getPromotionDate1()+"</td>");
 				out.println("<td>"+list.get(i).getPromotionDate2()+"</td>");
-				out.println("<td>"+list.get(i).getRecruitmentNum()+"</td>");
-				out.println("<td>"+list.get(i).getAvgViewers()+"</td>");
-				out.println("<td>"+list.get(i).getSubscribers()+"</td>");
-				out.println("<td>"+list.get(i).getSex()+"</td>");
-				out.println("<td>"+list.get(i).getUnderachiever()+"</td>");
-				out.println("<td>"+list.get(i).getPromotionMoney()+"</td>");
 				out.println("<td>"+list.get(i).getPromotionType()+"</td>");
-				out.println("<td>"+list.get(i).getPreviousPromotion1()+"</td>");
-				out.println("<td>"+list.get(i).getPreviousPromotion2()+"</td>");
-				out.println("<td>"+list.get(i).getPreviousPromotion3()+"</td>");
-				out.println("<td>"+list.get(i).getText()+"</td>");
+				out.println("<td>"+list.get(i).getCompanyWriteDate()+"</td>");
 				out.println("</tr>");
 				}
 		} else {
@@ -156,7 +133,7 @@
 		}
 	%>
 	</table>
-	
+	</div>
 	
 	
 	

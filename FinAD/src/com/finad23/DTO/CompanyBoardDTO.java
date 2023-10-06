@@ -8,12 +8,12 @@ public class CompanyBoardDTO {
 	private Boolean underachiever; //미달자 지원
 	private int promotionMoney; //총 광고 진행비
 	private String promotionType, previousPromotion1, previousPromotion2, previousPromotion3; //광고 유형, 이전 광고 사례
-	private String text; //광고 내용
+	private String text, companyWriteDate; //광고 내용, 작성일
 	public int getCompanyBoardNum() {
 		return companyBoardNum;
 	}
-	public void setCompanyBoardNum(int id) {
-		this.companyBoardNum = id;
+	public void setCompanyBoardNum(int companyBoardNum) {
+		this.companyBoardNum = companyBoardNum;
 	}
 	public String getTitle() {
 		return title;
@@ -135,4 +135,11 @@ public class CompanyBoardDTO {
 	public void setText(String text) {
 		this.text = text;
 	}
+	public String getCompanyWriteDate() {
+		return companyWriteDate;
+	}
+	public void setCompanyWriteDate(String companyWriteDate) {
+		this.companyWriteDate = companyWriteDate;
+	}
+	
 }

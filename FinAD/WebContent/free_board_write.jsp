@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>free_board_text.jsp</title>
+    <title>free_board_write.jsp</title>
     <link rel="stylesheet" href="css/free_board_write.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
