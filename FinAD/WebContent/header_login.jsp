@@ -44,7 +44,7 @@
 					<div class="gnb_div">
 						<ul class="gnb">
 							<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-							<a href="category.finad?type=beauty" target="_blank">
+							<a href="category.finad?url=beauty" target="_blank">
 									<div>
 										<img src="img/beauty_img.png" alt="">
 										<div class="li_text">뷰티 * 패션</div>
