@@ -31,6 +31,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			}
 		} else if(url.equals("beauty")) {
 			inter = CategoryExtr.instance();
+			rq.setAttribute("category", url);
 			try {
 				String category1 = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("category.jsp");
@@ -41,17 +42,6 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			}
 		}
 		
-//		if(category.equals("beauty")) {
-//			inter = CategoryExtr.instance();
-//			try {
-//				String category1 = inter.FinAD(rq, rs);
-//				RequestDispatcher re = rq.getRequestDispatcher("category.jsp");
-//				re.forward(rq, rs);
-//			} catch (Exception e) {
-//				// TODO: handle exception
-//				System.out.println(e);
-//			}
-//		}
 	}
 
 }

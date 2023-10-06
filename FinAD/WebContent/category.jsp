@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.finad23.jjj.Influ_info"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +16,8 @@
 		String id = (String) session.getAttribute("id");
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
+		String category = (String) request.getAttribute("category");
+		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
 		if (id == null && password == null) {
 	%>
 	<jsp:include page="header_login.jsp"></jsp:include>
@@ -23,6 +27,11 @@
 	<jsp:include page="header_logout.jsp"></jsp:include>
 	<%
 		}
+		
+		if(category.equals("beauty")){
+			
+		}
+		
 	%>
 	<div class="rank_div">
 		<ul class="rank_ul">
