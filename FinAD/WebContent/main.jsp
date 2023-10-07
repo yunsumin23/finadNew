@@ -152,6 +152,7 @@
 			</ul>
 		</div>
 	</div>
+	
 	<p class="praticipationg_p">참여중인 기업</p>
 	<div class="pra_div">
 		<div class="pra_div_div">
