@@ -2,8 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper_name">
     <select id="categoryId" resultType="com.finad23.jjj.Influ_info" parameterType="com.finad23.jjj.Influ_info">
-        <!-- select * from project.user where category like %#{category}%; -->
-        select * from project.user where category like CONCAT('%',#{category},'%')
+        select user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.category LIKE CONCAT('%',#{category},'%') ORDER BY user_mypage.subscribers DESC;
     </select>
     <select id="companyWriteID" resultType="com.finad23.DTO.CompanyBoardDTO">
         select * from project.companyboard;

@@ -199,8 +199,14 @@
     margin-left: 15px;
 }
 
+.list_01_div02 {
+	width:150px;
+}
+
 .list_01_div02 img, .list_02_div02 img, .list_03_div02 img, .list_04_div02 img, .list_05_div02 img, .list_06_div02 img, .list_07_div02 img, .list_08_div02 img, .list_09_div02 img, .list_10_div02 img {
     width: 64px;
+    height: 64px;
+    border-radius:50%;
 }
 
 .list_01_div02 a, .list_02_div02 a, .list_03_div02 a, .list_04_div02 a, .list_05_div02 a, .list_06_div02 a, .list_07_div02 a, .list_08_div02 a, .list_09_div02 a, .list_10_div02 a{
@@ -208,4 +214,8 @@
     align-items: center;
     text-decoration: none;
     color: #014D81;
+}
+
+.div_img {
+	margin-left: 15px;
 }

@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
+<%@ page import="java.util.List"%>
 <%@ page import="com.finad23.jjj.Influ_info"%>
+<%@ page import="java.text.DecimalFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/categori.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/categori01.js"></script>
 </head>
 <body>
@@ -29,15 +31,14 @@
 	<jsp:include page="header_logout.jsp"></jsp:include>
 	<%
 		}
-		
 	%>
 	<div class="rank_div">
 		<ul class="rank_ul">
 			<li class="rank_li01">크리에이터 랭킹</li>
 			<%
-			out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
+				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
 			%>
-			
+
 		</ul>
 	</div>
 	<div class="container">
@@ -139,285 +140,49 @@
 							</ul>
 						</div>
 					</div>
+
+					<%
+						if (list != null) {
+							for (int i = 0; i < list.size(); i++) {
+								
+							    DecimalFormat df = new DecimalFormat("#,###");
+							    String Subscribers = df.format(list.get(i).getSubscribers());
+							    String AvgViewers = df.format(list.get(i).getAvgviewers());
+							
+					%>
 					<div class="list_01">
 						<div class="list_01_div01">
 							<input type="checkbox" name="list_name01" class="list_check"
 								width="20px">
-							<p>1</p>
+							<p><%=i+1 %></p>
 							<p class="star">
 								<img src="img/star02.png" alt="" id="star01"
 									onclick="img_change(this)">
 							</p>
 						</div>
 						<div class="list_01_div02">
-							<%
-								if(list != null) {
-									for(int i = 0; i < list.size(); i++) {
-										
-									}
-								}
-								out.println("<a href='creator_page.html' target='_blank'><img src='img/BJ.png'>");
-							%>
-							<!-- <a href="creator_page.html" target="_blank"><img
-								src="img/BJ.png" alt=""> -->
+							<a href="creator_page.html" target="_blank"><img
+								src="img/<%=list.get(i).getImage() %>" alt="">
 								<div>
-									<span class="div_img">00TV</span>
+									<span class="div_img"><%=list.get(i).getNickname() %></span>
 								</div> </a>
 						</div>
 						<div class="list_01_div03">
 							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
+								<li><%=Subscribers%></li>
+								<li><%=AvgViewers %></li>
+								<li><%=list.get(i).getAvgviewers()*0.01 %></li>
 								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
+								<li><%= (int) ((list.get(i).getAvgviewers() * 0.001) * 30) %>만원</li>
 							</ul>
 						</div>
 					</div>
-<!-- 					<div class="list_02">
-						<div class="list_02_div01">
-							<input type="checkbox" name="list_name02" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star02"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_02_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_02_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_03">
-						<div class="list_03_div01">
-							<input type="checkbox" name="list_name03" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star03"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_03_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_03_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_04">
-						<div class="list_04_div01">
-							<input type="checkbox" name="list_name04" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star04"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_04_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_04_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_05">
-						<div class="list_05_div01">
-							<input type="checkbox" name="list_name05" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star05"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_05_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_05_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_06">
-						<div class="list_06_div01">
-							<input type="checkbox" name="list_name06" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star06"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_06_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_06_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_07">
-						<div class="list_07_div01">
-							<input type="checkbox" name="list_name07" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star07"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_07_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_07_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_08">
-						<div class="list_08_div01">
-							<input type="checkbox" name="list_name08" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star08"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_08_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_08_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_09">
-						<div class="list_09_div01">
-							<input type="checkbox" name="list_name09" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star09"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_09_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_09_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div>
-					<div class="list_10">
-						<div class="list_10_div01">
-							<input type="checkbox" name="list_name10" class="list_check"
-								width="20px">
-							<p>1</p>
-							<p class="star">
-								<img src="img/star02.png" alt="" id="star10"
-									onclick="img_change(this)">
-							</p>
-						</div>
-						<div class="list_10_div02">
-							<a href="" target="_blank"><img src="img/BJ.png" alt="">
-								<div>
-									<span class="div_img">00TV</span>
-								</div> </a>
-						</div>
-						<div class="list_10_div03">
-							<ul>
-								<li>구독자 수</li>
-								<li>광고영상<br>평균 조회수
-								</li>
-								<li>예상 CPV</li>
-								<li>광고 영상 호감도</li>
-								<li>예상 광고 단가</li>
-							</ul>
-						</div>
-					</div> -->
+
+					<%
+						}
+						}
+					%>
+					
 				</div>
 			</form>
 		</div>
