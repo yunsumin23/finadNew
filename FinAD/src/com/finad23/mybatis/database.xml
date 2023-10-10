@@ -7,4 +7,5 @@
     <select id="companyWriteID" resultType="com.finad23.DTO.CompanyBoardDTO">
         select * from project.companyboard;
     </select>
+    
 </mapper>

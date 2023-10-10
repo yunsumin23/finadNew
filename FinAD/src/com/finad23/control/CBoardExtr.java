@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.DTO.CompanyBoardDTO;
+import com.finad23.mybatis.CBoardConn;
 
 public class CBoardExtr implements ConInter { //광고게시판 Extract == 추출이라는 뜻
 
@@ -15,7 +16,7 @@ public class CBoardExtr implements ConInter { //광고게시판 Extract == 추�
 	}
 	@Override
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
-		Select select = Select.instance();
+		CBoardConn select = CBoardConn.instance();
 		List<CompanyBoardDTO> list = select.dbSelect();
 		rq.setAttribute("List", list);
 		
