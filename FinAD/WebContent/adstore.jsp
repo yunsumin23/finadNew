@@ -218,18 +218,7 @@
 					</div>
 				</div>
 			</a> <a href="">
-				<div class="product-card">
-					<div>
-						<%
-							out.println("<img class='product-img' src='img/" + jjj.get(5).getItemImage() + "' + alt=''>");
-						%>
-					</div>
-					
-					<div class="product-contents">
-						<%
-							out.println("<span class='product-name'>" + jjj.get(5).getItemName() + "</span><span class='product-price'>"
-									+ jjj.get(5).getItemPrice() + "원</span>");
-						%>
+				
 						<div>
 							<div class="product-seller">
 								<img class="product-avatar" src="img/oking.png" />
