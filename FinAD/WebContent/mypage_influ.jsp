@@ -83,7 +83,7 @@
 				<div>
 					<ul>
 						<%
-							out.println("<li>" + user1.getSubscri() + "</li>");
+							out.println("<li>" + user1.getSubscribers() + "</li>");
 							out.println("<li>" + user1.getAvgviewers() + "</li>");
 						%>
 					</ul>
