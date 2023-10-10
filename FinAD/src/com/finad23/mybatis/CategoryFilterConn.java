@@ -11,6 +11,7 @@ public class CategoryFilterConn {
 	SqlSessionFactory sqlsession = SqlConnect.getSqlSession();
 	
 	public void filter() {
+		SqlSession session = sqlsession.openSession();
 		
 	}
 }
