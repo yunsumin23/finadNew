@@ -6,7 +6,14 @@ public class BoardDTO {
 	private String name;
 	private String text;
 	private String date;
+	private int view;
 	
+	public int getView() {
+		return view;
+	}
+	public void setView(int view) {
+		this.view = view;
+	}
 	public int getNumber() {
 		return number;
 	}

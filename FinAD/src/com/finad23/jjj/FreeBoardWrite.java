@@ -20,7 +20,8 @@ public class FreeBoardWrite {
 			+ boardDTO.getName() + "','"
 			+ boardDTO.getDate() + "','"
 			+ boardDTO.getWriter() + "','"
-			+ boardDTO.getText() + "');");
+			+ boardDTO.getText() + "','"
+			+ boardDTO.getView() + "');");
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
