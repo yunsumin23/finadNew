@@ -1,7 +1,7 @@
 package com.finad23.jjj;
 
 public class Mypage_influ {
-	private String image,youtuLink,liveBcLink,snsLink,introduc;
+	private String image,youtuLink,liveBcLink,snsLink,introduc, shorts;
 	int subscribers, avgviewers, thravgSub, thravgViewer, thravgHit;
 	double man_ratio, woman_ratio, tenAge, tweAge, thrAge, forAge, fifAge;
 	public String getImage() {
@@ -105,5 +105,11 @@ public class Mypage_influ {
 	}
 	public void setFifAge(double fifAge) {
 		this.fifAge = fifAge;
+	}
+	public String getShorts() {
+		return shorts;
+	}
+	public void setShorts(String shorts) {
+		this.shorts = shorts;
 	}
 }

@@ -43,11 +43,11 @@
 	</div>
 	<div class="container">
 		<div class="left_filter">
-			<form action="filter.finad?url=filter" name="form_left" method="post">
+			<form action="category.finad?url=filter" name="form_left" method="post">
 				<div>
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
-						<select name="shorts" class="shorts">
+						<select name="shorts" class="shorts" name="shorts">
 							<option value="nothing" selected="select">--</option>
 							<option value="true">쇼츠 있음</option>
 							<option value="false">쇼츠 없음</option>
@@ -55,7 +55,7 @@
 					</div>
 					<div class="main_sub">
 						<div class="sub_div">구독자 수</div>
-						<select name="sub" class="sub">
+						<select name="sub" class="sub" name="sub">
 							<option value="nothing01" selected="select">--</option>
 							<option value="under10">10만명 이하</option>
 							<option value="over10">10만~20만명</option>

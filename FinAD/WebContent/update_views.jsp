@@ -4,7 +4,7 @@
 <%
     String view = request.getParameter("freeboardviews");
     int boardId = Integer.parseInt(request.getParameter("boardId")); // 게시물 ID를 받아옵니다.
-
+	String result = null;
     Connection connection = null;
     Statement statement = null;
     try {
@@ -21,10 +21,10 @@
 
         if (rowsAffected > 0) {
             // 조회수 업데이트 성공
-            out.println("success");
+           	result = "success";
         } else {
             // 조회수 업데이트 실패
-            out.println("fail");
+            result = "fail";
         }
     } catch (Exception e) {
         e.printStackTrace();

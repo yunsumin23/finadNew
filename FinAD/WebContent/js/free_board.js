@@ -37,7 +37,7 @@ function views(boardId) {
                 // 조회수 증가에 성공한 경우, 화면에도 증가된 조회수를 반영합니다.
                 view++;
                 $("#viewCount").text(view);
-            } else {
+            } else if(result === "fail"){
                 alert("조회수 증가에 실패했습니다.");
             }
         },
