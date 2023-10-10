@@ -224,6 +224,7 @@
 							out.println("<img class='product-img' src='img/" + jjj.get(5).getItemImage() + "' + alt=''>");
 						%>
 					</div>
+					
 					<div class="product-contents">
 						<%
 							out.println("<span class='product-name'>" + jjj.get(5).getItemName() + "</span><span class='product-price'>"
