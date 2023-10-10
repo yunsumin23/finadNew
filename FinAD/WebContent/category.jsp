@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.finad23.jjj.Influ_info"%>
-<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="java.text.DecimalFormat"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,17 +144,16 @@
 					<%
 						if (list != null) {
 							for (int i = 0; i < list.size(); i++) {
-								
-							    DecimalFormat df = new DecimalFormat("#,###");
-							    String Subscribers = df.format(list.get(i).getSubscribers());
-							    String AvgViewers = df.format(list.get(i).getAvgviewers());
-							
+
+								DecimalFormat df = new DecimalFormat("#,###");
+								String Subscribers = df.format(list.get(i).getSubscribers());
+								String AvgViewers = df.format(list.get(i).getAvgviewers());
 					%>
 					<div class="list_01">
 						<div class="list_01_div01">
 							<input type="checkbox" name="list_name01" class="list_check"
 								width="20px">
-							<p><%=i+1 %></p>
+							<p><%=i + 1%></p>
 							<p class="star">
 								<img src="img/star02.png" alt="" id="star01"
 									onclick="img_change(this)">
@@ -162,18 +161,18 @@
 						</div>
 						<div class="list_01_div02">
 							<a href="creator_page.html" target="_blank"><img
-								src="img/<%=list.get(i).getImage() %>" alt="">
+								src="img/<%=list.get(i).getImage()%>" alt="">
 								<div>
-									<span class="div_img"><%=list.get(i).getNickname() %></span>
+									<span class="div_img"><%=list.get(i).getNickname()%></span>
 								</div> </a>
 						</div>
 						<div class="list_01_div03">
 							<ul>
 								<li><%=Subscribers%></li>
-								<li><%=AvgViewers %></li>
-								<li><%=list.get(i).getAvgviewers()*0.01 %></li>
+								<li><%=AvgViewers%></li>
+								<li><%=list.get(i).getAvgviewers() * 0.01%></li>
 								<li>광고 영상 호감도</li>
-								<li><%= (int) ((list.get(i).getAvgviewers() * 0.001) * 30) %>만원</li>
+								<li><%=(int) ((list.get(i).getAvgviewers() * 0.001) * 30)%>만원</li>
 							</ul>
 						</div>
 					</div>
@@ -182,7 +181,7 @@
 						}
 						}
 					%>
-					
+
 				</div>
 			</form>
 		</div>
