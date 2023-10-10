@@ -38,11 +38,11 @@
 			있습니다. 여러분은 PC, 휴대폰 등 인터넷 이용이 가능한 각종 단말기를 통해 각양각색의 FINAD 서비스를 자유롭게
 			이용하실 수 있으며, 개별 서비스들의 구체적인 내용은 각 서비스 상의 안내, 공지사항, FINAD 웹고객</div>
 		<div class="check_agree">
-			<input type="checkbox" value="" onclick="" class="check_01">동의
+			<input type="checkbox" id="check_agree1" value="" class="check_01">동의
 		</div>
 		<span class="explain">만 15세 이상임을 확인합니다 (필수)</span>
 		<div class="check_agree">
-			<input type="checkbox" value="" class="check_01">동의
+			<input type="checkbox" id="check_agree2" value="" class="check_01">동의
 		</div>
 		<div class="text_agree">개인정보보호법에 따라 FINAD에 회원가입 신청하시는 분께 수집하는
 			개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한
@@ -57,7 +57,7 @@
 			휴대전화번호를, 선택항목으로 비밀번호를 수집합니다.</div>
 		<span class="explain">개인정보 수집 이용 동의 (필수)</span>
 		<div class="check_agree">
-			<input type="checkbox" value="" class="check_01">동의
+			<input type="checkbox" id="check_agree3" value="" class="check_01">동의
 		</div>
 		<p class="ex_p">* 필수 수집항목은 서비스 이용에 필요한 최소한의 정보이며, 동의를 해야만 서비스를 이용할
 			수 있습니다.</p>
@@ -78,12 +78,9 @@
             <p>아래 인증하기버튼을 클릭해 본인인증을 진행해주세요.</p>
             <p>가입하시는 분 명의로 개설된 휴대폰으로 인증이 가능합니다. (만 15세 미만 가입불가)</p> -->
 		<div class="btn_div">
-			<input type="button" value="일반 회원" id="btn_agree"
-				onclick="location.href='sign_nomal.jsp'"> <input
-				type="button" value="인플루언서 회원" id="btn_agree1"
-				onclick="location.href='sign_influencer.jsp'"> <input
-				type="button" value="기업 회원" id="btn_agree2"
-				onclick="location.href='sign_company.jsp'">
+			<input type="button" value="일반 회원" id="btn_agree" onclick="agreeCheck1()"> 
+			<input type="button" value="인플루언서 회원" id="btn_agree1" onclick="agreeCheck2()"> 
+			<input type="button" value="기업 회원" id="btn_agree2" onclick="agreeCheck3()">
 		</div>
 	</div>
 

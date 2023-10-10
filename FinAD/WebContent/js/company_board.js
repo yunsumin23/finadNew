@@ -28,7 +28,7 @@ function zoomOut(event) {
 
 
 
-//검색 버튼 클릭 시 호출되는 함수
+/*//검색 버튼 클릭 시 호출되는 함수
 function search() {
  // 체크된 체크박스 값을 가져와서 검색 쿼리를 생성
  var selectedFilters = [];
@@ -78,4 +78,4 @@ function sendSearchQuery(filters, query) {
          console.error("검색 오류:", error);
      }
  });
-}
+}*/
