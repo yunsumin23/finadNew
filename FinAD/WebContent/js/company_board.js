@@ -57,7 +57,7 @@ function search() {
  // 서버로 검색 쿼리를 보냄
  sendSearchQuery(selectedFilters, query);
 }
-
+ 
 //검색 쿼리를 서버로 보내는 함수
 function sendSearchQuery(filters, query) {
  // AJAX를 사용하여 서버로 검색 쿼리를 전송
