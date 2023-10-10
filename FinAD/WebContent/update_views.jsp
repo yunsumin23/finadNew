@@ -26,6 +26,7 @@
             // 조회수 업데이트 실패
             result = "fail";
         }
+        
     } catch (Exception e) {
         e.printStackTrace();
         out.println("fail"); // 오류 발생 시 실패 메시지 출력
