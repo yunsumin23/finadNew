@@ -7,5 +7,9 @@
     <select id="companyWriteID" resultType="com.finad23.DTO.CompanyBoardDTO">
         select * from project.companyboard;
     </select>
+    <select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">
+    	select user.
+    </select>
+    
     
 </mapper>

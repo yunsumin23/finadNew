@@ -18,7 +18,6 @@
 		String id = (String) session.getAttribute("id");
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
-		/* String category = (String) request.getAttribute("category"); */
 		String category = request.getParameter("url");
 		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
 		int creatorNum = list.size();
@@ -44,7 +43,7 @@
 	</div>
 	<div class="container">
 		<div class="left_filter">
-			<form action="category_filter.jsp" name="form_left" method="post">
+			<form action="filter.finad?url=filter" name="form_left" method="post">
 				<div>
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
