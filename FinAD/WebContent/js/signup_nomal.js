@@ -15,10 +15,10 @@ $(document).ready(function() {
 		if (id.trim() === "") {
 			$("#result").html("아이디를 입력해주세요.");
 			$("#result").css("color", "#FF4343");
+			$("#result").css("font-size", "15px");
 			$("#result").css("text-align", "right");
 			$("#result").css("margin-left", "250px");
 			$('input[name="id"]').css('border', '5px solid #FF4343');
-			$('input[name="id"]').css('margin-bottom', '10px');
 		} else if (id.length < 6 || id.length > 16) {
 			$("#result").html("아이디는 6글자에서 16글자 사이로 입력해주세요.");
 			$("#result").css("color", "#FF4343");
@@ -295,7 +295,6 @@ function checkEmail() {
 		check_email.style.fontSize = '15px';
 		check_email.style.textAlign = 'right';
 		check_email.style.width = '150px';
-//		check_email.style.margin.left = '250px';
 		text_email[0].style.border = '5px solid #FF4343';
 	} else {
 		check_email.innerHTML = '';

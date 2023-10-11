@@ -3,10 +3,10 @@
 
 #signup_input {
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 100px;
 	width: 550px;
 	font-size: 20px;
-	height: 1000px;
+	height: 1010px;
 }
 
 #input_title {
@@ -134,7 +134,9 @@
 #input_final {
 	margin: 0 auto;
 	margin-top: 50px;
-	width: 200px;
+	margin-left: 40px;
+	margin-bottom: 100px;
+	width: 400px;
 	height: 61px;
 	font-size: 25px;
 	color: white;
@@ -189,6 +191,38 @@
 	font-family: 'Malgun Gothic';
 	padding: 5px;
 	margin: 3px;
+}
+#check_addr{
+	width: 270px;
+	text-align: right;
+	margin-left: 20px;
+	margin-top: 18px;
+	font-size: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+#result{
+	font-size: 15px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+
+
+#check_email{
+	margin-left: 400px;
+	font-size: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+#check_phone{
+	width: 270px;
+	text-align: right;
+	margin-left: 20px;
+	margin-top: 5px;
+	font-size: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 #check {

@@ -82,11 +82,12 @@
 				onblur="checkEmail();" maxlength="32">
 			<p id="check_email"></p>
 			
+			
 			<div class="input_infoca">카테고리 선택</div>
 			<div>
 				<table id="input_info3">
 					<tr>
-						<td><input type="checkbox" value="beauty" name="categori">뷰티
+						<td><input type="checkbox" value="beauty"  name="categori">뷰티
 							* 패션</td>
 						<td><input type="checkbox" value="food" name="categori">먹방</td>
 						<td><input type="checkbox" value="BJ" name="categori">BJ
