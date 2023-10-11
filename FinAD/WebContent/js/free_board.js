@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var view;
+	var view=0;
 	
     $(".gnb").hide();
     $(".gnbbox").hide();
