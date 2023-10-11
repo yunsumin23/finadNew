@@ -85,7 +85,8 @@ public class CategoryFilterExtr implements ConInter { // DB처리하는 파일
 		}
 
 		CategoryFilterDTO filter = new CategoryFilterDTO();
-		
+		String cate = rq.getParameter("url");
+		filter.setCategory(cate);
 		filter.setShorts(shorts);
 		filter.setSub(sub);
 		filter.setPrice(price);

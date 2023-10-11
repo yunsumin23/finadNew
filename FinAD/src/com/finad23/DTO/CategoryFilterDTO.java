@@ -1,7 +1,7 @@
 package com.finad23.DTO;
 
 public class CategoryFilterDTO {
-	private String shorts, sub, price, avg, offer;
+	private String shorts, sub, price, avg, offer, category;
 
 	public String getShorts() {
 		return shorts;
@@ -41,6 +41,14 @@ public class CategoryFilterDTO {
 
 	public void setOffer(String offer) {
 		this.offer = offer;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 }

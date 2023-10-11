@@ -330,7 +330,19 @@
 			</a>
 			</section>
 			<div class="mm">
-			<div class="left_div">
+				<div class="right_div">
+					<h1 id="ele">ADStore 가전관</h1>
+					<div class="right_div_div">
+						<ul>
+							<li><a href=""><img src="img/zflip.png" alt=""></a></li>
+							<li><a href=""><img src="img/lg_go.png" alt=""></a></li>
+							<li><a href=""><img src="img/macbook.png" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+				
+				
+				<div class="left_div">
 					<h1 id="fash"> ADStore 패션관</h1>
 					<div class="m_div">
 						<div class="left_div_div01">
@@ -363,17 +375,6 @@
 				</a></li>
 							</ul>
 						</div>
-					</div>
-				</div>
-				
-				<div class="right_div">
-					<h1 id="ele">ADStore 가전관</h1>
-					<div class="right_div_div">
-						<ul>
-							<li><a href=""><img src="img/zflip.png" alt=""></a></li>
-							<li><a href=""><img src="img/lg_go.png" alt=""></a></li>
-							<li><a href=""><img src="img/macbook.png" alt=""></a></li>
-						</ul>
 					</div>
 				</div>
 			</div>
