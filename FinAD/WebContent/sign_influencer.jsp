@@ -39,8 +39,12 @@
 			<p id="check_name"></p>
 			<div class="input_info">성별 :</div>
 			<div class="input_info2" style="text-align: center;">
-				<input type="radio" name="gender" value="남자" onblur="checkSex()">남성
-				<input type="radio" name="gender" value="여자" onblur="checkSex()">여성<br>
+				<label for="man" class="radio_box"> <input type="radio"
+					id="man" name="gender" value="남성" checked="checked" /> <span
+					class="on"></span> 남성
+				</label> <label for="woman" class="radio_box"> <input type="radio"
+					id="woman" name="gender" value="여성" /> <span class="on"></span> 여성
+				</label><br>
 			</div>
 			<p id="check_sex"></p>
 			<div class="input_info">활동명 :</div>
@@ -77,6 +81,7 @@
 			<input type="text" class="input_info2" name="email"
 				onblur="checkEmail();" maxlength="32">
 			<p id="check_email"></p>
+			
 			<div class="input_infoca">카테고리 선택</div>
 			<div>
 				<table id="input_info3">

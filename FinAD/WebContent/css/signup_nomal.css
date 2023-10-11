@@ -2,9 +2,9 @@
 	url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 #signup_input {
-	margin: 100px auto;
+	margin: 0 auto;
+	margin-top: 50px;
 	width: 550px;
-	margin-bottom: 100px;
 	font-size: 20px;
 	height: 1000px;
 }
@@ -84,6 +84,26 @@
 	padding: 10px;
 	font-size: 15px;
 }
+
+
+
+
+.radio_box { display: inline-block; *display: inline; *zoom: 1; position: relative; padding-left: 25px; margin-right: 10px; cursor: pointer; font-size: 14px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+/* 기본 라디오 버튼 숨기기 */
+.radio_box input[type="radio"] { display: none; }
+
+/* 선택되지 않은 라디오 버튼 스타일 꾸미기 */
+.on { width: 20px; height: 20px; background: #ddd; border-radius: 50%; position: absolute; top: 0; left: 0; }
+
+/* 선택된 라디오 버튼 스타일 꾸미기 */
+.radio_box input[type="radio"]:checked + .on { background: #f86480; }
+.on:after { content: ""; position: absolute; display: none; }
+.radio_box input[type="radio"]:checked + .on:after { display: block; }
+.on:after { width: 10px; height: 10px; background: #fff; border-radius: 50%; position: absolute; left: 5px; top: 5px; }
+
+
+
 
 #input_info3 {
 	width: 550px;
