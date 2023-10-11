@@ -76,7 +76,7 @@
 				<p id="check_phone"></p>
 			</div>
 
-			<div class="input_info">이메일 :</div>
+			<div class="input_infoem">이메일 :</div>
 			<input type="text" class="input_info2" name="email"
 				onblur="checkEmail();" maxlength="32"><br>
 			<p id="check_email"></p>

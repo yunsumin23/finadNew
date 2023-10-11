@@ -295,6 +295,7 @@ function checkEmail() {
 		check_email.style.fontSize = '15px';
 		check_email.style.textAlign = 'right';
 		check_email.style.width = '150px';
+//		check_email.style.margin.left = '250px';
 		text_email[0].style.border = '5px solid #FF4343';
 	} else {
 		check_email.innerHTML = '';
