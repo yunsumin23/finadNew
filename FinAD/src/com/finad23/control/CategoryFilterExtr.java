@@ -25,7 +25,6 @@ public class CategoryFilterExtr implements ConInter { // DB처리하는 파일
 		String price = rq.getParameter("price");
 		String avg = rq.getParameter("avg");
 		String offer = rq.getParameter("offer");
-		String price_name = rq.getParameter("price_name");
 
 		if (shorts.equalsIgnoreCase("true")) {
 			shorts = "true";
@@ -90,7 +89,6 @@ public class CategoryFilterExtr implements ConInter { // DB처리하는 파일
 		filter.setShorts(shorts);
 		filter.setSub(sub);
 		filter.setPrice(price);
-		filter.setPrice_name(price_name);
 		filter.setAvg(avg);
 		filter.setOffer(offer);
 		

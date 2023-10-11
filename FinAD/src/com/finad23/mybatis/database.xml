@@ -7,7 +7,7 @@
     <select id="companyWriteID" resultType="com.finad23.DTO.CompanyBoardDTO">
         select * from project.companyboard;
     </select>
-	<select id="filterId" resultType="com.finad23.jjj.Influ_info" parameterType="com.finad23.jjj.Influ_info">
+	<select id="filterId" resultType="com.finad23.jjj.Influ_info" parameterType="com.finad23.DTO.CategoryFilterDTO">
     <![CDATA[
     SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers
     FROM project.user
@@ -16,7 +16,7 @@
     AND
     (
         (
-            #{shorts} IS NULL OR
+            #{shorts} = 'nothing' OR
             (
                 (#{shorts} = 'true' AND user_mypage.shorts LIKE '%true%') OR
                 (#{shorts} = 'false' AND user_mypage.shorts LIKE '%false%')
@@ -26,7 +26,7 @@
     AND	
     (
         (
-            #{sub} IS NULL OR
+            #{sub} = 'nothing' OR
             (
                 (#{sub} = 'under10' AND user_mypage.subscribers <= 100000) OR
                 (#{sub} = 'over10' AND user_mypage.subscribers BETWEEN 100000 AND 200000) OR
@@ -39,7 +39,7 @@
     AND
     (
         (
-            #{price} IS NULL OR
+            #{price} = 'nothing' OR
             (
                 (#{price} = 'under30' AND ((user_mypage.avgviewers * 0.001) * 30) < 30) OR
                 (#{price} = 'over30' AND ((user_mypage.avgviewers * 0.001) * 30) BETWEEN 30 AND 100) OR
@@ -51,7 +51,7 @@
     AND
     (
         (
-            #{avg} IS NULL OR
+            #{avg} = 'nothing' OR
             (
                 (#{avg} = 'under1000' AND user_mypage.avgviewers < 1000) OR
                 (#{avg} = 'over1000' AND user_mypage.avgviewers BETWEEN 1000 AND 5000) OR

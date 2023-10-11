@@ -231,7 +231,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 		} else if(url.equals("filter")) {
 			inter = CategoryFilterExtr.instance();
 			try {
-				String filter1 = inter.FinAD(rq, rs);
+				inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {

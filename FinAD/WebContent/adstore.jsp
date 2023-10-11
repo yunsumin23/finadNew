@@ -77,29 +77,29 @@
 					src="img/beautyicon.png" alt="뷰티">
 					<p class="lil_p">뷰티</p> </a></li>
 			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-				href="#" target="_blank"><img src="img/campicon.png"
+				href=""><img src="img/campicon.png"
 					alt="여행">
 					<p class="lil_p">여행</p> </a></li>
 			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-			<a href="#ele">
+			<a href="">
 			<img src="img/electroicon.png" alt="가전">
 					<p class="lil_p">가전</p> </a></li>
 			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-				href="#fash"><img src="img/fashionicon.png"
+				href=""><img src="img/fashionicon.png"
 					alt="패션">
 					<p class="lil_p">패션</p> </a></li>
 			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-				href="#" target="_blank"><img src="img/foodicon.png"
+				href=""><img src="img/foodicon.png"
 					alt="식품">
 					<p class="lil_p">식품</p> </a></li>
 			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-				href="#" target="_blank"><img src="img/healthicon.png" alt="건강">
+				href=""><img src="img/healthicon.png" alt="건강">
 					<p class="lil_p">건강</p> </a></li>
 					<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-				href="#" target="_blank"><img src="img/kidicon.png" alt="키즈">
+				href=""><img src="img/kidicon.png" alt="키즈">
 					<p class="lil_p">키즈</p> </a></li>
 					<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-				href="#" target="_blank"><img src="img/peticon.png" alt="애견">
+				href=""><img src="img/peticon.png" alt="애견">
 					<p class="lil_p">애견</p> </a></li>
 		</ul>
 	</div>
