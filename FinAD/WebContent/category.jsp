@@ -48,7 +48,7 @@
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
 						<select name="shorts" class="shorts" name="shorts">
-							<option value="nothing" selected="select">--</option>
+							<option value="nothing" selected="selected">--</option>
 							<option value="true">쇼츠 있음</option>
 							<option value="false">쇼츠 없음</option>
 						</select>
@@ -56,7 +56,7 @@
 					<div class="main_sub">
 						<div class="sub_div">구독자 수</div>
 						<select name="sub" class="sub" name="sub">
-							<option value="nothing01" selected="select">--</option>
+							<option value="nothing01" selected="selected">--</option>
 							<option value="under10">10만명 이하</option>
 							<option value="over10">10만~20만명</option>
 							<option value="over20">20만~50만명</option>
@@ -68,11 +68,11 @@
 						<div class="price_div">예상 광고 단가</div>
 						<div class="price">
 							<select name="price" class="price_select">
-								<option value="nothing02" selected="select">--</option>
-								<option value="min_price">최소</option>
-								<option value="max_price">최대</option>
-								<input type="text" name="price_name" class="price_class">만
-								원
+								<option value="nothing02" selected="selected">--</option>
+								<option value="under30">30만원 이하</option>
+								<option value="over30">30~100만원</option>
+								<option value="over100">100~300만원</option>
+								<option value="over300">300만원 이상</option>
 							</select>
 						</div>
 					</div>
@@ -80,18 +80,18 @@
 						<div class="avg_div">광고 평균 조회수</div>
 						<div class="avg">
 							<select name="avg" class="avg_select">
-								<option value="nothing03">--</option>
-								<option value="min_avg">최소</option>
-								<option value="max_avg">최대</option>
-								<input type="text" name="avg_name_text" class="avg_class">만
-								회
+								<option value="nothing03" selected="selected">--</option>
+								<option value="under1000">1000회 이하</option>
+								<option value="over1000">1000~5000회</option>
+								<option value="over5000">5000~10000회</option>
+								<option value="over10000">100000회 이상</option>
 							</select>
 						</div>
 					</div>
 					<div class="main_offer">
 						<div class="offer_div">받은 제안 수</div>
 						<select name="offer" class="offer">
-							<option value="nothing04">--</option>
+							<option value="nothing04" selected="selected">--</option>
 							<option value="over1">1개 이상</option>
 							<option value="over10">10개 이상</option>
 							<option value="over50">50개 이상</option>

@@ -15,9 +15,12 @@ public class CategoryFilterConn { // DB연결하는 파일
 	}
 	SqlSessionFactory sqlsession = SqlConnect.getSqlSession();
 	
-	public List<Influ_info> filter(Influ_info filter) {
+	public List<CategoryFilterDTO> filter(CategoryFilterDTO filter) {
 		SqlSession session = sqlsession.openSession();
-		List<Influ_info> list = session.selectList("filterId", filter);
+
+		
+		
+		List<CategoryFilterDTO> list = session.selectList("filterId", filter);
 		session.close(); // session을 열였으니 닫아준다.
 		return list;
 	}

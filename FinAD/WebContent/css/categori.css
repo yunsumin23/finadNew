@@ -65,7 +65,7 @@
     font-size: 20px;
 }
 
-.shorts, .sub, .offer {
+.shorts, .sub, .offer, .price_select, .avg_select {
     width: 168px;
     height: 30px;
     color: #FF766B;
@@ -82,13 +82,13 @@
     border: none;
 }
 
-.price_select, .avg_select {
+/* .price_select, .avg_select {
     color: #FF766B;
     font-size: 13px;
     text-align: right;
     margin-right: 10px;
     border: 1px solid #FF766B;
-}
+} */
 
 .check_sub {
 	margin: 0 auto;

@@ -232,7 +232,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			inter = CategoryFilterExtr.instance();
 			try {
 				String filter1 = inter.FinAD(rq, rs);
-				RequestDispatcher re = rq.getRequestDispatcher("category.jsp");
+				RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {
 				// TODO: handle exception
