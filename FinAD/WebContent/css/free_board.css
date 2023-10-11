@@ -6,6 +6,16 @@
 	margin: 0 auto;
 	margin-top: 80px;
 }
+
+a {
+    color: black; /* 원하는 색상으로 변경 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+a:visited {
+    color: #800080; /* 클릭 후의 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
 table tr td:nth-child(1){
 	text-align: center;
 }
@@ -16,8 +26,7 @@ th, td {
 	padding: 3px;
 	border-bottom : 1px solid gray;
 }
-#sss{
-}
+
 table th:nth-child(1) {
     width: 70px;
 }

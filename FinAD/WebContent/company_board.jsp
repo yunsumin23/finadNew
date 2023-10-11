@@ -90,14 +90,22 @@
                 </tr>
             </table>
         </div>
-        <div class="written_search">
-            <form action="/search" method="get">
-                <input type="text" name="query" id="search_input" placeholder="검색어를 입력하세요...">
+        <!-- <div class="written_search">
+            <form action="company_board.jsp" method="get">
+                <input type="search" name="query" id="search_input" placeholder="검색어를 입력하세요...">
                 <button type="submit" class="search_button">검색</button>
                 <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
             </form>
-        </div>
+        </div> -->
+        <div class="written_search">
+  		  <form action="company_board.jsp" method="get">
+       		 <input type="search" name="query" id="search_input" placeholder="검색어를 입력하세요...">
+        	 <button type="button" class="search_button" onclick="search()">검색</button>
+       		 <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
+   		  </form>
+ 		</div>
 	</div>
+	
 	<div id="company_board_container">
 	<table>
 		<tr>

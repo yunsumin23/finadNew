@@ -1,4 +1,4 @@
-package com.finad23.control;
+package com.finad23.mybatis;
 
 import java.util.List;
 
@@ -6,14 +6,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.finad23.DTO.CompanyBoardDTO;
-import com.finad23.mybatis.SqlConnect;
 
 
 
-public class Select {
+public class CBoardConn {
 	
-	static Select select = new Select();
-	public static Select instance() {
+	static CBoardConn select = new CBoardConn();
+	public static CBoardConn instance() {
 		return select;
 	}
 	

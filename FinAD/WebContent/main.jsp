@@ -86,72 +86,73 @@
 		<div class="creator_type_div">
 			<ul class="creator_type_ul">
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="category.jsp" target="_blank"><img
+					href="category.finad?url=beauty"><img
 						src="img/beauty.png" alt="뷰티,패션">
 						<p>뷰티,패션</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="category.jsp" target="_blank"><img src="img/food.png" alt="먹방">
+					href="category.finad?url=food" ><img src="img/food.png" alt="먹방">
 						<p>먹방</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/BJ.png" alt="BJ,엔터테이너">
+					href="category.finad?url=BJ" ><img src="img/BJ.png" alt="BJ,엔터테이너">
 						<p>BJ,엔터테이너</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/vLog.png" alt="VLOG,일상">
+					href="category.finad?url=vlog" ><img src="img/vLog.png" alt="VLOG,일상">
 						<p>VLOG,일상</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/game.png" alt="게임">
+					href="category.finad?url=game" ><img src="img/game.png" alt="게임">
 						<p>게임</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/IT.png" alt="IT,전자기기">
+					href="category.finad?url=IT" ><img src="img/IT.png" alt="IT,전자기기">
 						<p>IT,전자기기</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/music.png" alt="음악,춤">
+					href="category.finad?url=music" ><img src="img/music.png" alt="음악,춤">
 						<p>음악,춤</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/cook.png" alt="요리,베이킹">
+					href="category.finad?url=cook" ><img src="img/cook.png" alt="요리,베이킹">
 						<p>요리,베이킹</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/travel.png" alt="여행,아웃도어">
+					href="category.finad?url=travel" ><img src="img/travel.png" alt="여행,아웃도어">
 						<p>여행,아웃도어</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/pet.png" alt="동물,펫">
+					href="category.finad?url=pet" ><img src="img/pet.png" alt="동물,펫">
 						<p>동물,펫</p> </a></li>
 			</ul>
 			<ul class="creator_type_ul">
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/sports.png" alt="스포츠,건강">
+					href="category.finad?url=sports" ><img src="img/sports.png" alt="스포츠,건강">
 						<p>스포츠,건강</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/movie.png" alt="영화,애니">
+					href="category.finad?url=movie" ><img src="img/movie.png" alt="영화,애니">
 						<p>영화,애니</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/car.png" alt="자동차">
+					href="category.finad?url=car" ><img src="img/car.png" alt="자동차">
 						<p>자동차</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/kid.png" alt="키즈,플레이">
+					href="category.finad?url=kid" ><img src="img/kid.png" alt="키즈,플레이">
 						<p>키즈,플레이</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/education.png" alt="교육">
+					href="category.finad?url=education" ><img src="img/education.png" alt="교육">
 						<p>교육</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/real estate.png"
+					href="category.finad?url=realestate" ><img src="img/real estate.png"
 						alt="부동산,투자">
 						<p>부동산,투자</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/Politics.png" alt="정치,시사">
+					href="category.finad?url=politics" ><img src="img/Politics.png" alt="정치,시사">
 						<p>정치,시사</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/palette.png" alt="그림,만들기">
+					href="category.finad?url=palette" ><img src="img/palette.png" alt="그림,만들기">
 						<p>그림,만들기</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/clover.png" alt="운세,타로">
+					href="category.finad?url=clover"><img src="img/clover.png" alt="운세,타로">
 						<p>운세,타로</p> </a></li>
 				<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a
-					href="" target="_blank"><img src="img/another.png" alt="기타">
+					href="category.finad?url=another" ><img src="img/another.png" alt="기타">
 						<p>기타</p> </a></li>
 			</ul>
 		</div>
 	</div>
+	
 	<p class="praticipationg_p">참여중인 기업</p>
 	<div class="pra_div">
 		<div class="pra_div_div">

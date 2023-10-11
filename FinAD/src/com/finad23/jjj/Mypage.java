@@ -12,12 +12,12 @@ public class Mypage {
 	ResultSet resultSet = null;
 	
 	
-//	?¼ë°˜ìœ ?? ?°?´?„° ì¶”ì¶œ
+//	?ï¿½ï¿½ë°˜ìœ ?? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì¶”ì¶œ
 	public Nomal_info nomal_user(String id) {
 		Nomal_info nomal_user = new Nomal_info();
 		try {
 			getcon();
-//			java?—?„œ jdbcë¥? ?‚¬?š©?•´?„œ ?°?´?„°ë² ì´?Š¤?? ?ƒ?˜¸ ?‘?š©?•  ?•Œ ?‚¬?š©?˜?Š” ì½”ë“œ
+//			java?ï¿½ï¿½?ï¿½ï¿½ jdbcï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ë² ì´?ï¿½ï¿½?? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì½”ë“œ
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery("select * from nomal_user where nomalUserId = '" + id + "';");
 			if(resultSet.next()) {
@@ -38,7 +38,7 @@ public class Mypage {
 		return nomal_user;
 	}
 	
-//	?¸?”Œë£¨ì–¸?„œ ?°?´?„° ì¶”ì¶œ
+//	?ï¿½ï¿½?ï¿½ï¿½ë£¨ì–¸?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì¶”ì¶œ
 	public Influ_info influ(String id) {
 		Influ_info influ_info = new Influ_info();
 		try {
@@ -64,7 +64,7 @@ public class Mypage {
 		return influ_info;
 	}
 
-//	?¸?”Œë£¨ì–¸?„œ ë§ˆì´?˜?´ì§? ì¶”ê? ? •ë³?
+//	?ï¿½ï¿½?ï¿½ï¿½ë£¨ì–¸?ï¿½ï¿½ ë§ˆì´?ï¿½ï¿½?ï¿½ï¿½ï¿½? ì¶”ï¿½? ?ï¿½ï¿½ï¿½?
 	public Mypage_influ influ_mypage(String id) {
 		Mypage_influ mypage_influ = new Mypage_influ();
 		try {
@@ -73,7 +73,7 @@ public class Mypage {
 			resultSet = statement.executeQuery("select * from user_mypage where influUserId = '" + id + "';");
 			if(resultSet.next()) {
 				mypage_influ.setImage(resultSet.getString("image"));
-				mypage_influ.setSubscri(resultSet.getInt("subscribers"));
+				mypage_influ.subscribers(resultSet.getInt("subscribers"));
 				mypage_influ.setYoutuLink(resultSet.getString("youtubeLink"));
 				mypage_influ.setLiveBcLink(resultSet.getString("liveBroadcastLink"));
 				mypage_influ.setSnsLink(resultSet.getString("snsLink"));
@@ -102,7 +102,7 @@ public class Mypage {
 		return mypage_influ;
 	}
 	
-//	ê¸°ì—…?šŒ?› ?°?´?„° ì¶”ì¶œ
+//	ê¸°ì—…?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ì¶”ì¶œ
 	public Company_info company(String id) {
 		Company_info company_info = new Company_info();
 		try {
@@ -131,22 +131,22 @@ public class Mypage {
 	
 	
 	
-//	ì»¤ë„¥?…˜ ?•œë²ˆì— ëª¨ì?ê±°ì„ ?“°ê³ ì‹¶?œ¼ë©? ë©”ì†Œ?“œ ?˜¸ì¶œí•˜ë©´ë¨.
+//	ì»¤ë„¥?ï¿½ï¿½ ?ï¿½ï¿½ë²ˆì— ëª¨ï¿½?ê±°ì„ ?ï¿½ï¿½ê³ ì‹¶?ï¿½ï¿½ï¿½? ë©”ì†Œ?ï¿½ï¿½ ?ï¿½ï¿½ì¶œí•˜ë©´ë¨.
 	public void getcon() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?characterEncoding=utf-8", "root", "123456");
 			if(connection == null) {
-//				throw?Š” ?˜ˆ?™¸ì²˜ë¦¬ë¥? ê°•ì œë¡? ?‹œ?‚¤?Š”ê±°ê³ 
-//				throws?Š” ë©”ì†Œ?“œ ?˜†?— ?‹¬?•„?„œ ?•´?‹¹ ë©”ì†Œ?“œê°? ?–´?–¤ ?˜ˆ?™¸ë¥? ?˜ì§? ?ˆ˜ ?ˆ?Š”ì§?ë¥? ?„ ?–¸?•˜?Š” ?° ?‚¬?š©?•œ?‹¤!
-				throw new Exception("?°?´?„°ë² ì´?Š¤ ?—°ê²? ?•ˆ?¨.");
+//				throw?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ì²˜ë¦¬ï¿½? ê°•ì œï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ê±°ê³ 
+//				throws?ï¿½ï¿½ ë©”ì†Œ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ë©”ì†Œ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½?ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½!
+				throw new Exception("?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ë² ì´?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½.");
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e);
 		}
 	}
-//	?´ë¡œì¦ˆ ? „ë¶? ëª¨ì?ê±°ì„ finally ?— ?ˆ?Š” ?Š¸?¼?´?— ?´ ë©”ì†Œ?“œ ?˜¸ì¶œí•˜ë©? ?¨.
+//	?ï¿½ï¿½ë¡œì¦ˆ ?ï¿½ï¿½ï¿½? ëª¨ï¿½?ê±°ì„ finally ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ ë©”ì†Œ?ï¿½ï¿½ ?ï¿½ï¿½ì¶œí•˜ï¿½? ?ï¿½ï¿½.
 	public void close() {
 		try {
 			resultSet.close();

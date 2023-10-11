@@ -28,7 +28,7 @@ public class FreeBoard {
 		return connection;
 	}
 	
-	public void dicon(Statement statement, Connection connection) { //ë§¤ê°œë³??ˆ˜
+	public void dicon(Statement statement, Connection connection) { //ë§¤ê°œï¿½??ï¿½ï¿½
 		try {
 			statement.close();
 		}catch (Exception ignored) {
@@ -41,14 +41,14 @@ public class FreeBoard {
 		}
 	}
 	
-//ê²Œì‹œ?Œ ?°?´?„°ë¥? ê°?? ¸?˜¤?Š” ë©”ì„œ?“œ
+//ê²Œì‹œ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½? ï¿½??ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ë©”ì„œ?ï¿½ï¿½
 	public ArrayList<BoardDTO> getBoardList() {
 //		ArrayList<BoardDTO> boardList = new ArrayList<>();
-		// ?°?´?„°ë² ì´?Š¤ ?—°ê²? ë°? ì¿¼ë¦¬ ?‹¤?–‰
+		// ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ë² ì´?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ï¿½? ì¿¼ë¦¬ ?ï¿½ï¿½?ï¿½ï¿½
 		Connection connection = con();
 		Statement statement = null;
 		ResultSet resultSet = null;
-		// ê²°ê³¼ë¥? BoardDTO ê°ì²´ë¡? ë³??™˜?•˜?—¬ boardList?— ì¶”ê?
+		// ê²°ê³¼ï¿½? BoardDTO ê°ì²´ï¿½? ï¿½??ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ boardList?ï¿½ï¿½ ì¶”ï¿½?
 		ArrayList<BoardDTO> arr = new ArrayList<BoardDTO>();
 		
 		try {
@@ -61,6 +61,7 @@ public class FreeBoard {
 				boardDTO.setName(resultSet.getString("freeboardname"));
 				boardDTO.setText(resultSet.getString("freeboardtext"));
 				boardDTO.setDate(resultSet.getString("freeboarddate"));
+				boardDTO.setView(resultSet.getInt("freeboardviews"));
 				arr.add(boardDTO);
 			}
 		}catch (SQLException e) {

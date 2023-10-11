@@ -46,7 +46,7 @@ function hideBtn1(){
 function agreeCheck1() {
     // 이용약관1, 이용약관2, 이용약관3 모두 동의한 경우에만 페이지 이동
     if ($("#check_agree1").is(":checked") && $("#check_agree2").is(":checked") && $("#check_agree3").is(":checked")) {
-        window.location.href = 'signup_nomal.html';
+        window.location.href = 'sign_nomal.jsp';
     } else {
         alert("모든 필수 약관에 동의해 주세요.");
     }
@@ -54,7 +54,7 @@ function agreeCheck1() {
 
 function agreeCheck2() {
     if ($("#check_agree1").is(":checked") && $("#check_agree2").is(":checked") && $("#check_agree3").is(":checked")) {
-        window.location.href = 'signup_influencer.html';
+        window.location.href = 'sign_influencer.jsp';
     } else {
         alert("모든 필수 약관에 동의해 주세요.");
     }
@@ -62,7 +62,7 @@ function agreeCheck2() {
 
 function agreeCheck3() {
     if ($("#check_agree1").is(":checked") && $("#check_agree2").is(":checked") && $("#check_agree3").is(":checked")) {
-        window.location.href = 'signup_company.html';
+        window.location.href = 'sign_company.jsp';
     } else {
         alert("모든 필수 약관에 동의해 주세요.");
     }
