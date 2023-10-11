@@ -36,8 +36,6 @@
 }
 #text p {
 	padding-bottom: 300px;
-}
-#text p {
 	word-break: break-word;
 }
 #free_board_btn{
@@ -55,3 +53,4 @@ table tr td input {
 	padding: 3px;
 	margin-left: 5px;
 }
+

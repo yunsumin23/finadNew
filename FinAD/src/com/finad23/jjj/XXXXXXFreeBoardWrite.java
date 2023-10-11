@@ -7,7 +7,7 @@ import java.sql.Statement;
 import com.finad23.DTO.BoardDTO;
 
 
-public class FreeBoardWrite {
+public class XXXXXXFreeBoardWrite {
 	public void freeBoardWrite(BoardDTO boardDTO) {
 		Connection connection = null;
 		Statement statement = null;

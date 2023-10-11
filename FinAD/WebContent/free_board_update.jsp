@@ -7,17 +7,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>free_board_text.jsp</title>
-<link rel="stylesheet" href="css/free_board_text.css">
+<title>free_board_update.jsp</title>
+<link rel="stylesheet" href="css/free_board_update.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="js/free_board_text.js"></script>
+	<script type="text/javascript" src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+    <script type="text/javascript" src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/translations/ko.js"></script>
+<script src="js/free_board_update.js"></script>
 <jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard"
 		scope="page" />
 </head>
 <body>
 	<%
-		String clickText = request.getParameter("number"); //클릭한 글의 글번호 값을 받아서 저장
+		String clickText = "74";
+		// request.getParameter("number");
+		//클릭한 글의 글번호 값을 받아서 저장
 		ArrayList<BoardDTO> arr = boardList.getBoardList();
 
 		BoardDTO boardDTO = null;
@@ -27,7 +31,6 @@
 				break;
 			}
 		}
-	
 	%>
 <%
 	String id = (String) session.getAttribute("id");
@@ -49,13 +52,14 @@
 		<table>
 			<tr>
 			<%
-				out.println("<td colspan='6'>"+boardDTO.getName()+"</td>");
+				out.println("<td colspan='6'><input type='text' name='input_name'value='" + boardDTO.getName()+"'></td>");
 			%>
 			</tr>
 			<tr id="text_info">
 				<%
 					out.println("<td>" + boardDTO.getWriter() + "</td>");
 					out.println("<td>" + boardDTO.getDate() + "</td>");
+					
 				%>
 				<td></td>
 				<td>조회수</td>
@@ -64,7 +68,7 @@
 			</tr>
 			<tr>
 				<%
-					out.println("<td colspan='6' id='text'>" + boardDTO.getText() + "</td>");
+					out.println("<td colspan='6' id='text'><textarea name='input_text' id='editor'>" + boardDTO.getText() + "</textarea></td>");
 				%>
 			</tr>
 		</table>
@@ -73,7 +77,7 @@
 		<table>
 			<tr>
 				<td>
-					<form action = "free_board_update.jsp?number=<%=clickText%>"><input type="submit" value="수정"></form>
+					<form action = "free_board.jsp"><input type="submit" value="수정"></form>
 				</td>
 				<td>
 					<form action = "free_board.jsp"><input type="submit" value="삭제"></form>

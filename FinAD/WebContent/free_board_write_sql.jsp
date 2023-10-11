@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>free_board_write_sql.jsp</title>
 </head>
 <body>
 <%

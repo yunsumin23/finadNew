@@ -41,8 +41,7 @@ function check_login() {
 		<%
 	}
 %>
-	<jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard"
-		scope="page" />
+	<jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard" scope="page" />
 
 	<div id="table_header">
 		<h1>자유게시판</h1>
