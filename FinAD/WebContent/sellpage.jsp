@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/sellpage.css" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="js/sellpage.js" type="text/javascript"></script>
-    </head>
+    </head> 
 
     <body>
 <%

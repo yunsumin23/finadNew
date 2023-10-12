@@ -125,7 +125,7 @@
 						<span class="product-name"><%= product.getItemName() %></span> <span
 							class="product-price"><%= product.getItemPrice() %>원</span>
 						<div class="product-seller">
-							<img class="product-avatar"
+							<img class="product-avatar" 
 								src="img/<%= product.getItemSeller() %>" /> <span><%= product.getItemInfo() %></span>
 						</div>
 					</div>

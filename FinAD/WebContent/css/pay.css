@@ -374,7 +374,7 @@ input[type="button"] {
 .summoney {
   width: 400px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 20px; 
   margin-left: 1300px;
   display: flex;
   /* background-color: blue; */
