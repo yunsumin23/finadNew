@@ -19,7 +19,8 @@
 </head>
 <body>
 	<%
-		String clickText = "74";
+		String clickText = request.getParameter("number");
+	
 		// request.getParameter("number");
 		//클릭한 글의 글번호 값을 받아서 저장
 		ArrayList<BoardDTO> arr = boardList.getBoardList();
@@ -55,17 +56,6 @@
 				out.println("<td colspan='6'><input type='text' name='input_name'value='" + boardDTO.getName()+"'></td>");
 			%>
 			</tr>
-			<tr id="text_info">
-				<%
-					out.println("<td>" + boardDTO.getWriter() + "</td>");
-					out.println("<td>" + boardDTO.getDate() + "</td>");
-					
-				%>
-				<td></td>
-				<td>조회수</td>
-				<td>추천수</td>
-				<td>댓글수</td>
-			</tr>
 			<tr>
 				<%
 					out.println("<td colspan='6' id='text'><textarea name='input_text' id='editor'>" + boardDTO.getText() + "</textarea></td>");
@@ -77,13 +67,10 @@
 		<table>
 			<tr>
 				<td>
-					<form action = "free_board.jsp"><input type="submit" value="수정"></form>
+					<form action = "free_board.jsp"><input type="submit" value="완료"></form>
 				</td>
 				<td>
-					<form action = "free_board.jsp"><input type="submit" value="삭제"></form>
-				</td>
-				<td>
-					<form action = "free_board.jsp"><input type="submit" value="목록"></form>
+					<form action = "free_board.jsp"><input type="submit" value="취소"></form>
 				</td>
 			</tr>
 		</table>

@@ -30,17 +30,13 @@
 	width: 50px;
 	text-align: center;
 }
-#text_header td{
-	border-bottom: 1px solid gray;
-	padding: 3px;
-}
 #text p {
 	padding-bottom: 300px;
 	word-break: break-word;
 }
 #free_board_btn{
 	margin-top: 10px;
-	margin-left: 1127px;
+	margin-left: 745px;
 }
 #free_board_btn form {
 	
@@ -49,8 +45,26 @@
 	width: 55px;
 	height: 25px;
 }
-table tr td input {
+#free_board_btn table tr td input {
 	padding: 3px;
 	margin-left: 5px;
+}
+input[name="input_name"]{
+	width: 1300px;
+	padding: 3px;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+#free_board_btn form input[type="submit"] {
+	margin-top: 50px;
+    width: 200px;
+    height: 61px;
+    font-size: 25px;
+    color: white;
+    border: 1px solid #346aff;
+    border-radius: 3px;
+    background-color: #346aff;
+    cursor: pointer;
+    
 }
 
