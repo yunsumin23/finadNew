@@ -80,12 +80,18 @@
                     <input type="submit" value="수정">
                 </form>
             </td>
-            <td>
-                <form action="free_board.jsp"><input type="submit" value="삭제"></form>
-            </td>
-            <%
-            }
-            %>
+            <%} %>
+           <% if (id != null && id.equals(boardDTO.getWriter())) {
+    // 현재 사용자가 게시물 작성자와 일치하면 삭제 버튼을 표시
+%>
+<td>
+    <form action="free_board_delete.jsp?number=<%=clickText%>" method="post">
+        <input type="submit" value="삭제">
+    </form>
+</td>
+<%
+}
+%>
             <td>
                 <form action="free_board.jsp"><input type="submit" value="목록"></form>
             </td>
