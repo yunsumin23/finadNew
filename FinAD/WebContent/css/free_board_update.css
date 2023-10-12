@@ -55,7 +55,7 @@ input[name="input_name"]{
 	font-size: 20px;
 	margin-bottom: 15px;
 }
-#free_board_btn form input[type="submit"] {
+#free_board_btn input[type="submit"] {
 	margin-top: 50px;
     width: 200px;
     height: 61px;
