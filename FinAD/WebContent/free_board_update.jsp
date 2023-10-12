@@ -47,7 +47,7 @@
 		<%
 	}
 %>
-
+	<form action = "free_board_update_sql.jsp?number=<%=clickText%>" method="post">
 	<div id="text_header">
 		<h1>자유게시판</h1>
 		<table>
@@ -67,17 +67,15 @@
 		<table>
 			<tr>
 				<td>
-					<form action = "free_board_update_sql.jsp?number=<%=clickText%>" method="post""><input type="submit" value="완료"></form>
+					<input type="submit" value="완료">
 				</td>
 				<td>
 					<form action = "free_board.jsp"><input type="submit" value="취소"></form>
 				</td>
 			</tr>
-		</table>
-			
-			
-			
+		</table>		
 		</div>
+		</form>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -70,23 +70,29 @@
 		</table>
 	</div>
 	<div id="free_board_btn">
-		<table>
-			<tr>
-				<td>
-					<form action = "free_board_update.jsp?number=<%=clickText%>" method="post"><input type="submit" value="수정"></form>
-				</td>
-				<td>
-					<form action = "free_board.jsp"><input type="submit" value="삭제"></form>
-				</td>
-				<td>
-					<form action = "free_board.jsp"><input type="submit" value="목록"></form>
-				</td>
-			</tr>
-		</table>
-			
-			
-			
-		</div>
+    <table>
+        <tr>
+            <%
+            if (id != null && id.equals(boardDTO.getWriter()) && clickText != null && clickText.equals(Integer.toString(boardDTO.getNumber()))) {
+            %>
+            <td>
+                <form action="free_board_update.jsp?number=<%=clickText%>" method="post">
+                    <input type="submit" value="수정">
+                </form>
+            </td>
+            <td>
+                <form action="free_board.jsp"><input type="submit" value="삭제"></form>
+            </td>
+            <%
+            }
+            %>
+            <td>
+                <form action="free_board.jsp"><input type="submit" value="목록"></form>
+            </td>
+        </tr>
+    </table>
+</div>
+
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

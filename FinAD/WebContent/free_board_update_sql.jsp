@@ -48,9 +48,8 @@
                 throw new Exception("데이터베이스 연결 안됨<br>");
             }
             statement = connection.createStatement();
-            int i = statement.executeUpdate("UPDATE freeboard SET freeboardName = '" + name + "', freeboardText = '" + text + "' WHERE freeboardNumber = " + clickText + ";");
-
-            								 
+            int i = statement.executeUpdate("UPDATE project.freeboard SET freeboardName = '" + name + "', freeboardText = '" + text + "' WHERE freeboardNumber = " + clickText + ";");
+          									 
 			
         } finally{
             try{
