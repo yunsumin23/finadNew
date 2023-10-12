@@ -67,7 +67,7 @@
 		<table>
 			<tr>
 				<td>
-					<form action = "free_board.jsp"><input type="submit" value="완료"></form>
+					<form action = "free_board_update_sql.jsp?number=<%=clickText%>" method="post""><input type="submit" value="완료"></form>
 				</td>
 				<td>
 					<form action = "free_board.jsp"><input type="submit" value="취소"></form>

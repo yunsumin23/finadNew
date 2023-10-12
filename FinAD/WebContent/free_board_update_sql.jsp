@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>free_board_write_sql.jsp</title>
+<title>free_board_update_sql.jsp</title>
 </head>
 <body>
 <%
@@ -32,13 +32,10 @@
 	}
 %>
     <%
-        String writer = id;
+    	String clickText = request.getParameter("number");
         String name = request.getParameter("input_name");
-        String text = request.getParameter("input_text");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date currentDate = new Date();
-        String formattedDate = dateFormat.format(currentDate);
-
+   		String text = request.getParameter("input_text");
+       
         Connection connection = null;
         Statement statement = null;
         
@@ -51,8 +48,10 @@
                 throw new Exception("데이터베이스 연결 안됨<br>");
             }
             statement = connection.createStatement();
-            int i = statement.executeUpdate("insert into freeboard(freeboardWriter, freeboardName, freeboardText, freeboardDate) values ('"+  writer + "','" + name + "','" + text + "','" + formattedDate + "');");
+            int i = statement.executeUpdate("UPDATE freeboard SET freeboardName = '" + name + "', freeboardText = '" + text + "' WHERE freeboardNumber = " + clickText + ";");
 
+            								 
+			
         } finally{
             try{
                 statement.close();
