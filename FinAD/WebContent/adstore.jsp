@@ -115,7 +115,7 @@
             for (int i = 0; i < jjj.size(); i++) {
                 AdstoreDTO product = jjj.get(i);
             %>
-			<a href="sellpage.jsp" target="_blank">
+			<a href="adstore.finad?url=<%=product.getItemNumber() %>" target="_blank">
 				<div class="product-card">
 					<div>
 						<img class="product-img" src="img/<%= product.getItemImage() %>"

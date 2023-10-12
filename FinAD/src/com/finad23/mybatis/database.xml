@@ -63,6 +63,8 @@
     ORDER BY user_mypage.subscribers DESC
     ]]>
 	</select>
-    
+    <select id="">
+    	select * from project.adstore;
+    </select>
     
 </mapper>

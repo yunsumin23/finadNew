@@ -310,6 +310,8 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				// TODO: handle exception
 				System.out.println(e);
 			}
+		} else if(url.equals("0")) {
+			
 		}
 
 	}
