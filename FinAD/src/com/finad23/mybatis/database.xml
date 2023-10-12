@@ -7,7 +7,7 @@
     <select id="companyWriteID" resultType="com.finad23.DTO.CompanyBoardDTO">
         select * from project.companyboard;
     </select>
-	<select id="filterId" resultType="com.finad23.jjj.Influ_info" parameterType="com.finad23.DTO.CategoryFilterDTO">
+	<select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">
     <![CDATA[
     SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers
     FROM project.user

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
-<%@ page import="com.finad23.jjj.Influ_info"%>
+<%@ page import="com.finad23.DTO.CategoryFilterDTO"%>
 <%@ page import="java.text.DecimalFormat"%>
 <!DOCTYPE html>
 <html>
@@ -19,7 +19,7 @@
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
 		String category = request.getParameter("url");
-		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
+		List<CategoryFilterDTO> list = (List<CategoryFilterDTO>) request.getAttribute("List");
 		int creatorNum = list.size();
 		if (id == null && password == null) {
 	%>
@@ -43,7 +43,7 @@
 	</div>
 	<div class="container">
 		<div class="left_filter">
-			<form action="category.finad?url=filter" name="form_left" method="post">
+			<form action="category.finad?url=<%=category %>&filter" name="form_left" method="post">
 				<div>
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
@@ -179,6 +179,12 @@
 
 					<%
 						}
+						} else {
+					%>
+					<div>
+						<p>필터링 된 크리에이터가 없습니다.</p>
+					</div>
+					<%
 						}
 					%>
 

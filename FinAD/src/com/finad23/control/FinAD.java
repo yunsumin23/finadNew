@@ -14,8 +14,12 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 	protected void service(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String url = rq.getParameter("url");
+		String cat = rq.getParameter("cat");
+		String filter= rq.getParameter("filter");
 		// 카테고리 넘어갈 때 어떤 type인지에 따라 보여지는 크리에이터가 다르게 설정 해둔거임
-
+		System.out.println(url);
+		System.out.println(cat);
+		System.out.println(filter);
 		ConInter inter = null;
 		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요 / 싫은데요?
 		
@@ -29,6 +33,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				System.out.println(e);
 			}
 		} else if(url.equals("beauty")) {
+			if (cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -37,6 +42,18 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if (cat.equals("beauty")){
+				if (filter.equals("aaa")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("food")) {
 			inter = CategoryExtr.instance();
@@ -228,17 +245,8 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				// TODO: handle exception
 				System.out.println(e);
 			}
-		} else if(url.equals("filter")) {
-			inter = CategoryFilterExtr.instance();
-			try {
-				inter.FinAD(rq, rs);
-				RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
-				re.forward(rq, rs);
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
 		}
-			
+
 	}
 
 }

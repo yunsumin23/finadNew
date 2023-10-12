@@ -37,13 +37,14 @@
 			<li class="rank_li01">크리에이터 랭킹</li>
 			<%
 				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
+				/* out.println(category); */
 			%>
 
 		</ul>
 	</div>
 	<div class="container">
 		<div class="left_filter">
-			<form action="category.finad?url=filter" name="form_left" method="post">
+			<form action="category.finad?url=<%= category %>&cat=<%= category %>&filter=aaa" name="form_left" method="post">
 				<div>
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
@@ -100,7 +101,7 @@
 					</div>
 					<div>
 						<div class="submit_div">
-							<input type="submit" name="submit" value="적용하기" class="check_sub">
+							<input type="submit" name="sub_btn" value="적용하기" class="check_sub">
 						</div>
 					</div>
 				</div>
@@ -179,6 +180,12 @@
 
 					<%
 						}
+						} else {
+					%>
+						<div>
+						<p>필터링 된 크리에이터가 없습니다.</p>
+						</div>
+					<%
 						}
 					%>
 
