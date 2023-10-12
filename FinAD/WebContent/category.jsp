@@ -44,7 +44,7 @@
 	</div>
 	<div class="container">
 		<div class="left_filter">
-			<form action="category.finad?url=<%= category %>&cat=<%= category %>&filter=aaa" name="form_left" method="post">
+			<form action="category.finad?url=<%= category %>&cat=<%= category %>&filter=true" name="form_left" method="post">
 				<div>
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
