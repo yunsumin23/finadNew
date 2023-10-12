@@ -154,7 +154,7 @@
     });
 </script>
                     <div class="button">
-                        <input type="button" class="cart" value="장바구니" onclick="location.href='cart.html'">
+                        <input type="button" class="cart" value="장바구니" onclick="location.href='cart.jsp'">
                         <input type="button" class="order" value="바로결제" onclick="location.href='pay.html'">
                     </div>
                 </div>
