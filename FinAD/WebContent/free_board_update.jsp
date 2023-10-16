@@ -37,6 +37,10 @@
 	String id = (String) session.getAttribute("id");
 	String password = (String) session.getAttribute("password");
 	String type = (String) session.getAttribute("type");
+	if (id == null || !id.equals(boardDTO.getWriter())) {
+		%><script>alert("권한이 없습니다")</script><%
+		return;
+	}
 	if (id == null && password == null) {
 %>
 <jsp:include page="header_login.jsp"></jsp:include>
