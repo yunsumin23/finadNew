@@ -8,7 +8,7 @@
         select * from project.companyboard;
     </select>
 	<select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">
-    <![CDATA[
+<!--      <![CDATA[
     SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers
     FROM project.user
     LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId
@@ -60,6 +60,96 @@
             )
         )
     )
+    ORDER BY user_mypage.subscribers DESC
+    ]]> -->
+         <![CDATA[
+    SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers
+    FROM project.user
+    LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId
+    WHERE user.category LIKE CONCAT('%',#{category},'%')
+    <choose>
+        <when test="shorts != 'nothing'">
+            AND
+            (
+                (
+                    #{shorts} = 'true' AND user_mypage.shorts LIKE '%true%') OR
+                    (#{shorts} = 'false' AND user_mypage.shorts LIKE '%false%')
+                )
+        </when>
+    </choose>
+    <choose>
+        <when test="sub != 'nothing'">
+            AND
+            (
+                (
+                    <choose>
+                        <when test="sub == 'under10'">
+                            user_mypage.subscribers <= 100000
+                        </when>
+                        <when test="sub == 'over10'">
+                            user_mypage.subscribers BETWEEN 100000 AND 200000
+                        </when>
+                        <when test="sub == 'over20'">
+                            user_mypage.subscribers BETWEEN 200000 AND 500000
+                        </when>
+                        <when test="sub == 'over50'">
+                            user_mypage.subscribers BETWEEN 500000 AND 1000000
+                        </when>
+                        <when test="sub == 'over100'">
+                            user_mypage.subscribers >= 1000000
+                        </when>
+                    </choose>
+                )
+            )
+        </when>
+    </choose>
+    <choose>
+        <when test="price != 'nothing'">
+            AND
+            (
+                (
+                    <choose>
+                        <when test="price == 'under30'">
+                            ((user_mypage.avgviewers * 0.001) * 30) < 30
+                        </when>
+                        <when test="price == 'over30'">
+                            ((user_mypage.avgviewers * 0.001) * 30) BETWEEN 30 AND 100
+                        </when>
+                        <when test="price == 'over100'">
+                            ((user_mypage.avgviewers * 0.001) * 30) BETWEEN 100 AND 300
+                        </when>
+                        <when test="price == 'over300'">
+                            ((user_mypage.avgviewers * 0.001) * 30) > 300
+                        </when>
+                    </choose>
+                )
+            )
+        </when>
+    </choose>
+    <choose>
+        <when test="avg != 'nothing'">
+            AND
+            (
+                (
+                    <choose>
+                        <when test="avg == 'under1000'">
+                            user_mypage.avgviewers < 1000
+                        </when>
+                        <when test="avg == 'over1000'">
+                            user_mypage.avgviewers BETWEEN 1000 AND 5000
+                        </when>
+                        <when test="avg == 'over5000'">
+                            user_mypage.avgviewers BETWEEN 5000 AND 10000
+                        </when>
+                        <when test="avg == 'over10000'">
+                            user_mypage.avgviewers > 10000
+                        </when>
+                    </choose>
+                )
+            )
+        </when>
+    </choose>
+    
     ORDER BY user_mypage.subscribers DESC
     ]]>
 	</select>

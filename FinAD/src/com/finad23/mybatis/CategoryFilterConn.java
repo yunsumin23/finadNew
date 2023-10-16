@@ -14,13 +14,17 @@ public class CategoryFilterConn { // DB연결하는 파일
 	}
 	SqlSessionFactory sqlsession = SqlConnect.getSqlSession();
 	
+	
 	public List<CategoryFilterDTO> filter(CategoryFilterDTO filter) {
 		SqlSession session = sqlsession.openSession();
 
 		
 		
 		List<CategoryFilterDTO> list = session.selectList("filterId", filter);
+		System.out.println(filter);
+		System.out.println(filter.getShorts());
 		session.close(); // session을 열였으니 닫아준다.
 		return list;
 	}
+	
 }
