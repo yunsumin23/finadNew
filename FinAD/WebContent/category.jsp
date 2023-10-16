@@ -48,7 +48,7 @@
 				<div>
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
-						<select name="shorts" class="shorts" name="shorts">
+						<select name="shorts" class="shorts">
 							<option value="nothing" selected="selected">--</option>
 							<option value="true">쇼츠 있음</option>
 							<option value="false">쇼츠 없음</option>
@@ -56,7 +56,7 @@
 					</div>
 					<div class="main_sub">
 						<div class="sub_div">구독자 수</div>
-						<select name="sub" class="sub" name="sub">
+						<select name="sub" class="sub">
 							<option value="nothing01" selected="selected">--</option>
 							<option value="under10">10만명 이하</option>
 							<option value="over10">10만~20만명</option>

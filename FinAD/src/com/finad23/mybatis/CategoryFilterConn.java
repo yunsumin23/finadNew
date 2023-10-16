@@ -23,6 +23,9 @@ public class CategoryFilterConn { // DB연결하는 파일
 		List<CategoryFilterDTO> list = session.selectList("filterId", filter);
 		System.out.println(filter);
 		System.out.println(filter.getShorts());
+		System.out.println(filter.getSub());
+		System.out.println(filter.getPrice());
+		System.out.println(filter.getAvg());
 		session.close(); // session을 열였으니 닫아준다.
 		return list;
 	}
