@@ -492,6 +492,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 					}
 				}
 		}
+		
 
 	}
 
