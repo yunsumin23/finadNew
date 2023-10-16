@@ -263,6 +263,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				}
 			}
 		} else if(url.equals("sports")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -271,8 +272,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if (cat.equals("sports")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("movie")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -281,8 +295,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if(cat.equals("true")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("car")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -291,8 +318,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if(cat.equals("car")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("kid")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -301,8 +341,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if(cat.equals("kid")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("education")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -311,8 +364,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if(cat.equals("education")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("realestate")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -321,8 +387,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if(cat.equals("realestate")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("politics")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -331,8 +410,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if(cat.equals("politics")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("palette")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -341,8 +433,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if(cat.equals("palette")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("clover")) {
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -351,8 +456,21 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+			} else if (cat.equals("clover")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 			}
 		} else if(url.equals("another")) {
+			if(cat == null || cat.equals(null)) 
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -362,6 +480,17 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				// TODO: handle exception
 				System.out.println(e);
 			}
+			} else if(cat.equals("another")) {
+				if(filter.equals("true")) {
+					inter = CategoryFilterExtr.instance();
+					try {
+						inter.FinAD(rq, rs);
+						RequestDispatcher re = rq.getRequestDispatcher("ss.jsp");
+						re.forward(rq, rs);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
 		}
 
 	}
