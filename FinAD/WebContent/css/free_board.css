@@ -47,10 +47,31 @@ table th:nth-child(6) {
 	width: 50px;
 }
 #free_board_write_btn{
+	width:1300px;
+	margin: 0 auto;
 	margin-top: 10px;
 	margin-left: 955px;
 }
 #free_board_write_btn input {
 	width: 55px;
+	height: 25px;
+	float: left;
+}
+#free_board_search {
+	width:340px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+select{
+	width:70px;
+	height: 25px;
+	text-align: center;
+}
+#free_board_search input[type="search"] {
+	width: 200px;
+	height: 25px;
+}
+#free_board_search input[type="submit"]{
+	width: 50px;
 	height: 25px;
 }

@@ -74,12 +74,19 @@ function check_login() {
 			%>
 		</table>
 		<div id="free_board_write_btn">
-			<form action="free_board.jsp">
-				<input type="search">
-				<input type="submit">
-			</form>
 			<form action = "free_board_write.jsp" onsubmit="return check_login();">
 				<input type="submit" value="글쓰기">
+			</form>
+		</div>
+		<div id="free_board_search">
+			<form action="free_board.jsp">
+				<select>
+					<option>제목</option>
+					<option>내용</option>
+					<option>제목+내용</option>
+				</select>
+				<input type="search">
+				<input type="submit" value="검색">
 			</form>
 		</div>
 	</div>

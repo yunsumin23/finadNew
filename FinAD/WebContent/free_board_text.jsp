@@ -61,14 +61,26 @@
 				<td>조회수</td>
 				<td>추천수</td>
 				<td>댓글수</td>
+				<span style="width:100%;height:2px;background:#000;"></span>
 			</tr>
 			<tr>
 				<%
 					out.println("<td colspan='6' id='text'>" + boardDTO.getText() + "</td>");
 				%>
 			</tr>
+			<tr>
+				<td colspan='6'>
+				<div class="voting-buttons">
+    				<button class="vote-button" id="upvote-button"><img src="img/d.png" width="50px" height="50px" alt="추천">
+   					</button>
+    				<button class="vote-button" id="downvote-button"><img src="img/q.png" width="50px" height="50px" alt="비추천">
+    				</button>
+				</div>
+				</td>
+			</tr>
 		</table>
 	</div>
+	
 	<div id="free_board_btn">
     <table>
         <tr>
@@ -87,6 +99,11 @@
     			</form>
 			</td>
 <%
+} else {
+	%><style>#free_board_btn {
+    margin-top: 10px;
+    margin-left: 1260px;
+}</style><%
 }
 %>
             <td>
