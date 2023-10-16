@@ -61,7 +61,6 @@
 				<td>조회수</td>
 				<td>추천수</td>
 				<td>댓글수</td>
-				<span style="width:100%;height:2px;background:#000;"></span>
 			</tr>
 			<tr>
 				<%
@@ -71,10 +70,8 @@
 			<tr>
 				<td colspan='6'>
 				<div class="voting-buttons">
-    				<button class="vote-button" id="upvote-button"><img src="img/d.png" width="50px" height="50px" alt="추천">
+    				<button class="vote-button" id="upvote-button" onclick="like()"><img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
    					</button>
-    				<button class="vote-button" id="downvote-button"><img src="img/q.png" width="50px" height="50px" alt="비추천">
-    				</button>
 				</div>
 				</td>
 			</tr>

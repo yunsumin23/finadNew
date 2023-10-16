@@ -24,3 +24,15 @@ function zoomOut(event) {
     event.target.style.zIndex = 0;
     event.target.style.transition = "all 0.5s"
 }
+function like(){
+	let likeImg = document.getElementById('like_img');
+	if (image.src.endsWith('img/d.png')) {
+        image.src = 'img/d_clicked.png'; // 이미지를 변경합니다.
+        image.alt = '추천됨'; // 이미지의 대체 텍스트도 변경할 수 있습니다.
+    } else {
+        image.src = 'img/d.png';
+        image.alt = '추천';
+    }
+	
+	
+}

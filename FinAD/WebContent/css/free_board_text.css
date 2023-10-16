@@ -43,7 +43,7 @@ table{
 }
 
 #text p {
-	padding-bottom: 300px;
+	padding-bottom: 170px;
 }
 #text p {
 	word-break: break-word;
@@ -69,6 +69,7 @@ table tr td input {
     width: 120px;
     margin-top:20px;
     margin-left: 440px;
+    padding-bottom: 50px;
 }
 
 .vote-button {
