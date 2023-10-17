@@ -22,11 +22,11 @@
 	String type = (String) session.getAttribute("type");
 	if (id == null && password == null) {
 %>
-<jsp:include page="header_login.jsp"></jsp:include>
+<jsp:include page="adheader_login.jsp"></jsp:include>
 <%
 	} else {
 		%>
-<jsp:include page="header_logout.jsp"></jsp:include>
+<jsp:include page="adheader_logout.jsp"></jsp:include>
 		<%
 	}
 %>
