@@ -15,62 +15,61 @@
 		resultType="com.finad23.DTO.CompanyBoardDTO">
 		select * from project.companyboard;
 	</select>
-	<select id="filterId"
-		resultType="com.finad23.DTO.CategoryFilterDTO"
-		parameterType="com.finad23.DTO.CategoryFilterDTO">
+	<select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">
      <![CDATA[
     SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers
-    FROM project.user
-    LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId
-    WHERE user.category LIKE CONCAT('%',#{category},'%')
-    AND
-    (
-        (
-            #{shorts} = 'nothing' OR
-            (
-                (#{shorts} = 'true' AND (user_mypage.shorts) LIKE '%true%') OR
-                (#{shorts} = 'false' AND (user_mypage.shorts) LIKE '%false%')
-            )
-        )
-    )	
-    AND	
-    (
-        (
-            #{sub} = 'nothing' OR
-            (
-                (#{sub} = 'under10' AND ((user_mypage.subscribers) <= 100000) OR
-                (#{sub} = 'over10' AND ((user_mypage.subscribers) BETWEEN 100000 AND 200000) OR
-                (#{sub} = 'over20' AND ((user_mypage.subscribers) BETWEEN 200000 AND 500000) OR
-                (#{sub} = 'over50' AND ((user_mypage.subscribers) BETWEEN 500000 AND 1000000) OR
-                (#{sub} = 'over100' AND ((user_mypage.subscribers) >= 1000000)
-            )
-        )
-    )
-   AND
+	FROM project.user
+	LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId
+	WHERE user.category LIKE CONCAT('%', #{category}, '%')
+	AND
 	(
     	(
-        	#{price} = 'nothing' OR
+        	#{shorts} = 'nothing' OR
         	(
-            	(#{price} = 'under30' AND ((user_mypage.avgviewers * 0.001) * 30) < 30) OR
-            	(#{price} = 'over30' AND ((user_mypage.avgviewers * 0.001) * 30) BETWEEN 30 AND 100) OR
-            	(#{price} = 'over100' AND ((user_mypage.avgviewers * 0.001) * 30) BETWEEN 100 AND 300) OR
-            	(#{price} = 'over300' AND ((user_mypage.avgviewers * 0.001) * 30) > 300)
+            	(#{shorts} = 'true' AND user_mypage.shorts LIKE '%true%') OR
+            	(#{shorts} = 'false' AND user_mypage.shorts LIKE '%false%')
         	)
     	)
 	)
-    AND
-    (
-        (
-            #{avg} = 'nothing' OR
-            (
-                (#{avg} = 'under1000' AND (user_mypage.avgviewers) < 1000) OR
-                (#{avg} = 'over1000' AND (user_mypage.avgviewers) BETWEEN 1000 AND 5000) OR
-                (#{avg} = 'over5000' AND (user_mypage.avgviewers) BETWEEN 5000 AND 10000) OR
-                (#{avg} = 'over10000' AND (user_mypage.avgviewers) > 10000)
-            )
-        )
-    )
-    ORDER BY user_mypage.subscribers DESC
+	AND
+	(
+    	(
+        	#{sub} = 'nothing' OR
+        	(
+            	(#{sub} = 'under10' AND user_mypage.subscribers <= 100000) OR
+            	(#{sub} = 'over10' AND user_mypage.subscribers BETWEEN 100000 AND 200000) OR
+            	(#{sub} = 'over20' AND user_mypage.subscribers BETWEEN 200000 AND 500000) OR
+            	(#{sub} = 'over50' AND user_mypage.subscribers BETWEEN 500000 AND 1000000) OR
+            	(#{sub} = 'over100' AND user_mypage.subscribers >= 1000000)
+        	)	
+    	)
+	)
+	AND
+	(
+	    (
+	        #{price} = 'nothing' OR
+	        (
+	            (#{price} = 'under30' AND ((user_mypage.avgviewers * 0.001) * 30) < 30) OR
+	            (#{price} = 'over30' AND ((user_mypage.avgviewers * 0.001) * 30) BETWEEN 30 AND 100) OR
+	            (#{price} = 'over100' AND ((user_mypage.avgviewers * 0.001) * 30) BETWEEN 100 AND 300) OR
+	            (#{price} = 'over300' AND ((user_mypage.avgviewers * 0.001) * 30) > 300)
+	        )
+	    )
+	)
+	AND
+	(
+	    (
+	        #{avg} = 'nothing' OR
+	        (
+	            (#{avg} = 'under1000' AND user_mypage.avgviewers < 1000) OR
+	            (#{avg} = 'over1000' AND user_mypage.avgviewers BETWEEN 1000 AND 5000) OR
+	            (#{avg} = 'over5000' AND user_mypage.avgviewers BETWEEN 5000 AND 10000) OR
+	            (#{avg} = 'over10000' AND user_mypage.avgviewers > 10000)
+	        )
+	    )
+	)
+	ORDER BY user_mypage.subscribers DESC
+
     ]]>
 
 	</select>

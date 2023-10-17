@@ -491,6 +491,8 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 						// TODO: handle exception
 					}
 				}
+		} else if(url.equals("1") || url.equals("2") || url.equals("3") || url.equals("4") || url.equals("5")) {
+			inter = SellerExtr.instance();
 		}
 		
 
