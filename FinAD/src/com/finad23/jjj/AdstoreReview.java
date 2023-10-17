@@ -56,6 +56,9 @@ public class AdstoreReview {
 				adstorereviewDTO.setItemReviewNumber(resultSet.getInt("itemReviewNumber"));
 				adstorereviewDTO.setItemBuyer(resultSet.getString("itemBuyer"));
 				adstorereviewDTO.setItemReviewText(resultSet.getString("itemReviewText"));
+				adstorereviewDTO.setAttachedFile(resultSet.getString("attachedFile"));
+				adstorereviewDTO.setReviewTitle(resultSet.getString("reviewTitle"));
+				
 				arr.add(adstorereviewDTO);
 			}
 		}catch (SQLException e) {

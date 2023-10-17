@@ -470,7 +470,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				}
 			}
 		} else if(url.equals("another")) {
-			if(cat == null || cat.equals(null)) 
+			if(cat == null || cat.equals(null)) {
 			inter = CategoryExtr.instance();
 			try {
 				String category1 = inter.FinAD(rq, rs);
@@ -491,11 +491,19 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 						// TODO: handle exception
 					}
 				}
-		} else if(url.equals("1") || url.equals("2") || url.equals("3") || url.equals("4") || url.equals("5")) {
+			}
+		} else if(url.equals("1") || url.equals("2") || url.equals("3") || url.equals("4") || url.equals("5") || url.equals("6") || url.equals("7") || url.equals("8") || url.equals("9")){
 			inter = SellerExtr.instance();
+			try {
+				String s = inter.FinAD(rq, rs);
+				RequestDispatcher re = rq.getRequestDispatcher("sellpage.jsp");
+				re.forward(rq, rs);
+			}catch(Exception e) {
+				System.out.println(e);
+			}
 		}
 		
-
+		
 	}
 
 }

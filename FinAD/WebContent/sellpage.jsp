@@ -181,83 +181,30 @@
                 <nav>
                     <h1 class="re_re" id="ree">상품평</h1>
                 </nav>
-                <ul>
-                    <li class="re_per">
-                     
-                            <h5 class="ratingstar4">
-                            <%
-							out.println("<span class='product-name'>" + jjj.get(0).getItemName() + "</span>");
-						%>
-                            </h5>
-                            <span class="re_id">
-                            <%
-									out.println("<span>" + kkk.get(0).getItemBuyer() + "</span>");
-								%>
-							2023-09-01</span>
-                        </div>
-                        <h3>가볍고 시원하고</h3>
-                        <p class="re_text">
-                            <%
-									out.println("<span>" + kkk.get(0).getItemReviewText() + "</span>");
-								%> </p>
-                    </li>
-                    <li class="re_per">
-                        <div>
-                            <h5 class="ratingstar4"> <%
-							out.println("<span class='product-name'>" + jjj.get(0).getItemName() + "</span>");
-						%></h5>
-                            <span class="re_id"> <%
-									out.println("<span>" + kkk.get(1).getItemBuyer() + "</span>");
-								%> 2023-09-01</span>
-                        </div>
-                        <h3>나름 괜찮음...</h3>
-                        <p class="re_text"> <%
-									out.println("<span>" + kkk.get(1).getItemReviewText() + "</span>");
-								%></p>
-                    </li>
-                    <li class="re_per">
-                        <div>
-                            <h5 class="ratingstar4"><%
-							out.println("<span class='product-name'>" + jjj.get(0).getItemName() + "</span>");
-						%></h5>
-                            <span class="re_id"><%
-									out.println("<span>" + kkk.get(2).getItemBuyer() + "</span>");
-								%> 2023-09-01</span>
-                        </div>
-                        <h3>나이키 왜이래</h3>
-                        <p class="re_text"><%
-									out.println("<span>" + kkk.get(2).getItemReviewText() + "</span>");
-								%> </p>
-                    </li>
-                    <li class="re_per">
-                        <div>
-                            <h5 class="ratingstar4"><%
-							out.println("<span class='product-name'>" + jjj.get(0).getItemName() + "</span>");
-						%></h5>
-                            <span class="re_id"><%
-									out.println("<span>" + kkk.get(3).getItemBuyer() + "</span>");
-								%> 2023-08-30</span>
-                        </div>
-                        <h3>사이즈 참고하세요.</h3>
-                        <p class="re_text"> <%
-									out.println("<span>" + kkk.get(3).getItemReviewText() + "</span>");
-								%> </p>
-                    </li>
-                    <li class="re_per">
-                        <div>
-                            <h5 class="ratingstar4"><%
-							out.println("<span class='product-name'>" + jjj.get(0).getItemName() + "</span>");
-						%></h5>
-                            <span class="re_id"><%
-									out.println("<span>" + kkk.get(4).getItemBuyer() + "</span>");
-								%> 2023-08-30</span>
-                        </div>
-                        <h3>정사이즈로...</h3>
-                        <p class="re_text"><%
-									out.println("<span>" + kkk.get(4).getItemReviewText() + "</span>");
-								%> </p>
-                    </li>
-                </ul>
+               <ul>
+    <%
+    for (int i = 0; i < kkk.size(); i++) {
+        AdstoreReviewDTO review = kkk.get(i);
+    %>
+    <li class="re_per">
+        <h5 class="ratingstar4">
+            <span class='product-name'><%= jjj.get(0).getItemName() %></span>
+        </h5>
+        <span class="re_id">
+            <span><%= review.getItemBuyer() %></span>
+        </span>
+        <h3>
+            <span><%= review.getReviewTitle() %></span>
+        </h3>
+        <p class="re_text">
+            <span><%= review.getItemReviewText() %></span>
+        </p>
+    </li>
+    <%
+    }
+    %>
+</ul>
+
             </article>
                 <div class="paging">
                     <span class="prev">

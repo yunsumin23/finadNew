@@ -4,6 +4,8 @@ public class AdstoreReviewDTO {
 	private int itemReviewNumber;
 	private String itemBuyer;
 	private String itemReviewText;
+	private String attachedFile;
+	private String reviewTitle;
 	
 	public int getItemReviewNumber() {
 		return itemReviewNumber;
@@ -16,6 +18,18 @@ public class AdstoreReviewDTO {
 	}
 	public void setItemBuyer(String itemBuyer) {
 		this.itemBuyer = itemBuyer;
+	}
+	public String getAttachedFile() {
+		return attachedFile;
+	}
+	public void setAttachedFile(String attachedFile) {
+		this.attachedFile = attachedFile;
+	}
+	public String getReviewTitle() {
+		return reviewTitle;
+	}
+	public void setReviewTitle(String reviewTitle) {
+		this.reviewTitle = reviewTitle;
 	}
 	public String getItemReviewText() {
 		return itemReviewText;

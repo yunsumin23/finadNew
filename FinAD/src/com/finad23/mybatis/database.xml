@@ -73,8 +73,10 @@
     ]]>
 
 	</select>
-	<select id="">
-		select * from project.adstore;
-	</select>
+<select id="itemReviewNumber" resultType="com.finad23.DTO.AdstoreReviewDTO">
+    SELECT itemReviewNumber, itemBuyer, itemReviewText, attachedFile, reviewTitle
+    FROM project.adstorereview;
+</select>
+
 
 </mapper>

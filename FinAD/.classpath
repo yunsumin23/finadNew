@@ -9,9 +9,11 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/lib/jstl.jar"/>
-	<classpathentry kind="lib" path="C:/lib/mybatis-3.5.13.jar"/>
 	<classpathentry kind="lib" path="C:/lib/mysql-connector-java-5.1.49-bin.jar"/>
 	<classpathentry kind="lib" path="C:/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/lib/standard.jar"/>
+	<classpathentry kind="lib" path="C:/lib/cos.jar"/>
+	<classpathentry kind="lib" path="C:/lib/jai_codec.jar"/>
+	<classpathentry kind="lib" path="C:/lib/jai_core.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
