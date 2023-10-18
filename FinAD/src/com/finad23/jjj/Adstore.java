@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import com.finad23.DTO.AdstoreDTO;
 
 
-
-
-
 public class Adstore {
 	Connection connection = null;
 	Statement statement = null;
@@ -65,7 +62,9 @@ public class Adstore {
 				adstoreDTO.setItemInfo(resultSet.getString("itemInfo"));
 				adstoreDTO.setItemImage(resultSet.getString("itemImage"));
 				adstoreDTO.setItemDate(resultSet.getString("itemDate"));
-				adstoreDTO.setCategory(resultSet.getString("category"));
+				adstoreDTO.setItemDetail1(resultSet.getString("itemDetail1"));
+				adstoreDTO.setItemDetail2(resultSet.getString("itemDetail2"));
+				adstoreDTO.setItemDetail3(resultSet.getString("itemDetail3"));
 				arr.add(adstoreDTO);
 			}
 		}catch (SQLException e) {

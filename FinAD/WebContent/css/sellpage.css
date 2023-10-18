@@ -80,6 +80,15 @@
 }
 
 
+.product-img{
+  width: 220px;
+  height: 220px;
+  border: 2px solid #c0c0c0;
+  border-radius: 12px;
+ 
+}
+
+
 .nikekr{
     font-size: 25px;
     color: #014D81;

@@ -9,6 +9,9 @@ public class AdstoreDTO {
 	private String itemImage;
 	private String itemDate;
 	private String category;
+	private String itemDetail1;
+	private String itemDetail2;
+	private String itemDetail3;
 	public int getItemNumber() {
 		return itemNumber;
 	}
@@ -56,6 +59,24 @@ public class AdstoreDTO {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	public String getItemDetail1() {
+		return itemDetail1;
+	}
+	public void setItemDetail1(String itemDetail1) {
+		this.itemDetail1 = itemDetail1;
+	}
+	public String getItemDetail2() {
+		return itemDetail2;
+	}
+	public void setItemDetail2(String itemDetail2) {
+		this.itemDetail2 = itemDetail2;
+	}
+	public String getItemDetail3() {
+		return itemDetail3;
+	}
+	public void setItemDetail3(String itemDetail3) {
+		this.itemDetail3 = itemDetail3;
 	}
 	
 }

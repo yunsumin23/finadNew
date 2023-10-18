@@ -54,7 +54,7 @@ public class AdstoreReview {
 			while(resultSet.next()) {
 				AdstoreReviewDTO adstorereviewDTO = new AdstoreReviewDTO();
 				adstorereviewDTO.setItemReviewNumber(resultSet.getInt("itemReviewNumber"));
-				adstorereviewDTO.setItemBuyer(resultSet.getString("itemBuyer"));
+				adstorereviewDTO.setNomalUserId(resultSet.getString("nomalUserId"));
 				adstorereviewDTO.setItemReviewText(resultSet.getString("itemReviewText"));
 				adstorereviewDTO.setAttachedFile(resultSet.getString("attachedFile"));
 				adstorereviewDTO.setReviewTitle(resultSet.getString("reviewTitle"));

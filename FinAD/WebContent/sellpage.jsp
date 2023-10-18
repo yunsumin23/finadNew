@@ -40,11 +40,9 @@
         <section class="section">
             <div class="info">
                 <div class="nike_slide">
-                    <ul>
-                        <li><a href=""><img src="img/niket1.png" alt=""></a></li>
-                        <li><a href=""><img src="img/niket2.png" alt=""></a></li>
-                        <li><a href=""><img src="img/niket3.png" alt=""></a></li>
-                    </ul>
+                   <%
+							out.println("<img id='product-img' src='img/" + jjj.get(0).getItemImage() + "' + alt='' + onmouseenter='zoomIn(event)' onmouseleave='zoomOut(event)' >");
+					%>
                 </div>
                 <div class="summary">
                     <nav>
@@ -160,13 +158,12 @@
                 </div>
             </div>
             <article class="detail">
-                
                 <div>
                 <img class="nike_2" src="img/nike2.png" alt="상세페이지1">
                 <img class="nike_3" src="img/nike3.png" alt="상세페이지2">
                 <img class="nike_4" src="img/nike4.png" alt="상세페이지3">
-                <!-- <img class="nike_4" src="img/nike4.jpg" alt="상세페이지3">   -->
             </div>
+
             </article>
             <article class="notice">
                 <p class="notice_last"> 소비자가 전자상거래등에서 소비자 보호에 관한 법률 제 17조 제1항 또는 제3항에 따라 청약철회를 하고 동법 제 18조 제1항 에 따라

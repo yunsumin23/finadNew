@@ -2,7 +2,7 @@ package com.finad23.DTO;
 
 public class AdstoreReviewDTO {
 	private int itemReviewNumber;
-	private String itemBuyer;
+	private String nomalUserId;
 	private String itemReviewText;
 	private String attachedFile;
 	private String reviewTitle;
@@ -10,15 +10,16 @@ public class AdstoreReviewDTO {
 	public int getItemReviewNumber() {
 		return itemReviewNumber;
 	}
+	public String getNomalUserId() {
+		return nomalUserId;
+	}
+	public void setNomalUserId(String nomalUserId) {
+		this.nomalUserId = nomalUserId;
+	}
 	public void setItemReviewNumber(int itemReviewNumber) {
 		this.itemReviewNumber = itemReviewNumber;
 	}
-	public String getItemBuyer() {
-		return itemBuyer;
-	}
-	public void setItemBuyer(String itemBuyer) {
-		this.itemBuyer = itemBuyer;
-	}
+
 	public String getAttachedFile() {
 		return attachedFile;
 	}
