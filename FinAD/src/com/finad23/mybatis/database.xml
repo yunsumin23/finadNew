@@ -65,10 +65,15 @@
     ]]>
 
 	</select>
-<select id="itemReviewNumber" resultType="com.finad23.DTO.AdstoreReviewDTO">
-    SELECT itemReviewNumber, itemBuyer, itemReviewText, attachedFile, reviewTitle
-    FROM project.adstorereview;
-</select>
-
+	<select id="itemReviewNumber" resultType="com.finad23.DTO.AdstoreReviewDTO">
+    	SELECT itemReviewNumber, itemBuyer, itemReviewText, attachedFile, reviewTitle
+    	FROM project.adstorereview;
+	</select>
+	<select id="cateSearchId" resultType="com.finad23.DTO.CateSearchDTO">
+	SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers
+	FROM project.user
+	LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId
+	WHERE user.category LIKE CONCAT('%', #{category}, '%')
+	</select>
 
 </mapper>

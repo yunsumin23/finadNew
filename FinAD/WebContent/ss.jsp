@@ -107,12 +107,14 @@
 			</form>
 		</div>
 		<div class="rignt_contents">
-			<form action="jsp/categori01.jsp" name="form_rignt" method="post">
+			<form action="catesearch.finad?url=catesearch" name="form_rignt" method="post">
 				<div class="search_view">
 					<div>
 						<input type="search" class="right-control"
-							placeholder="유튜버를 검색하세요">
+							placeholder="유튜버를 검색하세요" name="cate_search">
 					</div>
+			</form>
+			<form action="">
 					<div>
 						<input type="submit" class="fir_btn" value="관심 유튜버" name="fir_btn">
 						<input type="button" class="sec_btn" value="필터 초기화" name="sec_btn">
