@@ -10,26 +10,6 @@ $(document).ready(function () {
         $(".gnbbox").stop().slideUp();
     });
 
-    $(".shorts").hide();
-    $(".sub").hide();
-    $(".price").hide();
-    $(".avg").hide();
-    $(".offer").hide();
-    $(".shorts_div").click(function () {
-        $(".shorts").stop().slideToggle();
-    });
-    $(".sub_div").click(function () {
-        $(".sub").stop().slideToggle();
-    });
-    $(".price_div").click(function () {
-        $(".price").stop().slideToggle();
-    });
-    $(".avg_div").click(function () {
-        $(".avg").stop().slideToggle();
-    });
-    $(".offer_div").click(function () {
-        $(".offer").stop().slideToggle();
-    });
 });
 
 window.onload = function all_check() {
