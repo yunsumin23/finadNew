@@ -62,6 +62,7 @@ public class FreeBoard {
 				boardDTO.setText(resultSet.getString("freeboardtext"));
 				boardDTO.setDate(resultSet.getString("freeboarddate"));
 				boardDTO.setView(resultSet.getInt("freeboardviews"));
+				boardDTO.setLike(resultSet.getInt("freeboardLike"));
 				arr.add(boardDTO);
 			}
 		}catch (SQLException e) {

@@ -62,13 +62,14 @@ function check_login() {
 					String name = boardDTO.get(i).getName();
 					String date = boardDTO.get(i).getDate();
 					int view = boardDTO.get(i).getView();
+					int like = boardDTO.get(i).getLike();
 					out.println("<tr>");
 					out.println("<td>" + number + "</td>");
 					out.println("<td><a href='free_board_text.jsp?number=" + number + "' onclick='views(" + number + ")'>" + name + "</td>"); // 클릭 이벤트 추가
 					out.println("<td>" + writer + "</td>");
 					out.println("<td>" + date + "</td>");
 					out.println("<td>" + view + "</td>");
-					out.println("<td>" + "추천수" + "</td>");
+					out.println("<td>" + like + "</td>");
 					out.println("</tr>");
 				}
 			%>

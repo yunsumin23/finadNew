@@ -70,7 +70,7 @@
 			<tr>
 				<td colspan='6'>
 				<div class="voting-buttons">
-    				<button class="vote-button" id="upvote-button" onclick="like()"><img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
+    				<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)"><img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
    					</button>
 				</div>
 				</td>
