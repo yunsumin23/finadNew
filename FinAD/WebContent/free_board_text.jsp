@@ -12,8 +12,8 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/free_board_text.js"></script>
-<jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard"
-		scope="page" />
+<jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard" scope="page" />
+<jsp:useBean id="boardLike" class="com.finad23.jjj.FreeBoardLike" scope="page" />
 </head>
 <body>
 	<%
@@ -70,7 +70,8 @@
 			<tr>
 				<td colspan='6'>
 				<div class="voting-buttons">
-    				<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)"><img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
+    				<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
+    				<img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
    					</button>
 				</div>
 				</td>
