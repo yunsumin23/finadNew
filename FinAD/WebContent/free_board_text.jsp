@@ -92,7 +92,7 @@
     							<img src="img/d_clicked.png" width="50px" height="50px" id="like_img"alt="추천">
    								</button>
 							</div>
-							<%out.println("elseelse");%>
+							<%out.println("freeboardLikeDTO !=null && id.equals(freeboardLikeDTO.getUserID())");%>
 						<%	
 					}else{%>
 						<div class="voting-buttons">
