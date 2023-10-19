@@ -12,7 +12,7 @@ a {
     text-decoration: none; /* 밑줄 제거 */
 }
 a:visited {
-    color: #800080; /* 클릭 후의 색상 */
+    color: #808080; /* 클릭 후의 색상 */
     text-decoration: none; /* 밑줄 제거 */
 }
 

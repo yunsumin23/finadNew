@@ -5,7 +5,11 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page import="com.finad23.DTO.FreeboardLikeDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<jsp:useBean id="boardLike" class="com.finad23.jjj.FreeBoardLike" scope="page" />
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
@@ -32,9 +36,20 @@
 	}
 %>
     <%
+    ArrayList<FreeboardLikeDTO> arr = boardLike.getBoardList();
+
+	FreeboardLikeDTO freeboardLikeDTO = null;
+	for (FreeboardLikeDTO selected : arr) {
+		if (selected.getPostID() == Integer.parseInt(request.getParameter("number"))) {
+			freeboardLikeDTO = selected;
+			break;
+		}
+	}
+    	
         String userId = id;
         String postId = request.getParameter("number");
-        String isLiked = "0";
+        int isLiked = 0;
+        isLiked = freeboardLikeDTO.getIsLiked();
 
         Connection connection = null;
         Statement statement = null;
