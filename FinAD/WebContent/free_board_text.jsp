@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.finad23.DTO.BoardDTO"%>
+<%@ page import="com.finad23.DTO.FreeboardLikeDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,11 @@
 </head>
 <body>
 	<%
+	String id = (String) session.getAttribute("id");
+	String password = (String) session.getAttribute("password");
+	String type = (String) session.getAttribute("type");
 		String clickText = request.getParameter("number"); //클릭한 글의 글번호 값을 받아서 저장
+		
 		ArrayList<BoardDTO> arr = boardList.getBoardList();
 
 		BoardDTO boardDTO = null;
@@ -27,12 +32,21 @@
 				break;
 			}
 		}
-	
+		
+		ArrayList<FreeboardLikeDTO> arre = boardLike.getBoardList(clickText, id);
+
+		FreeboardLikeDTO freeboardLikeDTO = null;
+		
+		for (FreeboardLikeDTO selected : arre) {
+			if (selected.getPostID() == Integer.parseInt(clickText)) {
+				freeboardLikeDTO = selected;
+				break;
+			}
+		}
+		
 	%>
 <%
-	String id = (String) session.getAttribute("id");
-	String password = (String) session.getAttribute("password");
-	String type = (String) session.getAttribute("type");
+
 	if (id == null && password == null) {
 %>
 <jsp:include page="header_login.jsp"></jsp:include>
@@ -69,16 +83,32 @@
 			</tr>
 			<tr>
 				<td colspan='6'>
-				<div class="voting-buttons">
-    				<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
-    				<img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
-   					</button>
-				</div>
+				<% 
+					if(freeboardLikeDTO!=null){
+						if(freeboardLikeDTO.getIsLiked() == "0") { %>
+							<div class="voting-buttons">
+    							<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
+    							<img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
+   								</button>
+							</div>
+					<% } else {	%>
+							<div class="voting-buttons">
+    							<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
+    							<img src="img/d_clicked.png" width="50px" height="50px" id="like_img"alt="추천">
+   								</button>
+								</div>
+						<%	}
+					}else{%>
+						<div class="voting-buttons">
+    						<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
+    						<img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
+   							</button>
+						</div>
+				<%}%>
 				</td>
 			</tr>
 		</table>
 	</div>
-	
 	<div id="free_board_btn">
     <table>
         <tr>
@@ -101,7 +131,7 @@
 	%><style>#free_board_btn {
     margin-top: 10px;
     margin-left: 1260px;
-}</style><%
+	}</style><%
 }
 %>
             <td>
@@ -109,6 +139,7 @@
             </td>
         </tr>
     </table>
+    <%=freeboardLikeDTO.getIsLiked() %>
 </div>
 
 	<jsp:include page="footer.jsp"></jsp:include>

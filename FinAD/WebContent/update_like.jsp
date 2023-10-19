@@ -2,6 +2,10 @@
 <%@ page import="java.sql.*" %>
 <!-- update_like.jsp -->
 <%
+	String id = (String) session.getAttribute("id");
+	String password = (String) session.getAttribute("password");
+	String type = (String) session.getAttribute("type");
+
     String view = request.getParameter("freeboardviews");
     int boardId = Integer.parseInt(request.getParameter("boardId")); // 게시물 ID를 받아옵니다.
 	String result = null;

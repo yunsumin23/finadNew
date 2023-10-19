@@ -3,7 +3,7 @@ package com.finad23.DTO;
 public class FreeboardLikeDTO {
 	private String userID; //작성자 ID
 	private int postID;  //게시글번호
-	private int isLiked;  //좋아요 yes or no
+	private String isLiked;  //좋아요 yes or no
 	private String createdAt;   //누른 날짜
 	
 	public String getUserID() {
@@ -20,10 +20,10 @@ public class FreeboardLikeDTO {
 		this.postID = postID;
 	}
 
-	public int getIsLiked() {
+	public String getIsLiked() {
 		return isLiked;
 	}
-	public void setIsLiked(int isLiked) {
+	public void setIsLiked(String isLiked) {
 		this.isLiked = isLiked;
 	}
 	public String getCreatedAt() {

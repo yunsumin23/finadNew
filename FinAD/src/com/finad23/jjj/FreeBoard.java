@@ -28,7 +28,7 @@ public class FreeBoard {
 		return connection;
 	}
 	
-	public void dicon(Statement statement, Connection connection) { //매개�??��
+	public void dicon(Statement statement, Connection connection) { 
 		try {
 			statement.close();
 		}catch (Exception ignored) {
@@ -40,15 +40,12 @@ public class FreeBoard {
 			// TODO: handle exception
 		}
 	}
-	
-//게시?�� ?��?��?���? �??��?��?�� 메서?��
-	public ArrayList<BoardDTO> getBoardList() {
-//		ArrayList<BoardDTO> boardList = new ArrayList<>();
-		// ?��?��?��베이?�� ?���? �? 쿼리 ?��?��
+		public ArrayList<BoardDTO> getBoardList() {
+
 		Connection connection = con();
 		Statement statement = null;
 		ResultSet resultSet = null;
-		// 결과�? BoardDTO 객체�? �??��?��?�� boardList?�� 추�?
+
 		ArrayList<BoardDTO> arr = new ArrayList<BoardDTO>();
 		
 		try {

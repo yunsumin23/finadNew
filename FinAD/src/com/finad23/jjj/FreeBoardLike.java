@@ -26,7 +26,7 @@ public class FreeBoardLike {
 		return connection;
 	}
 	
-	public void dicon(Statement statement, Connection connection) { //매개�??��
+	public void dicon(Statement statement, Connection connection) {
 		try {
 			statement.close();
 		}catch (Exception ignored) {
@@ -40,7 +40,7 @@ public class FreeBoardLike {
 	}
 	
 
-	public ArrayList<FreeboardLikeDTO> getBoardList() {
+	public ArrayList<FreeboardLikeDTO> getBoardList(String numb, String uid) {
 		Connection connection = con();
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -48,13 +48,13 @@ public class FreeBoardLike {
 		
 		try {
 			statement = connection.createStatement();
-			resultSet = statement.executeQuery("select * from project.freeboardLike;");
+			resultSet = statement.executeQuery("select * from project.freeboardlike WHERE freeboardPostID = " + numb + ", freeboardUserID = '" + uid + "';");
 			while(resultSet.next()) {
 				FreeboardLikeDTO freeboardLikeDTO = new FreeboardLikeDTO();
 				freeboardLikeDTO.setUserID(resultSet.getString("freeboardUserID"));
 				freeboardLikeDTO.setPostID(resultSet.getInt("freeboardPostID"));
-				freeboardLikeDTO.setIsLiked(resultSet.getInt("freeboardIsLiked"));
-				freeboardLikeDTO.setCreatedAt(resultSet.getString("CreateAt"));
+				freeboardLikeDTO.setIsLiked(resultSet.getString("freeboardIsLiked"));
+				freeboardLikeDTO.setCreatedAt(resultSet.getString("CreatedAt"));
 
 				arr.add(freeboardLikeDTO);
 			}

@@ -18,7 +18,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>free_board_like.jsp</title>
+<title>free_board_relike.jsp</title>
 </head>
 <body>
 <%
@@ -50,7 +50,7 @@
                 throw new Exception("데이터베이스 연결 안됨<br>");
             }
             statement = connection.createStatement();
-            int i = statement.executeUpdate("insert into freeboardLike(freeboardUserID, freeboardPostID, freeboardIsLiked) values ('"+  userId + "','" + postId + "', '1');");
+            int i = statement.executeUpdate("DELETE FROM freeboardLike WHERE freeboardPostID = " + postId + " AND freeboardUserId = '" + userId + "'");
 
         } finally{
             try{
