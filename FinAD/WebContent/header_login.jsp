@@ -22,6 +22,7 @@
 					</form>
 				</div>
 			</div>
+			
 			<div class="header_search">
 				<input type="search" class="form-control" placeholder="search">
 			</div>
