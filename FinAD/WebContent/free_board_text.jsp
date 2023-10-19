@@ -133,7 +133,7 @@
     margin-left: 1260px;
 	}</style><%
 }
-%>
+%> 
             <td>
                 <form action="free_board.jsp"><input type="submit" value="목록"></form>
             </td>
