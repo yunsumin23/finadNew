@@ -52,8 +52,8 @@ public class FreeBoardLike {
 			while(resultSet.next()) {
 				FreeboardLikeDTO freeboardLikeDTO = new FreeboardLikeDTO();
 				freeboardLikeDTO.setUserID(resultSet.getString("freeboardUserID"));
-				freeboardLikeDTO.setPostID(resultSet.getString("freeboardPostID"));
-				freeboardLikeDTO.setLiked(resultSet.getBoolean("freeboardIsLiked"));
+				freeboardLikeDTO.setPostID(resultSet.getInt("freeboardPostID"));
+				freeboardLikeDTO.setIsLiked(resultSet.getInt("freeboardIsLiked"));
 				freeboardLikeDTO.setCreatedAt(resultSet.getString("CreateAt"));
 
 				arr.add(freeboardLikeDTO);
