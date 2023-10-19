@@ -42,11 +42,11 @@
 	AND
 	(
 		CASE
-			WHEN #{avg} = 'under10' THEN (user_mypage.subscribers <= 100000)
-			WHEN #{avg} = 'over10' THEN (user_mypage.subscribers BETWEEN 100000 AND 200000)
-			WHEN #{avg} = 'over20' THEN (user_mypage.subscribers BETWEEN 200000 AND 500000)
-			WHEN #{avg} = 'over50' THEN (user_mypage.subscribers BETWEEN 500000 AND 1000000)
-			WHEN #{sub} = 'over100' THEN (user_mypage.subscribers >= 1000000)			
+			WHEN #{sub} = 'under10' THEN (user_mypage.subscribers < 100000)
+			WHEN #{sub} = 'over10' THEN (user_mypage.subscribers BETWEEN 100000 AND 200000)
+			WHEN #{sub} = 'over20' THEN (user_mypage.subscribers BETWEEN 200000 AND 500000)
+			WHEN #{sub} = 'over50' THEN (user_mypage.subscribers BETWEEN 500000 AND 1000000)
+			WHEN #{sub} = 'over100' THEN (user_mypage.subscribers > 1000000)			
 			ELSE (user_mypage.subscribers)
 		END
 	)

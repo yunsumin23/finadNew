@@ -22,10 +22,10 @@ public class CategoryFilterConn { // DB연결하는 파일
 		
 		List<CategoryFilterDTO> list = session.selectList("filterId", filter);
 		System.out.println(filter);
-		System.out.println("Conn페이지 "+ filter.getShorts());
-		System.out.println("Conn페이지 "+ filter.getSub());
-		System.out.println("Conn페이지 "+ filter.getPrice());
-		System.out.println("Conn페이지 "+ filter.getAvg());
+		System.out.println("Conn페이지 쇼츠"+ filter.getShorts());
+		System.out.println("Conn페이지 구독자"+ filter.getSub());
+		System.out.println("Conn페이지 가격"+ filter.getPrice());
+		System.out.println("Conn페이지 조회수"+ filter.getAvg());
 		session.close(); // session을 열였으니 닫아준다.
 		return list;
 	}

@@ -97,10 +97,10 @@ public class CategoryFilterExtr implements ConInter { // DB처리하는 파일
 		
 		rq.setAttribute("List", list);
 		
-		System.out.println("Extr페이지 "+ filter.getShorts());
-		System.out.println("Extr페이지 "+ filter.getSub());
-		System.out.println("Extr페이지 "+ filter.getPrice());
-		System.out.println("Extr페이지 "+ filter.getAvg());
+		System.out.println("Extr페이지 쇼츠"+ filter.getShorts());
+		System.out.println("Extr페이지 구독자"+ filter.getSub());
+		System.out.println("Extr페이지 가격"+ filter.getPrice());
+		System.out.println("Extr페이지 조회수"+ filter.getAvg());
 		System.out.println("Extr페이지 "+ filter.getOffer());
 		
 		

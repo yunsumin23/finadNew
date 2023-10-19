@@ -188,7 +188,7 @@
             <span class='product-name'><%= jjj.get(0).getItemName() %></span>
         </h5>
         <span class="re_id">
-            <span><%= review.getItemBuyer() %></span>
+            <span><%= review.getNomalUserId() %></span>
         </span>
         <h3>
             <span><%= review.getReviewTitle() %></span>
