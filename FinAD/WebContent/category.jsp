@@ -106,10 +106,10 @@
 			</form>
 		</div>
 		<div class="rignt_contents">
-			<form action="catesearch.finad?url=<%= category %>&catesearch=true" name="form_rignt" method="post">
+			<form action="catesearch.finad?url=<%= category %>&cat=<%=category%>&catesearch=true" name="form_rignt" method="post">
 				<div class="search_view">
 					<div>
-						<input type="search" class="right-control" placeholder="유튜버를 검색하세요" name="cate_search">
+						<input type="search" class="right-control" placeholder="크리에이터를 검색하세요" name="cate_search">
 					</div>
 			</form>
 			<form action="">

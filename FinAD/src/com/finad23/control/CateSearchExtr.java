@@ -19,17 +19,20 @@ public class CateSearchExtr implements ConInter{
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		// TODO Auto-generated method stub
 		CateSearchConn conn = CateSearchConn.instance();
-		
-		CateSearchDTO searchDTO = new CateSearchDTO();
+
+		String cate = rq.getParameter("url");
 		String search = rq.getParameter("cate_search");
-		
-		searchDTO.setSearch(search);
+		CateSearchDTO searchDTO = new CateSearchDTO();
+
+		searchDTO.setCategory(cate);
+		searchDTO.setNickname(search);
 		
 		List<CateSearchDTO> list = conn.search(searchDTO);
 		
 		rq.setAttribute("List", list);
 		
-		System.out.println("검색어 입력 " + search);
+		System.out.println("Extr카테고리 입력 " + searchDTO.getCategory());
+		System.out.println("Extr검색어 입력 " + searchDTO.getNickname());
 		return null;
 	}
 	

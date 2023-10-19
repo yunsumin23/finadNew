@@ -52,30 +52,3 @@ function img_change(imgElement) {
     // 다음 이미지로 변경한다.
     imgElement.src = "img/" + nextFileName;
   }
-
-//function filter(category) {
-//	var shorts = document.querySelector(".shorts").value;
-//	var sub = document.querySelector(".sub").value;
-//	var price = document.querySelector(".price").value;
-//	var avg = document.querySelector(".avg").value;
-//	var offer = document.querySelector(".offer").value;
-//	
-//	$.ajax({
-//		type: "POST",
-//		url: "category.finad?url=" + category + "&filter=true",
-//		data: {
-//			shorts : shorts,
-//			sub : sub,
-//			price : price,
-//			avg : avg,
-//			offer : offer},
-//			success: function (response) {
-//				if(result === "true") {
-//					
-//				}
-//			},
-//			error: function () {
-//				alert("실패함 ㅋㅅㅋ");
-//			}
-//	});
-//}

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
-<%@ page import="com.finad23.DTO.CategoryFilterDTO"%>
+<%@ page import="com.finad23.DTO.CateSearchDTO"%>
 <%@ page import="java.text.DecimalFormat"%>
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
 		String category = request.getParameter("url");
-		List<CategoryFilterDTO> list = (List<CategoryFilterDTO>) request.getAttribute("List");
+		List<CateSearchDTO> list = (List<CateSearchDTO>) request.getAttribute("List");
 		int creatorNum = list.size();
 		if (id == null && password == null) {
 	%>
@@ -172,24 +172,6 @@
 			<%
 				}
 				} else {
-			%>
-			<div class="list_01">
-				<div class="list_01_div01">
-					필터링된 크리에이터가 없습니다
-				</div>
-				<div class="list_01_div02">
-				</div>
-				<div class="list_01_div03">
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
-				</div>
-			</div>
-			<%
 				}
 			%>
 

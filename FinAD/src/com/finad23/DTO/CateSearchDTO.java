@@ -2,12 +2,6 @@ package com.finad23.DTO;
 
 public class CateSearchDTO {
 	private String shorts, sub, price, avg, offer, category, pw, name, sex, email, nickname, newsagency, mobilenumber, post, address, reference, image, youtuLink, liveBcLink, snsLink, introduc, search;
-	public String getSearch() {
-		return search;
-	}
-	public void setSearch(String search) {
-		this.search = search;
-	}
 	int subscribers, avgviewers, thravgSub, thravgViewer, thravgHit;
 	double man_ratio, woman_ratio, tenAge, tweAge, thrAge, forAge, fifAge;
 	public String getShorts() {
@@ -15,6 +9,12 @@ public class CateSearchDTO {
 	}
 	public void setShorts(String shorts) {
 		this.shorts = shorts;
+	}
+	public String getSearch() {
+		return search;
+	}
+	public void setSearch(String search) {
+		this.search = search;
 	}
 	public String getSub() {
 		return sub;

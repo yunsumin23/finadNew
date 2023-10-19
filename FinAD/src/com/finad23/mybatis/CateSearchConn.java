@@ -15,12 +15,14 @@ public class CateSearchConn {
 	}
 	SqlSessionFactory sqlsession = SqlConnect.getSqlSession();
 	
-	public List search(CateSearchDTO searchDTO) {
+	public List<CateSearchDTO> search(CateSearchDTO searchDTO) {
 		SqlSession session = sqlsession.openSession();
 		
 		List<CateSearchDTO> list = session.selectList("cateSearchId", searchDTO);
+		System.out.println(searchDTO);
+		System.out.println("Conn검색어 입력 " + searchDTO.getNickname());
 		session.close();
-		return null;
+		return list;
 	}
 	
 }
