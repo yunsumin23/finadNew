@@ -33,7 +33,7 @@
 			}
 		}
 		
-		ArrayList<FreeboardLikeDTO> arre = boardLike.getBoardList(clickText, id);
+		ArrayList<FreeboardLikeDTO> arre = boardLike.getBoardList();
 
 		FreeboardLikeDTO freeboardLikeDTO = null;
 		
@@ -84,26 +84,24 @@
 			<tr>
 				<td colspan='6'>
 				<% 
-					if(freeboardLikeDTO!=null){
-						if(freeboardLikeDTO.getIsLiked() == "0") { %>
+					if(freeboardLikeDTO !=null && id.equals(freeboardLikeDTO.getUserID())){
+							%>
 							<div class="voting-buttons">
-    							<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
-    							<img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
-   								</button>
-							</div>
-					<% } else {	%>
-							<div class="voting-buttons">
-    							<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
+    							<button class="vote-button" id="upvote-button" onclick="relikeButton(<%=clickText%>)">
+
     							<img src="img/d_clicked.png" width="50px" height="50px" id="like_img"alt="추천">
    								</button>
-								</div>
-						<%	}
+							</div>
+							<%out.println("elseelse");%>
+						<%	
 					}else{%>
 						<div class="voting-buttons">
-    						<button class="vote-button" id="upvote-button" onclick="button(<%=clickText%>)">
+    						<button class="vote-button" id="upvote-button" onclick="likeButton(<%=clickText%>)">
+
     						<img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
    							</button>
 						</div>
+						<%out.println("else");%>
 				<%}%>
 				</td>
 			</tr>
@@ -139,7 +137,6 @@
             </td>
         </tr>
     </table>
-    <%=freeboardLikeDTO.getIsLiked() %>
 </div>
 
 	<jsp:include page="footer.jsp"></jsp:include>

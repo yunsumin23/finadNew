@@ -70,18 +70,24 @@ function reLike(boardId) {
 }
 
 
-function button(boardId){
+function likeButton(boardId){
 	let likeImg = document.getElementById('like_img');
 	if (likeImg.src.endsWith('img/d.png')) {
 		likeImg.src = 'img/d_clicked.png'; // 이미지를 변경합니다.
         likeImg.alt = '추천됨'; // 이미지의 대체 텍스트도 변경할 수 있습니다.
         like(boardId);
         window.location.href = "free_board_like.jsp?number="+boardId;  
-    } else {
-    	likeImg.src = 'img/d.png';
-    	likeImg.alt = '추천';
-    	reLike(boardId);
-    	window.location.href = "free_board_relike.jsp?number="+boardId; 
-    }
+    } 
+}
+
+function relikeButton(boardId){
+	let likeImg = document.getElementById('like_img');
+	if (likeImg.src.endsWith('img/d_clicked.png')) {
+	    likeImg.src = 'img/d.png';
+	    likeImg.alt = '추천';
+	   	reLike(boardId);
+	   	window.location.href = "free_board_relike.jsp?number="+boardId; 
+	    
+	}
 }
 

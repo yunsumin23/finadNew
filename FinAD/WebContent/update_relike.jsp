@@ -6,7 +6,6 @@
 	String password = (String) session.getAttribute("password");
 	String type = (String) session.getAttribute("type");
 
-    String view = request.getParameter("freeboardviews");
     int boardId = Integer.parseInt(request.getParameter("boardId")); // 게시물 ID를 받아옵니다.
 	String result = null;
     Connection connection = null;
@@ -20,7 +19,7 @@
         statement = connection.createStatement();
 
         // 게시물의 추천수를 1 감소시키는 SQL문 실행
-        String updateQuery = "UPDATE project.freeboard SET freeboardLike = freeboardLike -1 WHERE freeboardNumber = " + boardId + "and freeboardWriter ='" + id+"';";
+        String updateQuery = "UPDATE project.freeboard SET freeboardLike = freeboardLike -1 WHERE freeboardNumber = " + boardId;
         int rowsAffected = statement.executeUpdate(updateQuery);
 
         if (rowsAffected > 0) {
