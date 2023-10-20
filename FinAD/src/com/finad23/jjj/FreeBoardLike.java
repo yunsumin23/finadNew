@@ -40,7 +40,7 @@ public class FreeBoardLike {
 	}
 	
 
-	public ArrayList<FreeboardLikeDTO> getBoardList() {
+	public ArrayList<FreeboardLikeDTO> getBoardList(String id) {
 		Connection connection = con();
 		Statement statement = null;
 		ResultSet resultSet = null;
@@ -48,7 +48,7 @@ public class FreeBoardLike {
 		
 		try {
 			statement = connection.createStatement();
-			resultSet = statement.executeQuery("select * from project.freeboardlike;");
+			resultSet = statement.executeQuery("select * from project.freeboardlike where freeboardUserId = '" + id + "';");
 			while(resultSet.next()) {
 				FreeboardLikeDTO freeboardLikeDTO = new FreeboardLikeDTO();
 				freeboardLikeDTO.setUserID(resultSet.getString("freeboardUserID"));
