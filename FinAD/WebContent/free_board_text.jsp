@@ -104,7 +104,7 @@
    							</button>
 						</div>
 						<%out.println("else");%>
-					<%}
+					<%} 
 				}%>  <%
 				}%>
 				
