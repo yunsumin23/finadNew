@@ -33,7 +33,7 @@
 			}
 		}
 		
-		ArrayList<FreeboardLikeDTO> arre = boardLike.getBoardList(id);
+		ArrayList<FreeboardLikeDTO> arre = boardLike.getBoardList(id, clickText);
 
 		FreeboardLikeDTO freeboardLikeDTO = null;
 		
@@ -85,29 +85,33 @@
 				<td colspan='6'>
 				<% 
 			if(id != null){
-				if(freeboardLikeDTO != null){
-					if(clickText.equals(freeboardLikeDTO.getPostID()) && id.equals(freeboardLikeDTO.getUserID())){
-							%>
-							<div class="voting-buttons">
+				if(freeboardLikeDTO != null){%>
+					<div class="voting-buttons">
     							<button class="vote-button" id="upvote-button" onclick="relikeButton(<%=clickText%>)">
 
     							<img src="img/d_clicked.png" width="50px" height="50px" id="like_img"alt="추천">
    								</button>
-							</div>
-							<%out.println("freeboardLikeDTO !=null && id.equals(freeboardLikeDTO.getUserID())");%>
-						<%	
-					}else{%>
-						<div class="voting-buttons">
+							</div> 
+						
+
+					<%}
+				 else{%>
+				 			
+							 
+							<div class="voting-buttons">
     						<button class="vote-button" id="upvote-button" onclick="likeButton(<%=clickText%>)">
 
     						<img src="img/d.png" width="50px" height="50px" id="like_img"alt="추천">
    							</button>
 						</div>
-						<%out.println("else");%>
-					<%} 
-				}%>  <%
-				}%>
+							<%
+				}
+				}
+				%>
+				<%
 				
+				
+				%>
 				</td>
 			</tr>
 		</table>

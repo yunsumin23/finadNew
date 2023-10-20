@@ -40,23 +40,23 @@ public class FreeBoardLike {
 	}
 	
 
-	public ArrayList<FreeboardLikeDTO> getBoardList(String id) {
+	public ArrayList<FreeboardLikeDTO> getBoardList(String id, String clickText) {
 		Connection connection = con();
 		Statement statement = null;
 		ResultSet resultSet = null;
-		ArrayList<FreeboardLikeDTO> arr = new ArrayList<FreeboardLikeDTO>();
+		ArrayList<FreeboardLikeDTO> arre = new ArrayList<FreeboardLikeDTO>();
 		
 		try {
 			statement = connection.createStatement();
-			resultSet = statement.executeQuery("select * from project.freeboardlike where freeboardUserId = '" + id + "';");
-			while(resultSet.next()) {
+			resultSet = statement.executeQuery("select freeboardUserID, freeboardPostID from project.freeboardlike where freeboardUserId = '" + id + "' and freeboardPostId =" + clickText + ";");
+			if(resultSet.next()) {
 				FreeboardLikeDTO freeboardLikeDTO = new FreeboardLikeDTO();
 				freeboardLikeDTO.setUserID(resultSet.getString("freeboardUserID"));
 				freeboardLikeDTO.setPostID(resultSet.getInt("freeboardPostID"));
-				freeboardLikeDTO.setIsLiked(resultSet.getString("freeboardIsLiked"));
-				freeboardLikeDTO.setCreatedAt(resultSet.getString("CreatedAt"));
+//				freeboardLikeDTO.setIsLiked(resultSet.getString("freeboardIsLiked"));
+//				freeboardLikeDTO.setCreatedAt(resultSet.getString("CreatedAt"));
 
-				arr.add(freeboardLikeDTO);
+				arre.add(freeboardLikeDTO);
 			}
 		}catch (SQLException e) {
 			// TODO: handle exception
@@ -64,6 +64,6 @@ public class FreeBoardLike {
 		}finally {
 			dicon(statement, connection);
 		}
-		return arr;
+		return arre;
 	}
 }
