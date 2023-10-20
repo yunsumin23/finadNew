@@ -100,6 +100,7 @@
 					<div>
 						<div class="submit_div">
 							<input type="submit" name="sub_btn" value="적용하기" class="check_sub">
+							
 						</div>
 					</div>
 				</div>

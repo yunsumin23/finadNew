@@ -9,7 +9,6 @@ $(document).ready(function () {
         $(".gnb").stop().slideUp();
         $(".gnbbox").stop().slideUp();
     });
-
 });
 
 window.onload = function all_check() {
