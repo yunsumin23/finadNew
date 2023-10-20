@@ -37,7 +37,7 @@
 			<%
 				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
 			%>
-
+			
 		</ul>
 	</div>
 	<div class="container">
