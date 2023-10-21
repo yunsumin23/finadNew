@@ -35,23 +35,27 @@ textarea {
     border-radius: 25px;
 }
 .title{
-	width:300px;
+	width:200px;
 	height: 55px;
 	font-size: 22px;
 	text-align: center;
 	padding: 3px;
 }
 .content{
-	width:1000px;
+	width:1100px;
 	height: 55px;
 	font-size: 16px;
 	padding: 3px;
 }
 .content2{
-	width:350px;
+	width:450px;
 	height: 55px;
 	font-size: 16px;
 	padding: 3px;
 	text-align: center;
 }
-
+td input[type="text"] {
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+}

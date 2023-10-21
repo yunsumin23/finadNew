@@ -43,7 +43,7 @@ public class FreeBoard {
 		public ArrayList<BoardDTO> getBoardList() {
 
 		Connection connection = con();
-		Statement statement = null;
+		Statement statement = null; 
 		ResultSet resultSet = null;
 
 		ArrayList<BoardDTO> arr = new ArrayList<BoardDTO>();
