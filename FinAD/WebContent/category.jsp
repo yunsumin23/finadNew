@@ -99,7 +99,7 @@
 					</div>
 					<div>
 						<div class="submit_div">
-							<input type="submit" name="sub_btn" value="적용하기" class="check_sub">
+							<input type="button" name="sub_btn" value="적용하기" class="check_sub" onclick="filter()">
 							
 						</div>
 					</div>
@@ -157,7 +157,7 @@
 					</p>
 				</div>
 				<div class="list_01_div02">
-					<a href="creator_page.html" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
+					<a href="creator.finad?url=creator" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
 						<div>
 							<span class="div_img"><%=list.get(i).getNickname()%></span>
 						</div> </a>

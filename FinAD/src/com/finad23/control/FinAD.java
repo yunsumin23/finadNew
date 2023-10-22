@@ -65,9 +65,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 					}
 				}
 			}
-		}
-
-		else if (url.equals("food")) {
+		} else if (url.equals("food")) {
 			if (cat == null) {
 				inter = CategoryExtr.instance();
 				try {
