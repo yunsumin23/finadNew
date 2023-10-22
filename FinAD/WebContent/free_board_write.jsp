@@ -20,8 +20,10 @@
 	String id = (String) session.getAttribute("id");
 	String password = (String) session.getAttribute("password");
 	String type = (String) session.getAttribute("type");
+	
 	if (id == null && password == null) {
 %>
+
 <jsp:include page="header_login.jsp"></jsp:include>
 <%
 	} else {

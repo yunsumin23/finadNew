@@ -24,9 +24,9 @@ textarea {
     font-size: 17px;
     
 }
-#write_final{
+#submit_btn{
     margin-top: 100px;
-    margin-left: 300px;
+    margin-left: 450px;
     width: 400px;
     height: 61px;
     font-size: 25px;
@@ -39,6 +39,12 @@ textarea {
 	height: 55px;
 	font-size: 22px;
 	text-align: center;
+	padding: 3px;
+}
+#content_title{
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
 	padding: 3px;
 }
 .content{
@@ -54,6 +60,17 @@ textarea {
 	padding: 3px;
 	text-align: center;
 }
+.content3{
+	width: 200px;
+	height: 55px;
+	font-size: 16px;
+	padding: 3px;
+	padding-left: 125px;
+}
+span{
+	font-size: 22px;
+}
+
 td input[type="text"] {
 	width: 200px;
 	height: 40px;
