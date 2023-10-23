@@ -13,7 +13,7 @@
 
 <servlet-mapping>
 
-<servlet-name>sfinad</servlet-name>
+<servlet-name>finad</servlet-name>
 
 <url-pattern> *.finad</url-pattern>
 
