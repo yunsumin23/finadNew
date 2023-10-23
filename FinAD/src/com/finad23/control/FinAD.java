@@ -31,12 +31,12 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 		System.out.println("catesearch " + catesearch);
 		ConInter inter = null;
 		//.bo
-		rq.setCharacterEncoding("UTF-8");
-		String RequestURI=rq.getRequestURI();
-		String contextPath=rq.getContextPath();
-		String command=RequestURI.substring(contextPath.length());
-		ActionForward forward=null;
-		FinadAction action=null;
+//		rq.setCharacterEncoding("UTF-8");
+//		String RequestURI=rq.getRequestURI();
+//		String contextPath=rq.getContextPath();
+//		String command=RequestURI.substring(contextPath.length());
+//		ActionForward forward=null;
+//		FinadAction action=null;
 		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요 / 싫은데요?
 
 		if (url.equals("select")) {
@@ -44,6 +44,15 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			try {
 				String n = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("company_board.jsp");
+				re.forward(rq, rs);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}else if (url.equals("CBoardWrite")) {
+			inter = CBoardExtr.instance();
+			try {
+				String cboardWrite = inter.FinAD(rq, rs);
+				RequestDispatcher re = rq.getRequestDispatcher("company_board_write.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {
 				System.out.println(e);

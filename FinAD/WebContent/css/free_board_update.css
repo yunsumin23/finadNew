@@ -31,8 +31,10 @@
 	text-align: center;
 }
 #text p {
-	padding-bottom: 300px;
 	word-break: break-word;
+}
+#text p:last-child {
+	padding-bottom: 300px;
 }
 #free_board_btn{
 	margin-top: 10px;

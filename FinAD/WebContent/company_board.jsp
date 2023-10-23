@@ -142,7 +142,7 @@
 	%>
 	</table>
 	<div id="company_board_write_btn">
-			<form action = "company_board_write.jsp" onsubmit="return check_login();">
+			<form action = "company_board.finad?url=CBoardWrite" onsubmit="return check_login();">
 				<input type="submit" value="글쓰기">
 			</form>
 	</div>

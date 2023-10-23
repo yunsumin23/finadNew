@@ -20,7 +20,7 @@ public class CBoardConn {
 	
 	public List<CompanyBoardDTO> dbSelect() {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<CompanyBoardDTO> list = sqlSession.selectList("companyWriteID");
+		List<CompanyBoardDTO> list = sqlSession.selectList("companyBoardID");
 		sqlSession.close();
 		return list;
 				

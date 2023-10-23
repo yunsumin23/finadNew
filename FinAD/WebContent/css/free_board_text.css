@@ -42,7 +42,7 @@ table{
 	border-bottom:0;
 }
 
-#text p {
+#text p:last-child {
 	padding-bottom: 170px;
 }
 #text p {
