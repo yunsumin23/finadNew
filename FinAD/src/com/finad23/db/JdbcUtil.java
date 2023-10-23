@@ -7,6 +7,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class JdbcUtil {
+	
 	public static Connection getConnection() {
 		Connection con = null;
 		

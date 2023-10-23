@@ -99,7 +99,7 @@
 					</div>
 					<div>
 						<div class="submit_div">
-							<input type="button" name="sub_btn" value="적용하기" class="check_sub" onclick="filter()">
+							<input type="submit" name="sub_btn" value="적용하기" class="check_sub" onclick="filter()">
 							
 						</div>
 					</div>
@@ -147,6 +147,7 @@
 						DecimalFormat df = new DecimalFormat("#,###");
 						String Subscribers = df.format(list.get(i).getSubscribers());
 						String AvgViewers = df.format(list.get(i).getAvgviewers());
+						String nickname = list.get(i).getNickname();
 			%>
 			<div class="list_01">
 				<div class="list_01_div01">
@@ -157,9 +158,9 @@
 					</p>
 				</div>
 				<div class="list_01_div02">
-					<a href="creator.finad?url=creator" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
+					<a href="creator.finad?&nickname=abcd" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
 						<div>
-							<span class="div_img"><%=list.get(i).getNickname()%></span>
+							<span class="div_img"><%=nickname%></span>
 						</div> </a>
 				</div>
 				<div class="list_01_div03">
