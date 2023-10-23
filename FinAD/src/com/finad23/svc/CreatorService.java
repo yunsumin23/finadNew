@@ -1,5 +1,25 @@
 package com.finad23.svc;
 
-public class CreatorService {
 
+
+import java.sql.Connection;
+
+import com.finad23.DAO.FinadDAO;
+import com.finad23.jjj.Influ_info;
+import static com.finad23.db.JdbcUtil.*;
+
+public class CreatorService {
+	
+	public Influ_info getArticle(String id) throws Exception {
+		
+		Influ_info article = null;
+		Connection conn = getConnection();
+		FinadDAO finadDAO = FinadDAO.getInstance();
+		finadDAO.setConnection(conn);
+		
+		
+		return null;
+		
+	}
+	
 }

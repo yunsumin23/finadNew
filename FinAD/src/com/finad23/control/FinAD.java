@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.finad23.action.FinadAction;
 
 import com.finad23.action.BoardListAction;
+import com.finad23.action.CreatorAct;
 import com.finad23.VO.ActionForward;
 
 public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
@@ -696,9 +697,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				System.out.println(e);
 			}
-			
-		} 
 
 	}
 
-}
+	}}
