@@ -1,6 +1,10 @@
 #company_board_category_container {
 	width: 1300px;
 	margin: 0 auto;
+	margin-top: 80px;
+}
+h1{
+	margin-bottom: 20px;
 }
 #written_container{
     
@@ -125,7 +129,7 @@ table tr td span {
 	width:1300px;
 	margin: 0 auto;
 	margin-top: 10px;
-	margin-left: 1244px;
+	padding-left: 1244px;
 }
 #company_board_write_btn input {
 	width: 55px;

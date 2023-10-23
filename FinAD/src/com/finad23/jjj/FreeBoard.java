@@ -50,7 +50,7 @@ public class FreeBoard {
 		
 		try {
 			statement = connection.createStatement();
-			resultSet = statement.executeQuery("select * from project.freeboard;");
+			resultSet = statement.executeQuery("select * from project.freeboard ORDER BY freeboardnumber DESC;");
 			while(resultSet.next()) {
 				BoardDTO boardDTO = new BoardDTO();
 				boardDTO.setNumber(resultSet.getInt("freeboardnumber"));

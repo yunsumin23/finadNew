@@ -41,7 +41,7 @@ import com.finad23.VO.PageInfo;
 		rq.setAttribute("pageInfo", pageInfo);
 		rq.setAttribute("articleList", articleList);
 		ActionForward forward= new ActionForward();
-   		forward.setPath("/qna_board_list.jsp");
+   		forward.setPath("/free_board.jsp");
    		return forward;
    		
 	 }

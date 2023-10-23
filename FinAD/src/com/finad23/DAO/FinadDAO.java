@@ -43,7 +43,7 @@ public class FinadDAO {
 		ResultSet rs = null;
 
 		try{
-			pstmt=con.prepareStatement("select count(*) from board");
+			pstmt=con.prepareStatement("select count(*) from freeboard");
 			rs = pstmt.executeQuery();
 
 			if(rs.next()){

@@ -696,15 +696,8 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			} catch (Exception e) {
 				System.out.println(e);
 			}
-			//페이징
-		} else if(command.equals("/boardList.bo")){
-			action = new BoardListAction();
-			try{
-				forward=action.excute(rq, rs);
-			}catch(Exception e){
-				e.printStackTrace();
-			}
-		}
+			
+		} 
 
 	}
 

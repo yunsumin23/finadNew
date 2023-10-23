@@ -3,15 +3,18 @@
 /* free_board */
 #table_header{
 	width: 1300px;
+	height:1100px;
 	margin: 0 auto;
 	margin-top: 80px;
 }
-
-a {
+h1{
+	margin-bottom: 20px;
+}
+#table_header table tr td a {
     color: black; /* 원하는 색상으로 변경 */
     text-decoration: none; /* 밑줄 제거 */
 }
-a:visited {
+#table_header table tr td a:visited {
     color: #808080; /* 클릭 후의 색상 */
     text-decoration: none; /* 밑줄 제거 */
 }
@@ -56,7 +59,7 @@ table th:nth-child(6) {
 	width:1300px;
 	margin: 0 auto;
 	margin-top: 10px;
-	margin-left: 955px;
+	padding-left: 955px;
 }
 #free_board_write_btn input {
 	width: 55px;
@@ -73,6 +76,16 @@ select{
 	height: 25px;
 	text-align: center;
 }
+/*페이징*/
+#pageList{
+	text-align: center;
+}
+#pageList a{
+	color: black;
+	text-decoration: none; /* 밑줄 제거 */
+}
+
+
 #free_board_search input[type="search"] {
 	width: 200px;
 	height: 25px;
