@@ -20,22 +20,4 @@
 </servlet-mapping>
 
 
-<servlet>
-
-<servlet-name>sfinad</servlet-name>
-
-<servlet-class>com.finad23.control.FinAD</servlet-class>
-
-</servlet>
-
-
-<servlet-mapping>
-
-<servlet-name>finad</servlet-name>
-
-<url-pattern> *.finad</url-pattern>
-
-</servlet-mapping>
-
-
 </web-app>
