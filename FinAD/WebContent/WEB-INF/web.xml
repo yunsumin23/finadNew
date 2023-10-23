@@ -24,7 +24,7 @@
 
 <servlet-name>finad23</servlet-name>
 
-<servlet-class>com.finad23.control.FinAD</servlet-class>
+<servlet-class>com.finad23.control.FinadSecController</servlet-class>
 
 </servlet>
 

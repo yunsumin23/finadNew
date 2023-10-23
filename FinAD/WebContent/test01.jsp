@@ -9,13 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-List<CateSearchDTO> list = (List<CateSearchDTO>) request.getAttribute("List");
-if (list != null && !list.isEmpty()) {
-	out.println(list.get(0).getNickname());
-} else {
-    out.println("없다 다시 돌아가라");
-}
-%>
+1234
 </body>
 </html>

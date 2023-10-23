@@ -10,16 +10,19 @@ import static com.finad23.db.JdbcUtil.*;
 
 public class CreatorService {
 	
-	public Influ_info getArticle(String id) throws Exception {
+	public Influ_info getArticle(String nickname) throws Exception {
 		
 		Influ_info article = null;
 		Connection conn = getConnection();
 		FinadDAO finadDAO = FinadDAO.getInstance();
 		finadDAO.setConnection(conn);
 		
+//		System.out.println("service페이지 "  + nickname);
 		
-		return null;
-		
+		article = finadDAO.creator(nickname);
+		close(conn);
+		return article;
+
 	}
 	
 }

@@ -158,7 +158,7 @@
 					</p>
 				</div>
 				<div class="list_01_div02">
-					<a href="creator.finad?&nickname=abcd" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
+					<a href="creator.finad23?nickname=<%=nickname %>" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
 						<div>
 							<span class="div_img"><%=nickname%></span>
 						</div> </a>

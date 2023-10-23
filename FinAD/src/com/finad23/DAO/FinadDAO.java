@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 import com.finad23.DTO.BoardDTO;
+import com.finad23.jjj.Influ_info;
 
 
 
@@ -94,6 +95,49 @@ public class FinadDAO {
 		return articleList;
 
 	}
-	
+	public Influ_info creator(String nickname) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Influ_info influ_info = null;
+//		System.out.println("DAO페이지 " + nickname);
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			pstmt = con.prepareStatement(
+					"SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.nickName LIKE CONCAT('%" + nickname + "%') ORDER BY user_mypage.subscribers DESC");
+//					"SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.nickName LIKE '%?%' ORDER BY user_mypage.subscribers DESC");
+//			pstmt.setString(1, nickname);
+			System.out.println(nickname + "ㅗㅗㅗㅗㅗㅗㅗㅗ");
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				influ_info = new Influ_info();
+				influ_info.setNickname(rs.getString("nickName"));
+				influ_info.setCategory(rs.getString("category"));
+				influ_info.setSubscribers(rs.getInt("subscribers"));
+				influ_info.setImage(rs.getString("image"));
+				influ_info.setYoutuLink(rs.getString("youtubeLink"));
+				influ_info.setLiveBcLink(rs.getString("liveBroadcastLink"));
+				influ_info.setSnsLink(rs.getString("snsLink"));
+				influ_info.setIntroduc(rs.getString("introduction"));
+				influ_info.setAvgviewers(rs.getInt("avgviewers"));
+				influ_info.setThravgSub(rs.getInt("30avgSub"));
+				influ_info.setThravgViewer(rs.getInt("30avgViewer"));
+				influ_info.setThravgHit(rs.getInt("30avgHits"));
+				influ_info.setMan_ratio(rs.getDouble("man_ratio"));
+				influ_info.setWoman_ratio(rs.getDouble("woman_ratio"));
+				influ_info.setTenAge(rs.getDouble("ageAvg10"));
+				influ_info.setTweAge(rs.getDouble("ageAvg20"));
+				influ_info.setThrAge(rs.getDouble("ageAvg30"));
+				influ_info.setForAge(rs.getDouble("ageAvg40"));
+				influ_info.setFifAge(rs.getDouble("ageAvg50"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return influ_info;
+	}
 	
 }
