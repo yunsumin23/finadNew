@@ -1,4 +1,5 @@
 <%@page import="java.util.ArrayList"%>
+<%@page import="com.finad23.VO.PageInfo" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.finad23.DTO.BoardDTO"%>
@@ -12,6 +13,18 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/free_board.js"></script>
 <script>
+<%
+ArrayList<BoardDTO> articleList=(ArrayList<BoardDTO>)request.getAttribute("articleList");
+PageInfo pageInfo = (PageInfo)request.getAttribute("pageInfo");
+%>
+<% if (pageInfo != null) { 
+int listCount = pageInfo.getListCount();
+int nowPage = pageInfo.getPage();
+int maxPage = pageInfo.getMaxPage();
+int startPage = pageInfo.getStartPage();
+int endPage = pageInfo.getEndPage();
+ } %>
+
 var id = '<%= session.getAttribute("id") %>';
 var password = '<%= session.getAttribute("password") %>';
 
@@ -79,6 +92,29 @@ function check_login() {
 				<input type="submit" value="글쓰기">
 			</form>
 		</div>
+		<section id="pageList">
+		<%if(nowPage<=1){ %>
+		[이전]&nbsp;
+		<%}else{ %>
+		<a href="boardList.bo?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
+		<%} %>
+
+		<%for(int a=startPage;a<=endPage;a++){
+				if(a==nowPage){%>
+		[<%=a %>]
+		<%}else{ %>
+		<a href="boardList.bo?page=<%=a %>">[<%=a %>]
+		</a>&nbsp;
+		<%} %>
+		<%} %>
+
+		<%if(nowPage>=maxPage){ %>
+		[다음]
+		<%}else{ %>
+		<a href="boardList.bo?page=<%=nowPage+1 %>">[다음]</a>
+		<%} %>
+	</section>
+	
 		<div id="free_board_search">
 			<form action="free_board.jsp">
 				<select>

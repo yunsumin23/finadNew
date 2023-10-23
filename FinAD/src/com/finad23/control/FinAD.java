@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import com.finad23.action.FinadAction;
+
+import com.finad23.action.BoardListAction;
+import com.finad23.VO.ActionForward;
+
 public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 
 	@Override
@@ -23,6 +29,13 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 		System.out.println("filter " + filter);
 		System.out.println("catesearch " + catesearch);
 		ConInter inter = null;
+		//.bo
+		rq.setCharacterEncoding("UTF-8");
+		String RequestURI=rq.getRequestURI();
+		String contextPath=rq.getContextPath();
+		String command=RequestURI.substring(contextPath.length());
+		ActionForward forward=null;
+		FinadAction action=null;
 		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요 / 싫은데요?
 
 		if (url.equals("select")) {
@@ -682,6 +695,14 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				re.forward(rq, rs);
 			} catch (Exception e) {
 				System.out.println(e);
+			}
+			//페이징
+		} else if(command.equals("/boardList.bo")){
+			action = new BoardListAction();
+			try{
+				forward=action.excute(rq, rs);
+			}catch(Exception e){
+				e.printStackTrace();
 			}
 		}
 

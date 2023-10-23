@@ -161,7 +161,7 @@ table tr td span {
       display: block;
       left: 0;
       top: 0;
-      position: relative;
+      position: absolute;
       transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
     }
     &:checked {
