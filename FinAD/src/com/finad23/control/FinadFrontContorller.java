@@ -11,7 +11,7 @@ import com.finad23.VO.ActionForward;
 import com.finad23.action.CreatorAct;
 import com.finad23.action.FinadAction;
 
-@WebServlet("*finad")
+
 public class FinadFrontContorller extends javax.servlet.http.HttpServlet {
 	protected void doProcess(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
 		rq.setCharacterEncoding("UTF-8");
