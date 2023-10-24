@@ -17,7 +17,7 @@ public class CreatorService {
 		FinadDAO finadDAO = FinadDAO.getInstance();
 		finadDAO.setConnection(conn);
 		
-		System.out.println("service페이지 "  + nickname);
+//		System.out.println("service페이지 "  + nickname);
 		
 		article = finadDAO.creator(nickname);
 		close(conn);

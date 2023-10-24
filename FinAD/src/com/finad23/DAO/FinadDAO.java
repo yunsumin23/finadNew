@@ -99,7 +99,7 @@ public class FinadDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Influ_info influ_info = null;
-		System.out.println("DAO페이지 " + nickname);
+//		System.out.println("DAO페이지 " + nickname);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			pstmt = conn.prepareStatement(
@@ -110,7 +110,7 @@ public class FinadDAO {
 			//					"SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.nickName LIKE '%?%' ORDER BY user_mypage.subscribers DESC");
 //			pstmt.setString(1, nickname);
 //			pstmt = conn.prepareStatement("select * from user");
-			System.out.println("ㅗㅗㅗㅗㅗㅗㅗㅗ" + nickname);
+//			System.out.println("ㅗㅗㅗㅗㅗㅗㅗㅗ" + nickname);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

@@ -15,12 +15,12 @@ public class CreatorAction implements FinadAction{
 		String nickname = rq.getParameter("nickname");
 		CreatorService creatorService = new CreatorService();
 		Influ_info article = creatorService.getArticle(nickname);
-		System.out.println("action페이지 " + nickname);
+//		System.out.println("action페이지 " + nickname);
 		ActionForward forward = new ActionForward();
 		rq.setAttribute("nickname", nickname);
 		rq.setAttribute("article", article);
 		forward.setPath("/creator_page.jsp");
-		System.out.println("ksndk "+ article.getNickname());
+//		System.out.println("ksndk "+ article.getNickname());
 		return forward;
 		
 	}
