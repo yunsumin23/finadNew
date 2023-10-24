@@ -79,34 +79,34 @@ table tr td span {
     text-align: center;
 }
 #company_board_container table th:nth-child(2) {
-    width: 400px;
+    width: 340px;
 }
 #company_board_container table th:nth-child(3) {
-	width: 175px;
+	width: 150px;
 }
 #company_board_container table td:nth-child(3) {
     text-align: center;
 }
 #company_board_container table th:nth-child(4) {
-	width: 85px;
+	width: 100px;
 }
 #company_board_container table td:nth-child(4) {
     text-align: center;
 }
 #company_board_container table th:nth-child(5) {
-	width: 85px;
+	width: 100px;
 }
 #company_board_container table td:nth-child(5) {
     text-align: center;
 }
 #company_board_container table th:nth-child(6) {
-	width: 85px;
+	width: 100px;
 }
 #company_board_container table td:nth-child(6) {
     text-align: center;
 }
 #company_board_container table th:nth-child(7) {
-	width: 85px;
+	width: 100px;
 }
 #company_board_container table td:nth-child(7) {
     text-align: center;
@@ -118,7 +118,7 @@ table tr td span {
     text-align: center;
 }
 #company_board_container table th:nth-child(9) {
-	width: 85px;
+	width: 100px;
 }
 #company_board_container table td:nth-child(9) {
     text-align: center;

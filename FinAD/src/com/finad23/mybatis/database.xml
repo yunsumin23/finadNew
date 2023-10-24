@@ -13,7 +13,7 @@
 	</select>
 	<select id="companyBoardID"
 		resultType="com.finad23.DTO.CompanyBoardDTO">
-		select * from project.companyboard;
+		select * from project.companyboard  ORDER BY companyBoardNum DESC;
 	</select>
 	<select id="companyWriteID"
 		resultType="com.finad23.DTO.CompanyBoardDTO">

@@ -42,7 +42,7 @@
 			<table border="1">
 				<tr>
 					<td class="title">제목</td>
-					<td class="content" colspan="3"><input type="text" id="content_title"></td>
+					<td class="content" colspan="3"><input type="text" name="title" id="content_title"></td>
 				</tr>
 				<tr>
 					<td class="title">회사명</td>

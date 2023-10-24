@@ -5,7 +5,7 @@ public class CompanyBoardDTO {
 	private String title, companyName, companyInfo1, companyInfo2, companyInfo3; //제목, 마케팅 담당자 정보
 	private String recruitmentDate1, recruitmentDate2, promotionDate1, promotionDate2; //모집 기간, 광고기간
 	private String recruitmentNum, avgViewers, subscribers, sex; //모집인원, 평균 시청자 , 최소 구독자수
-	private Boolean underachiever; //미달자 지원
+	private String underachiever; //미달자 지원
 	private int promotionMoney; //총 광고 진행비
 	private String promotionType, previousPromotion1, previousPromotion2, previousPromotion3; //광고 유형, 이전 광고 사례
 	private String text, companyWriteDate; //광고 내용, 작성일
@@ -93,10 +93,10 @@ public class CompanyBoardDTO {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	public Boolean getUnderachiever() {
+	public String getUnderachiever() {
 		return underachiever;
 	}
-	public void setUnderachiever(Boolean underachiever) {
+	public void setUnderachiever(String underachiever) {
 		this.underachiever = underachiever;
 	}
 	public int getPromotionMoney() {
