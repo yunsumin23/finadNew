@@ -61,7 +61,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			inter = CBoardInsert.instance();
 			try {
 				String cboardWrited = inter.FinAD(rq, rs);
-				RequestDispatcher re = rq.getRequestDispatcher("company_board.jsp");
+				RequestDispatcher re = rq.getRequestDispatcher("test01.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {
 				System.out.println(e);
