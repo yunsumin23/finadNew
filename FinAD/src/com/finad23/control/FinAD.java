@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.finad23.action.FinadAction;
 
 import com.finad23.action.BoardListAction;
-import com.finad23.action.CreatorAct;
+//import com.finad23.action.CreatorAct;
 import com.finad23.VO.ActionForward;
 
 public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
@@ -39,10 +39,10 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 //		FinadAction action=null;
 		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요 / 싫은데요?
 
-		if (url.equals("select")) {
+		if (url.equals("CBoard")) {
 			inter = CBoardExtr.instance();
 			try {
-				String n = inter.FinAD(rq, rs);
+				String cboard = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("company_board.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {
