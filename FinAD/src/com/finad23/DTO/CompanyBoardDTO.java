@@ -4,7 +4,9 @@ public class CompanyBoardDTO {
 	private int companyBoardNum;
 	private String title, companyName, companyInfo1, companyInfo2, companyInfo3; //제목, 마케팅 담당자 정보
 	private String recruitmentDate1, recruitmentDate2, promotionDate1, promotionDate2; //모집 기간, 광고기간
-	private String recruitmentNum, avgViewers, subscribers, sex; //모집인원, 평균 시청자 , 최소 구독자수
+	private String recruitmentNum; //모집인원
+	private int avgViewers, subscribers; //모집인원, 평균 시청자
+	private String sex; // 최소 구독자수
 	private String underachiever; //미달자 지원
 	private int promotionMoney; //총 광고 진행비
 	private String promotionType, previousPromotion1, previousPromotion2, previousPromotion3; //광고 유형, 이전 광고 사례
@@ -75,16 +77,17 @@ public class CompanyBoardDTO {
 	public void setRecruitmentNum(String recruitmentNum) {
 		this.recruitmentNum = recruitmentNum;
 	}
-	public String getAvgViewers() {
+
+	public int getAvgViewers() {
 		return avgViewers;
 	}
-	public void setAvgViewers(String avgViewers) {
+	public void setAvgViewers(int avgViewers) {
 		this.avgViewers = avgViewers;
 	}
-	public String getSubscribers() {
+	public int getSubscribers() {
 		return subscribers;
 	}
-	public void setSubscribers(String subscribers) {
+	public void setSubscribers(int subscribers) {
 		this.subscribers = subscribers;
 	}
 	public String getSex() {
