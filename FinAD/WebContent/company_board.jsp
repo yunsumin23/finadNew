@@ -145,7 +145,6 @@
 			<form action = "company_board.finad?url=CBoardWrite" onsubmit="return check_login();" method="post">
 				<input type="submit" value="글쓰기">
 			</form>
-			<a href="company_board.finad?url=CBoardWrite">sex</a>
 	</div>
 	
 <!-- 	기업 회원만 버튼 보이게 하는 조건문 [테스트를 위해 주석 처리] -->

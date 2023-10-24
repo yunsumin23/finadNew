@@ -22,7 +22,7 @@ public class SqlInsert {
 		
 //		System.out.println(user.getInfluUserId()); // 혹시 시스템에 찍히는지 찍어봄
 		
-		int i = session.insert("insertId", CBoard); // int타입으로 담아야함
+		int i = session.insert("companyWriteID", CBoard); // int타입으로 담아야함
 //		이유는 insert 자동 완성 문구에 보면 int가 있어서 일단 int i로 담아 둔거임.
 		session.commit();
 		session.close(); // close를 해야한다.

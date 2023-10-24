@@ -38,7 +38,7 @@
 	<%-- 	}%> --%>
 
 	<div id="write_container">
-		<form action="" method="post">
+		<form action="company_board.jsp?url=CBoardWrited" method="post">
 			<table border="1">
 				<tr>
 					<td class="title">제목</td>
