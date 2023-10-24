@@ -61,50 +61,50 @@
 				<tr>
 					<td class="title">모집 기간</td>
 					<td class="content2" colspan="1">
-						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" value="2023-08-23"> ~ 
-						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" value="2023-08-23">
+						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="recruitmentDate1" value="2023-08-23"> ~ 
+						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="recruitmentDate2" value="2023-08-23">
 					</td>
 					<td class="title">홍보 기간</td>
-					<td class="content2" colspan="1"><input type="date" class="write_date" max="2100-12-31" min="2023-08-23" value="2023-08-23"> ~ 
-						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" value="2023-08-23">
+					<td class="content2" colspan="1"><input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="promotionDate1" value="2023-08-23"> ~ 
+						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="promotionDate2" value="2023-08-23">
 					</td>
 				</tr>
 				<tr>
 					<td class="title">모집 인원</td>
-					<td class="content3"><input type="text"><span> 명</span></td>
+					<td class="content3"><input type="text" name="recruitmentNum"><span> 명</span></td>
 					<td class="title">성별</td>
 					<td class="content2">
 						<div class="write_text">
-							<input type="radio" name="gender" value="남자">남성 
-							<input type="radio" name="gender" value="여자">여성
+							<input type="radio" name="sex" value="남자">남성 
+							<input type="radio" name="sex" value="여자">여성
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td class="title">평균 시청자</td>
-					<td class="content3"><input type="text"><span> 명</span></td>
+					<td class="content3"><input type="text" name="avgViewers"><span> 명</span></td>
 					<td class="title">구독자 수</td>
-					<td class="content3"><input type="text"><span> 만명</span></td>
+					<td class="content3"><input type="text" name="subscribers"><span> 만명</span></td>
 				</tr>
 				<tr>
 					<td class="title">미달자 지원</td>
 					<td class="content2">
-						<input type="radio" name="gender" value="yes">O 
-						<input type="radio" name="gender" value="no">X
+						<input type="radio" name="underachiever" value="yes">O 
+						<input type="radio" name="underachiever" value="no">X
 					</td>
 					<td class="title">총 광고진행비</td>
-					<td class="content3"><input type="text"><span> 만원</span></td>
+					<td class="content3"><input type="text" name="promotionMoney"><span> 만원</span></td>
 				</tr>
 				<tr>
 					<td class="title">광고 유형</td>
 					<td class="content2" colspan="3">
-						<input type="checkbox" name="adtype" value="남자"> 생방송 
-						<input type="checkbox" name="adtype" value="여자"> 유튜브 리뷰 
-						<input type="checkbox" name="adtype" value="남자"> 유튜브 콘텐츠 
-						<input type="checkbox" name="adtype" value="여자"> 홍보모델 
-						<input type="checkbox" name="adtype" value="남자"> 홍보배너 
-						<input type="checkbox" name="adtype" value="여자"> CF 
-						<input type="checkbox" name="adtype" value="여자"> 기타
+						<input type="checkbox" name="promotionType" value="생방송"> 생방송 
+						<input type="checkbox" name="promotionType" value="유튜브 리뷰 "> 유튜브 리뷰 
+						<input type="checkbox" name="promotionType" value="유튜브 콘텐츠 "> 유튜브 콘텐츠 
+						<input type="checkbox" name="promotionType" value="홍보모델 "> 홍보모델 
+						<input type="checkbox" name="promotionType" value="홍보배너 "> 홍보배너 
+						<input type="checkbox" name="promotionType" value="CF"> CF 
+						<input type="checkbox" name="promotionType" value="기타"> 기타
 					</td>
 				</tr>
 				<tr>
@@ -118,7 +118,7 @@
 					<td class="content" colspan="3">값 불러옴(미구현)</td>
 				</tr>
 				<tr>
-					<td colspan="6"><textarea name="input_text" id="editor"></textarea></td>
+					<td colspan="6"><textarea name="input_text" name="text" id="editor"></textarea></td>
 				</tr>
 
 			</table>

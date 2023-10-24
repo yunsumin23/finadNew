@@ -23,7 +23,7 @@
 		  values(#{title},#{companyName},#{companyInfo1},#{companyInfo2},#{companyInfo3},#{recruitmentDate1},
 		  #{recruitmentDate2},#{promotionDate1},#{promotionDate2},#{recruitmentNum},#{avgViewers},#{subscribers},
 		  #{sex},#{underachiever},#{promotionMoney},#{promotionType},#{previousPromotion1},#{previousPromotion2},
-		  #{previousPromotion3},#{text},#{companyWriteDate})
+		  #{previousPromotion3},#{text},CURRENT_TIMESTAMP)
 
 	</insert>
 	<select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">

@@ -29,9 +29,9 @@ public class CBoardInsert implements ConInter {
 		String promotionDate1 = rq.getParameter("promotionDate1");
 		String promotionDate2 = rq.getParameter("promotionDate2");
 		String recruitmentNum = rq.getParameter("recruitmentNum");
+		String sex = rq.getParameter("sex");
 		int avgViewers = Integer.parseInt(rq.getParameter("avgViewers"));
 		int subscribers = Integer.parseInt(rq.getParameter("subscribers"));
-		String sex = rq.getParameter("sex");
 		String  underachiever = rq.getParameter("underachiever");
 		int promotionMoney = Integer.parseInt(rq.getParameter("promotionMoney"));
 		String promotionType = rq.getParameter("promotionType");
@@ -39,7 +39,7 @@ public class CBoardInsert implements ConInter {
 		String previousPromotion2 = "e";//rq.getParameter("previousPromotion2");
 		String previousPromotion3 = "f";//rq.getParameter("previousPromotion3");
 		String text = rq.getParameter("text");
-		String companyWriteDate = rq.getParameter("companyWriteDate");
+//		String companyWriteDate = rq.getParameter("companyWriteDate");
 		
 		CompanyBoardDTO companyBoardDTO = new CompanyBoardDTO();
 		companyBoardDTO.setTitle(title);
@@ -63,7 +63,7 @@ public class CBoardInsert implements ConInter {
 		companyBoardDTO.setPreviousPromotion2(previousPromotion2);
 		companyBoardDTO.setPreviousPromotion3(previousPromotion3);
 		companyBoardDTO.setText(text);
-		companyBoardDTO.setCompanyWriteDate(companyWriteDate);
+//		companyBoardDTO.setCompanyWriteDate(companyWriteDate);
 		
 		
 		SqlInsert insert = SqlInsert.instance();
