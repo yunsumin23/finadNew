@@ -20,7 +20,7 @@ import com.finad23.jjj.Influ_info;
 
 public class FinadDAO {
 	DataSource ds;
-	Connection con;
+	Connection conn;
 	private static FinadDAO finadDAO;
 	
 	private FinadDAO() {
@@ -34,7 +34,7 @@ public class FinadDAO {
 	}
 	
 	public void setConnection(Connection conn) {
-		this.con = con;
+		this.conn = conn;
 	}
 	
 	public int selectListCount() {
@@ -44,7 +44,7 @@ public class FinadDAO {
 		ResultSet rs = null;
 
 		try{
-			pstmt=con.prepareStatement("select count(*) from freeboard");
+			pstmt=conn.prepareStatement("select count(*) from freeboard");
 			rs = pstmt.executeQuery();
 
 			if(rs.next()){
@@ -70,7 +70,7 @@ public class FinadDAO {
 		int startrow=(page-1)*10; 
 
 		try{
-			pstmt = con.prepareStatement(board_list_sql);
+			pstmt = conn.prepareStatement(board_list_sql);
 			pstmt.setInt(1, startrow);
 			rs = pstmt.executeQuery();
 
@@ -99,14 +99,18 @@ public class FinadDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Influ_info influ_info = null;
-//		System.out.println("DAO페이지 " + nickname);
+		System.out.println("DAO페이지 " + nickname);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			pstmt = con.prepareStatement(
-					"SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.nickName LIKE CONCAT('%" + nickname + "%') ORDER BY user_mypage.subscribers DESC");
-//					"SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.nickName LIKE '%?%' ORDER BY user_mypage.subscribers DESC");
+			pstmt = conn.prepareStatement(
+					"SELECT user.*, user_mypage.*"
+					+ "FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId "
+					+ "WHERE user.nickName LIKE CONCAT('%" + nickname + "%') ORDER BY user_mypage.subscribers DESC");
+
+			//					"SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.nickName LIKE '%?%' ORDER BY user_mypage.subscribers DESC");
 //			pstmt.setString(1, nickname);
-			System.out.println(nickname + "ㅗㅗㅗㅗㅗㅗㅗㅗ");
+//			pstmt = conn.prepareStatement("select * from user");
+			System.out.println("ㅗㅗㅗㅗㅗㅗㅗㅗ" + nickname);
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -131,6 +135,9 @@ public class FinadDAO {
 				influ_info.setForAge(rs.getDouble("ageAvg40"));
 				influ_info.setFifAge(rs.getDouble("ageAvg50"));
 			}
+			
+//			System.out.println(influ_info.getNickname());
+//			System.out.println(influ_info.getSnsLink());
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {

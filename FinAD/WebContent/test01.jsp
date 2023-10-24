@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.List"%>
-<%@ page import="com.finad23.DTO.CateSearchDTO"%>
+<%@page import="com.finad23.jjj.Influ_info" %>
+<%
+	Influ_info article = (Influ_info)request.getAttribute("article");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +11,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-1234
+<%
+	if(article != null) {
+		out.println(article.getNickname());
+	} else {
+		out.println("안된다 이녀석아");
+	}
+%>
 </body>
 </html>
