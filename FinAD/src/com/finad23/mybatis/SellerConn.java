@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import com.finad23.DTO.AdstoreReviewDTO;
+import com.finad23.DTO.SellerDTO;
 
 public class SellerConn {
     static SellerConn sellerConn = new SellerConn();
@@ -15,12 +15,13 @@ public class SellerConn {
 
     SqlSessionFactory sqlsession = SqlConnect.getSqlSession();
 
-    public List<AdstoreReviewDTO> sqlSelect(AdstoreReviewDTO adr) {
+    public List<SellerDTO> sqlSelect(String sell) {
         SqlSession sqlSession = sqlsession.openSession();
 
-        List<AdstoreReviewDTO> list = sqlSession.selectList("itemReviewNumber", adr);
+        List<SellerDTO> list = sqlSession.selectList("itemReviewNumber", sell);
         sqlSession.close();
         return list;
-
+//        sqlSession.select("itemReviewNumber", sell);
+        
 	}
 }

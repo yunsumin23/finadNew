@@ -85,10 +85,15 @@
     ]]>
 
 	</select>
-	<select id="itemReviewNumber" resultType="com.finad23.DTO.AdstoreReviewDTO">
-    	SELECT itemReviewNumber, itemBuyer, itemReviewText, attachedFile, reviewTitle
-    	FROM project.adstorereview;
+	
+	<select id="itemReviewNumber" resultType="com.finad23.DTO.SellerDTO"
+		parameterType="com.finad23.DTO.SellerDTO">
+		SELECT adstore.*, adstorereview.* 
+		FROM project.adstore
+		LEFT JOIN project.adstorereview ON adstore.itemNumber = adstorereview.nomalUserId
+		WHERE adstore.itemNumber LIKE CONCAT('%1%');
 	</select>
+	
 	<select id="cateSearchId" resultType="com.finad23.DTO.CateSearchDTO" parameterType="com.finad23.DTO.CateSearchDTO">
 	SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers
 	FROM project.user

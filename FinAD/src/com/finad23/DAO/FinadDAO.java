@@ -99,18 +99,16 @@ public class FinadDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Influ_info influ_info = null;
-//		System.out.println("DAO페이지 " + nickname);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			pstmt = conn.prepareStatement(
 					"SELECT user.*, user_mypage.*"
-					+ "FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId "
-					+ "WHERE user.nickName LIKE CONCAT('%" + nickname + "%') ORDER BY user_mypage.subscribers DESC");
-
-			//					"SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId WHERE user.nickName LIKE '%?%' ORDER BY user_mypage.subscribers DESC");
-//			pstmt.setString(1, nickname);
-//			pstmt = conn.prepareStatement("select * from user");
-//			System.out.println("ㅗㅗㅗㅗㅗㅗㅗㅗ" + nickname);
+					+ "FROM project.user LEFT JOIN project.user_mypage "
+					+ "ON user.influUserId "
+					+ "= user_mypage.influUserId "
+					+ "WHERE user.nickName LIKE "
+					+ "CONCAT('%" + nickname + "%') "
+					+ "ORDER BY user_mypage.subscribers DESC");
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -135,9 +133,6 @@ public class FinadDAO {
 				influ_info.setForAge(rs.getDouble("ageAvg40"));
 				influ_info.setFifAge(rs.getDouble("ageAvg50"));
 			}
-			
-//			System.out.println(influ_info.getNickname());
-//			System.out.println(influ_info.getSnsLink());
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {

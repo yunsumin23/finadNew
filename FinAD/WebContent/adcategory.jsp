@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADstore</title>
+<title>AdCategory</title>
 <link rel="stylesheet" href="css/adstore.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -37,45 +37,6 @@
 		Adstore adstorelist = new Adstore();
 		ArrayList<AdstoreDTO> jjj = adstorelist.getAdstoreList();
 	%>
-	<div id="contain">
-		<span class="slideshow-container">
-			<div id="hhh">
-				<div class="Slidesbackground">
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/fashionban.jpg"
-							class="slideshow-image"></a>
-					</div>
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/campban.jpg"
-							class="slideshow-image"></a>
-					</div>
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/electroban.jpg"
-							class="slideshow-image"></a>
-					</div>
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/beautyban.jpg"
-							class="slideshow-image"></a>
-					</div>
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/foodban.jpg"
-							class="slideshow-image"></a>
-					</div>
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/petban.jpg"
-							class="slideshow-image"></a>
-					</div>
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/kidban.jpg"
-							class="slideshow-image"></a>
-					</div>
-					<div class="mySlides fade">
-						<a href="sellpage.jsp"><img src="img/healthban.jpg"
-							class="slideshow-image"></a>
-					</div>
-				</div>
-			</div>
-		</span>
 
 		<div class="advertising_type">
 			<p class="advertising_type_p"></p>

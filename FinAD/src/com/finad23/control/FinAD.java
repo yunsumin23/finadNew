@@ -709,7 +709,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 				|| url.equals("6") || url.equals("7") || url.equals("8") || url.equals("9")) {
 			inter = SellerExtr.instance();
 			try {
-				String s = inter.FinAD(rq, rs);
+				String sell = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("sellpage.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {

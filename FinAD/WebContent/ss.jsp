@@ -144,6 +144,7 @@
 						DecimalFormat df = new DecimalFormat("#,###");
 						String Subscribers = df.format(list.get(i).getSubscribers());
 						String AvgViewers = df.format(list.get(i).getAvgviewers());
+						String nickname = list.get(i).getNickname();
 			%>
 			<div class="list_01">
 				<div class="list_01_div01">
@@ -154,7 +155,7 @@
 					</p>
 				</div>
 				<div class="list_01_div02">
-					<a href="creator_page.html" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
+					<a href="creator.finad23?nickname=<%=nickname %>" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
 						<div>
 							<span class="div_img"><%=list.get(i).getNickname()%></span>
 						</div> </a>
