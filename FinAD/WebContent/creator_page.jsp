@@ -37,7 +37,7 @@
 				<a href=<%=article.getYoutuLink() %> target="_blank"><img src="img/<%=article.getImage() %>" alt="" class="creatorimg"></a>
 				<ul>
 					<li>
-						<p>닉네임 : <%=article.getNickname() %></p>
+						<p>활동명 : <%=article.getNickname() %></p>
 					</li>
 					<li>
 						<p>한국어 | 한국</p>
@@ -51,6 +51,9 @@
 					</li>
 				</ul>
 				<div class="button_div">
+					<form action="">
+						<input type="button" name="creator_button" class="creator_button" value="인플루언서 비교하기">
+					</form>
 					<form action="jsp/creator_page.jsp" name="button" method="post">
 						<input type="button" name="creator_button" class="creator_button" value="<%=article.getNickname() %> 연락하기">
 					</form>
