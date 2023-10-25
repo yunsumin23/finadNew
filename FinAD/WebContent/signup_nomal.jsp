@@ -61,7 +61,7 @@
 		} catch (Exception ignored) {
 			
 		}
-		response.sendRedirect("signup_final.html");
+		response.sendRedirect("main.jsp");
 	%>
 </body>
 </html>
