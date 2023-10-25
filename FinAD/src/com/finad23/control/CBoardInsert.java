@@ -16,10 +16,10 @@ public class CBoardInsert implements ConInter {
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		System.out.println("test1");
 		String title = rq.getParameter("title");
-		String companyName = "1234";//rq.getParameter("companyName");
-		String companyInfo1 = "a";//rq.getParameter("companyInfo1");
-		String companyInfo2 = "b";//rq.getParameter("companyInfo2");
-		String companyInfo3 = "c";//rq.getParameter("companyInfo3");
+		String companyName = rq.getParameter("companyName");
+		String companyInfo1 = rq.getParameter("companyInfo1");
+		String companyInfo2 = rq.getParameter("companyInfo2");
+		String companyInfo3 = rq.getParameter("companyInfo3");
 		String recruitmentDate1 = rq.getParameter("recruitmentDate1");
 		String recruitmentDate2 = rq.getParameter("recruitmentDate2");
 		String promotionDate1 = rq.getParameter("promotionDate1");
@@ -31,9 +31,9 @@ public class CBoardInsert implements ConInter {
 		String  underachiever = rq.getParameter("underachiever");
 		int promotionMoney = Integer.parseInt(rq.getParameter("promotionMoney"));
 		String promotionType = rq.getParameter("promotionType");
-		String previousPromotion1 = "d";//rq.getParameter("previousPromotion1");
-		String previousPromotion2 = "e";//rq.getParameter("previousPromotion2");
-		String previousPromotion3 = "f";//rq.getParameter("previousPromotion3");
+		String previousPromotion1 = rq.getParameter("previousPromotion1");
+		String previousPromotion2 = rq.getParameter("previousPromotion2");
+		String previousPromotion3 = rq.getParameter("previousPromotion3");
 		String text = rq.getParameter("text");
 		
 		CompanyBoardDTO CBoardDTO = new CompanyBoardDTO();
@@ -58,36 +58,11 @@ public class CBoardInsert implements ConInter {
 		CBoardDTO.setPreviousPromotion3(previousPromotion3);
 		CBoardDTO.setText(text);
 		
+		System.out.println("test2");
 		SqlInsert insert = SqlInsert.instance();
 		insert.sqlInsert(CBoardDTO);
 		
-		
-		
-		
-		
-		
-//		System.out.println("제목 " + CBoardDTO.getTitle());
-//		System.out.println("담당자정보 " + CBoardDTO.getCompanyInfo1());
-//		System.out.println("담당자정보 " + CBoardDTO.getCompanyInfo2());
-//		System.out.println("담당자정보 " + CBoardDTO.getCompanyInfo3());
-//		System.out.println("모집기간 " + CBoardDTO.getRecruitmentDate1());
-//		System.out.println("모집기간 " + CBoardDTO.getRecruitmentDate2());
-//		System.out.println("홍보기간 " + CBoardDTO.getPromotionDate1());
-//		System.out.println("홍보기간 " + CBoardDTO.getPromotionDate2());
-//		System.out.println("모집인원 " + CBoardDTO.getRecruitmentNum());
-//		System.out.println("평균시청자 " + CBoardDTO.getAvgViewers());
-//		System.out.println("구독자 " + CBoardDTO.getSubscribers());
-//		System.out.println("성별 " + CBoardDTO.getSex());
-//		System.out.println("미달자   " + CBoardDTO.getUnderachiever());
-//		System.out.println("광고진행비 " + CBoardDTO.getPromotionMoney());
-//		System.out.println("광고유형 " + CBoardDTO.getPromotionType());
-//		System.out.println("이전광고사례 " + CBoardDTO.getPreviousPromotion1());
-//		System.out.println("이전광고사례 " + CBoardDTO.getPreviousPromotion2());
-//		System.out.println("이전광고사례 " + CBoardDTO.getPreviousPromotion3());
-//		System.out.println("내용 " + CBoardDTO.getText());
-	
-		
-		System.out.println("test2");
+		System.out.println("test4");
 
 		return null;
 }

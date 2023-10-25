@@ -124,16 +124,26 @@
 		List<CompanyBoardDTO> list = (List<CompanyBoardDTO>) request.getAttribute("List");
 		if (list != null) {
 			for (int i = 0; i < list.size(); i++) {
+				int number = list.get(i).getCompanyBoardNum();
+				String title = list.get(i).getTitle();
+				String companyName = list.get(i).getCompanyName();
+				String recruitmentDate1 =list.get(i).getRecruitmentDate1();
+				String recruitmentDate2 = list.get(i).getRecruitmentDate2();
+				String promotionDate1 = list.get(i).getPromotionDate1();
+				String promotionDate2 = list.get(i).getPromotionDate2();
+				String promotionType = list.get(i).getPromotionType();
+				String companyWriteDate = list.get(i).getCompanyWriteDate();
+				
 				out.println("<tr>");
-				out.println("<td>"+list.get(i).getCompanyBoardNum()+"</td>");
-				out.println("<td>"+list.get(i).getTitle()+"</td>");
-				out.println("<td>"+list.get(i).getCompanyName()+"</td>");
-				out.println("<td>"+list.get(i).getRecruitmentDate1()+"</td>");
-				out.println("<td>"+list.get(i).getRecruitmentDate2()+"</td>");
-				out.println("<td>"+list.get(i).getPromotionDate1()+"</td>");
-				out.println("<td>"+list.get(i).getPromotionDate2()+"</td>");
-				out.println("<td>"+list.get(i).getPromotionType()+"</td>");
-				out.println("<td>"+list.get(i).getCompanyWriteDate()+"</td>");
+				out.println("<td>"+ number +"</td>");
+				out.println("<td><a href='company_board_text.finad?url=CBoard_Text&number=1'>"+ title +"</a></td>");
+				out.println("<td>"+ companyName +"</td>");
+				out.println("<td>"+ recruitmentDate1 +"</td>");
+				out.println("<td>"+ recruitmentDate2 +"</td>");
+				out.println("<td>"+ promotionDate1 +"</td>");
+				out.println("<td>"+ promotionDate2 +"</td>");
+				out.println("<td>"+ promotionType +"</td>");
+				out.println("<td>"+ companyWriteDate +"</td>");
 				out.println("</tr>");
 				}
 		} else {

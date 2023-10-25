@@ -46,7 +46,7 @@
 				</tr>
 				<tr>
 					<td class="title">회사명</td>
-					<td class="content" colspan="3">값 불러옴(미구현)</td>
+					<td class="content" colspan="3"><input type="text" name="title" value=""></td>
 				</tr>
 				<tr>
 					<td class="title" rowspan="3">마케팅 담당자 정보</td>
@@ -75,8 +75,8 @@
 					<td class="title">성별</td>
 					<td class="content2">
 						<div class="write_text">
-							<input type="radio" name="sex" value="남자">남성 
-							<input type="radio" name="sex" value="여자">여성
+							<input type="radio" name="sex" value="male">남성 
+							<input type="radio" name="sex" value="female">여성
 						</div>
 					</td>
 				</tr>

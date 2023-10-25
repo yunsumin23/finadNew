@@ -22,7 +22,7 @@ public class SqlControl {
 		try {
 //			어디 패키지 안에 들어가있는 xml파일을 적으면 된다.(확장자 까지 적어줘야함)
 //			패키지안에 있는걸 사용할려면 패키지를 다 적어야한다.
-			String resource = "com/junpro/mybatis/user.xml";
+			String resource = "com/finad23/mybatis/dbConnect.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
 			SqlSessionFactoryBuilder factory = new SqlSessionFactoryBuilder();
 //			try문 안에 있는 코드를 읽어보면 sqlSession에 담아둔다.
