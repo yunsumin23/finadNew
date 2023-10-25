@@ -25,7 +25,7 @@
 		%>
 <jsp:include page="header_logout.jsp"></jsp:include>
 		<%
-	}
+	} 
 %>
 	<div id="company_board_category_container">
 		<h1>광고게시판</h1>
