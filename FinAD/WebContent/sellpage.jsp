@@ -39,24 +39,22 @@
   
         <section class="section">
             <div class="info">
-                <div class="nike_slide">
+                <div class="slide">
                    <%
-							out.println("<img id='product-img' src='img/" + jjj.get(0).getItemImage() + "' + alt='' + onmouseenter='zoomIn(event)' onmouseleave='zoomOut(event)' >");
+							out.println("<img id='product-img' src='img/" + jjj.get(3).getItemImage() + "' + alt=''>");
 					%>
                 </div>
                 <div class="summary">
                     <nav>
-                        <h1 class="nikekr"><a href="https://www.nike.com/kr" id="nikr"> 나이키 코리아 </a></h1>
+                        <h1><%
+							out.println("<span class='product-name'>" + jjj.get(3).getItemName() + "</span>");
+						%></h1>
                         <h5 class="rating star4">
                             <a href="#ree">상품평 보기</a>
                         </h5>
-                        <h5> 상품번호 : <span>4512154</span>
-                        </h5>
                     </nav>
                     <nav>
-                        <h3><%
-							out.println("<span class='product-name'>" + jjj.get(0).getItemName() + "</span>");
-						%></h3>
+                       
                         <div class="chs">
                             <div class="yyy">
                                 <h4>사이즈</h4>
@@ -104,13 +102,13 @@
 </div>
 
 <div class="total">
-    <span><span id="totalPrice"><%= jjj.get(0).getItemPrice() %>원</span></span> <!-- 수정: ID 추가 -->
+    <span><span id="totalPrice"><%= jjj.get(3).getItemPrice() %>원</span></span> <!-- 수정: ID 추가 -->
     총 상품금액
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
         // 초기 상품 가격 및 수량 설정
-        var itemPrice = <%= jjj.get(0).getItemPrice() %>;
+        var itemPrice = <%= jjj.get(3).getItemPrice() %>;
         var quantity = parseInt($("#quantity").val());
         var totalPrice = itemPrice * quantity;
         
@@ -159,9 +157,15 @@
             </div>
             <article class="detail">
                 <div>
-                <img class="nike_2" src="img/nike2.png" alt="상세페이지1">
-                <img class="nike_3" src="img/nike3.png" alt="상세페이지2">
-                <img class="nike_4" src="img/nike4.png" alt="상세페이지3">
+                <%
+							out.println("<img class='detailcut' src='img/" + jjj.get(3).getItemDetail1() + "' + alt='' >");
+					%>
+                <%
+							out.println("<img class='detailcut' src='img/" + jjj.get(3).getItemDetail2() + "' + alt='' >");
+					%>
+					<%
+							out.println("<img class='detailcut' src='img/" + jjj.get(3).getItemDetail3() + "' + alt='' >");
+					%>
             </div>
 
             </article>
@@ -185,7 +189,7 @@
     %>
     <li class="re_per">
         <h5 class="ratingstar4">
-            <span class='product-name'><%= jjj.get(0).getItemName() %></span>
+            <span class='product-name'><%= jjj.get(3).getItemName() %></span>
         </h5>
         <span class="re_id">
             <span><%= review.getNomalUserId() %></span>
