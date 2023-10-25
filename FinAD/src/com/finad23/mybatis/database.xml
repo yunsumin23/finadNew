@@ -15,16 +15,26 @@
 		resultType="com.finad23.DTO.CompanyBoardDTO">
 		select * from project.companyboard  ORDER BY companyBoardNum DESC;
 	</select>
-	<insert id="companyWriteID"
-		parameterType="com.finad23.DTO.CompanyBoardDTO">
-		insert into project.companyboard (title, companyName, companyInfo1, companyInfo2, companyInfo3, recruitmentDate1, recruitmentDate2,
-		 promotionDate1, promotionDate2, recruitmentNum, avgViewers, subscribers, sex, underachiever, promotionMoney,
-		  promotionType, previousPromotion1, previousPromotion2,previousPromotion3, text, companyWriteDate ) 
-		  values(#{title},#{companyName},#{companyInfo1},#{companyInfo2},#{companyInfo3},#{recruitmentDate1},
-		  #{recruitmentDate2},#{promotionDate1},#{promotionDate2},#{recruitmentNum},#{avgViewers},#{subscribers},
-		  #{sex},#{underachiever},#{promotionMoney},#{promotionType},#{previousPromotion1},#{previousPromotion2},
-		  #{previousPromotion3},#{text},CURRENT_TIMESTAMP);
-	</insert>
+<!-- 	<insert id="companyWriteID" -->
+<!-- 		parameterType="com.finad23.DTO.CompanyBoardDTO"> -->
+<!-- 		insert into project.companyboard (title, companyName, companyInfo1, companyInfo2, companyInfo3, recruitmentDate1, recruitmentDate2, -->
+<!-- 		 promotionDate1, promotionDate2, recruitmentNum, avgViewers, subscribers, sex, underachiever, promotionMoney, -->
+<!-- 		  promotionType, previousPromotion1, previousPromotion2,previousPromotion3, text, companyWriteDate )  -->
+<!-- 		  values(#{title},#{companyName},#{companyInfo1},#{companyInfo2},#{companyInfo3},#{recruitmentDate1}, -->
+<!-- 		  #{recruitmentDate2},#{promotionDate1},#{promotionDate2},#{recruitmentNum},#{avgViewers},#{subscribers}, -->
+<!-- 		  #{sex},#{underachiever},#{promotionMoney},#{promotionType},#{previousPromotion1},#{previousPromotion2}, -->
+<!-- 		  #{previousPromotion3},#{text},CURRENT_TIMESTAMP); -->
+<!-- 	</insert> -->
+	<insert id="companyWriteID" parameterType="com.finad23.DTO.CompanyBoardDTO">
+    insert into project.companyboard (title, companyName, companyInfo1, companyInfo2, companyInfo3, recruitmentDate1, recruitmentDate2,
+    promotionDate1, promotionDate2, recruitmentNum, avgViewers, subscribers, sex, underachiever, promotionMoney,
+    promotionType, previousPromotion1, previousPromotion2, previousPromotion3, text, companyWriteDate ) 
+    values(#{title}, #{companyName}, #{companyInfo1}, #{companyInfo2}, #{companyInfo3}, #{recruitmentDate1},
+    #{recruitmentDate2}, #{promotionDate1}, #{promotionDate2}, #{recruitmentNum}, #{avgViewers}, #{subscribers},
+    #{sex}, #{underachiever}, #{promotionMoney}, #{promotionType}, #{previousPromotion1}, #{previousPromotion2},
+    #{previousPromotion3}, #{text}, CURRENT_TIMESTAMP);
+</insert>
+	
 	<select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">
      <![CDATA[
     SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers

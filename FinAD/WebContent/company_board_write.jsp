@@ -38,7 +38,7 @@
 	<%-- 	}%> --%>
 
 	<div id="write_container">
-		<form action="company_board.finad?url=CBoardWrited" method="post">
+		<form action="company_board_write.finad?url=CBoardWrited" method="post">
 			<table border="1">
 				<tr>
 					<td class="title">제목</td>

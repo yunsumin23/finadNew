@@ -1,14 +1,10 @@
 package com.finad23.control;
 
-import com.finad23.mybatis.CBoardConn;
-import com.finad23.mybatis.SqlInsert;
-
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.DTO.CompanyBoardDTO;
+import com.finad23.mybatis.SqlInsert;
 
 public class CBoardInsert implements ConInter {
 	static CBoardInsert cboardInsert = new CBoardInsert();
@@ -18,7 +14,7 @@ public class CBoardInsert implements ConInter {
 	
 	@Override
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
-//		int companyBoardNum;
+		System.out.println("test1");
 		String title = rq.getParameter("title");
 		String companyName = "1234";//rq.getParameter("companyName");
 		String companyInfo1 = "a";//rq.getParameter("companyInfo1");
@@ -35,81 +31,64 @@ public class CBoardInsert implements ConInter {
 		String  underachiever = rq.getParameter("underachiever");
 		int promotionMoney = Integer.parseInt(rq.getParameter("promotionMoney"));
 		String promotionType = rq.getParameter("promotionType");
-//		if(promotionType.equalsIgnoreCase("live")) {
-//			promotionType = "live";
-//		} else if(promotionType.equalsIgnoreCase("review")) {
-//			promotionType = "review";
-//		} else if(promotionType.equalsIgnoreCase("contents")) {
-//			promotionType = "contents";
-//		} else if(promotionType.equalsIgnoreCase("model")) {
-//			promotionType = "modle";
-//		} else if(promotionType.equalsIgnoreCase("banner")) {
-//			promotionType = "banner";
-//		} else if(promotionType.equalsIgnoreCase("cf")) {
-//			promotionType = "cf";
-//		} else {
-//			promotionType = "another";
-//		}
 		String previousPromotion1 = "d";//rq.getParameter("previousPromotion1");
 		String previousPromotion2 = "e";//rq.getParameter("previousPromotion2");
 		String previousPromotion3 = "f";//rq.getParameter("previousPromotion3");
 		String text = rq.getParameter("text");
-//		String companyWriteDate = rq.getParameter("companyWriteDate");
 		
-		CompanyBoardDTO companyBoardDTO = new CompanyBoardDTO();
-		companyBoardDTO.setTitle(title);
-		companyBoardDTO.setCompanyName(companyName);
-		companyBoardDTO.setCompanyInfo1(companyInfo1);
-		companyBoardDTO.setCompanyInfo2(companyInfo2);
-		companyBoardDTO.setCompanyInfo3(companyInfo3);
-		companyBoardDTO.setRecruitmentDate1(recruitmentDate1);
-		companyBoardDTO.setRecruitmentDate2(recruitmentDate2);
-		companyBoardDTO.setPromotionDate1(promotionDate1);
-		companyBoardDTO.setPromotionDate2(promotionDate2);
-		companyBoardDTO.setRecruitmentNum(recruitmentNum);
-		companyBoardDTO.setAvgViewers(avgViewers);
-		companyBoardDTO.setSubscribers(subscribers);
-		companyBoardDTO.setSex(sex);
-		companyBoardDTO.setUnderachiever(underachiever);
-		companyBoardDTO.setPromotionMoney(promotionMoney);
-		companyBoardDTO.setPromotionType(promotionType);
-		companyBoardDTO.setPreviousPromotion1(previousPromotion1);
-		companyBoardDTO.setPreviousPromotion2(previousPromotion2);
-		companyBoardDTO.setPreviousPromotion3(previousPromotion3);
-		companyBoardDTO.setText(text);
-//		companyBoardDTO.setCompanyWriteDate(companyWriteDate);
-		
+		CompanyBoardDTO CBoardDTO = new CompanyBoardDTO();
+		CBoardDTO.setTitle(title);
+		CBoardDTO.setCompanyName(companyName);
+		CBoardDTO.setCompanyInfo1(companyInfo1);
+		CBoardDTO.setCompanyInfo2(companyInfo2);
+		CBoardDTO.setCompanyInfo3(companyInfo3);
+		CBoardDTO.setRecruitmentDate1(recruitmentDate1);
+		CBoardDTO.setRecruitmentDate2(recruitmentDate2);
+		CBoardDTO.setPromotionDate1(promotionDate1);
+		CBoardDTO.setPromotionDate2(promotionDate2);
+		CBoardDTO.setRecruitmentNum(recruitmentNum);
+		CBoardDTO.setAvgViewers(avgViewers);
+		CBoardDTO.setSubscribers(subscribers);
+		CBoardDTO.setSex(sex);
+		CBoardDTO.setUnderachiever(underachiever);
+		CBoardDTO.setPromotionMoney(promotionMoney);
+		CBoardDTO.setPromotionType(promotionType);
+		CBoardDTO.setPreviousPromotion1(previousPromotion1);
+		CBoardDTO.setPreviousPromotion2(previousPromotion2);
+		CBoardDTO.setPreviousPromotion3(previousPromotion3);
+		CBoardDTO.setText(text);
 		
 		SqlInsert insert = SqlInsert.instance();
-		insert.sqlInsert(companyBoardDTO);
+		insert.sqlInsert(CBoardDTO);
 		
 		
 		
 		
 		
 		
-//		System.out.println("제목 " + companyBoardDTO.getTitle());
-//		System.out.println("담당자정보 " + companyBoardDTO.getCompanyInfo1());
-//		System.out.println("담당자정보 " + companyBoardDTO.getCompanyInfo2());
-//		System.out.println("담당자정보 " + companyBoardDTO.getCompanyInfo3());
-//		System.out.println("모집기간 " + companyBoardDTO.getRecruitmentDate1());
-//		System.out.println("모집기간 " + companyBoardDTO.getRecruitmentDate2());
-//		System.out.println("홍보기간 " + companyBoardDTO.getPromotionDate1());
-//		System.out.println("홍보기간 " + companyBoardDTO.getPromotionDate2());
-//		System.out.println("모집인원 " + companyBoardDTO.getRecruitmentNum());
-//		System.out.println("평균시청자 " + companyBoardDTO.getAvgViewers());
-//		System.out.println("구독자 " + companyBoardDTO.getSubscribers());
-//		System.out.println("성별 " + companyBoardDTO.getSex());
-//		System.out.println("미달자   " + companyBoardDTO.getUnderachiever());
-//		System.out.println("광고진행비 " + companyBoardDTO.getPromotionMoney());
-//		System.out.println("광고유형 " + companyBoardDTO.getPromotionType());
-//		System.out.println("이전광고사례 " + companyBoardDTO.getPreviousPromotion1());
-//		System.out.println("이전광고사례 " + companyBoardDTO.getPreviousPromotion2());
-//		System.out.println("이전광고사례 " + companyBoardDTO.getPreviousPromotion3());
-//		System.out.println("내용 " + companyBoardDTO.getText());
+//		System.out.println("제목 " + CBoardDTO.getTitle());
+//		System.out.println("담당자정보 " + CBoardDTO.getCompanyInfo1());
+//		System.out.println("담당자정보 " + CBoardDTO.getCompanyInfo2());
+//		System.out.println("담당자정보 " + CBoardDTO.getCompanyInfo3());
+//		System.out.println("모집기간 " + CBoardDTO.getRecruitmentDate1());
+//		System.out.println("모집기간 " + CBoardDTO.getRecruitmentDate2());
+//		System.out.println("홍보기간 " + CBoardDTO.getPromotionDate1());
+//		System.out.println("홍보기간 " + CBoardDTO.getPromotionDate2());
+//		System.out.println("모집인원 " + CBoardDTO.getRecruitmentNum());
+//		System.out.println("평균시청자 " + CBoardDTO.getAvgViewers());
+//		System.out.println("구독자 " + CBoardDTO.getSubscribers());
+//		System.out.println("성별 " + CBoardDTO.getSex());
+//		System.out.println("미달자   " + CBoardDTO.getUnderachiever());
+//		System.out.println("광고진행비 " + CBoardDTO.getPromotionMoney());
+//		System.out.println("광고유형 " + CBoardDTO.getPromotionType());
+//		System.out.println("이전광고사례 " + CBoardDTO.getPreviousPromotion1());
+//		System.out.println("이전광고사례 " + CBoardDTO.getPreviousPromotion2());
+//		System.out.println("이전광고사례 " + CBoardDTO.getPreviousPromotion3());
+//		System.out.println("내용 " + CBoardDTO.getText());
 	
 		
-		
+		System.out.println("test2");
+
 		return null;
 }
 }
