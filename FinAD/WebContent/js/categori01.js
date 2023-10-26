@@ -10,36 +10,43 @@ $(document).ready(function () {
         $(".gnbbox").stop().slideUp();
     });
     
-    $(".check_sub").clikc(function() {
-    	
-    var shorts = document.querySelector(".shorts").value;
-    var sub = document.querySelector(".sub").value;
-    var price = document.querySelector(".price_select").value;
-    var avg = document.querySelector(".avg_select").value;
-    var offer = document.querySelector(".offer").value;
+//    $(".check_sub").on("click",function() {
+//    	
+//    var shorts = document.querySelector(".shorts").value;
+//    var sub = document.querySelector(".sub").value;
+//    var price = document.querySelector(".price_select").value;
+//    var avg = document.querySelector(".avg_select").value;
+//    var offer = document.querySelector(".offer").value;
+//
+//    var urlParams = new URLSearchParams(window.location.search);
+//    var category = urlParams.get("url");
+//  $.ajax({
+//  type: "POST",
+//  url: "category.finad?url=" + category + "&cat=" + category + "&filter=true",
+//  data: {
+//      shorts: shorts,
+//      sub: sub,
+//      price: price,
+//      avg: avg,
+//      offer: offer
+//  },
+//  success: function(response) {
+//  	$(".list_01_img").html("히히");
+//  	if ($(".list_01").hasClass("asdf") {
+//    	
+//    	}
+//  	var $res = $(response);
+//  	
+//      console.log("성공");
+//  },
+//  error: function(error) {
+//  	console.log("실패");
+//  }
+//});
+//    location.href = "category.finad?url=" + category + "&cat=" + category + "&filter=true" + "&shorts=" + shorts
+//	+ "&sub=" + sub + "&price=" + price + "&avg=" + avg + "&offer=" + offer;
 
-    var urlParams = new URLSearchParams(window.location.search);
-    var category = urlParams.get("category");
-    
-    $.ajax({
-        type: "POST",
-        url: "category.finad?url=" + category + "&cat=" + category + "&filter=true",
-        data: {
-            shorts: shorts,
-            sub: sub,
-            price: price,
-            avg: avg,
-            offer: offer
-        },
-        success: function(response) {
-        	$("#creatorList").html(response);
-            console.log("성공:", response);
-        },
-        error: function(error) {
-            console.log("실패:");
-        }
-    });
-    });
+//    });
     });
 
 window.onload = function all_check() {

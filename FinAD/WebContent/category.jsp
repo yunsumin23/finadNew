@@ -99,8 +99,7 @@
 					</div>
 					<div>
 						<div class="submit_div">
-							<input type="submit" name="sub_btn" value="적용하기" class="check_sub" onclick="filter()">
-							
+							<input type="submit" name="sub_btn" value="적용하기" class="check_sub">
 						</div>
 					</div>
 				</div>
@@ -119,6 +118,7 @@
 					<input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> 
 					<input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
 				</div>
+			</form>
 		</div>
 		<div class="cre_list">
 			<div class="list_00">
@@ -149,7 +149,7 @@
 						String AvgViewers = df.format(list.get(i).getAvgviewers());
 						String nickname = list.get(i).getNickname();
 			%>
-			<div class="list_01">
+			<div class="list_01 asdf">
 				<div class="list_01_div01">
 					<input type="checkbox" name="list_name01" class="list_check" width="20px">
 					<p><%=i + 1%></p>
@@ -158,7 +158,7 @@
 					</p>
 				</div>
 				<div class="list_01_div02">
-					<a href="creator.finad23?nickname=<%=nickname %>" target="_blank"><img src="img/<%=list.get(i).getImage()%>" alt="">
+					<a href="creator.finad23?nickname=<%=nickname %>" target="_blank" class="list_01_img"><img src="img/<%=list.get(i).getImage()%>" alt="">
 						<div>
 							<span class="div_img"><%=nickname%></span>
 						</div> </a>
