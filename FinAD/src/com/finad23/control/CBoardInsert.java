@@ -14,7 +14,6 @@ public class CBoardInsert implements ConInter {
 	
 	@Override
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
-		System.out.println("test1");
 		String title = rq.getParameter("title");
 		String companyName = rq.getParameter("companyName");
 		String companyInfo1 = rq.getParameter("companyInfo1");
@@ -30,11 +29,11 @@ public class CBoardInsert implements ConInter {
 		int subscribers = Integer.parseInt(rq.getParameter("subscribers"));
 		String  underachiever = rq.getParameter("underachiever");
 		int promotionMoney = Integer.parseInt(rq.getParameter("promotionMoney"));
-		String promotionType = rq.getParameter("promotionType");
+		String[] promotionTypes = rq.getParameterValues("promotionType");
 		String previousPromotion1 = rq.getParameter("previousPromotion1");
 		String previousPromotion2 = rq.getParameter("previousPromotion2");
 		String previousPromotion3 = rq.getParameter("previousPromotion3");
-		String text = rq.getParameter("text");
+		String text = rq.getParameter("input_text");
 		
 		CompanyBoardDTO CBoardDTO = new CompanyBoardDTO();
 		CBoardDTO.setTitle(title);
@@ -52,17 +51,20 @@ public class CBoardInsert implements ConInter {
 		CBoardDTO.setSex(sex);
 		CBoardDTO.setUnderachiever(underachiever);
 		CBoardDTO.setPromotionMoney(promotionMoney);
-		CBoardDTO.setPromotionType(promotionType);
+		if (promotionTypes != null) {
+	        // 여러 개의 선택된 promotionType 값을 반복하여 설정
+	        for (String promotionType : promotionTypes) {
+	            // promotionType 값을 설정
+	            CBoardDTO.setPromotionType(promotionType);
+	        }
+	    }
 		CBoardDTO.setPreviousPromotion1(previousPromotion1);
 		CBoardDTO.setPreviousPromotion2(previousPromotion2);
 		CBoardDTO.setPreviousPromotion3(previousPromotion3);
 		CBoardDTO.setText(text);
 		
-		System.out.println("test2");
 		SqlInsert insert = SqlInsert.instance();
 		insert.sqlInsert(CBoardDTO);
-		
-		System.out.println("test4");
 
 		return null;
 }

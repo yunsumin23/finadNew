@@ -136,7 +136,7 @@
 				
 				out.println("<tr>");
 				out.println("<td>"+ number +"</td>");
-				out.println("<td><a href='company_board_text.finad?url=CBoard_Text&number=1'>"+ title +"</a></td>");
+				out.println("<td><a href='company_board_text.finad?url=CBoardText&number="+ number+"'>"+ title +"</a></td>");
 				out.println("<td>"+ companyName +"</td>");
 				out.println("<td>"+ recruitmentDate1 +"</td>");
 				out.println("<td>"+ recruitmentDate2 +"</td>");

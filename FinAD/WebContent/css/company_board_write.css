@@ -25,14 +25,17 @@ textarea {
     
 }
 #submit_btn{
-    margin-top: 100px;
-    margin-left: 450px;
-    width: 400px;
+    margin: 0 auto;
+    margin-left: 550px;
+    margin-top: 50px;
+    width: 200px;
     height: 61px;
     font-size: 25px;
-    border: 1px solid #c9c9ff;
-    background-color: #c9c9ff;
-    border-radius: 25px;
+    color: white;
+    border: 1px solid #346aff;
+    border-radius: 3px;
+    background-color: #346aff;
+    cursor: pointer;
 }
 .title{
 	width:200px;

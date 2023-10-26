@@ -1,6 +1,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com.finad23.DTO.CompanyUserDTO" %>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +22,16 @@
 		String id = (String) session.getAttribute("id");
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
+		
+		List<CompanyUserDTO> list = (List<CompanyUserDTO>) request.getAttribute("List");
+		CompanyUserDTO CUserDTO = null;
+		for (CompanyUserDTO selected : list) {
+			if (selected.getcompanyId().equals(id)) {
+				CUserDTO = selected;
+				break;
+			}
+		}
+		
 		if (id == null && password == null) {
 	%>
 	<jsp:include page="header_login.jsp"></jsp:include>
@@ -50,13 +62,13 @@
 				</tr>
 				<tr>
 					<td class="title" rowspan="3">마케팅 담당자 정보</td>
-					<td class="content" colspan="3">담당자 이름</td>
+					<td class="content" colspan="3"><%=CUserDTO.getName() %><input type="hidden" name="companyInfo1" value="<%=CUserDTO.getName()%>" ></td>
 				</tr>
 				<tr>
-					<td class="content" colspan="3">담당자 이메일</td>
+					<td class="content" colspan="3"><%=CUserDTO.geteMail() %><input type="hidden" name="companyInfo2" value="<%=CUserDTO.geteMail()%>" ></td>
 				</tr>
 				<tr>
-					<td class="content" colspan="3">담당자 전화번호</td>
+					<td class="content" colspan="3"><%=CUserDTO.getTelephoneNumber() %><input type="hidden" name="companyInfo3" value="<%=CUserDTO.getTelephoneNumber()%>" ></td>
 				</tr>
 				<tr>
 					<td class="title">모집 기간</td>
@@ -75,8 +87,9 @@
 					<td class="title">성별</td>
 					<td class="content2">
 						<div class="write_text">
-							<input type="radio" name="sex" value="male">남성 
-							<input type="radio" name="sex" value="female">여성
+							<input type="radio" name="sex" value="남">남성 
+							<input type="radio" name="sex" value="여">여성
+							<input type="radio" name="sex" value="무관">무관
 						</div>
 					</td>
 				</tr>
@@ -89,8 +102,8 @@
 				<tr>
 					<td class="title">미달자 지원</td>
 					<td class="content2">
-						<input type="radio" name="underachiever" value="yes">O 
-						<input type="radio" name="underachiever" value="no">X
+						<input type="radio" name="underachiever" value="O">O 
+						<input type="radio" name="underachiever" value="X">X
 					</td>
 					<td class="title">총 광고진행비</td>
 					<td class="content3"><input type="text" name="promotionMoney"><span> 만원</span></td>

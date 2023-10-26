@@ -123,6 +123,14 @@ table tr td span {
 #company_board_container table td:nth-child(9) {
     text-align: center;
 }
+#company_board_container table tr td a {
+    color: black; /* 원하는 색상으로 변경 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+#company_board_container table tr td a:visited {
+    color: #808080; /* 클릭 후의 색상 */
+    text-decoration: none; /* 밑줄 제거 */
+}
 
 /* 글쓰기 버튼*/
 #company_board_write_btn{

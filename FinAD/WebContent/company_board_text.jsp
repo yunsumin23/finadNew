@@ -6,17 +6,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/company_board.css">
+<link rel="stylesheet" href="css/company_board_text.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/company_board.js"></script>
-<title>company_board.jsp</title>
+<title>company_board_text.jsp</title>
 </head>
 <body>
 <%
 	String id = (String) session.getAttribute("id");
 	String password = (String) session.getAttribute("password");
 	String type = (String) session.getAttribute("type");
+	String clickText = request.getParameter("number"); //클릭한 글의 글번호 값을 받아서 저장
+	
+	List<CompanyBoardDTO> list = (List<CompanyBoardDTO>) request.getAttribute("List");
+	CompanyBoardDTO CBoardDTO = null;
+	for (CompanyBoardDTO selected : list) {
+		if (selected.getCompanyBoardNum() == Integer.parseInt(clickText)) {
+			CBoardDTO = selected;
+			break;
+		}
+	}
 	if (id == null && password == null) {
 %>
 <jsp:include page="header_login.jsp"></jsp:include>
@@ -27,63 +37,113 @@
 		<%
 	} 
 %>
-	<div id="company_board_category_container">
+	<div id="text_header">
 		<h1>광고게시판</h1>
-        <!-- <div class="written_search">
-            <form action="company_board.jsp" method="get">
-                <input type="search" name="query" id="search_input" placeholder="검색어를 입력하세요...">
-                <button type="submit" class="search_button">검색</button>
-                <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
-            </form>
-        </div> -->
-        <div class="written_search">
-  		  <form action="company_board.jsp" method="get">
-       		 <input type="search" name="query" id="search_input" placeholder="검색어를 입력하세요...">
-        	 <button type="button" class="search_button" onclick="search()">검색</button>
-       		 <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
-   		  </form>
- 		</div>
+		<p><%out.println(CBoardDTO.getCompanyWriteDate());%></p>
 	</div>
 	
-	<div id="company_board_container">
-	<table>
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>회사명</th>
-			<th>모집 시작</th>
-			<th>모집 종료</th>
-			<th>광고 시작</th>
-			<th>광고 종료</th>
-			<th>광고 유형</th>
-			<th>작성일</th>
-		</tr>
-	
-	<%	
-		List<CompanyBoardDTO> list = (List<CompanyBoardDTO>) request.getAttribute("List");
-		if (list != null) {
-			for (int i = 0; i < list.size(); i++) {
-				out.println("<tr>");
-				out.println("<td>"+list.get(i).getCompanyBoardNum()+"</td>");
-				out.println("<td>"+list.get(i).getTitle()+"</td>");
-				out.println("<td>"+list.get(i).getCompanyName()+"</td>");
-				out.println("<td>"+list.get(i).getRecruitmentDate1()+"</td>");
-				out.println("<td>"+list.get(i).getRecruitmentDate2()+"</td>");
-				out.println("<td>"+list.get(i).getPromotionDate1()+"</td>");
-				out.println("<td>"+list.get(i).getPromotionDate2()+"</td>");
-				out.println("<td>"+list.get(i).getPromotionType()+"</td>");
-				out.println("<td>"+list.get(i).getCompanyWriteDate()+"</td>");
-				out.println("</tr>");
-				}
-		} else {
-			out.print("데이터가 없습니다.");
-		}
-	%>
-	</table>
-	<div id="company_board_write_btn">
-			<form action = "company_board.finad?url=CBoardWrite" onsubmit="return check_login();" method="post">
-				<input type="submit" value="글쓰기">
-			</form>
+	<div id="text_container">
+		<table id="info_box">
+			<tr>
+				<td class="title" colspan="3"><%out.println(CBoardDTO.getTitle()); %></td> 
+				<td class="content2"><%out.println(CBoardDTO.getCompanyName()); %></td>
+			</tr>
+			<tr>
+				<td class="info_title">총 광고 비용</td>
+				<td class="info_title">모집 기간</td>
+				<td class="info_title">홍보 기간</td>
+				<td class="info_title">광고 유형</td>
+			</tr>
+			<tr>
+				<td class="content2"><%out.println(CBoardDTO.getPromotionMoney()); %><span>만원</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getRecruitmentDate1()); %> ~ <%out.println(CBoardDTO.getRecruitmentDate2()); %></td>
+				<td class="content2"><%out.println(CBoardDTO.getPromotionDate1()); %> ~ <%out.println(CBoardDTO.getPromotionDate2()); %></td>
+				<td class="content2"><%out.println(CBoardDTO.getPromotionType()); %></td>
+			</tr>
+		</table>
+		
+		<h1>모집 조건</h1>
+		<table id="info_box">
+			<tr>
+				<td class="info_title">모집 인원</td>
+				<td class="info_title">평균 시청자</td>
+				<td class="info_title">구독자 수</td>
+				<td class="info_title">조건 미달자 지원 가능 여부</td>
+			</tr>
+			<tr>
+				<td class="content2"><%out.println(CBoardDTO.getRecruitmentNum()); %><span>명</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getAvgViewers()); %><span>명</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getSubscribers());%><span>만명</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getUnderachiever()); %></td>
+			</tr>
+			<tr>
+				<td><br></td>
+			<tr>
+			<tr>
+				<td class="info_title">성별</td>
+				<td class="info_title"></td>
+				<td class="info_title"></td>
+				<td class="info_title"></td>
+			</tr>
+			<tr>
+				<td class="content2"><%out.println(CBoardDTO.getSex());%></td>
+				<td class="content2"><%%></td>
+				<td class="content2"><%%></td>
+				<td class="content2"><%%></td>
+			</tr>
+		</table>
+		
+		<h1>광고 내용</h1>
+		<table id="info_box">
+			<tr>
+				<td class="info_title">모집 인원</td>
+				<td class="info_title">평균 시청자</td>
+				<td class="info_title">구독자 수</td>
+				<td class="info_title">조건 미달자 지원 가능 여부</td>
+			</tr>
+			<tr>
+				<td class="content2"><%out.println(CBoardDTO.getRecruitmentNum()); %><span>명</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getAvgViewers()); %><span>명</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getSubscribers());%><span>만명</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getUnderachiever()); %></td>
+			</tr>
+		</table>
+		
+		<h1>상세 요강</h1>
+		<table id="info_box">
+			<tr>
+				<td colspan="4" id="c_text"><%out.println(CBoardDTO.getText()); %></td>
+			</tr>
+		</table>
+
+		<h1>이전 광고 사례</h1>
+		<table id="info_box">
+			<tr>
+				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion1() %>'><%= CBoardDTO.getPreviousPromotion1() %></a></td>
+			</tr>
+			<tr>
+				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion2() %>'><%= CBoardDTO.getPreviousPromotion2() %></a></td>
+			</tr>
+			<tr>
+				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion3() %>'><%= CBoardDTO.getPreviousPromotion3() %></a></td>
+			</tr>	
+		</table>		
+		<h1>마케팅 담당자 정보</h1>
+		<table id="info_box">
+			<tr>
+				<td class="info_title">이름</td>
+				<td class="info_title">이메일</td>
+				<td class="info_title">전화번호</td>
+			</tr>
+			<tr>
+				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo1());%></td>
+				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo2());%></td>
+				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo3());%></td>
+			</tr>
+		</table>		
+		<form action="company_board.finad?url=CBoard" method="post">
+			<input type="submit" value="목록">
+		</form>
 	</div>
 	
 <!-- 	기업 회원만 버튼 보이게 하는 조건문 [테스트를 위해 주석 처리] -->
@@ -95,8 +155,7 @@
 <!-- 			</form> -->
 <!-- 		</div> -->
 <%-- 	<%}%> --%>
-		
-	</div>
+	
 	
 	
 	
