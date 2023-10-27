@@ -94,7 +94,7 @@ td input[type="text"] {
 div form {
 	text-align: right;
 }
-div form input[type="submit"] {
+#text_container form input[type="submit"] {
 	margin: 0 auto;
     margin-top: 50px;
     width: 200px;

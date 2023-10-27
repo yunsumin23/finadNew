@@ -51,13 +51,18 @@ public class CBoardInsert implements ConInter {
 		CBoardDTO.setSex(sex);
 		CBoardDTO.setUnderachiever(underachiever);
 		CBoardDTO.setPromotionMoney(promotionMoney);
+		String adtype="";
 		if (promotionTypes != null) {
-	        // 여러 개의 선택된 promotionType 값을 반복하여 설정
-	        for (String promotionType : promotionTypes) {
+	        // 여러 개의 선택된 promotionType 값을 반복하여 설정	
+	        for (int i = 0; i < promotionTypes.length; i++) {
 	            // promotionType 값을 설정
-	            CBoardDTO.setPromotionType(promotionType);
+	            adtype += promotionTypes[i];
+	            if (i < promotionTypes.length - 1) {
+	            	adtype += ", ";
+	            }
 	        }
 	    }
+		CBoardDTO.setPromotionType(adtype);
 		CBoardDTO.setPreviousPromotion1(previousPromotion1);
 		CBoardDTO.setPreviousPromotion2(previousPromotion2);
 		CBoardDTO.setPreviousPromotion3(previousPromotion3);

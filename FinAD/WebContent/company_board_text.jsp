@@ -96,16 +96,16 @@
 		<h1>광고 내용</h1>
 		<table id="info_box">
 			<tr>
-				<td class="info_title">모집 인원</td>
-				<td class="info_title">평균 시청자</td>
-				<td class="info_title">구독자 수</td>
-				<td class="info_title">조건 미달자 지원 가능 여부</td>
+				<td class="info_title">총 광고 비용</td>
+				<td class="info_title">홍보 기간</td>
+				<td class="info_title">광고 유형</td>
+				<td class="info_title"></td>
 			</tr>
 			<tr>
-				<td class="content2"><%out.println(CBoardDTO.getRecruitmentNum()); %><span>명</span></td>
-				<td class="content2"><%out.println(CBoardDTO.getAvgViewers()); %><span>명</span></td>
-				<td class="content2"><%out.println(CBoardDTO.getSubscribers());%><span>만명</span></td>
-				<td class="content2"><%out.println(CBoardDTO.getUnderachiever()); %></td>
+				<td class="content2"><%out.println(CBoardDTO.getPromotionMoney()); %><span>만원</span></td>
+				<td class="content2"><%out.println(CBoardDTO.getPromotionDate1()); %> ~ <%out.println(CBoardDTO.getPromotionDate2()); %></td>
+				<td class="content2"><%out.println(CBoardDTO.getPromotionType()); %></td>
+				<td class="content2"></td>
 			</tr>
 		</table>
 		

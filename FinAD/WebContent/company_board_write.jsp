@@ -50,7 +50,7 @@
 	<%-- 	}%> --%>
 
 	<div id="write_container">
-		<form action="company_board_write.finad?url=CBoardWrited" method="post">
+		<form action="company_board_write.finad?url=CBoardWrited" method="post" accept-charset="UTF-8">
 			<table border="1">
 				<tr>
 					<td class="title">제목</td>
@@ -58,7 +58,7 @@
 				</tr>
 				<tr>
 					<td class="title">회사명</td>
-					<td class="content" colspan="3"><input type="text" name="title" value=""></td>
+					<td class="content" colspan="3"><%=CUserDTO.getCompanyName() %><input type="hidden" name="companyName" value="<%= CUserDTO.getCompanyName()%>"></td>
 				</tr>
 				<tr>
 					<td class="title" rowspan="3">마케팅 담당자 정보</td>
@@ -111,13 +111,13 @@
 				<tr>
 					<td class="title">광고 유형</td>
 					<td class="content2" colspan="3">
-						<input type="checkbox" name="promotionType" value="live"> 생방송 
-						<input type="checkbox" name="promotionType" value="review "> 유튜브 리뷰 
-						<input type="checkbox" name="promotionType" value="contents "> 유튜브 콘텐츠 
-						<input type="checkbox" name="promotionType" value="model "> 홍보모델 
-						<input type="checkbox" name="promotionType" value="banner "> 홍보배너 
-						<input type="checkbox" name="promotionType" value="cf"> CF 
-						<input type="checkbox" name="promotionType" value="another"> 기타
+						<input type="checkbox" name="promotionType" value="생방송"> 생방송 
+						<input type="checkbox" name="promotionType" value="유튜브 리뷰"> 유튜브 리뷰 
+						<input type="checkbox" name="promotionType" value="유튜브 컨텐츠"> 유튜브 콘텐츠 
+						<input type="checkbox" name="promotionType" value="홍보모델"> 홍보모델 
+						<input type="checkbox" name="promotionType" value="홍보배너"> 홍보배너 
+						<input type="checkbox" name="promotionType" value="CF"> CF 
+						<input type="checkbox" name="promotionType" value="기타"> 기타
 					</td>
 				</tr>
 				<tr>

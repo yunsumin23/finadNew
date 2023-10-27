@@ -50,7 +50,7 @@
                         <input type="checkbox" value=""><span>1회성 컨텐츠</span><br>
                         <input type="checkbox" value=""><span>1 ~ 7일</span><br>
                         <input type="checkbox" value=""><span>7 ~ 14일</span><br>
-                        <input type="checkbox" value=""><span>14 ~ 30일</span>/<br>
+                        <input type="checkbox" value=""><span>14 ~ 30일</span><br>
                         <input type="checkbox" value=""><span>30 ~ 60일</span><br>
                         <input type="checkbox" value=""><span>60 ~ 90일</span><br>
                         <input type="checkbox" value=""><span>90일 이상</span>
@@ -136,7 +136,7 @@
 				
 				out.println("<tr>");
 				out.println("<td>"+ number +"</td>");
-				out.println("<td><a href='company_board_text.finad?url=CBoardText&number="+ number+"'>"+ title +"</a></td>");
+				out.println("<td id='title'><a href='company_board_text.finad?url=CBoardText&number="+ number+"'>"+ title +"</a></td>");
 				out.println("<td>"+ companyName +"</td>");
 				out.println("<td>"+ recruitmentDate1 +"</td>");
 				out.println("<td>"+ recruitmentDate2 +"</td>");

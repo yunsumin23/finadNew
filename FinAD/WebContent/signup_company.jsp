@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%@page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
@@ -9,6 +10,7 @@
 </head>
 <body>
 <%
+	request.setCharacterEncoding("UTF-8"); // 한글 데이터 인코딩 설정
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String name = request.getParameter("company_name");
@@ -21,7 +23,9 @@
 	Statement statement = null;
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
-		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "123456");
+		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8", "root", "123456");
+
+												
 		if(connection == null) {
 			throw new Exception("데이터베이스 연결 안됨<br>");
 		}
@@ -38,7 +42,7 @@
 	} catch (Exception ignored) {
 		
 	}
-	response.sendRedirect("signup_final.html");
+	response.sendRedirect("signup_final.jsp");
 %>
 </body>
 </html>

@@ -19,7 +19,8 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 
 	@Override
 	protected void service(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub.
+		rq.setCharacterEncoding("UTF-8"); // 한글 데이터 인코딩 설정
 		String url = rq.getParameter("url");
 		String cat = rq.getParameter("cat");
 		String filter = rq.getParameter("filter");
@@ -30,6 +31,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 		System.out.println("filter " + filter);
 		System.out.println("catesearch " + catesearch);
 		ConInter inter = null;
+		
 		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요 / 싫은데요?
 
 		if (url.equals("CBoard")) {
