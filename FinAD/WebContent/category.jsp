@@ -29,7 +29,6 @@
 	<%
 		}
 	%>
-
 	<div class="rank_div">
 		<ul class="rank_ul">
 			<li class="rank_li01">크리에이터 랭킹</li>
@@ -99,14 +98,14 @@
 					</div>
 					<div>
 						<div class="submit_div">
-							<input type="submit" name="sub_btn" value="적용하기" class="check_sub">
+							<input type="button" name="sub_btn" value="적용하기" class="check_sub">
 						</div>
 					</div>
 				</div>
 			</form>
 		</div>
 		<div class="rignt_contents">
-			<form action="catesearch.finad?url=<%= category %>&cat=<%=category%>&catesearch=true" name="form_rignt" method="post">
+			<form action="catesearch.finad?url=<%=category%>&cat=<%=category%>&catesearch=true" name="form_rignt" method="post">
 				<div class="search_view">
 					<div>
 						<input type="search" class="right-control" placeholder="크리에이터를 검색하세요" name="cate_search">
@@ -114,9 +113,7 @@
 			</form>
 			<form action="">
 				<div>
-					<input type="submit" class="fir_btn" value="관심 유튜버" name="fir_btn"> 
-					<input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> 
-					<input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
+					<input type="submit" class="fir_btn" value="관심 유튜버" name="fir_btn"> <input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> <input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
 				</div>
 			</form>
 		</div>
@@ -140,50 +137,47 @@
 				</div>
 			</div>
 
-			<%
+			 <%
 				if (list != null) {
-					for (int i = 0; i < list.size(); i++) {
-
+					for (Influ_info cate : list) {
 						DecimalFormat df = new DecimalFormat("#,###");
-						String Subscribers = df.format(list.get(i).getSubscribers());
-						String AvgViewers = df.format(list.get(i).getAvgviewers());
-						String nickname = list.get(i).getNickname();
-			%>
-			<div class="list_01 asdf">
-				<div class="list_01_div01">
-					<input type="checkbox" name="list_name01" class="list_check" width="20px">
-					<p><%=i + 1%></p>
-					<p class="star">
-						<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
-					</p>
+						String Subscribers = df.format(cate.getSubscribers());
+						String AvgViewers = df.format(cate.getAvgviewers());
+						String nickname = cate.getNickname();
+			%> 
+			<div id="list_01_wrapper">
+				<div class="list_01 asdf">
+					<div class="list_01_div01">
+						<input type="checkbox" name="list_name01" class="list_check" width="20px">
+						<p>
+						</p>
+						<p class="star">
+							<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
+						</p>
+					</div>
+					<div class="list_01_div02">
+						<a href="creator.finad23?nickname= <%=nickname %>" target="_blank" class="list_01_img"><img src="img/<%=cate.getImage()%>" alt="" id="img_data">
+							<div>
+								<span class="div_img">
+									 <%=nickname%> 
+								</span>
+							</div> </a>
+					</div>
+					<div class="list_01_div03">
+						<ul>
+							<li><p id="sub_data"><%=Subscribers%></li>
+							<li><p id="viwe_data"><%=AvgViewers%></li>
+							<li><p id="cpv_data"><%=cate.getAvgviewers() * 0.01%></li>
+							<li>광고 영상 호감도</li>
+							<li><p id="price_data"><%=(int) ((cate.getAvgviewers() * 0.001) * 30)%>만원</li>
+						</ul>
+					</div>
 				</div>
-				<div class="list_01_div02">
-					<a href="creator.finad23?nickname=<%=nickname %>" target="_blank" class="list_01_img"><img src="img/<%=list.get(i).getImage()%>" alt="">
-						<div>
-							<span class="div_img"><%=nickname%></span>
-						</div> </a>
-				</div>
-				<div class="list_01_div03">
-					<ul>
-						<li><%=Subscribers%></li>
-						<li><%=AvgViewers%></li>
-						<li><%=list.get(i).getAvgviewers() * 0.01%></li>
-						<li>광고 영상 호감도</li>
-						<li><%=(int) ((list.get(i).getAvgviewers() * 0.001) * 30)%>만원</li>
-					</ul>
-				</div>
-			</div>
-
-			<%
-				}
-				} else {
-			%>
-			<div>
-				<p>필터링 된 크리에이터가 없습니다.</p>
 			</div>
 			<%
 				}
-			%>
+				} 
+			%> 
 
 		</div>
 		</form>
