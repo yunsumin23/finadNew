@@ -140,8 +140,11 @@
 				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo2());%></td>
 				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo3());%></td>
 			</tr>
-		</table>		
-		<form action="company_board.finad?url=CBoard" method="post">
+		</table>
+		<form action="" id="submit_btn1" method="post">
+			<input type="submit" value="지원하기">
+		</form>		
+		<form action="company_board.finad?url=CBoard" id="submit_btn2" method="post">
 			<input type="submit" value="목록">
 		</form>
 	</div>
