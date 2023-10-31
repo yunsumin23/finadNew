@@ -17,7 +17,6 @@ public class Mypage {
 		Nomal_info nomal_user = new Nomal_info();
 		try {
 			getcon();
-//			java?��?�� jdbc�? ?��?��?��?�� ?��?��?��베이?��?? ?��?�� ?��?��?�� ?�� ?��?��?��?�� 코드
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery("select * from nomal_user where nomalUserId = '" + id + "';");
 			if(resultSet.next()) {

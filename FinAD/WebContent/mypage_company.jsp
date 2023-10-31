@@ -57,9 +57,9 @@
 			</div>
 			<hr>
 			<h2>소개글</h2>
-			<form action="" method="post">
-				<input type="text" name="text" class="text">
-			</form>
+			
+				<div class="text"></div>
+			
 			<div class="reviousAdvertising">
 				<h2>이전 광고 사례</h2>
 				<ul>

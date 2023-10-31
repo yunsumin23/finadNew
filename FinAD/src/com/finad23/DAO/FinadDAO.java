@@ -142,4 +142,36 @@ public class FinadDAO {
 		return influ_info;
 	}
 	
+	public ArrayList<Influ_info> search(String nickname) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String search = "SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers "  
+	            + "FROM project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId " 
+	            + "WHERE user.nickName LIKE CONCAT('%" + nickname + "%') " 
+	            + "ORDER BY user_mypage.subscribers DESC;";
+		ArrayList<Influ_info> list = new ArrayList<Influ_info>();
+		Influ_info influ_info = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			pstmt = conn.prepareStatement(search);
+			rs = pstmt.executeQuery();
+//			System.out.println("dao " + nickname);
+			while(rs.next()) {
+				influ_info = new Influ_info();
+				influ_info.setNickname(rs.getString("nickName"));
+				influ_info.setSubscribers(rs.getInt("subscribers"));
+				influ_info.setAvgviewers(rs.getInt("avgviewers"));
+				influ_info.setImage(rs.getString("image"));
+				list.add(influ_info);
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}
 }

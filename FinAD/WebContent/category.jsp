@@ -113,7 +113,9 @@
 			</form>
 			<form action="">
 				<div>
-					<input type="submit" class="fir_btn" value="관심 유튜버" name="fir_btn"> <input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> <input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
+					<input type="submit" class="fir_btn" value="관심 유튜버" name="fir_btn"> 
+					<input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> 
+					<input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
 				</div>
 			</form>
 		</div>
