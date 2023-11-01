@@ -80,6 +80,7 @@ table tr td span {
 
 #company_board_container th, td {
 	padding: 3px;
+	padding-left: 15px;
 	border-bottom : 1px solid gray;
 	font-size: 16px;
 }

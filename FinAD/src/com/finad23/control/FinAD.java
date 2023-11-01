@@ -56,7 +56,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			inter = CBoardInsert.instance();
 			try {
 				String cboardWrited = inter.FinAD(rq, rs);
-				RequestDispatcher re = rq.getRequestDispatcher("company_board.jsp");
+				RequestDispatcher re = rq.getRequestDispatcher("company_board.finad?url=CBoard");
 				re.forward(rq, rs);
 			} catch (Exception e) {
 				System.out.println(e);
@@ -66,6 +66,15 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 			try {
 				String cboardText = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("company_board_text.jsp");
+				re.forward(rq, rs);
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}else if (url.equals("CBoardVol")) {
+			inter = CBoardVolExtr.instance();
+			try {
+				String cboardVol = inter.FinAD(rq, rs);
+				RequestDispatcher re = rq.getRequestDispatcher("company_board_vol.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {
 				System.out.println(e);
