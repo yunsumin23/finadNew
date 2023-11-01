@@ -167,8 +167,8 @@
 						<div class="list_01_div01">
 							<input type="checkbox" name="list_name01" class="list_check" width="20px">
 							<p></p>
-							<button class="star">
-								<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
+							<button class="star" id="star_btn" onclick="relike">
+								<img src="img/star01.png" alt="" id="star01" onclick="img_change(this)">
 							</button>
 						</div>
 						<%
@@ -177,7 +177,7 @@
 						<div class="list_01_div01">
 							<input type="checkbox" name="list_name01" class="list_check" width="20px">
 							<p></p>
-							<button class="star">
+							<button class="star" id="star_btn" onclick="like">
 								<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
 							</button>
 						</div>

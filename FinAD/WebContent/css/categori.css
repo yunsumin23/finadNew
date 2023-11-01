@@ -226,3 +226,8 @@
 .btn_class {
 	display: flex;
 }
+#star_btn {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
