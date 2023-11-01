@@ -27,7 +27,6 @@
 	<%
 		} else {
 	%>
-	
 	<jsp:include page="header_logout.jsp"></jsp:include>
 	<%
 		}
