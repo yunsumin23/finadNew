@@ -9,8 +9,10 @@
 <link rel="stylesheet" href="css/company_board_text.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="js/company_board.js"></script>
+<script src="js/company_board_vol.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> -->
 <title>company_board_vol.jsp</title>
 </head>
 <body>
@@ -41,6 +43,7 @@
 			<th>시간</th>
 		</tr>
 		<%
+		double count = 0;
 		List<CBoardVolunteerDTO> list = (List<CBoardVolunteerDTO>) request.getAttribute("List");
 		if (list != null) {
 			for (int i = 0; i < list.size(); i++) {
@@ -50,7 +53,7 @@
 				int volunteerViewer = list.get(i).getVolunteerViewer();
 				int volunteerSubscribe = list.get(i).getVolunteerSubscribe();
 				String time = list.get(i).getTime();
-				
+				count++;
 				out.println("<tr>");
 				out.println("<td>"+ volunteerNumber +"</td>");
 				out.println("<td>"+ volunteer +"</td>");
@@ -63,8 +66,13 @@
 		} else {
 			out.print("데이터가 없습니다.");
 		}
+		double result = count/7;
 		%>
 		</table>
+		<h3>경쟁률</h3>
+		<%out.println( result + " : 1" ); %>
+		<canvas class="line_canvas" width="400" height="400"></canvas>
+		<canvas class="doughnut_graph" width="400" height="400"></canvas>
 	
 	<jsp:include page="footer.jsp"></jsp:include>
 
