@@ -2,6 +2,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="com.finad23.jjj.Influ_info"%>
 <%@ page import="java.text.DecimalFormat"%>
+<%@ page import="com.finad23.DTO.UserLikeDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,7 @@
 		String type = (String) session.getAttribute("type");
 		String category = request.getParameter("url");
 		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
+		UserLikeDTO userLikeDTO = null;
 		int creatorNum = list.size();
 		if (id == null && password == null) {
 	%>
@@ -111,13 +113,19 @@
 						<input type="search" class="right-control" placeholder="크리에이터를 검색하세요" name="cate_search">
 					</div>
 			</form>
-			<form action="">
-				<div>
-					<input type="submit" class="fir_btn" value="관심 유튜버" name="fir_btn"> 
-					<input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> 
-					<input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
-				</div>
-			</form>
+			<div class="btn_class">
+				<form action="">
+					<div>
+						<input type="submit" class="fir_btn" value="관심 유튜버" name="fir_btn">
+					</div>
+				</form>
+				<!-- 					<input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> -->
+				<form action="">
+					<div>
+						<input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
+					</div>
+				</form>
+			</div>
 		</div>
 		<div class="cre_list">
 			<div class="list_00">
@@ -139,47 +147,81 @@
 				</div>
 			</div>
 
-			 <%
+			<%
 				if (list != null) {
 					for (Influ_info cate : list) {
 						DecimalFormat df = new DecimalFormat("#,###");
 						String Subscribers = df.format(cate.getSubscribers());
 						String AvgViewers = df.format(cate.getAvgviewers());
 						String nickname = cate.getNickname();
-			%> 
+			%>
 			<div id="list_01_wrapper">
 				<div class="list_01 asdf">
 					<div class="list_01_div01">
 						<input type="checkbox" name="list_name01" class="list_check" width="20px">
-						<p>
-						</p>
-						<p class="star">
-							<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
-						</p>
+						<p></p>
+						<%
+							if (id != null) {
+										if (userLikeDTO != null) {
+						%>
+						<div class="list_01_div01">
+							<input type="checkbox" name="list_name01" class="list_check" width="20px">
+							<p></p>
+							<button class="star">
+								<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
+							</button>
+						</div>
+						<%
+							} else {
+						%>
+						<div class="list_01_div01">
+							<input type="checkbox" name="list_name01" class="list_check" width="20px">
+							<p></p>
+							<button class="star">
+								<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
+							</button>
+						</div>
+						<%
+							}
+									}
+						%>
 					</div>
 					<div class="list_01_div02">
-						<a href="creator.finad23?nickname= <%=nickname %>" target="_blank" class="list_01_img"><img src="img/<%=cate.getImage()%>" alt="" id="img_data">
+						<a href="creator.finad23?nickname= <%=nickname%>" target="_blank" class="list_01_img"><img src="img/<%=cate.getImage()%>" alt="" id="img_data">
 							<div>
-								<span class="div_img">
-									 <%=nickname%> 
+								<span class="div_img"> <%=nickname%>
 								</span>
 							</div> </a>
 					</div>
 					<div class="list_01_div03">
 						<ul>
 							<li><p id="sub_data"><%=Subscribers%></li>
+							<%
+								if (type == null || type.equals("nomal")) {
+							%>
+							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
+							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
+							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
+							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
+							<%
+								} else {
+							%>
 							<li><p id="viwe_data"><%=AvgViewers%></li>
 							<li><p id="cpv_data"><%=cate.getAvgviewers() * 0.01%></li>
 							<li>광고 영상 호감도</li>
 							<li><p id="price_data"><%=(int) ((cate.getAvgviewers() * 0.001) * 30)%>만원</li>
+							<%
+								}
+							%>
+
 						</ul>
 					</div>
 				</div>
 			</div>
 			<%
 				}
-				} 
-			%> 
+				}
+			%>
 
 		</div>
 		</form>

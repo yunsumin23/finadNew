@@ -17,7 +17,7 @@
 		<form method="post" action="check_login.jsp" id="login-form">
 			<input type="text" name="id" placeholder="아이디"> 
 			<input type="password" name="password" placeholder="비밀번호"> 
-			<label for="remember-check"> <input type="checkbox" id="remember-check">아이디 저장하기</label><br>
+			<label for="remember-check"><input type="checkbox" id="remember-check" name="cookie">아이디 저장하기</label><br>
 			<div id="choice_user" >
 				<span id="nomal_btn">
 					<input type="radio" name="user_grade" id="normal" value="nomal">
