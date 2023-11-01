@@ -11,7 +11,7 @@
 	Statement statement = null;
 	ResultSet resultSet = null;
 	if (id == null || id.trim().isEmpty() || password == null || id.trim().isEmpty()) {
-		response.sendRedirect("login.html");
+		response.sendRedirect("login.jsp");
 		return;
 	}
 	try {

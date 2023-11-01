@@ -69,16 +69,16 @@ function zoomOut(event) {
     event.target.style.transition = "all 0.5s"
 }
 
-function img_change(imgElement) {
-    // 현재 클릭된 이미지의 src 값을 가져온다
-    var currentSrc = imgElement.src;
-    
-    // 현재 이미지의 파일 이름을 추출한다
-    var currentFileName = currentSrc.substring(currentSrc.lastIndexOf("/") + 1);
-    
-    // 이미지 파일 이름에 따라 다음 이미지 파일 이름을 생성한다
-    var nextFileName = currentFileName === "star01.png" ? "star02.png" : "star01.png";
-    
-    // 다음 이미지로 변경한다.
-    imgElement.src = "img/" + nextFileName;
-  }
+//function img_change(imgElement) {
+//    // 현재 클릭된 이미지의 src 값을 가져온다
+//    var currentSrc = imgElement.src;
+//    
+//    // 현재 이미지의 파일 이름을 추출한다
+//    var currentFileName = currentSrc.substring(currentSrc.lastIndexOf("/") + 1);
+//    
+//    // 이미지 파일 이름에 따라 다음 이미지 파일 이름을 생성한다
+//    var nextFileName = currentFileName === "star01.png" ? "star02.png" : "star01.png";
+//    
+//    // 다음 이미지로 변경한다.
+//    imgElement.src = "img/" + nextFileName;
+//  }

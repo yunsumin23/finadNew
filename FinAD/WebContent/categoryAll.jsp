@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%
-	ArrayList<Influ_info> article=(ArrayList<Influ_info>)request.getAttribute("article");
+		ArrayList<Influ_info> article=(ArrayList<Influ_info>)request.getAttribute("article");
 		String id = (String) session.getAttribute("id");
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
@@ -178,7 +178,13 @@
 			</div>
 			<%
 				}
-				} 
+				} else {
+					%>
+					<script>
+					alert("검색된 크리에이터가 없습니다.");
+					</script>
+					<%
+				}
 			%> 
 
 		</div>
