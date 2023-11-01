@@ -168,7 +168,9 @@
 <%-- 	<%}%> --%>
 		
 	</div>
-	
+	<form action = "company_board.finad?url=CBoardVol" onsubmit="return check_login();" method="post">
+				<input type="submit" value="글쓰기">
+	</form>
 	
 	
 	<jsp:include page="footer.jsp"></jsp:include>

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.finad23.DTO.CompanyBoardDTO" %>
 <%@page import="java.util.List"%>
+<%@ page import="java.util.Arrays" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/company_board.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <title>company_board_text.jsp</title>
 </head>
 <body>
@@ -46,7 +48,7 @@
 		<table id="info_box">
 			<tr>
 				<td class="title" colspan="3"><%out.println(CBoardDTO.getTitle()); %></td> 
-				<td class="content2"><%out.println(CBoardDTO.getCompanyName()); %></td>
+				<td id="company_name"><%out.println(CBoardDTO.getCompanyName()); %></td>
 			</tr>
 			<tr>
 				<td class="info_title">총 광고 비용</td>
@@ -141,6 +143,55 @@
 				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo3());%></td>
 			</tr>
 		</table>
+		
+		<h1>이런분들이 지원해 주셨어요</h1>
+		<%
+    // 어제까지의 데이터 (실제로는 데이터베이스 또는 서버에서 가져와야 함)
+    int[] yesterdayData = {10, 25, 15};
+
+    // 오늘의 데이터 (실제로는 데이터베이스 또는 서버에서 가져와야 함)
+    int[] todayData = {5, 15, 10};
+
+    // 데이터 합산
+    int[] cumulativeData = new int[yesterdayData.length];
+    for (int i = 0; i < yesterdayData.length; i++) {
+        cumulativeData[i] = yesterdayData[i] + todayData[i];
+    }
+%>
+
+<script>
+    // JavaScript 변수로 어제까지의 데이터, 오늘의 데이터, 누적 데이터 설정
+    var yesterdayData = <%= Arrays.toString(yesterdayData) %>;
+    var todayData = <%= Arrays.toString(todayData) %>;
+    var cumulativeData = <%= Arrays.toString(cumulativeData) %>;
+</script>
+		<canvas id="myChart" width="400" height="200"></canvas>
+<script>
+	const labels =  Utils.months({count: 7});
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',  // 막대 그래프
+        data: {
+            labels: labels,  // 카테고리 레이블
+            datasets: [{
+                label: '누적 데이터',
+                data: cumulativeData,  // 어제까지와 오늘의 합산 데이터
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+		
+		
 		<form action="" id="submit_btn1" method="post">
 			<input type="submit" value="지원하기">
 		</form>		
