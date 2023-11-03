@@ -17,6 +17,12 @@
 	<select id="companyBoardID"
 		resultType="com.finad23.DTO.CompanyBoardDTO">
 		select * from project.companyboard  ORDER BY companyBoardNum DESC;
+		
+	</select>
+	<select id="companyBoardTextID"
+		resultType="com.finad23.DTO.CBoardVolunteerDTO" parameterType="com.finad23.DTO.CBoardVolunteerDTO">
+		SELECT * FROM project.companyboard join volunteer on companyboardNum = companyBoardNumber where companyboardNumber = #{vnum};
+		
 	</select>
 	<insert id="companyWriteID" parameterType="com.finad23.DTO.CompanyBoardDTO">
     insert into project.companyboard (title, companyName, companyInfo1, companyInfo2, companyInfo3, recruitmentDate1, recruitmentDate2,

@@ -16,22 +16,6 @@
 <title>company_board_vol.jsp</title>
 </head>
 <body>
-<%
-	String id = (String) session.getAttribute("id");
-	String password = (String) session.getAttribute("password");
-	String type = (String) session.getAttribute("type");
-	
-	if (id == null && password == null) {
-%>
-<jsp:include page="header_login.jsp"></jsp:include>
-<%
-	} else {
-		%>
-<jsp:include page="header_logout.jsp"></jsp:include>
-		<%
-	} 
-%>
-	
 		<h1>이런분들이 지원해 주셨어요</h1>
 		<table>
 		<tr>
@@ -74,7 +58,7 @@
 		<canvas class="line_canvas" width="400" height="400"></canvas>
 		<canvas class="doughnut_graph" width="400" height="400"></canvas>
 	
-	<jsp:include page="footer.jsp"></jsp:include>
+<%-- 	<jsp:include page="footer.jsp"></jsp:include> --%>
 
 </body>
 </html>

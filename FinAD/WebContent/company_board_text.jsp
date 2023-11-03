@@ -1,8 +1,11 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.finad23.DTO.CBoardVolunteerDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.finad23.DTO.CompanyBoardDTO" %>
 <%@page import="java.util.List"%>
 <%@ page import="java.util.Arrays" %>
+<%@ page import="org.json.JSONArray" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +13,7 @@
 <link rel="stylesheet" href="css/company_board_text.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="js/company_board.js"></script>
+<script src="js/company_board_text.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <title>company_board_text.jsp</title>
 </head>
@@ -21,9 +24,9 @@
 	String type = (String) session.getAttribute("type");
 	String clickText = request.getParameter("number"); //클릭한 글의 글번호 값을 받아서 저장
 	
-	List<CompanyBoardDTO> list = (List<CompanyBoardDTO>) request.getAttribute("List");
-	CompanyBoardDTO CBoardDTO = null;
-	for (CompanyBoardDTO selected : list) {
+	List<CBoardVolunteerDTO> list = (List<CBoardVolunteerDTO>) request.getAttribute("List");
+	CBoardVolunteerDTO CBoardDTO = null;
+	for (CBoardVolunteerDTO selected : list) {
 		if (selected.getCompanyBoardNum() == Integer.parseInt(clickText)) {
 			CBoardDTO = selected;
 			break;
@@ -146,8 +149,58 @@
 		
 		<h1>이런분들이 지원해 주셨어요</h1>
 		<%
-    
+		List<Integer> viewer = new ArrayList<>();
+		List<Integer> subscribe = new ArrayList<>();
+		
+		double count = 0;
+		if (list != null) {
+			for (int i = 0; i < list.size(); i++) {
+				int volunteerNumber = list.get(i).getVolunteerNumber();
+				String volunteer = list.get(i).getVolunteer();
+				int companyBoardNumber = list.get(i).getCompanyBoardNumber();
+				int volunteerViewer = list.get(i).getVolunteerViewer();
+				int volunteerSubscribe = list.get(i).getVolunteerSubscribe();
+				String time = list.get(i).getTime();
+				count++;
+				viewer.add(list.get(i).getAvgViewers());
+				subscribe.add(list.get(i).getSubscribers());
+// 				out.println("<tr>");
+// 				out.println("<td>"+ volunteerNumber +"</td>");
+// 				out.println("<td>"+ volunteer +"</td>");
+// 				out.println("<td>"+ companyBoardNumber +"</td>");
+// 				out.println("<td>"+ volunteerViewer +"</td>");
+// 				out.println("<td>"+ volunteerSubscribe +"</td>");
+// 				out.println("<td>"+ time +"</td>");
+// 				out.println("</tr>");
+				}
+		} else {
+			out.print("데이터가 없습니다.");
+		}
+		JSONArray jsonViewer = new JSONArray(viewer);
+		JSONArray jsonSubscribe = new JSONArray(subscribe);
+		double result = count/7;
+		double roundedNumber = Math.round(result * 100) / 100.0; //소수점 2번째까지만 표기
 		%>
+		<table id="info_box">
+			<tr>
+				<td class="info_title">경쟁률</td>
+				<td class="info_title">성비</td>
+				<td class="info_title">평균 시청자</td>
+				<td class="info_title">평균 구독자</td>
+			</tr>
+			<tr>
+				<td class="content2"><%out.println( roundedNumber + " : 1" ); %></td>
+				<td class="content2"><canvas class="doughnut_graph"></canvas></td>
+				<td class="content2"><canvas class="line_graph"></canvas></td>
+				<td class="content2"><canvas class="line_graph2"></canvas></td>
+			</tr>
+		</table>
+
+		
+		
+		
+		
+		
 		<form action="" id="submit_btn1" method="post">
 			<input type="submit" value="지원하기">
 		</form>		
@@ -165,7 +218,6 @@
 <!-- 			</form> -->
 <!-- 		</div> -->
 <%-- 	<%}%> --%>
-	
 	
 	
 	<jsp:include page="footer.jsp"></jsp:include>
