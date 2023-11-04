@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 import com.finad23.DTO.BoardDTO;
+import com.finad23.DTO.UserLikeDTO;
 import com.finad23.jjj.Influ_info;
 
 
@@ -173,5 +174,24 @@ public class FinadDAO {
 			close(pstmt);
 		}
 		return list;
+	}
+	
+	public UserLikeDTO creatorLike(String nickname, String id) {
+		PreparedStatement pstmt = null;
+		String like = "INSERT into project.userlike (likeUser, userNickname, ulike) values('"+ id +"','"+ nickname + "','1');";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			pstmt = conn.prepareStatement(like);
+		} catch(Exception e) {
+			System.out.print(e);
+		} finally {
+			try {
+				close(pstmt);
+			} catch(Exception e) {
+				System.out.print(e);
+			}
+		}
+		return null;
 	}
 }

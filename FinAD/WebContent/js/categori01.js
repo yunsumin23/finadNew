@@ -40,6 +40,31 @@ $(document).ready(function () {
       }
     });
    });
+   $("#star_btn").click(function() {
+//	  var star = document.querySelector("#star01");
+//	  var id = document.querySelector("#star_btn");
+//	  var nickname = document.querySelector("#star_btn");
+//	  console.log(star);
+//	  console.log(id);
+//	  console.log(nickname);
+	  $.ajax({
+		  type:"POST",
+		  url:"creatorLike.finad23",
+		  data: {
+			  id: '${id}',
+			  nickname: '${nickname}',
+		  },
+		  success: function(response) {
+			  console.log("성공");
+			  console.log(id);
+			  console.log(nickname);
+		  },
+		  error: function(error) {
+			  consol.log("실패");
+		  }
+	  });
+   });
+   
 });
 
 window.onload = function all_check() {

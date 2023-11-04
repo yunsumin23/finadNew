@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.VO.ActionForward;
 import com.finad23.action.CreatorAction;
+import com.finad23.action.CreatorLikeAction;
 import com.finad23.action.FinadAction;
 import com.finad23.action.MainSearchAction;
 
@@ -38,6 +39,13 @@ public class FinadSecController extends javax.servlet.http.HttpServlet{
 			} catch (Exception e) {
 				// TODO: handle exception
 				System.out.println(e);
+			}
+		} else if (command.equals("/creatorLike.finad23")) {
+			finadAction = new CreatorLikeAction();
+			try {
+				forward = finadAction.excute(rq, rs);
+			} catch (Exception e) {
+				System.out.print(e);
 			}
 		}
 		if(forward != null) {
