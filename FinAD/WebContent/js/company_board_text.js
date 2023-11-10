@@ -11,14 +11,56 @@ $(document).ready(function() {
     });
     
     var viewers = [];
+    var viwers50000 = 0;
+    var viwers100000 = 0;
+    var viwers300000 = 0;
+    var viwers500000 = 0;
+    var viwers700000 = 0;
+    var viwers1000000 = 0;
+    var viwers1500000 = 0;
+    var viwers2000000 = 0;
+    var viwers5000000 = 0;
+    var viwers10000000 = 0;
+    var viwers30000000 = 0;
+    var viwers20000000 = 0;
     var subscribers =[];
     var sex = [];
+    var male = 0;
+    var female = 0;
+    
     var count= document.getElementById('count').value;
     for(var i = 0; i < count; i++){
     	 viewers.push(document.getElementById('viewer'+i).value);
          subscribers.push(document.getElementById('subscribe'+i).value);
          sex.push(document.getElementById('sex'+i).value);
+    } 
+    for(var i=0; i<viewers.length; i++){
+    	if(viewers[i]>0 && viewers[i]<50000){
+    		viwers50000++;
+    	}
+    	if(viewers[i] === "1"){
+    		female++;
+    	}
     }
+    
+    for(var i=0; i<sex.length; i++){
+    	if(sex[i] === "0"){
+    		male++;
+    	}
+    	if(sex[i] === "1"){
+    		female++;
+    	}
+    }
+    
+    for(var i=0; i<sex.length; i++){
+    	if(sex[i] === "0"){
+    		male++;
+    	}
+    	if(sex[i] === "1"){
+    		female++;
+    	}
+    }
+    
     const ctx = document.querySelector(".line_graph");
 	const line_graph = new Chart(ctx, {
 		type : 'line',
@@ -41,14 +83,16 @@ $(document).ready(function() {
 		}
 	});
 	console.log(sex);
+	console.log(male);
+	console.log(female);
 	const ctx2 = document.querySelector(".doughnut_graph");
 	const doughnut_graph = new Chart(ctx2, {
 		type : 'doughnut',
 		data : {
 			labels : [ '남','여' ],
 			datasets : [ {
-				label : ['남','여'],
-				data : sex,
+				label : ['신청인원'],
+				data : [male,female],
 				backgroundColor: ['#36A2EB', '#FF5733'], // 각 데이터에 대한 색상 설정
 	            borderColor: ['#36A2EB', '#FF5733'],
 	            borderWidth: 1
