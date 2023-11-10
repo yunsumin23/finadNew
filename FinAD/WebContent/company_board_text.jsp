@@ -5,7 +5,6 @@
 <%@ page import="com.finad23.DTO.CompanyBoardDTO" %>
 <%@page import="java.util.List"%>
 <%@ page import="java.util.Arrays" %>
-<%@ page import="org.json.JSONArray" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -149,8 +148,7 @@
 		
 		<h1>이런분들이 지원해 주셨어요</h1>
 		<%
-		List<Integer> viewer = new ArrayList<>();
-		List<Integer> subscribe = new ArrayList<>();
+		
 		
 		double count = 0;
 		if (list != null) {
@@ -160,24 +158,18 @@
 				int companyBoardNumber = list.get(i).getCompanyBoardNumber();
 				int volunteerViewer = list.get(i).getVolunteerViewer();
 				int volunteerSubscribe = list.get(i).getVolunteerSubscribe();
+				int volunteerSex = list.get(i).getVolunteerSex();
 				String time = list.get(i).getTime();
 				count++;
-				viewer.add(list.get(i).getAvgViewers());
-				subscribe.add(list.get(i).getSubscribers());
-// 				out.println("<tr>");
-// 				out.println("<td>"+ volunteerNumber +"</td>");
-// 				out.println("<td>"+ volunteer +"</td>");
-// 				out.println("<td>"+ companyBoardNumber +"</td>");
-// 				out.println("<td>"+ volunteerViewer +"</td>");
-// 				out.println("<td>"+ volunteerSubscribe +"</td>");
-// 				out.println("<td>"+ time +"</td>");
-// 				out.println("</tr>");
+				%><input type="hidden" id="viewer<%=i %>" value="<%=volunteerViewer%>"><%
+				%><input type="hidden" id="subscribe<%=i %>" value="<%=volunteerSubscribe%>"><%
+				%><input type="hidden" id="sex<%=i %>" value="<%=volunteerSex%>"><%
 				}
 		} else {
-			out.print("데이터가 없습니다.");
+			out.print("데이터가 부족합니다.");
 		}
-		JSONArray jsonViewer = new JSONArray(viewer);
-		JSONArray jsonSubscribe = new JSONArray(subscribe);
+		
+		%><input type="hidden" id="count" value="<%=count%>"><%
 		double result = count/7;
 		double roundedNumber = Math.round(result * 100) / 100.0; //소수점 2번째까지만 표기
 		%>
@@ -201,9 +193,9 @@
 		
 		
 		
-		<form action="" id="submit_btn1" method="post">
-			<input type="submit" value="지원하기">
-		</form>		
+<!-- 		<form action="" id="submit_btn1" method="post"> -->
+<!-- 			<input type="submit" value="지원하기"> -->
+<!-- 		</form>		 -->
 		<form action="company_board.finad?url=CBoard" id="submit_btn2" method="post">
 			<input type="submit" value="목록">
 		</form>

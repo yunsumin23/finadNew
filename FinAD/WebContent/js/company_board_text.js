@@ -9,14 +9,24 @@ $(document).ready(function() {
         $(".gnb").stop().slideUp();
         $(".gnbbox").stop().slideUp();
     });
+    
+    var viewers = [];
+    var subscribers =[];
+    var sex = [];
+    var count= document.getElementById('count').value;
+    for(var i = 0; i < count; i++){
+    	 viewers.push(document.getElementById('viewer'+i).value);
+         subscribers.push(document.getElementById('subscribe'+i).value);
+         sex.push(document.getElementById('sex'+i).value);
+    }
     const ctx = document.querySelector(".line_graph");
 	const line_graph = new Chart(ctx, {
 		type : 'line',
 		data : {
-			labels : [ '30일전', '25일전', '20일전', '15일전', '10일전', '1일전' ],
+			labels : viewers,
 			datasets : [ {
 				label : '최근 30일 조회수',
-				data : [ 271300, 348000, 297000, 317000, 210000, 379000 ],
+				data : viewers,
 				borderColor : [ '#014D81' ],
 				borderWidth : 1
 			} ]
@@ -30,6 +40,7 @@ $(document).ready(function() {
 			}
 		}
 	});
+	console.log(sex);
 	const ctx2 = document.querySelector(".doughnut_graph");
 	const doughnut_graph = new Chart(ctx2, {
 		type : 'doughnut',
@@ -37,7 +48,7 @@ $(document).ready(function() {
 			labels : [ '남','여' ],
 			datasets : [ {
 				label : ['남','여'],
-				data : [2,4],
+				data : sex,
 				backgroundColor: ['#36A2EB', '#FF5733'], // 각 데이터에 대한 색상 설정
 	            borderColor: ['#36A2EB', '#FF5733'],
 	            borderWidth: 1

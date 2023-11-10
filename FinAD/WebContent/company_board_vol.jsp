@@ -33,7 +33,7 @@
 			for (int i = 0; i < list.size(); i++) {
 				int volunteerNumber = list.get(i).getVolunteerNumber();
 				String volunteer = list.get(i).getVolunteer();
-				int companyBoardNumer = list.get(i).getCompanyBoardNumer();
+				int companyBoardNumer = list.get(i).getCompanyBoardNumber();
 				int volunteerViewer = list.get(i).getVolunteerViewer();
 				int volunteerSubscribe = list.get(i).getVolunteerSubscribe();
 				String time = list.get(i).getTime();

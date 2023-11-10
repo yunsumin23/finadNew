@@ -17,6 +17,17 @@ public class CBoardVolunteerDTO {
 	private int companyBoardNumber;
 	private int volunteerViewer;
 	private int volunteerSubscribe;
+	private int volunteerSex;
+	
+	public int getVolunteerSex() {
+		return volunteerSex;
+	}
+	public void setVolunteerSex(int volunteerSex) {
+		this.volunteerSex = volunteerSex;
+	}
+	public void setCompanyBoardNumber(int companyBoardNumber) {
+		this.companyBoardNumber = companyBoardNumber;
+	}
 	private String time;
 	private int vnum;
 	
