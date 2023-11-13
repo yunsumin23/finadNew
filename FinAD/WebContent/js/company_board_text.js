@@ -11,19 +11,22 @@ $(document).ready(function() {
     });
     
     var viewers = [];
-    var viwers50000 = 0;
-    var viwers100000 = 0;
-    var viwers300000 = 0;
-    var viwers500000 = 0;
-    var viwers700000 = 0;
-    var viwers1000000 = 0;
-    var viwers1500000 = 0;
-    var viwers2000000 = 0;
-    var viwers5000000 = 0;
-    var viwers10000000 = 0;
-    var viwers30000000 = 0;
-    var viwers20000000 = 0;
+    var viewers50 = 0;
+    var viewers100 = 0;
+    var viewers500 = 0;
+    var viewers1000 = 0;
+    var viewers5000 = 0;
+    var viewers10000 = 0;
+    var viewers20000 = 0;
+
     var subscribers =[];
+    var subscribers10 = 0;
+    var subscribers30 = 0;
+    var subscribers50 = 0;
+    var subscribers100 = 0;
+    var subscribers200 = 0;
+    var subscribers500 = 0;
+    var subscribers1000 = 0;
     var sex = [];
     var male = 0;
     var female = 0;
@@ -35,11 +38,49 @@ $(document).ready(function() {
          sex.push(document.getElementById('sex'+i).value);
     } 
     for(var i=0; i<viewers.length; i++){
-    	if(viewers[i]>0 && viewers[i]<50000){
-    		viwers50000++;
+    	if(viewers[i]>0 && viewers[i]<50){
+    		viewers50++;
+    	} 
+    	if(viewers[i]>50 && viewers[i]<250){
+    		viewers100++;
     	}
-    	if(viewers[i] === "1"){
-    		female++;
+    	if(viewers[i]>250 && viewers[i]<750){
+    		viewers500++;
+    	}
+    	if(viewers[i]>750 && viewers[i]<2500){
+    		viewers1000++;
+    	}
+    	if(viewers[i]>2500 && viewers[i]<7500){
+    		viewers5000++;
+    	}
+    	if(viewers[i]>7500 && viewers[i]<15000){
+    		viewers10000++;
+    	}
+    	if(viewers[i]>15000){
+    		viewers20000++;
+    	}
+    }
+    for(var i=0; i<subscribers.length; i++){
+    	if(subscribers[i]>0 && subscribers[i]<150000){
+    		subscribers10++;
+    	} 
+    	if(subscribers[i]>150000 && subscribers[i]<250000){
+    		subscribers30++;
+    	}
+    	if(subscribers[i]>250000 && subscribers[i]<750000){
+    		subscribers50++;
+    	}
+    	if(subscribers[i]>750000 && subscribers[i]<1500000){
+    		subscribers100++;
+    	}
+    	if(subscribers[i]>1500000 && subscribers[i]<2500000){
+    		subscribers200++;
+    	}
+    	if(subscribers[i]>2500000 && subscribers[i]<7500000){
+    		subscribers500++;
+    	}
+    	if(subscribers[i]>7500000){
+    		subscribers1000++;
     	}
     }
     
@@ -52,83 +93,191 @@ $(document).ready(function() {
     	}
     }
     
-    for(var i=0; i<sex.length; i++){
-    	if(sex[i] === "0"){
-    		male++;
-    	}
-    	if(sex[i] === "1"){
-    		female++;
-    	}
-    }
-    
-    const ctx = document.querySelector(".line_graph");
-	const line_graph = new Chart(ctx, {
-		type : 'line',
-		data : {
-			labels : viewers,
-			datasets : [ {
-				label : '최근 30일 조회수',
-				data : viewers,
-				borderColor : [ '#014D81' ],
-				borderWidth : 1
-			} ]
-		},
-		options : {
-			responsive: false,
-			scales : {
-				y : {
-					beginAtZero : true
-				}
-			}
-		}
-	});
-	console.log(sex);
-	console.log(male);
-	console.log(female);
+    var maxViewers = Math.max(viewers50, viewers100, viewers500,viewers1000, viewers5000, 
+    		viewers10000,viewers20000);
+    var maxSubscribers = Math.max(subscribers10, subscribers30, subscribers50, subscribers100, 
+    		subscribers200, subscribers500, subscribers1000);
+    var maxValue1 = maxViewers*1.2; 
+    var maxValue2 = maxSubscribers*1.2; 
+    const ctx = document.querySelector(".bar_graph");
+    const bar_graph = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [50, 100, 500, 1000, 5000, 10000, 20000],
+            datasets: [{
+                label: '신청인원',
+                data: [viewers50, viewers100, viewers500, viewers1000, viewers5000, viewers10000, viewers20000],
+                borderColor: ['#346aff'],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks:{
+                    	display:false
+                    },
+                    max:maxValue1
+                    
+                }
+            },
+            plugins: {
+                datalabels: false, // 다른 데이터 라벨 플러그인이 활성화되어 있으면 비활성화
+                tooltip: {
+                    enabled: false // 툴팁 비활성화 시 필요
+                }
+            }
+        },
+        plugins: [{
+            afterDatasetsDraw: function(chart, easing) {
+                var ctx = chart.ctx;
+                chart.data.datasets.forEach(function (dataset, i) {
+                    var meta = chart.getDatasetMeta(i);
+                    if (!meta.hidden) {
+                        meta.data.forEach(function(element, index) {
+                            ctx.fillStyle = 'rgb(0, 0, 0)'; // 숫자 색상 설정
+
+                            var fontSize = 16; // 폰트 크기
+                            var fontStyle = 'bold';
+                            var fontFamily = 'Helvetica Neue';
+                            ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+
+                            var dataString = dataset.data[index].toString();
+
+                            // 데이터 값 위치 계산
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'bottom';
+                            var padding = 5; // 바 위의 패딩
+                            var position = element.tooltipPosition();
+                            ctx.fillText(dataString, position.x, position.y - (fontSize / 2) - padding);
+                        });
+                    }
+                });
+            }
+        }]
+    });
 	const ctx2 = document.querySelector(".doughnut_graph");
 	const doughnut_graph = new Chart(ctx2, {
 		type : 'doughnut',
 		data : {
 			labels : [ '남','여' ],
 			datasets : [ {
-				label : ['신청인원'],
+				label : '신청인원',
 				data : [male,female],
-				backgroundColor: ['#36A2EB', '#FF5733'], // 각 데이터에 대한 색상 설정
-	            borderColor: ['#36A2EB', '#FF5733'],
-	            borderWidth: 1
+				backgroundColor: ['#36A2EB', '#FF6384'], // 각 데이터에 대한 색상 설정
+	            borderColor: ['#014D81', '#014D81'],
+	            borderWidth: 2
 
 			} ]
 		},
-		options : {
-			responsive: false,
-			scales : {
-				y : {
-					beginAtZero : true
-				}
-			}
-		}
+		options: {
+	        responsive: false,
+	        cutout: '69%',
+	        plugins: {
+	            tooltip: {
+	                enabled: false // 툴팁 비활성화 시 필요
+	            }
+	        }
+	    },
+	    plugins: [{
+	        afterDraw: function(chart) {
+	            var ctx = chart.ctx;
+	            var maleCount = chart.data.datasets[0].data[0];
+	            var femaleCount = chart.data.datasets[0].data[1];
+	            var total = maleCount + femaleCount;
+	            var malePercentage = ((maleCount / total) * 100).toFixed(0);
+	            var femalePercentage = ((femaleCount / total) * 100).toFixed(0);
+
+	            var centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
+	            var centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
+
+	            ctx.save();
+	            ctx.textAlign = 'center';
+	            ctx.textBaseline = 'middle';
+	            ctx.font = '20px Arial';
+	            ctx.fillStyle = '#FF6384'; // 여성 비율의 색상
+	            ctx.fillText(`${femalePercentage}%`, centerX + 40, centerY); // 여성 비율 표시
+	            ctx.font = '20px Arial';
+	            ctx.fillStyle = '#FF6384'; // '여성' 색상
+	            ctx.fillText(`여성`, centerX + 40, centerY - 30); // 상단에 '여성' 텍스트 표시
+	            ctx.fillStyle = '#FF6384'; // 여성 인원 색상
+	            ctx.fillText(`${femaleCount} 명`, centerX + 40, centerY + 30); // 하단에 여성 인원수 표시
+
+	            ctx.fillStyle = '#36A2EB'; // 남성 비율의 색상
+	            ctx.fillText(`${malePercentage}%`, centerX - 40, centerY); // 남성 비율 표시
+	            ctx.font = '20px Arial';
+	            ctx.fillStyle = '36A2EB';  // '남성' 색상
+	            ctx.fillText(`남성`, centerX - 40, centerY - 30); // 상단에 '남성' 텍스트 표시
+	            ctx.fillStyle = '#36A2EB'; // 남성 인원 색상
+	            ctx.fillText(`${maleCount} 명`, centerX - 40, centerY + 30); // 하단에 남성 인원수 표시
+
+	            ctx.restore();
+	        }
+	    }]
 	});
-	const ctx3 = document.querySelector(".line_graph2");
-	const line_graph2 = new Chart(ctx3, {
-		type : 'line',
+	
+	const ctx3 = document.querySelector(".bar_graph2");
+	const bar_graph2 = new Chart(ctx3, {
+		type : 'bar',
 		data : {
-			labels : [ '30일전', '25일전', '20일전', '15일전', '10일전', '1일전' ],
+			labels : ["10만", "30만", "50만", "100만", "200만", "500만", "1000만"],
 			datasets : [ {
-				label : '최근 30일 조회수',
-				data : [ 271300, 348000, 297000, 317000, 210000, 379000 ],
-				borderColor : [ '#014D81' ],
-				borderWidth : 1
+				label : '신청인원',
+				data : [subscribers10, subscribers30, subscribers50, subscribers100, 
+					subscribers200, subscribers500, subscribers1000],
+				borderColor : [ '#346aff' ],
+				borderWidth : 2
 			} ]
 		},
-		options : {
-			responsive: false,
-			scales : {
-				y : {
-					beginAtZero : true
-				}
-			}
-		}
-	});
+		options: {
+            responsive: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks:{
+                    	display:false
+                    },
+                    max:maxValue2
+                    
+                }
+            },
+            plugins: {
+                datalabels: false, // 다른 데이터 라벨 플러그인이 활성화되어 있으면 비활성화
+                tooltip: {
+                    enabled: false // 툴팁 비활성화 시 필요
+                }
+            }
+        },
+        plugins: [{
+            afterDatasetsDraw: function(chart, easing) {
+                var ctx = chart.ctx;
+                chart.data.datasets.forEach(function (dataset, i) {
+                    var meta = chart.getDatasetMeta(i);
+                    if (!meta.hidden) {
+                        meta.data.forEach(function(element, index) {
+                            ctx.fillStyle = 'rgb(0, 0, 0)'; // 숫자 색상 설정
+
+                            var fontSize = 16; // 폰트 크기
+                            var fontStyle = 'bold';
+                            var fontFamily = 'Helvetica Neue';
+                            ctx.font = Chart.helpers.fontString(fontSize, fontStyle, fontFamily);
+
+                            var dataString = dataset.data[index].toString();
+
+                            // 데이터 값 위치 계산
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'bottom';
+                            var padding = 5; // 바 위의 패딩
+                            var position = element.tooltipPosition();
+                            ctx.fillText(dataString, position.x, position.y - (fontSize / 2) - padding);
+                        });
+                    }
+                });
+            }
+        }]
+    });
 });
 function resetSearch() {
         document.getElementById('search_input').value = '';

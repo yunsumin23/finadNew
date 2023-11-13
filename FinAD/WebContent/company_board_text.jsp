@@ -119,32 +119,6 @@
 				<td colspan="4" id="c_text"><%out.println(CBoardDTO.getText()); %></td>
 			</tr>
 		</table>
-
-		<h1>이전 광고 사례</h1>
-		<table id="info_box">
-			<tr>
-				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion1() %>'><%= CBoardDTO.getPreviousPromotion1() %></a></td>
-			</tr>
-			<tr>
-				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion2() %>'><%= CBoardDTO.getPreviousPromotion2() %></a></td>
-			</tr>
-			<tr>
-				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion3() %>'><%= CBoardDTO.getPreviousPromotion3() %></a></td>
-			</tr>	
-		</table>		
-		<h1>마케팅 담당자 정보</h1>
-		<table id="info_box">
-			<tr>
-				<td class="info_title">이름</td>
-				<td class="info_title">이메일</td>
-				<td class="info_title">전화번호</td>
-			</tr>
-			<tr>
-				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo1());%></td>
-				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo2());%></td>
-				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo3());%></td>
-			</tr>
-		</table>
 		
 		<h1>이런분들이 지원해 주셨어요</h1>
 		<%
@@ -181,13 +155,41 @@
 				<td class="info_title">평균 구독자</td>
 			</tr>
 			<tr>
-				<td class="content2"><%out.println( roundedNumber + " : 1" ); %></td>
-				<td class="content2"><canvas class="doughnut_graph"></canvas></td>
-				<td class="content2"><canvas class="line_graph"></canvas></td>
-				<td class="content2"><canvas class="line_graph2"></canvas></td>
+				<td class="content4"><%out.println( roundedNumber + " : 1" ); %></td>
+				<td class="content2"><canvas class="doughnut_graph" width="300" height="300"></canvas></td>
+				<td class="content2"><canvas class="bar_graph" width="325" height="325"></canvas></td>
+				<td class="content2"><canvas class="bar_graph2" width="325" height="325"></canvas></td>
 			</tr>
 		</table>
+		
 
+		<h1>이전 광고 사례</h1>
+		<table id="info_box">
+			<tr>
+				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion1() %>'><%= CBoardDTO.getPreviousPromotion1() %></a></td>
+			</tr>
+			<tr>
+				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion2() %>'><%= CBoardDTO.getPreviousPromotion2() %></a></td>
+			</tr>
+			<tr>
+				<td class="content2" colspan="4"><a href='<%= CBoardDTO.getPreviousPromotion3() %>'><%= CBoardDTO.getPreviousPromotion3() %></a></td>
+			</tr>	
+		</table>		
+		<h1>마케팅 담당자 정보</h1>
+		<table id="info_box">
+			<tr>
+				<td class="info_title">이름</td>
+				<td class="info_title">이메일</td>
+				<td class="info_title">전화번호</td>
+			</tr>
+			<tr>
+				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo1());%></td>
+				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo2());%></td>
+				<td class="content2"><%out.println(CBoardDTO.getCompanyInfo3());%></td>
+			</tr>
+		</table>
+		
+		
 		
 		
 		
