@@ -187,7 +187,7 @@
 						%>
 					</div>
 					<div class="list_01_div02">
-						<a href="creator.finad23?nickname= <%=nickname%>" target="_blank" class="list_01_img"><img src="img/<%=cate.getImage()%>" alt="" id="img_data">
+						<a href="creator.finad23?nickname=<%=nickname%>" target="_blank" class="list_01_img"><img src="img/<%=cate.getImage()%>" alt="" id="img_data">
 							<div>
 								<span class="div_img"> <%=nickname%>
 								</span>

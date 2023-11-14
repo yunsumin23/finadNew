@@ -20,6 +20,7 @@ public class JdbcUtil {
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e);
+			System.out.println("연결안됨");
 		}
 		return con;
 	}

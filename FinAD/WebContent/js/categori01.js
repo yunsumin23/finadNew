@@ -33,6 +33,8 @@ $(document).ready(function () {
     	  $(".list_01.asdf").remove();
     	  var res = $(response).find(".list_01");
     	  $("#list_01_wrapper").append(res);
+    	  $(".rank_li02").remove();
+    	  var rank = $(response).find();
           console.log("성공");
       },
       error: function(error) {

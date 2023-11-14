@@ -100,8 +100,10 @@ public class FinadDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Influ_info influ_info = null;
+//		System.out.println(nickname);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println(nickname);
 			pstmt = conn.prepareStatement(
 					"SELECT user.*, user_mypage.*"
 					+ "FROM project.user LEFT JOIN project.user_mypage "
@@ -111,7 +113,6 @@ public class FinadDAO {
 					+ "CONCAT('%" + nickname + "%') "
 					+ "ORDER BY user_mypage.subscribers DESC");
 			rs = pstmt.executeQuery();
-			
 			if(rs.next()) {
 				influ_info = new Influ_info();
 				influ_info.setNickname(rs.getString("nickName"));
@@ -133,6 +134,7 @@ public class FinadDAO {
 				influ_info.setThrAge(rs.getDouble("ageAvg30"));
 				influ_info.setForAge(rs.getDouble("ageAvg40"));
 				influ_info.setFifAge(rs.getDouble("ageAvg50"));
+//				System.out.println(influ_info.getNickname());
 			}
 		} catch (Exception e) {
 			// TODO: handle exception

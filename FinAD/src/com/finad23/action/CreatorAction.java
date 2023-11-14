@@ -13,6 +13,7 @@ public class CreatorAction implements FinadAction{
 	public ActionForward excute(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		// TODO Auto-generated method stub
 		String nickname = rq.getParameter("nickname");
+//		System.out.println(nickname);
 		CreatorService creatorService = new CreatorService();
 		Influ_info article = creatorService.getArticle(nickname);
 

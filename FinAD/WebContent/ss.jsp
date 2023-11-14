@@ -28,6 +28,17 @@
 				String AvgViewers = df.format(cate.getAvgviewers());
 				String nickname = cate.getNickname();
 	%>
+		<div class="rank_div">
+		<ul class="rank_ul">
+			<li class="rank_li01">크리에이터 랭킹</li>
+			<%
+				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
+				/* out.println(category); */
+			%>
+
+		</ul>
+	</div>
+	
 	<div id="list_01_wrapper">
 		<div class="list_01 asdf">
 			<div class="list_01_div01">
