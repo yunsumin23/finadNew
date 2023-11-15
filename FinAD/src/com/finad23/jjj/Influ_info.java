@@ -1,7 +1,7 @@
 package com.finad23.jjj;
 
 public class Influ_info {
-	private String id, pw, name, sex, email, nickname, newsagency, mobilenumber, category, post, address, reference, image, youtuLink, liveBcLink, snsLink, introduc, shorts;
+	private String id, pw, name, sex, email, nickName, newsagency, mobilenumber, category, post, address, reference, image, youtuLink, liveBcLink, snsLink, introduc, shorts;
 	int subscribers, avgviewers, thravgSub, thravgViewer, thravgHit;
 	double man_ratio, woman_ratio, tenAge, tweAge, thrAge, forAge, fifAge;
 	public String getImage() {
@@ -181,11 +181,11 @@ public class Influ_info {
 	}
 
 	public String getNickname() {
-		return nickname;
+		return nickName;
 	}
 
 	public void setNickname(String nickname) {
-		this.nickname = nickname;
+		this.nickName = nickname;
 	}
 
 	public String getNewsagency() {

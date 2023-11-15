@@ -159,8 +159,9 @@
     align-items: center;
 }
 
-.star img{
-    width: 32px;
+#star01 {
+    width: 40px;
+	height: 40px;
 }
 
 .list_01, .list_02, .list_03, .list_04, .list_05, .list_06, .list_07, .list_08, .list_09, .list_10 {
@@ -230,4 +231,13 @@
 	border: none;
 	background: none;
 	cursor: pointer;
+}
+#star_li {
+	display: flex;
+	justify-content: center;
+}
+
+.star_create {
+	width: 32px;
+	height: 32px;
 }

@@ -417,3 +417,12 @@ footer {
 .footer_class p {
     color: #aaa;
 }
+
+#star_li {
+	display: flex;
+}
+
+.star_create {
+	width: 32px;
+	height: 32px;
+}

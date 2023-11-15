@@ -12,6 +12,7 @@ public class CreatorAction implements FinadAction{
 	@Override
 	public ActionForward excute(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		// TODO Auto-generated method stub
+		rq.setCharacterEncoding("UTF-8");
 		String nickname = rq.getParameter("nickname");
 //		System.out.println(nickname);
 		CreatorService creatorService = new CreatorService();

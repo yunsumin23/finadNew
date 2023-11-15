@@ -17,6 +17,7 @@ public class FinadSecController extends javax.servlet.http.HttpServlet{
 	
 	protected void service(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
 		rq.setCharacterEncoding("UTF-8");
+		rs.setCharacterEncoding("UTF-8");
 		String RequestURI = rq.getRequestURI();
 		String contextPath = rq.getContextPath();
 		String command = RequestURI.substring(contextPath.length());

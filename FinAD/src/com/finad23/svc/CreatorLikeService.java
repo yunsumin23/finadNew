@@ -4,18 +4,30 @@ import java.sql.Connection;
 
 import com.finad23.DAO.FinadDAO;
 import com.finad23.DTO.UserLikeDTO;
+
 import static com.finad23.db.JdbcUtil.*;
 
 public class CreatorLikeService {
 	
-	public UserLikeDTO UserLikeDTO(String nickname, String id) throws Exception {
-		UserLikeDTO likeDTO = null;
-		Connection conn = getConnection();
-		FinadDAO finadDAO = FinadDAO.getInstance();
-		finadDAO.setConnection(conn);
+	public boolean likeArticle(UserLikeDTO likeDTO) throws Exception {
 		
-		likeDTO = finadDAO.creatorLike(nickname, id);
-		close(conn);
-		return likeDTO;
+		boolean countSuccess = false;
+		
+		Connection con = getConnection();
+		FinadDAO dao = FinadDAO.getInstance();
+		dao.setConnection(con);
+		
+		int likeCount = dao.creatorLike(likeDTO);
+		
+		if(likeCount > 0) {
+			commit(con);
+			countSuccess = true;
+		} else {
+			rollback(con);
+		}
+		close(con);
+		return countSuccess;
+		
 	}
+	
 }

@@ -161,25 +161,33 @@
 						<input type="checkbox" name="list_name01" class="list_check" width="20px">
 						<p></p>
 						<%
-							if (id != null) {
-										if (userLikeDTO != null) {
+				if (id != null) {
+					if (userLikeDTO != null) {
 						%>
 						<div class="list_01_div01">
-							<input type="checkbox" name="list_name01" class="list_check" width="20px">
+<!-- 							<input type="checkbox" name="list_name01" class="list_check" width="20px"> -->
 							<p></p>
-							<button class="star" id="star_btn" onclick="like(<%= id%>,<%= nickname%>)">
-								<img src="img/star01.png" alt="" id="star01">
-							</button>
+							<form action="creatorLike.finad23?id=<%= id%>&nickname=<%= nickname%>" method="post">
+								<button id="star_btn" name="star_btn">
+									<img src="img/star01.png" alt="" id="star01">
+								</button>
+								<input type="hidden" class="hidden_name" name="hidden_name" value="<%= nickname%>">
+								<input type="hidden" class="hidden_id" name="hidden_id" value="<%= id%>">
+							</form>
 						</div>
 						<%
 							} else {
 						%>
 						<div class="list_01_div01">
-							<input type="checkbox" name="list_name01" class="list_check" width="20px">
+							<!-- <input type="checkbox" name="list_name01" class="list_check" width="20px"> -->
 							<p></p>
-							<button class="star" id="star_btn" onclick="like(<%= id%>,<%= nickname%>)">
-								<img src="img/star02.png" alt="" id="star01">
-							</button>
+							<form action="creatorLike.finad23?id=<%= id%>&nickname=<%= nickname%>" method="post">
+								<button id="star_btn" name="star_btn">
+									<img src="img/star02.png" alt="" id="star01">
+								</button>
+								<input type="hidden" class="hidden_name" name="hidden_name" value="<%= nickname%>">
+								<input type="hidden" class="hidden_id" name="hidden_id" value="<%= id%>">
+							</form>
 						</div>
 						<%
 							}
@@ -199,21 +207,20 @@
 							<%
 								if (type == null || type.equals("nomal")) {
 							%>
-							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
-							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
-							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
-							<li style="filter: blur(5px);">못보지롱ㅋㅋ</li>
+							<li style="filter: blur(5px);"><%=AvgViewers%></li>
+							<li style="filter: blur(5px);"><%=cate.getAvgviewers() * 0.01%></li>
+							<li style="filter: blur(5px);">data</li>
+							<li style="filter: blur(5px);"><%=(int) ((cate.getAvgviewers() * 0.001) * 30)%>만원</li>
 							<%
 								} else {
 							%>
 							<li><p id="viwe_data"><%=AvgViewers%></li>
 							<li><p id="cpv_data"><%=cate.getAvgviewers() * 0.01%></li>
-							<li>광고 영상 호감도</li>
+							<li id="star_li"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star02.png"></li>
 							<li><p id="price_data"><%=(int) ((cate.getAvgviewers() * 0.001) * 30)%>만원</li>
 							<%
 								}
 							%>
-
 						</ul>
 					</div>
 				</div>

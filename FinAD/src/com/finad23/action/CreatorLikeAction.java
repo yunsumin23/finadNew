@@ -1,5 +1,7 @@
 package com.finad23.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,18 +14,21 @@ public class CreatorLikeAction implements FinadAction{
 	@Override
 	public ActionForward excute(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		// TODO Auto-generated method stub
-		String nickname = rq.getParameter("nickname");
-		String id = rq.getParameter("id");
-		String like = rq.getParameter("star01");
-		CreatorLikeService likeService = new CreatorLikeService();
-		UserLikeDTO likeDTO = likeService.UserLikeDTO(nickname, id);
-		
 		ActionForward forward = new ActionForward();
-		rq.setAttribute("id", id);
-//		rq.setAttribute("like", like);
-		rq.setAttribute("nickname", nickname);
-		rq.setAttribute("likeDTO", likeDTO);
-		forward.setPath("/test01.jsp");
+		UserLikeDTO likeDTO = new UserLikeDTO();
+		
+		String id = rq.getParameter("id");
+		String userNickname = rq.getParameter("nickname");
+		System.out.println("액션 "+id);
+		System.out.println("액션 "+userNickname);
+		
+		likeDTO.setId(id);
+		likeDTO.setNickName(userNickname);
+		CreatorLikeService likeService = new CreatorLikeService();
+		boolean like = likeService.likeArticle(likeDTO);
+		
+		
+		forward.setPath("test01.jsp");
 		
 		return forward;
 	}

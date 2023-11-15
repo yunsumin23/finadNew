@@ -85,15 +85,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="follow">
-		<p class="follow_p1">평균 구독자 증가 등급</p>
-		<p class="follow_p2">데이터를 통해 들고올 예정</p>
-		<p class="follow_p3">0.01%-0.99%는 유사한 채널의 평균적인 팔로워수를 증가 등급을 나타나는 수치입니다.</p>
-	</div>
+<!-- 	<div class="follow"> -->
+<!-- 		<p class="follow_p1">평균 구독자 증가 등급</p> -->
+<!-- 		<p class="follow_p2">데이터를 통해 들고올 예정</p> -->
+<!-- 		<p class="follow_p3">0.01%-0.99%는 유사한 채널의 평균적인 팔로워수를 증가 등급을 나타나는 수치입니다.</p> -->
+<!-- 	</div> -->
 	<div class="avg_look">
-		<p class="avg_look_p1">평균 조회수</p>
-		<p class="avg_look_p2">데이터를 통해 들고올 예정</p>
-		<p class="avg_look_p3">최신 10개 영상의 평균 조회수입니다.</p>
+		<p class="avg_look_p1">최신 조회수 합</p>
+		<p class="avg_look_p2" data-count="<%=article.getAvgviewers() * 10%>">0</p>
+		<p class="avg_look_p3">최신 10개 영상의 조회수입니다.</p>
 	</div>
 	<p class="add_info">추가 정보사항</p>
 	<%

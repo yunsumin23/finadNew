@@ -99,11 +99,11 @@ public class FinadDAO {
 	public Influ_info creator(String nickname) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Influ_info influ_info = null;
-//		System.out.println(nickname);
+		Influ_info influ_info = new Influ_info();
+		System.out.println("hhhhh "+nickname);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println(nickname);
+			System.out.println("ndjsand"+nickname);
 			pstmt = conn.prepareStatement(
 					"SELECT user.*, user_mypage.*"
 					+ "FROM project.user LEFT JOIN project.user_mypage "
@@ -113,8 +113,8 @@ public class FinadDAO {
 					+ "CONCAT('%" + nickname + "%') "
 					+ "ORDER BY user_mypage.subscribers DESC");
 			rs = pstmt.executeQuery();
+			System.out.println("ㅗㅗㅗㅗㅗㅗㅗ"+nickname);
 			if(rs.next()) {
-				influ_info = new Influ_info();
 				influ_info.setNickname(rs.getString("nickName"));
 				influ_info.setCategory(rs.getString("category"));
 				influ_info.setSubscribers(rs.getInt("subscribers"));
@@ -134,7 +134,7 @@ public class FinadDAO {
 				influ_info.setThrAge(rs.getDouble("ageAvg30"));
 				influ_info.setForAge(rs.getDouble("ageAvg40"));
 				influ_info.setFifAge(rs.getDouble("ageAvg50"));
-//				System.out.println(influ_info.getNickname());
+				System.out.println("ㅜㅜㅜㅜㅜㅜ"+influ_info.getNickname());
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -155,7 +155,7 @@ public class FinadDAO {
 		ArrayList<Influ_info> list = new ArrayList<Influ_info>();
 		Influ_info influ_info = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+//			Class.forName("com.mysql.jdbc.Driver");
 			pstmt = conn.prepareStatement(search);
 			rs = pstmt.executeQuery();
 //			System.out.println("dao " + nickname);
@@ -178,13 +178,17 @@ public class FinadDAO {
 		return list;
 	}
 	
-	public UserLikeDTO creatorLike(String nickname, String id) {
+	public int creatorLike(UserLikeDTO likeDTO) {
 		PreparedStatement pstmt = null;
-		String like = "INSERT into project.userlike (likeUser, userNickname, ulike) values('"+ id +"','"+ nickname + "','1');";
-		
+		int likeCount = 0;
+		String id = likeDTO.getId();
+		String nickname = likeDTO.getNickName();
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			pstmt = conn.prepareStatement(like);
+			pstmt = conn.prepareStatement(
+		            "INSERT INTO project.userlike (id, nickName, like) VALUES (?, ?, '1')");
+		        pstmt.setString(1, id);
+		        pstmt.setString(2, nickname);
+		        likeCount = pstmt.executeUpdate();
 		} catch(Exception e) {
 			System.out.print(e);
 		} finally {
@@ -194,6 +198,7 @@ public class FinadDAO {
 				System.out.print(e);
 			}
 		}
-		return null;
+		System.out.println("3ㅗㅗㅗㅗ");
+		return likeCount;
 	}
 }
