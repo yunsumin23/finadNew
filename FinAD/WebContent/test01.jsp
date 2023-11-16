@@ -19,6 +19,6 @@
 		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
 		UserLikeDTO userLikeDTO = null;
 	%>
-
+1234
 </body>
 </html>

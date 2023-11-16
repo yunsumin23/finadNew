@@ -162,8 +162,7 @@
 					<div class="list_01_div01">
 						<input type="checkbox" name="list_name01" class="list_check" width="20px">
 						<p></p>
-						<%= like %>
-						<%= id %>
+						<%= userLikeDTO.getId() %>
 						<%
 // 				if (id != null) {
 					if (userLikeDTO.getId() == id) {
