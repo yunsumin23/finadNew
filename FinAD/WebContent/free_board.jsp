@@ -43,12 +43,13 @@ var password = '<%=session.getAttribute("password")%>';
 	<%
 		}
 	%>
-	<jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard"
-		scope="page" />
+	<jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard" scope="page" />
+	<jsp:useBean id="boardListHits" class="com.finad23.jjj.FreeBoardHits" scope="page" />
+	<jsp:useBean id="boardListLikes" class="com.finad23.jjj.FreeBoardLikeTop5" scope="page" />
 
 	<div id="table_header">
 		<h1>자유게시판</h1>
-		<table>
+		<table id="main_table">
 			<tr id="sss">
 				<th>번호</th>
 				<th>제목</th>
@@ -68,6 +69,7 @@ var password = '<%=session.getAttribute("password")%>';
 				}
 				int startIndex = (currentPage - 1) * itemsPerPage;
 				int endIndex = Math.min(currentPage * itemsPerPage, totalItems);
+				
 				for (int i = startIndex; i < endIndex; i++) {
 					int number = boardDTO.get(i).getNumber();
 					String writer = boardDTO.get(i).getWriter();
@@ -88,6 +90,55 @@ var password = '<%=session.getAttribute("password")%>';
 				}
 			%>
 		</table>
+		<table id="rank1_table">
+		<tr>
+			<td colspan="4"><h2>실시간 조회수 Top5</h2></td>
+		</tr>
+		<%
+		ArrayList<BoardDTO> boardDTOHits = boardListHits.getBoardHitsList();
+			int cnt=0;
+			for(int i=0; i<5; i++){
+				cnt++;
+				out.println("<tr>");
+				out.println("<td>" + cnt +"</td>");
+				out.println("<td><a href='free_board_text.jsp?number=" + boardDTOHits.get(i).getNumber()
+					+ "' onclick='views(" + boardDTOHits.get(i).getNumber() + ")'>"
+					+ boardDTOHits.get(i).getName() + "</td>");
+				out.println("<td>" + boardDTOHits.get(i).getView() + "</td>");
+				out.println("<td>" + boardDTOHits.get(i).getLike() + "</td>");
+				out.println("</tr>");
+			}
+		%>
+		</table>
+		<table id="rank2_table">
+		<tr>
+			<td colspan="4"><h2>실시간 추천수 Top5</h2></td>
+		</tr>
+		<%
+		ArrayList<BoardDTO> boardDTOLikes = boardListLikes.getBoardLikesList();
+			int cnt2=0;
+			for(int i=0; i<5; i++){
+				cnt2++;
+				out.println("<tr>");
+				out.println("<td>" + cnt2 +"</td>");
+				out.println("<td><a href='free_board_text.jsp?number=" + boardDTOLikes.get(i).getNumber()
+					+ "' onclick='views(" + boardDTOLikes.get(i).getNumber() + ")'>"
+					+ boardDTOLikes.get(i).getName() + "</td>");
+				out.println("<td>" + boardDTOLikes.get(i).getView() + "</td>");
+				out.println("<td>" + boardDTOLikes.get(i).getLike() + "</td>");
+				out.println("</tr>");
+		}
+		%>
+		</table>
+		
+		<div id="free_board_write_btn">
+			<form action="free_board_write.jsp" onsubmit="return check_login();">
+				<input type="submit" value="글쓰기">
+			</form>
+		</div>
+		
+	</div>
+	<div id=free_board_footer>
 		<section id="pageList">
 		<%
     int pageGroupSize = 10; // 한 그룹당 페이지 수
@@ -118,11 +169,7 @@ var password = '<%=session.getAttribute("password")%>';
     }
     %>
 		</section>
-		<div id="free_board_write_btn">
-			<form action="free_board_write.jsp" onsubmit="return check_login();">
-				<input type="submit" value="글쓰기">
-			</form>
-		</div>
+		
 		<div id="free_board_search">
 			<form action="free_board.jsp">
 				<select>

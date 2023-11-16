@@ -189,12 +189,7 @@
 			</tr>
 		</table>
 		
-		
-		
-		
-		
-		
-		
+
 <!-- 		<form action="" id="submit_btn1" method="post"> -->
 <!-- 			<input type="submit" value="지원하기"> -->
 <!-- 		</form>		 -->

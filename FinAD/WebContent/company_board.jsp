@@ -90,13 +90,6 @@
                 </tr>
             </table>
         </div>
-        <!-- <div class="written_search">
-            <form action="company_board.jsp" method="get">
-                <input type="search" name="query" id="search_input" placeholder="검색어를 입력하세요...">
-                <button type="submit" class="search_button">검색</button>
-                <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
-            </form>
-        </div> -->
         <div class="written_search">
   		  <form action="company_board.jsp" method="get">
        		 <input type="search" name="query" id="search_input" placeholder="검색어를 입력하세요...">
@@ -168,9 +161,6 @@
 <%-- 	<%}%> --%>
 		
 	</div>
-	<form action = "company_board.finad?url=CBoardVol" onsubmit="return check_login();" method="post">
-				<input type="submit" value="글쓰기">
-	</form>
 	
 	
 	<jsp:include page="footer.jsp"></jsp:include>

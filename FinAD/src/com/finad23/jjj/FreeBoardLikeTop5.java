@@ -11,7 +11,7 @@ import com.finad23.DTO.BoardDTO;
 
 
 
-public class FreeBoardHits {
+public class FreeBoardLikeTop5 {
 	
 	public Connection con() {
 		Connection connection = null;
@@ -40,24 +40,24 @@ public class FreeBoardHits {
 			// TODO: handle exception
 		}
 	}
-		public ArrayList<BoardDTO> getBoardHitsList() {
+		public ArrayList<BoardDTO> getBoardLikesList() {
 
 		Connection connection = con();
 		Statement statement = null; 
 		ResultSet resultSet = null;
 
-		ArrayList<BoardDTO> arr2 = new ArrayList<BoardDTO>();
+		ArrayList<BoardDTO> arr3 = new ArrayList<BoardDTO>();
 		
 		try {
 			statement = connection.createStatement();
-			resultSet = statement.executeQuery("SELECT * FROM freeboard ORDER BY freeboardViews DESC limit 5;");
+			resultSet = statement.executeQuery("SELECT * FROM freeboard ORDER BY freeboardLike DESC limit 5;");
 			while(resultSet.next()) {
 				BoardDTO boardDTO = new BoardDTO();
 				boardDTO.setName(resultSet.getString("freeboardname"));
 				boardDTO.setNumber(resultSet.getInt("freeboardnumber"));
 				boardDTO.setView(resultSet.getInt("freeboardviews"));
 				boardDTO.setLike(resultSet.getInt("freeboardLike"));
-				arr2.add(boardDTO);
+				arr3.add(boardDTO);
 			}
 		}catch (SQLException e) {
 			// TODO: handle exception
@@ -65,6 +65,6 @@ public class FreeBoardHits {
 		}finally {
 			dicon(statement, connection);
 		}
-		return arr2;
+		return arr3;
 	}
 }

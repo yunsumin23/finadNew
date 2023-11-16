@@ -137,7 +137,7 @@
 } else {
 	%><style>#free_board_btn {
     margin-top: 10px;
-    margin-left: 1260px;
+    margin-left: 1515px;
 	}</style><%
 }
 %> 

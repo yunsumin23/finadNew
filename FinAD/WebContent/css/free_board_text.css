@@ -12,13 +12,13 @@ table{
 }
 
 #text_info td:nth-child(1){
-	width: 100px;
+	width: 150px;
 }
 #text_info td:nth-child(2){
-	width: 100px;
+	width: 150px;
 }
 #text_info td:nth-child(3){
-	width: 650px;
+	width: 850px;
 	padding-left: 15px;
 }
 #text_info td:nth-child(4){
@@ -50,15 +50,20 @@ table{
 }
 #free_board_btn{
 	margin-top: 10px;
-	margin-left: 1127px;
-}
-#free_board_btn form {
-	
+	margin-left: 1332px;
 }
 #free_board_btn input {
-	width: 55px;
-	height: 25px;
+	 width: 85px;
+    height: 35px;
+    font-size: 18px;
+    color: white;
+    border: 1px solid #346aff;
+    border-radius: 3px;
+    background-color: #346aff;
+    cursor: pointer;
+	float: right;
 }
+
 table tr td input {
 	padding: 3px;
 	margin-left: 5px;
@@ -68,7 +73,7 @@ table tr td input {
     text-align: center; /* 버튼을 가운데 정렬합니다. */
     width: 120px;
     margin-top:20px;
-    margin-left: 440px;
+
     padding-bottom: 50px;
 }
 
