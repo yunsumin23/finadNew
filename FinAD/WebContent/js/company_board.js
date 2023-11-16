@@ -9,6 +9,8 @@ $(document).ready(function() {
         $(".gnb").stop().slideUp();
         $(".gnbbox").stop().slideUp();
     });
+    
+    
 });
 function resetSearch() {
         document.getElementById('search_input').value = '';
@@ -26,56 +28,100 @@ function zoomOut(event) {
     event.target.style.transition = "all 0.5s"
 }
 
-
-
-/*//검색 버튼 클릭 시 호출되는 함수
 function search() {
- // 체크된 체크박스 값을 가져와서 검색 쿼리를 생성
- var selectedFilters = [];
- 
- // 홍보 종류 필터
- var promotionTypes = document.querySelectorAll('input[name="promotionType"]:checked');
- for (var i = 0; i < promotionTypes.length; i++) {
-     selectedFilters.push(promotionTypes[i].value);
- }
- 
- // 홍보 기간 필터
- var promotionDurations = document.querySelectorAll('input[name="promotionDuration"]:checked');
- for (var i = 0; i < promotionDurations.length; i++) {
-     selectedFilters.push(promotionDurations[i].value);
- }
- 
- // 카테고리 필터
- var categories = document.querySelectorAll('input[name="category"]:checked');
- for (var i = 0; i < categories.length; i++) {
-     selectedFilters.push(categories[i].value);
- }
- 
- // 검색어 입력란 값 가져오기
- var query = document.getElementById("search_input").value;
- 
- // 서버로 검색 쿼리를 보냄
- sendSearchQuery(selectedFilters, query);
+	var type = [];
+	var duration = [];
+	var category = [];
+	
+	 $('input:checkbox[name=type]').each(function () {
+	        if($(this).is(":checked")==true){
+	        	type.push(this.value);
+	        }
+	    });
+	 $('input:checkbox[name=duration]').each(function () {
+	        if($(this).is(":checked")==true){
+	        	duration.push(this.value);
+	        }
+	    });
+	 $('input:checkbox[name=category]').each(function () {
+	        if($(this).is(":checked")==true){
+	        	category.push(this.value);
+	        }
+	    });
+	 var search = document.getElementById("search_input").value;
+	 
+	 $.ajax({
+		    url: 'CBoardSearch',
+		    type: 'GET',
+		    data: {
+	            type: type,
+	            duration: duration,
+	            category: category,
+	            search: search
+	        },
+		    success: function(data) {
+		        // 서버로부터 받은 데이터를 이용하여 할 일
+		    	
+		        console.log(data);
+		    },
+		    error: function(error) {
+		        // 에러 처리
+//		        console.error('Error:', error);
+		    }
+		});
+
+	
+	
 }
- 
-//검색 쿼리를 서버로 보내는 함수
-function sendSearchQuery(filters, query) {
- // AJAX를 사용하여 서버로 검색 쿼리를 전송
- // jQuery를 사용한 예시
- $.ajax({
-     type: "GET",
-     url: "company_board.jsp", // 검색 요청을 처리하는 서블릿 주소로 변경
-     data: {
-         filters: filters,
-         query: query
-     },
-     success: function (data) {
-         // 검색 결과를 받아와서 페이지에 표시
-         // 이 부분을 적절히 수정하여 검색 결과를 표시하도록 구현
-         console.log("검색 결과:", data);
-     },
-     error: function (error) {
-         console.error("검색 오류:", error);
-     }
- });
-}*/
+
+//검색 버튼 클릭 시 호출되는 함수
+//function search() {
+// // 체크된 체크박스 값을 가져와서 검색 쿼리를 생성
+// var selectedFilters = [];
+// 
+// // 홍보 종류 필터
+// var promotionTypes = document.querySelectorAll('input[name="type"]:checked');
+// for (var i = 0; i < promotionTypes.length; i++) {
+//     selectedFilters.push(promotionTypes[i].value);
+// }
+// 
+// // 홍보 기간 필터
+// var promotionDurations = document.querySelectorAll('input[name="duration"]:checked');
+// for (var i = 0; i < promotionDurations.length; i++) {
+//     selectedFilters.push(promotionDurations[i].value);
+// }
+// 
+// // 카테고리 필터
+// var categories = document.querySelectorAll('input[name="category"]:checked');
+// for (var i = 0; i < categories.length; i++) {
+//     selectedFilters.push(categories[i].value);
+// }
+// 
+// // 검색어 입력란 값 가져오기
+// var query = document.getElementById("search_input").value;
+// 
+// // 서버로 검색 쿼리를 보냄
+// sendSearchQuery(selectedFilters, query);
+//}
+// 
+////검색 쿼리를 서버로 보내는 함수
+//function sendSearchQuery(filters, query) {
+// // AJAX를 사용하여 서버로 검색 쿼리를 전송
+// // jQuery를 사용한 예시
+// $.ajax({
+//     type: "GET",
+//     url: "company_board.jsp", // 검색 요청을 처리하는 서블릿 주소로 변경
+//     data: {
+//         filters: filters,
+//         query: query
+//     },
+//     success: function (data) {
+//         // 검색 결과를 받아와서 페이지에 표시
+//         // 이 부분을 적절히 수정하여 검색 결과를 표시하도록 구현
+//         console.log("검색 결과:", data);
+//     },
+//     error: function (error) {
+//         console.error("검색 오류:", error);
+//     }
+// });
+//}

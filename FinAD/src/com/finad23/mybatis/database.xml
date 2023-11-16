@@ -38,6 +38,27 @@
 		select * from project.volunteer;
 	</select>
 	
+	<!-- 수정된 "companyBoardSearchID" 쿼리 -->
+	<select id="companyBoardSearchID" resultType="com.finad23.DTO.CompanyBoardDTO" parameterType="map">
+   	 	SELECT * FROM project.companyboard
+   		 WHERE
+  		  <!-- 검색 파라미터에 따라 조건 추가 -->
+ 	   <if test="type != null and type != ''">
+  	      AND promotionType = #{type}
+  	  </if>
+  	  <if test="duration != null and duration != ''">
+    	    AND promotionDate2 - promotionDate1 = #{duration}
+  	  </if>
+<!--    	 <if test="category != null and category != ''"> -->
+<!--   	      AND category LIKE CONCAT('%', #{category}, '%') -->
+<!--   	  </if> -->
+  	  <if test="search != null and search != ''">
+  	      AND (title LIKE CONCAT('%', #{search}, '%') OR companyName LIKE CONCAT('%', #{search}, '%'))
+  	  </if>
+ 	   ORDER BY companyBoardNum DESC;
+</select>
+
+	
 	<select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">
      <![CDATA[
     SELECT user.*, user_mypage.*, FORMAT(user_mypage.subscribers, 0) AS subscribers

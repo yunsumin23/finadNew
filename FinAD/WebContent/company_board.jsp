@@ -38,61 +38,61 @@
                 </tr>
                 <tr>
                     <td rowspan="7">
-                        <input type="checkbox" value=""><span>생방송</span><br>
-                        <input type="checkbox" value=""><span>유튜브 리뷰</span><br>
-                        <input type="checkbox" value=""><span>유튜브 컨텐츠</span><br>
-                        <input type="checkbox" value=""><span>홍보모델</span><br>
-                        <input type="checkbox" value=""><span>홍보베너</span><br>
-                        <input type="checkbox" value=""><span>CF</span><br>
-                        <input type="checkbox" value=""><span>기타</span>
+                        <input type="checkbox" name="type" value="live"><span>생방송</span><br>
+                        <input type="checkbox" name="type" value="ureview"><span>유튜브 리뷰</span><br>
+                        <input type="checkbox" name="type" value="ucontent"><span>유튜브 컨텐츠</span><br>
+                        <input type="checkbox" name="type" value="model"><span>홍보모델</span><br>
+                        <input type="checkbox" name="type" value="banner"><span>홍보베너</span><br>
+                        <input type="checkbox" name="type" value="cf"><span>CF</span><br>
+                        <input type="checkbox" name="type" value="others"><span>기타</span>
                     </td>
                     <td rowspan="7">
-                        <input type="checkbox" value=""><span>1회성 컨텐츠</span><br>
-                        <input type="checkbox" value=""><span>1 ~ 7일</span><br>
-                        <input type="checkbox" value=""><span>7 ~ 14일</span><br>
-                        <input type="checkbox" value=""><span>14 ~ 30일</span><br>
-                        <input type="checkbox" value=""><span>30 ~ 60일</span><br>
-                        <input type="checkbox" value=""><span>60 ~ 90일</span><br>
-                        <input type="checkbox" value=""><span>90일 이상</span>
+                        <input type="checkbox" name="duration" value="1"><span>1회성 컨텐츠</span><br>
+                        <input type="checkbox" name="duration" value="7"><span>1 ~ 7일</span><br>
+                        <input type="checkbox" name="duration" value="14"><span>7 ~ 14일</span><br>
+                        <input type="checkbox" name="duration" value="30"><span>14 ~ 30일</span><br>
+                        <input type="checkbox" name="duration" value="60"><span>30 ~ 60일</span><br>
+                        <input type="checkbox" name="duration" value="90"><span>60 ~ 90일</span><br>
+                        <input type="checkbox" name="duration" value="91"><span>90일 이상</span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" value=""><span>뷰티 * 패션</span><br><br>
-                        <input type="checkbox" value=""><span>먹방</span><br><br>
-                        <input type="checkbox" value=""><span>BJ * 엔터테이너</span><br><br>
-                        <input type="checkbox" value=""><span>vLog * 일상</span>
+                        <input type="checkbox" name="category" value="뷰티 * 패션"><span>뷰티 * 패션</span><br><br>
+                        <input type="checkbox" name="category" value="먹방"><span>먹방</span><br><br>
+                        <input type="checkbox" name="category" value="BJ * 엔터테이너"><span>BJ * 엔터테이너</span><br><br>
+                        <input type="checkbox" name="category" value="vLog * 일상"><span>vLog * 일상</span>
                     </td>
                     <td>
-                        <input type="checkbox" value=""><span>게임</span><br><br>
-                        <input type="checkbox" value=""><span>IT * 전자기기</span><br><br>
-                        <input type="checkbox" value=""><span>음악 * 춤</span><br><br>
-                        <input type="checkbox" value=""><span>요리 * 베이킹</span>
+                        <input type="checkbox" name="category" value="게임"><span>게임</span><br><br>
+                        <input type="checkbox" name="category" value="it"><span>IT * 전자기기</span><br><br>
+                        <input type="checkbox" name="category" value="music"><span>음악 * 춤</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>요리 * 베이킹</span>
                     </td>
                     <td>
-                        <input type="checkbox" value=""><span>여행 * 아웃도어</span><br><br>
-                        <input type="checkbox" value=""><span>동물 * 펫</span><br><br>
-                        <input type="checkbox" value=""><span>스포츠 * 건강</span><br><br>
-                        <input type="checkbox" value=""><span>영화 * 애니</span>
+                        <input type="checkbox" name="category" value=""><span>여행 * 아웃도어</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>동물 * 펫</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>스포츠 * 건강</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>영화 * 애니</span>
                     </td>
                     <td>
-                        <input type="checkbox" value=""><span>자동차</span><br><br>
-                        <input type="checkbox" value=""><span>키즈 * 플레이</span><br><br>
-                        <input type="checkbox" value=""><span>교육</span><br><br>
-                        <input type="checkbox" value=""><span>부동산 * 투자</span><br>
+                        <input type="checkbox" name="category" value=""><span>자동차</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>키즈 * 플레이</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>교육</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>부동산 * 투자</span><br>
                     </td>
                     <td>
-                        <input type="checkbox" value=""><span>정치 * 시사</span><br><br>
-                        <input type="checkbox" value=""><span>그림 * 만들기</span><br><br>
-                        <input type="checkbox" value=""><span>운세 * 타로</span><br><br>
-                        <input type="checkbox" value=""><span>기타</span>
+                        <input type="checkbox" name="category" value=""><span>정치 * 시사</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>그림 * 만들기</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>운세 * 타로</span><br><br>
+                        <input type="checkbox" name="category" value=""><span>기타</span>
                     </td>
                 </tr>
             </table>
         </div>
         <div class="written_search">
   		  <form action="company_board.jsp" method="get">
-       		 <input type="search" name="query" id="search_input" placeholder="검색어를 입력하세요...">
+       		 <input type="search" name="company_board_search" id="search_input" placeholder="검색어를 입력하세요...">
         	 <button type="button" class="search_button" onclick="search()">검색</button>
        		 <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
    		  </form>
