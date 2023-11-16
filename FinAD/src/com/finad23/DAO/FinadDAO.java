@@ -185,7 +185,7 @@ public class FinadDAO {
 		String nickname = likeDTO.getNickName();
 		try {
 			pstmt = conn.prepareStatement(
-		            "INSERT INTO project.userlike (id, nickName, like) VALUES (?, ?, '1')");
+		            "INSERT INTO project.userlike (id, nickName, like1) VALUES (?, ?, '1')");
 		        pstmt.setString(1, id);
 		        pstmt.setString(2, nickname);
 		        likeCount = pstmt.executeUpdate();

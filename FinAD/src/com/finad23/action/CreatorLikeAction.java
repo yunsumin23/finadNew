@@ -27,7 +27,7 @@ public class CreatorLikeAction implements FinadAction{
 		CreatorLikeService likeService = new CreatorLikeService();
 		boolean like = likeService.likeArticle(likeDTO);
 		
-		
+		rq.setAttribute("like", likeDTO);
 		forward.setPath("test01.jsp");
 		
 		return forward;

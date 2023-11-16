@@ -19,8 +19,10 @@
 		String type = (String) session.getAttribute("type");
 		String category = request.getParameter("url");
 		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
-		UserLikeDTO userLikeDTO = null;
+		UserLikeDTO userLikeDTO = new UserLikeDTO();
+		String like = (String) request.getAttribute("like");
 		int creatorNum = list.size();
+		
 		if (id == null && password == null) {
 	%>
 	<jsp:include page="header_login.jsp"></jsp:include>
@@ -160,12 +162,13 @@
 					<div class="list_01_div01">
 						<input type="checkbox" name="list_name01" class="list_check" width="20px">
 						<p></p>
+						<%= like %>
+						<%= id %>
 						<%
-				if (id != null) {
-					if (userLikeDTO != null) {
+// 				if (id != null) {
+					if (userLikeDTO.getId() == id) {
 						%>
 						<div class="list_01_div01">
-<!-- 							<input type="checkbox" name="list_name01" class="list_check" width="20px"> -->
 							<p></p>
 							<form action="creatorLike.finad23?id=<%= id%>&nickname=<%= nickname%>" method="post">
 								<button id="star_btn" name="star_btn">
@@ -176,10 +179,10 @@
 							</form>
 						</div>
 						<%
-							} else {
+									
+								} else {
 						%>
 						<div class="list_01_div01">
-							<!-- <input type="checkbox" name="list_name01" class="list_check" width="20px"> -->
 							<p></p>
 							<form action="creatorLike.finad23?id=<%= id%>&nickname=<%= nickname%>" method="post">
 								<button id="star_btn" name="star_btn">
@@ -190,8 +193,10 @@
 							</form>
 						</div>
 						<%
+									
+								
 							}
-									}
+// 									}
 						%>
 					</div>
 					<div class="list_01_div02">
