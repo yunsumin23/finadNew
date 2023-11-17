@@ -102,16 +102,14 @@ public class FinadDAO {
 		Influ_info influ_info = new Influ_info();
 		System.out.println("hhhhh "+nickname);
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("ndjsand"+nickname);
 			pstmt = conn.prepareStatement(
-					"SELECT user.*, user_mypage.*"
-					+ "FROM project.user LEFT JOIN project.user_mypage "
-					+ "ON user.influUserId "
-					+ "= user_mypage.influUserId "
-					+ "WHERE user.nickName LIKE "
-					+ "CONCAT('%" + nickname + "%') "
-					+ "ORDER BY user_mypage.subscribers DESC");
+	                "SELECT user.*, user_mypage.* " +
+	                        "FROM project.user LEFT JOIN project.user_mypage " +
+	                        "ON user.influUserId = user_mypage.influUserId " +
+	                        "WHERE user.nickName LIKE ? " +
+	                        "ORDER BY user_mypage.subscribers DESC");
+
+	        pstmt.setString(1, "%" + nickname + "%");
 			rs = pstmt.executeQuery();
 			System.out.println("ㅗㅗㅗㅗㅗㅗㅗ"+nickname);
 			if(rs.next()) {
@@ -200,5 +198,9 @@ public class FinadDAO {
 		}
 		System.out.println("3ㅗㅗㅗㅗ");
 		return likeCount;
+	}
+	
+	public void abcd() {
+		
 	}
 }

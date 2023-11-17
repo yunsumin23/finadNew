@@ -48,6 +48,8 @@ public class FinadSecController extends javax.servlet.http.HttpServlet{
 			} catch (Exception e) {
 				System.out.print(e);
 			}
+		} else if (command.equals("/diffCre.finad23")) {
+			
 		}
 		if(forward != null) {
 			if(forward.isRedirect()) {
