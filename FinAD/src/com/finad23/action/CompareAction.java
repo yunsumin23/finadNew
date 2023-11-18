@@ -4,8 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.VO.ActionForward;
+import com.finad23.jjj.Influ_info;
+import com.finad23.svc.CompareService;
 
-public class DiffCreAction implements FinadAction{
+public class CompareAction implements FinadAction{
 
 	@Override
 	public ActionForward excute(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
@@ -13,8 +15,15 @@ public class DiffCreAction implements FinadAction{
 		rq.setCharacterEncoding("UTF-8");
 		String nickname = rq.getParameter("nickname");
 		
+		CompareService creService = new CompareService();
+		Influ_info info = creService.diffCre(nickname);
+		System.out.println("12345" + nickname);
+		ActionForward forward = new ActionForward();
+		rq.setAttribute("info", info);
 		
-		return null;
+		forward.setPath("/compare.jsp");
+		
+		return forward;
 	}
 
 }

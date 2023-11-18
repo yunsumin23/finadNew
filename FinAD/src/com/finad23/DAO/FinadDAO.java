@@ -200,7 +200,30 @@ public class FinadDAO {
 		return likeCount;
 	}
 	
-	public void abcd() {
-		
+	public Influ_info diifCre(String nickname) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Influ_info info = new Influ_info();
+		String diff = "SELECT user.influUserId, user.nickName, user_mypage.subscribers, user_mypage.image, user_mypage.avgviewers, user_mypage.`30avgSub`, user_mypage.shorts " + 
+				"From project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId" + 
+				"WHERE user.nickName LIKE CONCAT('%" + nickname + "%');";
+		try {
+			pstmt = conn.prepareStatement(diff);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				info.setNickname(rs.getString("nickName"));
+				info.setSubscribers(rs.getInt("subscribers"));
+				info.setImage(rs.getString("image"));
+				info.setAvgviewers(rs.getInt("avgviewers"));
+				info.setThravgSub(rs.getInt("30avgSub"));
+				info.setShorts(rs.getString("shorts"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return info;
 	}
 }

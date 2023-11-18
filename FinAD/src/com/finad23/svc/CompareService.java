@@ -3,17 +3,21 @@ package com.finad23.svc;
 import java.sql.Connection;
 
 import com.finad23.DAO.FinadDAO;
+import com.finad23.jjj.Influ_info;
 
 import static com.finad23.db.JdbcUtil.*;
-public class DiffCreService {
-	public void abcd() throws Exception {
+public class CompareService {
+	public Influ_info diffCre(String nickname) throws Exception {
 		
+		Influ_info info = null;
 		Connection conn = getConnection();
 		FinadDAO finadDAO = FinadDAO.getInstance();
 		finadDAO.setConnection(conn);
 		
+		info =finadDAO.diifCre(nickname);
 		
 		close(conn);
+		return info;
 		
 	}
 }

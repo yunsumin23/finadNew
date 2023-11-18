@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.VO.ActionForward;
+import com.finad23.action.CompareAction;
 import com.finad23.action.CreatorAction;
 import com.finad23.action.CreatorLikeAction;
 import com.finad23.action.FinadAction;
@@ -49,7 +50,13 @@ public class FinadSecController extends javax.servlet.http.HttpServlet{
 				System.out.print(e);
 			}
 		} else if (command.equals("/diffCre.finad23")) {
-			
+			finadAction = new CompareAction();
+			try {
+				forward = finadAction.excute(rq, rs);
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println(e);
+			}
 		}
 		if(forward != null) {
 			if(forward.isRedirect()) {
