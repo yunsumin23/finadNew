@@ -38,25 +38,36 @@
 		select * from project.volunteer;
 	</select>
 	
-	<!-- 수정된 "companyBoardSearchID" 쿼리 -->
-	<select id="companyBoardSearchID" resultType="com.finad23.DTO.CompanyBoardDTO" parameterType="map">
-   	 	SELECT * FROM project.companyboard
-   		 WHERE
-  		  <!-- 검색 파라미터에 따라 조건 추가 -->
- 	   <if test="type != null and type != ''">
-  	      AND promotionType = #{type}
-  	  </if>
-  	  <if test="duration != null and duration != ''">
-    	    AND promotionDate2 - promotionDate1 = #{duration}
-  	  </if>
-<!--    	 <if test="category != null and category != ''"> -->
-<!--   	      AND category LIKE CONCAT('%', #{category}, '%') -->
-<!--   	  </if> -->
-  	  <if test="search != null and search != ''">
-  	      AND (title LIKE CONCAT('%', #{search}, '%') OR companyName LIKE CONCAT('%', #{search}, '%'))
-  	  </if>
- 	   ORDER BY companyBoardNum DESC;
+<select id="companyBoardSearchID" resultType="com.finad23.DTO.CompanyBoardDTO" parameterType="map">
+    SELECT * FROM project.companyboard
+    <where>
+        <if test="promotionType != null and !promotionType.isEmpty()">
+            AND type IN
+            <foreach collection="promotionType.split(',')" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="duration != null and !duration.isEmpty()">
+            AND duration IN
+            <foreach collection="duration.split(',')" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="category != null and !category.isEmpty()">
+            AND category IN
+            <foreach collection="category.split(',')" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="search != null and !search.isEmpty()">
+            AND (title LIKE CONCAT('%', #{search}, '%') OR companyName LIKE CONCAT('%', #{search}, '%'))
+        </if>
+    </where>
+    ORDER BY companyBoardNum DESC;
 </select>
+
+
+
 
 	
 	<select id="filterId" resultType="com.finad23.DTO.CategoryFilterDTO" parameterType="com.finad23.DTO.CategoryFilterDTO">

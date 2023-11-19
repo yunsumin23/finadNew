@@ -28,6 +28,7 @@
 	}
 %>
 	<div id="company_board_category_container">
+	<form action="company_board.finad?url=CBoardSearch" method="post">
 		<h1>광고게시판</h1>
 		<div id="written_table">
             <table border="1">
@@ -90,13 +91,12 @@
                 </tr>
             </table>
         </div>
-        <div class="written_search">
-  		  <form action="company_board.jsp" method="get">
-       		 <input type="search" name="company_board_search" id="search_input" placeholder="검색어를 입력하세요...">
-        	 <button type="button" class="search_button" onclick="search()">검색</button>
+  		  <div class="written_search">
+       		 <input type="text" name="company_board_search" id="search_input" placeholder="검색어를 입력하세요...">
+        	 <button type="submit" class="search_button">검색</button>
        		 <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
+       		</div>
    		  </form>
- 		</div>
 	</div>
 	
 	<div id="company_board_container">

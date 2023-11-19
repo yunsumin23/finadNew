@@ -14,6 +14,24 @@ $(document).ready(function() {
 });
 function resetSearch() {
         document.getElementById('search_input').value = '';
+        
+     // 체크된 카테고리 해제
+        var categoryCheckboxes = document.getElementsByName("category");
+        for (var i = 0; i < categoryCheckboxes.length; i++) {
+            categoryCheckboxes[i].checked = false;
+        }
+
+        // 체크된 타입 해제
+        var typeCheckboxes = document.getElementsByName("type");
+        for (var i = 0; i < typeCheckboxes.length; i++) {
+            typeCheckboxes[i].checked = false;
+        }
+
+        // 체크된 기간 해제
+        var durationCheckboxes = document.getElementsByName("duration");
+        for (var i = 0; i < durationCheckboxes.length; i++) {
+            durationCheckboxes[i].checked = false;
+        }
 }
 
 function zoomIn(event) {
@@ -28,51 +46,52 @@ function zoomOut(event) {
     event.target.style.transition = "all 0.5s"
 }
 
-function search() {
-	var type = [];
-	var duration = [];
-	var category = [];
-	
-	 $('input:checkbox[name=type]').each(function () {
-	        if($(this).is(":checked")==true){
-	        	type.push(this.value);
-	        }
-	    });
-	 $('input:checkbox[name=duration]').each(function () {
-	        if($(this).is(":checked")==true){
-	        	duration.push(this.value);
-	        }
-	    });
-	 $('input:checkbox[name=category]').each(function () {
-	        if($(this).is(":checked")==true){
-	        	category.push(this.value);
-	        }
-	    });
-	 var search = document.getElementById("search_input").value;
-	 
-	 $.ajax({
-		    url: 'CBoardSearch',
-		    type: 'GET',
-		    data: {
-	            type: type,
-	            duration: duration,
-	            category: category,
-	            search: search
-	        },
-		    success: function(data) {
-		        // 서버로부터 받은 데이터를 이용하여 할 일
-		    	
-		        console.log(data);
-		    },
-		    error: function(error) {
-		        // 에러 처리
-//		        console.error('Error:', error);
-		    }
-		});
-
-	
-	
-}
+//function search() {
+//	var type = [];
+//	var duration = [];
+//	var category = [];
+//	
+//	 $('input:checkbox[name=type]').each(function () {
+//	        if($(this).is(":checked")==true){
+//	        	type.push(this.value);
+//	        }
+//	    });
+//	 $('input:checkbox[name=duration]').each(function () {
+//	        if($(this).is(":checked")==true){
+//	        	duration.push(this.value);
+//	        }
+//	    });
+//	 $('input:checkbox[name=category]').each(function () {
+//	        if($(this).is(":checked")==true){
+//	        	category.push(this.value);
+//	        }
+//	    });
+//	 var search = document.getElementById("search_input").value;
+//	 
+//	 $.ajax({
+//		    url: 'CBoardSearch',
+//		    type: 'GET',
+//		    data: {
+//	            type: type,
+//	            duration: duration,
+//	            category: category,
+//	            search: search
+//	        },
+//		    success: function(data) {
+//		        // 서버로부터 받은 데이터를 이용하여 할 일
+//		    	
+//		        console.log(data);
+//		    },
+//		    error: function(error) {
+//		        // 에러 처리
+////		        console.error('Error:', error);
+//		    	console.log(data);
+//		    }
+//		});
+//
+//	
+//	
+//}
 
 //검색 버튼 클릭 시 호출되는 함수
 //function search() {
