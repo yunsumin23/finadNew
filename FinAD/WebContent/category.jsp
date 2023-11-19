@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.finad23.jjj.Influ_info"%>
 <%@ page import="java.text.DecimalFormat"%>
@@ -22,7 +23,7 @@
 		UserLikeDTO userLikeDTO = new UserLikeDTO();
 		String like = (String) request.getAttribute("like");
 		int creatorNum = list.size();
-		
+
 		if (id == null && password == null) {
 	%>
 	<jsp:include page="header_login.jsp"></jsp:include>
@@ -45,7 +46,9 @@
 	</div>
 	<div class="container">
 		<div class="left_filter">
-			<form action="category.finad?url=<%=category%>&cat=<%=category%>&filter=true" name="form_left" method="post">
+			<form
+				action="category.finad?url=<%=category%>&cat=<%=category%>&filter=true"
+				name="form_left" method="post">
 				<div>
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
@@ -102,17 +105,21 @@
 					</div>
 					<div>
 						<div class="submit_div">
-							<input type="button" name="sub_btn" value="적용하기" class="check_sub">
+							<input type="button" name="sub_btn" value="적용하기"
+								class="check_sub">
 						</div>
 					</div>
 				</div>
 			</form>
 		</div>
 		<div class="rignt_contents">
-			<form action="catesearch.finad?url=<%=category%>&cat=<%=category%>&catesearch=true" name="form_rignt" method="post">
+			<form
+				action="catesearch.finad?url=<%=category%>&cat=<%=category%>&catesearch=true"
+				name="form_rignt" method="post">
 				<div class="search_view">
 					<div>
-						<input type="search" class="right-control" placeholder="크리에이터를 검색하세요" name="cate_search">
+						<input type="search" class="right-control"
+							placeholder="크리에이터를 검색하세요" name="cate_search">
 					</div>
 			</form>
 			<div class="btn_class">
@@ -124,7 +131,8 @@
 				<!-- 					<input type="button" class="sec_btn" value="필터 초기화" name="sec_btn"> -->
 				<form action="">
 					<div>
-						<input type="button" class="thr_btn" value="선택한 채널 광고 제안하기" name="thr_btn">
+						<input type="button" class="thr_btn" value="선택한 채널 광고 제안하기"
+							name="thr_btn">
 					</div>
 				</form>
 			</div>
@@ -132,7 +140,8 @@
 		<div class="cre_list">
 			<div class="list_00">
 				<div class="list_01_div01">
-					<input type="checkbox" name="list_name" id="check" width="20px" onclick="all_check()">
+					<input type="checkbox" name="list_name" id="check" width="20px"
+						onclick="all_check()">
 					<p></p>
 					<p></p>
 				</div>
@@ -160,50 +169,60 @@
 			<div id="list_01_wrapper">
 				<div class="list_01 asdf">
 					<div class="list_01_div01">
-						<input type="checkbox" name="list_name01" class="list_check" width="20px">
+						<input type="checkbox" name="list_name01" class="list_check"
+							width="20px">
 						<p></p>
-						<%= userLikeDTO.getId() %>
+						<%=userLikeDTO.getId()%>
 						<%
-// 				if (id != null) {
-					if (userLikeDTO.getId() == id) {
+							// 				if (id != null) {
+									if (userLikeDTO.getId() == id) {
 						%>
 						<div class="list_01_div01">
 							<p></p>
-							<form action="creatorLike.finad23?id=<%= id%>&nickname=<%= nickname%>" method="post">
+							<form
+								action="creatorLike.finad23?id=<%=id%>&nickname=<%=nickname%>"
+								method="post">
 								<button id="star_btn" name="star_btn">
 									<img src="img/star01.png" alt="" id="star01">
 								</button>
-								<input type="hidden" class="hidden_name" name="hidden_name" value="<%= nickname%>">
-								<input type="hidden" class="hidden_id" name="hidden_id" value="<%= id%>">
+								<input type="hidden" class="hidden_name" name="hidden_name"
+									value="<%=nickname%>"> <input type="hidden"
+									class="hidden_id" name="hidden_id" value="<%=id%>">
 							</form>
 						</div>
 						<%
-									
-								} else {
+							} else {
 						%>
 						<div class="list_01_div01">
 							<p></p>
-							<form action="creatorLike.finad23?id=<%= id%>&nickname=<%= nickname%>" method="post">
+							<form
+								action="creatorLike.finad23?id=<%=id%>&nickname=<%=nickname%>"
+								method="post">
 								<button id="star_btn" name="star_btn">
 									<img src="img/star02.png" alt="" id="star01">
 								</button>
-								<input type="hidden" class="hidden_name" name="hidden_name" value="<%= nickname%>">
-								<input type="hidden" class="hidden_id" name="hidden_id" value="<%= id%>">
+								<input type="hidden" class="hidden_name" name="hidden_name"
+									value="<%=nickname%>"> <input type="hidden"
+									class="hidden_id" name="hidden_id" value="<%=id%>">
 							</form>
 						</div>
 						<%
-									
-								
 							}
-// 									}
+									// 									}
 						%>
 					</div>
 					<div class="list_01_div02">
-						<a href="creator.finad23?nickname=<%=nickname%>" target="_blank" class="list_01_img"><img src="img/<%=cate.getImage()%>" alt="" id="img_data">
-							<div>
-								<span class="div_img"> <%=nickname%>
-								</span>
-							</div> </a>
+						<form action="creator.finad23" method="post" target="_blank">
+							<input type="hidden" name="category" value="<%=category%>">
+							<input type="hidden" name="nickname" value="<%=nickname%>">
+							<button type="submit" class="list_01_img">
+								<img src="img/<%=cate.getImage()%>" alt="" id="img_data">
+								<div class="div_img">
+									<span><%=nickname%></span>
+								</div>
+							</button>
+						</form>
+
 					</div>
 					<div class="list_01_div03">
 						<ul>
@@ -220,7 +239,12 @@
 							%>
 							<li><p id="viwe_data"><%=AvgViewers%></li>
 							<li><p id="cpv_data"><%=cate.getAvgviewers() * 0.01%></li>
-							<li id="star_li"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star01.png"><img class="star_create" src="img/star02.png"></li>
+							<li id="star_li"><img class="star_create"
+								src="img/star01.png"><img class="star_create"
+								src="img/star01.png"><img class="star_create"
+								src="img/star01.png"><img class="star_create"
+								src="img/star01.png"><img class="star_create"
+								src="img/star02.png"></li>
 							<li><p id="price_data"><%=(int) ((cate.getAvgviewers() * 0.001) * 30)%>만원</li>
 							<%
 								}

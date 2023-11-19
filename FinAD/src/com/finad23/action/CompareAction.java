@@ -1,5 +1,7 @@
 package com.finad23.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,14 +15,13 @@ public class CompareAction implements FinadAction{
 	public ActionForward excute(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		// TODO Auto-generated method stub
 		rq.setCharacterEncoding("UTF-8");
-		String nickname = rq.getParameter("nickname");
+		String category = rq.getParameter("hidden_category");
 		
 		CompareService creService = new CompareService();
-		Influ_info info = creService.diffCre(nickname);
-		System.out.println("12345" + nickname);
+		ArrayList<Influ_info> info = creService.diffCre(category);
 		ActionForward forward = new ActionForward();
 		rq.setAttribute("info", info);
-		
+//		System.out.println(category);
 		forward.setPath("/compare.jsp");
 		
 		return forward;

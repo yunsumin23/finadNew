@@ -200,15 +200,48 @@ public class FinadDAO {
 		return likeCount;
 	}
 	
-	public Influ_info diifCre(String nickname) {
+	public ArrayList<Influ_info> diifCre(String category) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Influ_info info = null;
+		ArrayList<Influ_info> list = new ArrayList<Influ_info>();
+		String diff = "SELECT user.influUserId, user.nickName, user.category, user_mypage.subscribers, user_mypage.image, user_mypage.avgviewers, user_mypage.`30avgSub`, user_mypage.shorts " + 
+				"FROM project.`user` " + 
+				"LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId " + 
+				"WHERE user.category LIKE '%" + category + "%';";
+		try {
+			pstmt = conn.prepareStatement(diff);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				info = new Influ_info();
+				info.setNickname(rs.getString("nickName"));
+				info.setSubscribers(rs.getInt("subscribers"));
+				info.setImage(rs.getString("image"));
+				info.setAvgviewers(rs.getInt("avgviewers"));
+				info.setThravgSub(rs.getInt("30avgSub"));
+				info.setShorts(rs.getString("shorts"));
+				list.add(info);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}
+	public Influ_info nonMat(String category, String nickname) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		Influ_info info = new Influ_info();
-		String diff = "SELECT user.influUserId, user.nickName, user_mypage.subscribers, user_mypage.image, user_mypage.avgviewers, user_mypage.`30avgSub`, user_mypage.shorts " + 
-				"From project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId" + 
-				"WHERE user.nickName LIKE CONCAT('%" + nickname + "%');";
+//		System.out.println(category);
+//		System.out.println(nickname);
+		String nonMat = "SELECT user.influUserId, user.nickName, user.category ,user_mypage.subscribers, user_mypage.image, user_mypage.avgviewers, user_mypage.`30avgSub`, user_mypage.shorts " + 
+				"From project.user LEFT JOIN project.user_mypage ON user.influUserId = user_mypage.influUserId " + 
+				"WHERE user.nickName LIKE '%" + nickname + "%' AND user.category LIKE '%" + category + "%';";
 		try {
-			pstmt = conn.prepareStatement(diff);
+			pstmt = conn.prepareStatement(nonMat);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				info.setNickname(rs.getString("nickName"));
@@ -220,10 +253,13 @@ public class FinadDAO {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e);
+			System.out.println("여기서 오류남");
 		} finally {
 			close(rs);
 			close(pstmt);
 		}
+		
 		return info;
 	}
 }

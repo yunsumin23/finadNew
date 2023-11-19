@@ -5,26 +5,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.VO.ActionForward;
 import com.finad23.jjj.Influ_info;
-import com.finad23.svc.CreatorService;
+import com.finad23.svc.NonMatService;
 
-public class CreatorAction implements FinadAction{
+public class NonMatAction implements FinadAction{
 
 	@Override
 	public ActionForward excute(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		// TODO Auto-generated method stub
 		rq.setCharacterEncoding("UTF-8");
+		String category = rq.getParameter("category");
 		String nickname = rq.getParameter("nickname");
+		
+//		System.out.println(category);
 //		System.out.println(nickname);
-		CreatorService creatorService = new CreatorService();
-		Influ_info article = creatorService.getArticle(nickname);
-
-		ActionForward forward = new ActionForward();
-		rq.setAttribute("nickname", nickname);
-		rq.setAttribute("article", article);
-		forward.setPath("/creator_page.jsp");
 		
-		return forward;
+		NonMatService nonMatService = new NonMatService();
+		Influ_info influ_info = nonMatService.nonMat(category, nickname);
+		ActionForward actionForward = new ActionForward();
+		rq.setAttribute("influ_info", influ_info);
+		actionForward.setPath("/Test123.jsp");
 		
+		return actionForward;
 	}
-	
+
 }

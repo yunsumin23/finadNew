@@ -3,6 +3,7 @@
 <%@ page import="java.text.DecimalFormat"%>
 <%
 	Influ_info article = (Influ_info) request.getAttribute("article");
+	String category = request.getParameter("category");
 %>
 <!DOCTYPE html>
 <html>
@@ -51,9 +52,10 @@
 					</li>
 				</ul>
 				<div class="button_div">
-					<form action="diffCre.finad23?nickname=<%= article.getNickname()%>" method="post">
+					<form action="diffCre.finad23" method="post" target="_blank">
 						<input type="submit" name="creator_button" class="creator_button" value="인플루언서 비교하기">
 						<input type="hidden" name="hidden_nickname" value="<%= article.getNickname()%>">
+						<input type="hidden" name="hidden_category" value="<%= category %>">
 					</form>
 					<form action="jsp/creator_page.jsp" name="button" method="post">
 						<input type="button" name="creator_button" class="creator_button" value="<%=article.getNickname() %> 연락하기">

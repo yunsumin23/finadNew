@@ -13,6 +13,7 @@ import com.finad23.action.CreatorAction;
 import com.finad23.action.CreatorLikeAction;
 import com.finad23.action.FinadAction;
 import com.finad23.action.MainSearchAction;
+import com.finad23.action.NonMatAction;
 
 public class FinadSecController extends javax.servlet.http.HttpServlet{
 	
@@ -51,6 +52,14 @@ public class FinadSecController extends javax.servlet.http.HttpServlet{
 			}
 		} else if (command.equals("/diffCre.finad23")) {
 			finadAction = new CompareAction();
+			try {
+				forward = finadAction.excute(rq, rs);
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println(e);
+			}
+		} else if(command.equals("/nonMat.finad23")) {
+			finadAction = new NonMatAction();
 			try {
 				forward = finadAction.excute(rq, rs);
 			} catch (Exception e) {
