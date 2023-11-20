@@ -15,12 +15,16 @@ h1 {
 	display: flex;
 }
 #fir_sec {
-	width: 650px;
+	width: 390px;
 	text-align: center;
 }
 #sec_sec {
-	width: 650px;
+	width: 390px;
 	text-align: center;
+}
+#cen_sec {
+	width: 520px;
+	font-size: 15px;
 }
 #fir_sec img, #sec_sec img {
 	width:256px;
@@ -40,4 +44,8 @@ h1 {
 }
 #sec_sec {
 	color: #FF766B;
+}
+
+#fir_sec p {
+	height: 30px;
 }

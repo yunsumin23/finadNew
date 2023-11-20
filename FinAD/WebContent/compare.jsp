@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="css/compare.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="js/compare.js"></script>
 </head>
 <body>
@@ -67,16 +69,16 @@
 					<img alt="" src="img/<%=cate.getImage()%>">
 				</div>
 				<div>
-					닉네임 : <span><%=cate.getNickname()%></span>
+					닉네임 : <span class="leftNick"><%=cate.getNickname()%></span>
 				</div>
 				<div>
-					구독자 : <span><%=Subscribers%></span>
+					구독자 : <span class="leftSub"><%=Subscribers%></span>
 				</div>
 				<div>
-					평균조회수 : <span><%=AvgViewers%></span>
+					평균조회수 : <span class="leftView"><%=AvgViewers%></span>
 				</div>
 				<div>
-					30일구독자수 : <span><%=AvgSub%></span>
+					30일구독자수 : <span class="left3Sub"><%=AvgSub%></span>
 				</div>
 				<div>
 					쇼츠유무 : <span><%=cate.getShorts()%></span>
@@ -86,7 +88,9 @@
 				}
 					}
 			%>
-
+			<section id="cen_sec">
+				<div id="columnchart_material" style="height: 500px;"></div>
+			</section>
 			<%-- nickname이 일치하지 않는 경우에만 하나의 select에 option으로 추가 --%>
 			<section id="sec_sec">
 				<form action="">
