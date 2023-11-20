@@ -3,7 +3,7 @@
 .main {
 	width: 1300px;
 	margin: 80px auto;
-	height: 1300px;
+	height: 1450px;
 }
 
 .main li {
@@ -23,14 +23,14 @@ h1 {
 }
 
 .user_img img {
-	height: 128px;
-	width: 128px;
+	height: 256px;
+	width: 256px;
 	border-radius: 50%
 }
 
 .top_info li {
 	padding: 5px;
-	font-size: 25px;
+	font-size: 30px;
 }
 
 .div_ul {
@@ -61,7 +61,7 @@ hr {
 }
 
 .div_data li {
-	font-size: 25px;
+	font-size: 40px;
 	padding: 7px
 }
 
@@ -73,6 +73,7 @@ hr {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	font-size: 25px;
 }
 
 .div_data2 li{
@@ -102,8 +103,9 @@ hr {
 
 h2 {
 	margin-top:50px;
-	width:75px;
+	width:100px;
 	border-bottom: 3px solid #014D81; 
+	font-size: 30px;
 }
 
 .div_category ul {
@@ -112,7 +114,7 @@ h2 {
 }
 
 .div_category li{
-	font-size: 20px;
+	font-size: 25px;
 	color: #FF766B;
 	padding: 15px;
 }
@@ -122,7 +124,7 @@ h2 {
 	border: 2px solid #014D81;
 	width: 1300px;
 	height: 300px;
-	font-size: 25px;
+	font-size: 28px;
 }
 
 .check_pro {
@@ -140,6 +142,7 @@ h2 {
 
 .man_woman, .avg_age {
 	display: flex;
+	font-size: 25px;
 }
 
 .man {
@@ -172,7 +175,8 @@ h2 {
 }
 
 .div_category img {
-	width: 64px;
+	width: 80px;
+	height: 80px;
 }
 
 .cate_div {
