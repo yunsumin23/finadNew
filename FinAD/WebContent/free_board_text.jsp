@@ -1,3 +1,5 @@
+<%@page import="com.finad23.DTO.FreeboardCommentDTO"%>
+<%@page import="com.finad23.jjj.FreeBoardComment"%>
 <%@page import="com.finad23.jjj.FreeBoard"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -15,6 +17,7 @@
 <script src="js/free_board_text.js"></script>
 <jsp:useBean id="boardList" class="com.finad23.jjj.FreeBoard" scope="page" />
 <jsp:useBean id="boardLike" class="com.finad23.jjj.FreeBoardLike" scope="page" />
+<jsp:useBean id="boardComment" class="com.finad23.jjj.FreeBoardComment" scope="page" />
 </head>
 <body>
 	<%
@@ -43,6 +46,17 @@
 				break;
 			}
 		}
+		
+		ArrayList<FreeboardCommentDTO> arr3 = boardComment.getBoardList(id, clickText);
+		
+		FreeboardCommentDTO freeboardCommentDTO = null;
+		for (FreeboardCommentDTO selected : arr3) {
+			if (selected.getPostID() == Integer.parseInt(clickText)) {
+				freeboardCommentDTO = selected;
+				break;
+			}
+		}
+		
 		
 	%>
 <%
@@ -115,6 +129,44 @@
 				</td>
 			</tr>
 		</table>
+	</div>
+	
+	
+	<table id="free_board_comment_list">
+		<tr>
+			<td colspan="4"><h2>댓글</h2></td>
+		</tr>
+		<%
+    // 댓글의 수만큼 반복하여 출력
+    if(arr3 != null){
+        for(int i=0; i<arr3.size(); i++){
+            FreeboardCommentDTO comment = arr3.get(i);
+            out.println("<tr>");
+            out.println("<td>" + (i+1) + "</td>"); // 일반적으로 댓글 번호는 1부터 시작합니다.
+            out.println("<td>" + comment.getUserID() + "</td>");
+            out.println("<td>" + comment.getText() + "</td>");
+            out.println("<td>" + comment.getCreatedAt() + "</td>");
+            out.println("</tr>");
+        }
+    }
+%>
+
+		</table>
+	
+	
+	
+	<div id="free_board_comment">
+		<form action="free_board_comment_sql.jsp">
+			<table>
+				<tr>
+					<td><textarea name="input_comment"></textarea>
+						<input type="hidden" name="input_number" value="<%=clickText%>">
+					</td>
+					
+					<td><input type="submit" value="등록"></td>
+				</tr>		
+			</table>
+		</form>
 	</div>
 	<div id="free_board_btn">
     <table>

@@ -90,3 +90,31 @@ table tr td input {
 .vote-button:hover {
     filter: brightness(1.2); /* 비추천 버튼을 마우스 오버 시 밝게 표시 (선택 사항) */
 }
+
+/*댓글*/
+#free_board_comment form {
+	width: 1300px;
+	height: 150px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#free_board_comment form table td{
+	height: 100px;
+}
+
+#free_board_comment form textarea {
+	width: 1000px; 
+	height: 100px;
+	resize: false;
+
+}
+
+#free_board_comment form input {
+	margin-left: 97px;
+	width: 200px;
+	height: 100px;
+}
+
+
+
