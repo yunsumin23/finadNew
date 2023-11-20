@@ -39,13 +39,13 @@
                 </tr>
                 <tr>
                     <td rowspan="7">
-                        <input type="checkbox" name="type" value="live"><span>생방송</span><br>
-                        <input type="checkbox" name="type" value="ureview"><span>유튜브 리뷰</span><br>
-                        <input type="checkbox" name="type" value="ucontent"><span>유튜브 컨텐츠</span><br>
-                        <input type="checkbox" name="type" value="model"><span>홍보모델</span><br>
-                        <input type="checkbox" name="type" value="banner"><span>홍보베너</span><br>
-                        <input type="checkbox" name="type" value="cf"><span>CF</span><br>
-                        <input type="checkbox" name="type" value="others"><span>기타</span>
+                        <input type="checkbox" name="type" value="생방송"><span>생방송</span><br>
+                        <input type="checkbox" name="type" value="유튜브 리뷰"><span>유튜브 리뷰</span><br>
+                        <input type="checkbox" name="type" value="유튜브 컨텐츠"><span>유튜브 컨텐츠</span><br>
+                        <input type="checkbox" name="type" value="홍보모델"><span>홍보모델</span><br>
+                        <input type="checkbox" name="type" value="홍보배너"><span>홍보베너</span><br>
+                        <input type="checkbox" name="type" value="CF"><span>CF</span><br>
+                        <input type="checkbox" name="type" value="기타"><span>기타</span>
                     </td>
                     <td rowspan="7">
                         <input type="checkbox" name="duration" value="1"><span>1회성 컨텐츠</span><br>
@@ -92,7 +92,7 @@
             </table>
         </div>
   		  <div class="written_search">
-       		 <input type="text" name="company_board_search" id="search_input" placeholder="검색어를 입력하세요...">
+       		 <input type="text" name="company_board_search" id="search_input" value="<%= request.getAttribute("searchQuery") != null ? request.getAttribute("searchQuery") : "" %>" placeholder="검색어를 입력하세요...">
         	 <button type="submit" class="search_button">검색</button>
        		 <button type="button" class="search_button" onclick="resetSearch()">초기화</button>
        		</div>

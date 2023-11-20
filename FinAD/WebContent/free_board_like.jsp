@@ -50,7 +50,7 @@
                 throw new Exception("데이터베이스 연결 안됨<br>");
             }
             statement = connection.createStatement();
-            int i = statement.executeUpdate("insert into freeboardLike(freeboardUserID, freeboardPostID, freeboardIsLiked) values ('"+  userId + "','" + postId + "', '1');");
+            int i = statement.executeUpdate("insert into freeboardLike(freeboardUserID, freeboardPostID, freeboardIsLiked) values('"+  userId + "','" + postId + "', '1');");
 
         } finally{
             try{

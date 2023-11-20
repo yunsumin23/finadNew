@@ -39,28 +39,29 @@
 	</select>
 	
 <select id="companyBoardSearchID" resultType="com.finad23.DTO.CompanyBoardDTO" parameterType="map">
-    SELECT * FROM project.companyboard
+    SELECT * FROM project.companyboard 
+<!--     WHERE promotionType LIKE CONCAT('%',#{type},'%') -->
     <where>
         <if test="promotionType != null and !promotionType.isEmpty()">
-            AND type IN
-            <foreach collection="promotionType.split(',')" item="item" open="(" separator="," close=")">
-                #{item}
-            </foreach>
+            AND promotionType LIKE CONCAT('%',#{type},'%')
+            <!-- <foreach collection="promotionType.split(',')" item="item" open="(" separator="," close=")">
+                #{promotionType}
+            </foreach> -->
         </if>
         <if test="duration != null and !duration.isEmpty()">
             AND duration IN
             <foreach collection="duration.split(',')" item="item" open="(" separator="," close=")">
-                #{item}
+                #{promotionType}
             </foreach>
         </if>
         <if test="category != null and !category.isEmpty()">
             AND category IN
             <foreach collection="category.split(',')" item="item" open="(" separator="," close=")">
-                #{item}
+                #{promotionType}
             </foreach>
         </if>
         <if test="search != null and !search.isEmpty()">
-            AND (title LIKE CONCAT('%', #{search}, '%') OR companyName LIKE CONCAT('%', #{search}, '%'))
+            AND title LIKE CONCAT('%', #{search}, '%')
         </if>
     </where>
     ORDER BY companyBoardNum DESC;

@@ -19,6 +19,9 @@ public class CBoardSearchExtr implements ConInter {
     @Override
     public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
         CBoardSearchConn select = CBoardSearchConn.instance();
+        
+        System.out.println(rq.getParameter("type"));
+        rq.setAttribute("searchQuery", rq.getParameter("company_board_search"));
 
         // 검색 파라미터를 Map에 담아 전달
         Map<String, Object> params = new HashMap<>();
