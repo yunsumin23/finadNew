@@ -41,7 +41,7 @@ public class FreeBoardComment {
 	}
 	
 
-	public ArrayList<FreeboardCommentDTO> getBoardList(String id, String clickText) {
+	public ArrayList<FreeboardCommentDTO> getBoardList(String clickText) {
 		Connection connection = con();
 		Statement statement = null;
 		ResultSet resultSet = null;

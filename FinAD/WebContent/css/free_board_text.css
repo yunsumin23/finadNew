@@ -92,6 +92,37 @@ table tr td input {
 }
 
 /*댓글*/
+#free_board_comment_list {
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+#free_board_comment_list td {
+	height: 30px;
+}
+#free_board_comment_list tr {
+	border: 1px solid gray;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+#free_board_comment_list td:nth-child(1) {
+	width: 30px;
+	text-align: center;
+}
+#free_board_comment_list td:nth-child(2) {
+	width: 100px;
+	text-align: center;
+}
+#free_board_comment_list td:nth-child(3) {
+	width: 1000px;
+}
+#free_board_comment_list td:nth-child(4) {
+	width: 170px;
+	text-align: center;
+}
+
+
 #free_board_comment form {
 	width: 1300px;
 	height: 150px;
