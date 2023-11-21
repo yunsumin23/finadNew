@@ -130,7 +130,7 @@ var password = '<%=session.getAttribute("password")%>';
 		}
 		%>
 		</table>
-		
+
 		<div id="free_board_write_btn">
 			<form action="free_board_write.jsp" onsubmit="return check_login();">
 				<input type="submit" value="글쓰기">

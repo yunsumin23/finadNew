@@ -134,7 +134,6 @@
 				out.println("<td>" + textWithBreaks + "</td>");
 				out.println("<td>" + freeboardCommentDTO.get(i).getCreatedAt() + "</td>");
 				out.println("</tr>");
-				
 
 			}
 		%>
@@ -142,19 +141,26 @@
 	</table>
 
 
-
+	<%
+		if (id != null && password != null) {
+	%>
 	<div id="free_board_comment">
-		<form action="free_board_comment_sql.jsp" onsubmit="return checkComment()">
+		<form action="free_board_comment_sql.jsp"
+			onsubmit="return checkComment()">
 			<table>
 				<tr>
 					<td><textarea name="input_comment" id="input_comment"></textarea></td>
-					<td><input type="hidden" name="input_number" value="<%=clickText%>">
-					</td>
+					<td><input type="hidden" name="input_number"
+						value="<%=clickText%>"></td>
 
 					<td><input type="submit" value="등록"></td>
 				</tr>
 			</table>
 		</form>
+		<%
+			}
+		%>
+
 	</div>
 	<div id="free_board_btn">
 		<table>
