@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.finad23.DTO.CompanyUserDTO;
+import com.finad23.DTO.CompanyUserMypageDTO;
 
 
 public class CUserConn {
@@ -17,9 +18,11 @@ public class CUserConn {
 	
 	SqlSessionFactory sqlSessionFactory = SqlConnect.getSqlSession();
 	
-	public List<CompanyUserDTO> dbSelect() {
+	public List<CompanyUserMypageDTO> dbSelect(String cid) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<CompanyUserDTO> list = sqlSession.selectList("companyUserID");
+		CompanyUserMypageDTO cUserMypageDTO = new CompanyUserMypageDTO();
+		cUserMypageDTO.setCid(cid);
+		List<CompanyUserMypageDTO> list = sqlSession.selectList("companyUserID", cUserMypageDTO);
 		sqlSession.close();
 		return list;
 				

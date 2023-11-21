@@ -6,17 +6,17 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.finad23.DTO.CompanyBoardDTO;
 
 // DB연결하는 파일
-public class SqlInsert {
+public class CBoardInsertConn {
 	
-	static SqlInsert insert = new SqlInsert();
-	public static SqlInsert instance() {
+	static CBoardInsertConn insert = new CBoardInsertConn();
+	public static CBoardInsertConn instance() {
 		return insert;
 	}
 	
 	
 	SqlSessionFactory sqlsession = SqlControl.getSqlSession();
 
-	public void sqlInsert(CompanyBoardDTO CBoardDTO) {
+	public void cBoardInsertConn(CompanyBoardDTO CBoardDTO) {
 		
 		SqlSession session = sqlsession.openSession(); // open을 했으면 
 		

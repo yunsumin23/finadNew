@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.DTO.CompanyUserDTO;
+import com.finad23.DTO.CompanyUserMypageDTO;
 import com.finad23.mybatis.CUserConn;
 
 public class CUserExtr implements ConInter { //기업 Extract == 추출이라는 뜻
@@ -16,10 +17,10 @@ public class CUserExtr implements ConInter { //기업 Extract == 추출이라는
 	}
 	@Override
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
+		String cid = rq.getParameter("userId");
 		CUserConn select = CUserConn.instance();
-		List<CompanyUserDTO> list = select.dbSelect();
-		rq.setAttribute("List", list);
-		
+		List<CompanyUserMypageDTO> list = select.dbSelect(cid);
+		rq.setAttribute("List", list);	
 		return null;
 	}
 }

@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.finad23.DTO.CompanyBoardDTO;
-import com.finad23.mybatis.SqlInsert;
+import com.finad23.mybatis.CBoardInsertConn;
 
 public class CBoardInsert implements ConInter {
 	static CBoardInsert cboardInsert = new CBoardInsert();
@@ -68,8 +68,8 @@ public class CBoardInsert implements ConInter {
 		CBoardDTO.setPreviousPromotion3(previousPromotion3);
 		CBoardDTO.setText(text);
 		
-		SqlInsert insert = SqlInsert.instance();
-		insert.sqlInsert(CBoardDTO);
+		CBoardInsertConn insert = CBoardInsertConn.instance();
+		insert.cBoardInsertConn(CBoardDTO);
 
 		return null;
 }

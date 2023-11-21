@@ -1,3 +1,4 @@
+<%@page import="com.finad23.DTO.CompanyUserMypageDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -31,6 +32,8 @@
 				break;
 			}
 		}
+		
+		
 		
 		if (id == null && password == null) {
 	%>
@@ -73,12 +76,12 @@
 				<tr>
 					<td class="title">모집 기간</td>
 					<td class="content2" colspan="1">
-						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="recruitmentDate1" value="2023-08-23"> ~ 
-						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="recruitmentDate2" value="2023-08-23">
+						<input type="date" class="write_date" max="2100-12-31" min="2023-11-21" name="recruitmentDate1" value="2023-11-21"> ~ 
+						<input type="date" class="write_date" max="2100-12-31" min="2023-11-21" name="recruitmentDate2" value="2023-11-21">
 					</td>
 					<td class="title">홍보 기간</td>
-					<td class="content2" colspan="1"><input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="promotionDate1" value="2023-08-23"> ~ 
-						<input type="date" class="write_date" max="2100-12-31" min="2023-08-23" name="promotionDate2" value="2023-08-23">
+					<td class="content2" colspan="1"><input type="date" class="write_date" max="2100-12-31" min="2023-11-21" name="promotionDate1" value="2023-11-21"> ~ 
+						<input type="date" class="write_date" max="2100-12-31" min="2023-11-21" name="promotionDate2" value="2023-11-21">
 					</td>
 				</tr>
 				<tr>
@@ -122,13 +125,13 @@
 				</tr>
 				<tr>
 					<td class="title" rowspan="3">이전 광고 사례</td>
-					<td class="content" colspan="3">값 불러옴(미구현)</td>
+					<td class="content" colspan="3">미구현</td> 
 				</tr>
 				<tr>
-					<td class="content" colspan="3">값 불러옴(미구현)</td>
+					<td class="content" colspan="3">미구현</td>
 				</tr>
 				<tr>
-					<td class="content" colspan="3">값 불러옴(미구현)</td>
+					<td class="content" colspan="3">미구현</td>
 				</tr>
 				<tr>
 					<td colspan="6"><textarea name="input_text" name="text" id="editor"></textarea></td>

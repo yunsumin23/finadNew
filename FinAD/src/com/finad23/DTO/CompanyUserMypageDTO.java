@@ -11,6 +11,15 @@ public class CompanyUserMypageDTO {
 	private String introduction;
 	private String company_mypageNum;
 	
+	private String cid; 
+
+	
+	public String getCid() {
+		return cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
 	public String getCompanyId() {
 		return companyId;
 	}

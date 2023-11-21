@@ -11,8 +11,8 @@
 		user_mypage.influUserId WHERE user.category LIKE
 		CONCAT('%',#{category},'%') ORDER BY user_mypage.subscribers DESC;
 	</select>
-	<select id="companyUserID" resultType="com.finad23.DTO.CompanyUserDTO">
-		select * from project.company;
+	<select id="companyUserID" resultType="com.finad23.DTO.CompanyUserDTO" parameterType="com.finad23.DTO.CompanyUserMypageDTO">
+		SELECT * FROM project.company JOIN project.company_mypage ON project.company.companyId = project.company_mypage.companyId WHERE project.company.companyId = #{cid} LIMIT 0, 1000;
 	</select>
 	<select id="companyBoardID"
 		resultType="com.finad23.DTO.CompanyBoardDTO">

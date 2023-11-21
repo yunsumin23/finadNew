@@ -146,6 +146,7 @@
 	</table>
 	<div id="company_board_write_btn">
 			<form action = "company_board.finad?url=CBoardWrite" onsubmit="return check_login();" method="post">
+				<input type="hidden" name="userId" value="<%= id %>">
 				<input type="submit" value="글쓰기">
 			</form>
 	</div>
