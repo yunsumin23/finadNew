@@ -86,8 +86,9 @@
 
 .text_box {
     border: 1px solid #014D81;
-    width: 1300px;
-    height: 400px;
+	min-height: 300px; 
+    max-height: 500px; 
+    overflow: auto; 
     font-size: 30px;
 }
 
@@ -116,12 +117,13 @@
 }
 
 .follow_p2, .avg_look_p2 {
-    font-size: 55px;
+    font-size: 65px;
     color: #FF3A56;
 }
 
 .follow_p3, .avg_look_p3 {
     color: #c2c2c2;
+    font-size: 30px;
 }
 
 .chart {
@@ -135,7 +137,7 @@
 
 .chart li{
     list-style: none;
-    font-size: 20px;
+    font-size: 33px;
     color: #014D81;
     text-align: center;
 }
@@ -201,7 +203,7 @@
 .data_count {
 	width: 240px;
 	height: 200px;
-	font-size: 60px;
+	font-size: 80px;
 	text-align: center;
 	display: flex;
 	align-items: center;

@@ -71,28 +71,23 @@
 	<div class="creator_play">
 		<p><%=article.getNickname() %> 영상</p>
 		<div>
-			<iframe width="1300" height="650" src="https://www.youtube.com/embed/Z-wkuJNpFWE?si=ZCjbHkh3zHUCf26R?mute=0&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<iframe width="1300" height="650" src="<%= article.getVideo1() %>?mute=0&autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		</div>
 	</div>
 	<div class="top_play">
 		<p>가장 높은 조회수 순</p>
 		<div class="top_play_div">
 			<div>
-				<iframe width="410" height="235" src="https://www.youtube.com/embed/vGJXAJlZZOw?si=p2P8Y0kc76FZ-b8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="410" height="235" src="<%= article.getVideo2() %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			<div>
-				<iframe width="410" height="235" src="https://www.youtube.com/embed/wuUtnXmi7zs?si=Oy2eW6bnbBhjWwyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="410" height="235" src="<%= article.getVideo3() %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			<div>
-				<iframe width="410" height="235" src="https://www.youtube.com/embed/HSREHS-l9Hg?si=ufKAGLLhX-vHDrBu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="410" height="235" src="<%= article.getVideo4() %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>
-<!-- 	<div class="follow"> -->
-<!-- 		<p class="follow_p1">평균 구독자 증가 등급</p> -->
-<!-- 		<p class="follow_p2">데이터를 통해 들고올 예정</p> -->
-<!-- 		<p class="follow_p3">0.01%-0.99%는 유사한 채널의 평균적인 팔로워수를 증가 등급을 나타나는 수치입니다.</p> -->
-<!-- 	</div> -->
 	<div class="avg_look">
 		<p class="avg_look_p1">최신 조회수 합</p>
 		<p class="avg_look_p2" data-count="<%=article.getAvgviewers() * 10%>">0</p>

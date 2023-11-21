@@ -38,7 +38,7 @@
 		<ul class="rank_ul">
 			<li class="rank_li01">크리에이터 랭킹</li>
 			<%
-				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
+// 				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
 				/* out.println(category); */
 			%>
 
@@ -53,16 +53,16 @@
 					<div class="main_shorts">
 						<div class="shorts_div">쇼츠 여부</div>
 						<select name="shorts" class="shorts">
-							<option value="nothing" selected="selected">--</option>
-							<option value="true">쇼츠 있음</option>
+							<option value="nothing">--</option>
+							<option value="true" selected="selected">쇼츠 있음</option>
 							<option value="false">쇼츠 없음</option>
 						</select>
 					</div>
 					<div class="main_sub">
 						<div class="sub_div">구독자 수</div>
 						<select name="sub" class="sub">
-							<option value="nothing01" selected="selected">--</option>
-							<option value="under10">10만명 이하</option>
+							<option value="nothing01">--</option>
+							<option value="under10" selected="selected">10만명 이하</option>
 							<option value="over10">10만~20만명</option>
 							<option value="over20">20만~50만명</option>
 							<option value="over50">50만~100만명</option>
@@ -73,8 +73,8 @@
 						<div class="price_div">예상 광고 단가</div>
 						<div class="price">
 							<select name="price" class="price_select">
-								<option value="nothing02" selected="selected">--</option>
-								<option value="under30">30만원 이하</option>
+								<option value="nothing02">--</option>
+								<option value="under30" selected="selected">30만원 이하</option>
 								<option value="over30">30~100만원</option>
 								<option value="over100">100~300만원</option>
 								<option value="over300">300만원 이상</option>
@@ -85,8 +85,8 @@
 						<div class="avg_div">광고 평균 조회수</div>
 						<div class="avg">
 							<select name="avg" class="avg_select">
-								<option value="nothing03" selected="selected">--</option>
-								<option value="under1000">1000회 이하</option>
+								<option value="nothing03">--</option>
+								<option value="under1000" selected="selected">1000회 이하</option>
 								<option value="over1000">1000~5000회</option>
 								<option value="over5000">5000~10000회</option>
 								<option value="over10000">100000회 이상</option>
@@ -96,8 +96,8 @@
 					<div class="main_offer">
 						<div class="offer_div">받은 제안 수</div>
 						<select name="offer" class="offer">
-							<option value="nothing04" selected="selected">--</option>
-							<option value="over1">1개 이상</option>
+							<option value="nothing04">--</option>
+							<option value="over1" selected="selected">1개 이상</option>
 							<option value="over10">10개 이상</option>
 							<option value="over50">50개 이상</option>
 							<option value="over99">99개 이상</option>
@@ -140,8 +140,7 @@
 		<div class="cre_list">
 			<div class="list_00">
 				<div class="list_01_div01">
-					<input type="checkbox" name="list_name" id="check" width="20px"
-						onclick="all_check()">
+					<input type="checkbox" name="list_name" id="check" onclick="all_check()">
 					<p></p>
 					<p></p>
 				</div>
@@ -169,10 +168,9 @@
 			<div id="list_01_wrapper">
 				<div class="list_01 asdf">
 					<div class="list_01_div01">
-						<input type="checkbox" name="list_name01" class="list_check"
-							width="20px">
+						<input type="checkbox" name="list_name01" class="list_check">
 						<p></p>
-						<%=userLikeDTO.getId()%>
+<%-- 						<%=userLikeDTO.getId()%> --%>
 						<%
 							// 				if (id != null) {
 									if (userLikeDTO.getId() == id) {
@@ -218,7 +216,7 @@
 							<button type="submit" class="list_01_img">
 								<img src="img/<%=cate.getImage()%>" alt="" id="img_data">
 								<div class="div_img">
-									<span><%=nickname%></span>
+									<span class="nickname_span"><%=nickname%></span>
 								</div>
 							</button>
 						</form>

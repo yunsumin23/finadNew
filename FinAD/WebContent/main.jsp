@@ -48,23 +48,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="advertising_type">
-		<p class="advertising_type_p">광고유형</p>
-		<ul class="advertising_ul">
-			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="https://www.naver.com" target="_blank"><img src="img/live.png" alt="생방송">
-					<p class="li_p">생방송</p> </a></li>
-			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/youtube_review.png" alt="유튜브 리뷰">
-					<p class="li_p">유튜브 리뷰</p> </a></li>
-			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/youtube_contents.png" alt="유튜브 콘텐츠">
-					<p class="li_p">유튜브 콘텐츠</p> </a></li>
-			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/promotional model.png" alt="홍보모델">
-					<p class="li_p">홍보모델</p> </a></li>
-			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/promotional banner.png" alt="홍보베너">
-					<p class="li_p">홍보베너</p> </a></li>
-			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/CF.png" alt="CF">
-					<p class="li_p">CF</p> </a></li>
-		</ul>
-	</div>
 	<div class="creator_type">
 		<p class="creator_p">크리에이터 분류</p>
 		<div class="creator_type_div">
@@ -113,6 +96,23 @@
 						<p>기타</p> </a></li>
 			</ul>
 		</div>
+	</div>
+	<div class="advertising_type">
+		<p class="advertising_type_p">광고유형</p>
+		<ul class="advertising_ul">
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="https://www.naver.com" target="_blank"><img src="img/live.png" alt="생방송">
+					<p class="li_p">생방송</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/youtube_review.png" alt="유튜브 리뷰">
+					<p class="li_p">유튜브 리뷰</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/youtube_contents.png" alt="유튜브 콘텐츠">
+					<p class="li_p">유튜브 콘텐츠</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/promotional model.png" alt="홍보모델">
+					<p class="li_p">홍보모델</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/promotional banner.png" alt="홍보베너">
+					<p class="li_p">홍보베너</p> </a></li>
+			<li onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)"><a href="#" target="_blank"><img src="img/CF.png" alt="CF">
+					<p class="li_p">CF</p> </a></li>
+		</ul>
 	</div>
 
 	<p class="praticipationg_p">참여중인 기업</p>
