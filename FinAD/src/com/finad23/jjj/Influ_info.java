@@ -1,9 +1,51 @@
 package com.finad23.jjj;
 
 public class Influ_info {
-	private String id, pw, name, sex, email, nickName, newsagency, mobilenumber, category, post, address, reference, image, youtuLink, liveBcLink, snsLink, introduc, shorts;
+	private String id, pw, name, sex, email, nickName, newsagency, mobilenumber, category, post, address, reference,
+			image, youtuLink, liveBcLink, snsLink, introduc, shorts, video1, video2, video3, video4;
 	int subscribers, avgviewers, thravgSub, thravgViewer, thravgHit;
 	double man_ratio, woman_ratio, tenAge, tweAge, thrAge, forAge, fifAge;
+
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public String getVideo1() {
+		return video1;
+	}
+
+	public void setVideo1(String video1) {
+		this.video1 = video1;
+	}
+
+	public String getVideo2() {
+		return video2;
+	}
+
+	public void setVideo2(String video2) {
+		this.video2 = video2;
+	}
+
+	public String getVideo3() {
+		return video3;
+	}
+
+	public void setVideo3(String video3) {
+		this.video3 = video3;
+	}
+
+	public String getVideo4() {
+		return video4;
+	}
+
+	public void setVideo4(String video4) {
+		this.video4 = video4;
+	}
+
 	public String getImage() {
 		return image;
 	}
@@ -235,9 +277,11 @@ public class Influ_info {
 	public void setReference(String reference) {
 		this.reference = reference;
 	}
+
 	public String getShorts() {
 		return shorts;
 	}
+
 	public void setShorts(String shorts) {
 		this.shorts = shorts;
 	}

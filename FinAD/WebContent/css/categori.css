@@ -108,6 +108,16 @@
 	cursor: pointer;
 }
 
+#check {
+	width: 20px;
+	height: 20px;
+}
+
+.list_check {
+	width: 30px;
+	height: 30px;
+}
+
 .rignt_contents {
 	width: 1082px;
 }
@@ -132,11 +142,10 @@
 	width: 100px;
 }
 
-.fir_btn, .sec_btn, .thr_btn {
+.fir_btn, .thr_btn {
 	margin: 0 auto;
-	margin-top: 50px;
-	height: 30px;
-	font-size: 18px;
+	height: 43px;
+	font-size: 20px;
 	color: white;
 	border: 1px solid #346aff;
 	border-radius: 3px;
@@ -145,12 +154,12 @@
 	margin-right: 10px;
 }
 
-.fir_btn, .sec_btn {
-	width: 100px;
+.fir_btn {
+	width: 110px;
 }
 
 .thr_btn {
-	width: 200px;
+	width: 210px;
 }
 
 .cre_list {
@@ -276,4 +285,11 @@
 	background: none;
 	align-items: center;
 	cursor: pointer;
+}
+
+.nickname_span {
+	font-size: 20px;
+}
+.list_01_div03 p {
+	font-size: 20px;
 }

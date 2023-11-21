@@ -132,6 +132,10 @@ public class FinadDAO {
 				influ_info.setThrAge(rs.getDouble("ageAvg30"));
 				influ_info.setForAge(rs.getDouble("ageAvg40"));
 				influ_info.setFifAge(rs.getDouble("ageAvg50"));
+				influ_info.setVideo1(rs.getString("video1"));
+				influ_info.setVideo2(rs.getString("video2"));
+				influ_info.setVideo3(rs.getString("video3"));
+				influ_info.setVideo4(rs.getString("video4"));
 				System.out.println("ㅜㅜㅜㅜㅜㅜ"+influ_info.getNickname());
 			}
 		} catch (Exception e) {

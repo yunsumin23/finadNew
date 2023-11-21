@@ -60,6 +60,7 @@
     font-size: 35px;
     font-weight: 500;
     color: #FF766B;
+    margin-top: 30px;
 }
 
 .li_p {
@@ -83,7 +84,7 @@
     display: flex;
     justify-content: space-around;
     border: 3px solid #014D81;
-    height: 250px;
+    height: 170px;
     margin-top: 15px;
     align-items: center;
 }
@@ -107,6 +108,7 @@
 
 .creator_type li {
     list-style: none;
+    text-align: center;
 }
 
 .creator_type img {
@@ -121,7 +123,7 @@
 .creator_type_ul p {
     color: #014D81;
     text-align: center;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 .pra_div {
