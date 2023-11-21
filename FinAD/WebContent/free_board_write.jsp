@@ -33,7 +33,7 @@
 %>
 	<div id="write_container">
 		<form action="free_board_write_sql.jsp" name="form" onsubmit="return check_name()" autocomplete="off">
-			<input type="text" name="input_name" placeholder="제목" value="">
+			<input type="text" name="input_name" id="input_name" placeholder="제목" value="">
 			<textarea name="input_text" id="editor"></textarea>
 			<input type="submit" value="완료"placeholder="내용">
 		</form>

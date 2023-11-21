@@ -90,3 +90,14 @@ function relikeButton(boardId){
 	}
 }
 
+function checkComment() {
+    var inputComment = document.getElementById('input_comment').value.trim();
+    
+    if(inputComment === "") {
+        alert("댓글을 작성해 주세요.");
+        return false; // 폼 제출을 막습니다.
+    }
+    
+    return true; // 폼 제출을 계속합니다.
+}
+

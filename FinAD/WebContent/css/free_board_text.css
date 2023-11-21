@@ -96,14 +96,13 @@ table tr td input {
 	width: 1300px;
 	margin: 0 auto;
 	margin-top: 20px;
+		word-break: break-word;
 }
 #free_board_comment_list td {
 	height: 30px;
 }
 #free_board_comment_list tr {
-	border: 1px solid gray;
-	border-radius: 10px;
-	margin-bottom: 8px;
+	border-bottom: 1px solid gray;
 }
 
 #free_board_comment_list td:nth-child(1) {
@@ -137,7 +136,7 @@ table tr td input {
 #free_board_comment form textarea {
 	width: 1000px; 
 	height: 100px;
-	resize: false;
+	resize: none;
 
 }
 
@@ -145,6 +144,8 @@ table tr td input {
 	margin-left: 97px;
 	width: 200px;
 	height: 100px;
+	background-color: white;
+	font-size: 18px;
 }
 
 

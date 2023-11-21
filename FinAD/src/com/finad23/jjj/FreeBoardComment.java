@@ -45,18 +45,18 @@ public class FreeBoardComment {
 		Connection connection = con();
 		Statement statement = null;
 		ResultSet resultSet = null;
-		ArrayList<FreeboardCommentDTO> arr3 = new ArrayList<FreeboardCommentDTO>();
+		ArrayList<FreeboardCommentDTO> arr4 = new ArrayList<FreeboardCommentDTO>();
 		
 		try {
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery("select * from project.freeboardComment where freeboardPostId =" + clickText + ";");
-			if(resultSet.next()) {
+			while(resultSet.next()) {
 				FreeboardCommentDTO freeboardCommentDTO = new FreeboardCommentDTO();
 				freeboardCommentDTO.setUserID(resultSet.getString("freeboardUserID"));
 				freeboardCommentDTO.setPostID(resultSet.getInt("freeboardPostID"));
 				freeboardCommentDTO.setText(resultSet.getString("freeboardComment"));
 				freeboardCommentDTO.setCreatedAt(resultSet.getString("CreatedAt"));
-				arr3.add(freeboardCommentDTO);
+				arr4.add(freeboardCommentDTO);
 			}
 		}catch (SQLException e) {
 			// TODO: handle exception
@@ -64,6 +64,6 @@ public class FreeBoardComment {
 		}finally {
 			dicon(statement, connection);
 		}
-		return arr3;
+		return arr4;
 	}
 }

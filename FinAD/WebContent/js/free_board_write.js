@@ -35,8 +35,8 @@ function zoomOut(event) {
 }
 
 function check_name() {
-    var name = document.getElementsByName("input_name")[0].value;
-    var text = document.getElementsByName("input_text")[0].value;
+    var name = document.getElementById("input_name").value.trim();
+    var text = document.getElementById("editor").value.trim();
 //    var elements = document.getElementsByClassName("ck ck-reset ck-editor ck-rounded-corners");
 //    for (var i = 0; i < elements.length; i++) {
 //        // element를 사용하여 원하는 작업을 수행합니다.

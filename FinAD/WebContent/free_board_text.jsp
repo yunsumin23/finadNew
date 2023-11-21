@@ -49,16 +49,6 @@
 				break;
 			}
 		}
-
-		ArrayList<FreeboardCommentDTO> arr3 = boardComment.getBoardList(clickText);
-
-		FreeboardCommentDTO freeboardCommentDTO = null;
-		for (FreeboardCommentDTO selected : arr3) {
-			if (selected.getPostID() == Integer.parseInt(clickText)) {
-				freeboardCommentDTO = selected;
-				break;
-			}
-		}
 	%>
 	<%
 		if (id == null && password == null) {
@@ -132,21 +122,21 @@
 	</div>
 
 
-	<table id="free_board_comment_list" >
+	<table id="free_board_comment_list">
 		<%
-			// 댓글의 수만큼 반복하여 출력
-			if (arr3 != null) {
-				for (int i = 0; i < arr3.size(); i++) {
-					FreeboardCommentDTO comment = arr3.get(i);
-					out.println("<tr>");
-					out.println("<td>" + (i + 1) + "</td>"); // 일반적으로 댓글 번호는 1부터 시작합니다.
-					out.println("<td>" + comment.getUserID() + "</td>");
-					out.println("<td>" + comment.getText() + "</td>");
-					out.println("<td>" + comment.getCreatedAt() + "</td>");
-					out.println("</tr>");
-				}
+			ArrayList<FreeboardCommentDTO> freeboardCommentDTO = boardComment.getBoardList(clickText);
+			for (int i = 0; i < freeboardCommentDTO.size(); i++) {
+				// 					FreeboardCommentDTO comment = arr3.get(i);
+				String textWithBreaks = freeboardCommentDTO.get(i).getText().replace("\n", "<br>");
+				out.println("<tr>");
+				out.println("<td>" + (i + 1) + "</td>"); // 일반적으로 댓글 번호는 1부터 시작합니다.
+				out.println("<td>" + freeboardCommentDTO.get(i).getUserID() + "</td>");
+				out.println("<td>" + textWithBreaks + "</td>");
+				out.println("<td>" + freeboardCommentDTO.get(i).getCreatedAt() + "</td>");
+				out.println("</tr>");
+				
+
 			}
-			
 		%>
 
 	</table>
@@ -154,11 +144,11 @@
 
 
 	<div id="free_board_comment">
-		<form action="free_board_comment_sql.jsp">
+		<form action="free_board_comment_sql.jsp" onsubmit="return checkComment()">
 			<table>
 				<tr>
-					<td><textarea name="input_comment"></textarea> <input
-						type="hidden" name="input_number" value="<%=clickText%>">
+					<td><textarea name="input_comment" id="input_comment"></textarea></td>
+					<td><input type="hidden" name="input_number" value="<%=clickText%>">
 					</td>
 
 					<td><input type="submit" value="등록"></td>
