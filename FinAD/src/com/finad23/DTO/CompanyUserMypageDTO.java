@@ -54,7 +54,7 @@ public class CompanyUserMypageDTO {
 		this.introduction = introduction;
 	}
 	public String getCompany_mypageNum() {
-		return company_mypageNum;
+		return company_mypageNum; 
 	}
 	public void setCompany_mypageNum(String company_mypageNum) {
 		this.company_mypageNum = company_mypageNum;
