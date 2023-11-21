@@ -7,9 +7,14 @@
 	margin: 0 auto;
 	margin-top: 80px; 
 	font-size: 16px;
+	
 }
+
 #table_header table tr th{
 	font-size: 20px;
+}
+#table_header table{
+		border-collapse: collapse; 
 }
 h1{
 	margin-bottom: 20px;
