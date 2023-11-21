@@ -101,7 +101,7 @@
 	
 	<div id="company_board_container">
 	<table>
-		<tr>
+		<tr id="abcd">
 			<th>번호</th>
 			<th>제목</th>
 			<th>회사명</th>

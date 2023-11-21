@@ -8,6 +8,11 @@ table{
 }
 h1{
 	margin-bottom: 20px;
+	font-size: 70px;
+	color: #050c58;
+}
+#abcd {
+	color: #346aff;
 }
 #written_container{
     
@@ -26,6 +31,7 @@ h1{
 .written_head2{
     width: 1100px;
     height: 50px;
+    color: #346aff;
 }
 #company_board_container table{
 	table-layout:fixed;
@@ -37,7 +43,7 @@ h1{
     padding: 5px;
 }
 #company_board_container table tr td{
-    font-size: 16px;
+    font-size: 20px;
     height: 30px;
     padding: 5px;
     text-overflow: ellipsis;
@@ -82,7 +88,7 @@ table tr td span {
 	padding: 3px;
 	padding-left: 15px;
 	border-bottom : 1px solid gray;
-	font-size: 16px;
+	font-size: 18px;
 }
 #company_board_container table th:nth-child(1) {
     width: 50px;

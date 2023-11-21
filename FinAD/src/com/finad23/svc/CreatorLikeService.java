@@ -18,6 +18,7 @@ public class CreatorLikeService {
 		dao.setConnection(con);
 		
 		int likeCount = dao.creatorLike(likeDTO);
+//		UserLikeDTO likeDTO2 = dao.likeSelect();
 		
 		if(likeCount > 0) {
 			commit(con);

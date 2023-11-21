@@ -34,8 +34,7 @@ $(document).ready(function () {
     	  var res = $(response).find(".list_01");
     	  $("#list_01_wrapper").append(res);
     	  $(".rank_li02").remove();
-    	  var rank = $(response).find();
-          console.log("성공");
+
       },
       error: function(error) {
       	console.log("실패");
@@ -45,10 +44,6 @@ $(document).ready(function () {
    $("#star_btn").on("click",function() {
  var nickname = document.querySelector(".hidden_name").value;
  var id = document.querySelector(".hidden_id").value;
-// var nickname = document.querySelector("#star_btn");
-// console.log(star);
-// console.log(id);
-// console.log(nickname);
 	  $.ajax({
 		  type:"POST",
 		  url:"creatorLike.finad23?id=" + id + "&nickname=" + nickname + "",
@@ -57,9 +52,10 @@ $(document).ready(function () {
 			  nickname: nickname
 		  },
 		  success: function(response) {
+			  $("#star_btn").remove();
+			  var like = $(response).find(".list_0444");
+			  $(".list_01_div01").append(like);
 			  console.log("성공");
-			  console.log(id);
-			  console.log(nickname);
 		  },
 		  error: function(error) {
 			  console.log("실패");
@@ -95,18 +91,3 @@ function zoomOut(event) {
     event.target.style.zIndex = 0;
     event.target.style.transition = "all 0.5s"
 }
-
-// function img_change(imgElement) {
-// // 현재 클릭된 이미지의 src 값을 가져온다
-// var currentSrc = imgElement.src;
-//    
-// // 현재 이미지의 파일 이름을 추출한다
-// var currentFileName = currentSrc.substring(currentSrc.lastIndexOf("/") + 1);
-//    
-// // 이미지 파일 이름에 따라 다음 이미지 파일 이름을 생성한다
-// var nextFileName = currentFileName === "star01.png" ? "star02.png" :
-// "star01.png";
-//    
-// // 다음 이미지로 변경한다.
-// imgElement.src = "img/" + nextFileName;
-// }

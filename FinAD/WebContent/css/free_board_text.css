@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
+h1 {
+	font-size: 70px;
+	color: #050c58;
+}
+
+
 table{
 	border-collapse:collapse;
+	font-size: 18px;
 }
 
 /* free_board_text */
@@ -47,6 +54,7 @@ table{
 }
 #text p {
 	word-break: break-word;
+	font-size: 24px;
 }
 #free_board_btn{
 	margin-top: 10px;
@@ -145,7 +153,7 @@ table tr td input {
 	width: 200px;
 	height: 100px;
 	background-color: white;
-	font-size: 18px;
+	font-size: 30px;
 }
 
 

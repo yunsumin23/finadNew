@@ -6,23 +6,26 @@
 	height:1100px;
 	margin: 0 auto;
 	margin-top: 80px; 
-	font-size: 16px;
-	
+	font-size: 18px;
 }
-
 #table_header table tr th{
-	font-size: 20px;
-}
-#table_header table{
-		border-collapse: collapse; 
+	font-size: 26px;
+	color: #0a16b1;
 }
 h1{
 	margin-bottom: 20px;
 }
 #table_header table tr td a {
-    color: black; /* 원하는 색상으로 변경 */
+    color: #004fa8; /* 원하는 색상으로 변경 */
     text-decoration: none; /* 밑줄 제거 */
 }
+#table_header h1{
+	color: #050c58;
+	font-size: 70px;@g
+	
+}
+
+
 #table_header table tr td a:visited {
     color: #808080; /* 클릭 후의 색상 */
     text-decoration: none; /* 밑줄 제거 */
@@ -46,6 +49,7 @@ table tr td:nth-child(6){
 #main_table th, #main_table td {
 	padding: 3px;
 	border-bottom : 1px solid gray;
+	color: #383838;
 }
 
 #main_table table th:nth-child(1) {
@@ -81,7 +85,7 @@ table tr td:nth-child(6){
 #free_board_search {
 	width:340px;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 120px;
 }
 select{
 	width:70px;
@@ -94,10 +98,12 @@ select{
 	left: 1250px;
 	top: 223px;
 	font-size: 16px;
-	border: 1px solid gray;
+	border: 3px solid #ff4646;
+	border-radius: 5px;
 }
 #rank1_table h2{
 	padding-bottom: 10px;
+	color: #ff4646;
 }
 #rank1_table tr td {
 	height: 27px;
@@ -121,10 +127,12 @@ select{
 	left: 1250px;
 	top: 443px;
 	font-size: 16px;
-	border: 1px solid gray;
+	border: 3px solid #5b5bff;
+	border-radius: 5px;
 }
 #rank2_table h2{
 	padding-bottom: 10px;
+	color: #5b5bff;
 }
 #rank2_table tr td {
 	height: 27px;
@@ -163,7 +171,7 @@ select{
 #free_board_footer{
 	width: 880.7px;
 	margin-left: 301.5px;
-	
+	margin-top: 150px;
 }
 #pageList{
 	text-align: center;
