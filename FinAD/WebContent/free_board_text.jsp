@@ -1,3 +1,5 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.finad23.DTO.FreeboardCommentDTO"%>
 <%@page import="com.finad23.jjj.FreeBoardComment"%>
 <%@page import="com.finad23.jjj.FreeBoard"%>
@@ -49,6 +51,10 @@
 				break;
 			}
 		}
+		
+		int commentCnt=0;
+		ArrayList<FreeboardCommentDTO> freeboardCommentDTO = boardComment.getBoardList(clickText);
+	    commentCnt = freeboardCommentDTO.size(); // 댓글 리스트의 크기를 commentCnt에 할당
 	%>
 	<%
 		if (id == null && password == null) {
@@ -67,18 +73,18 @@
 		<table>
 			<tr>
 				<%
-					out.println("<td colspan='6'>" + boardDTO.getName() + "</td>");
+					out.println("<td class='title' colspan='6'>" + boardDTO.getName() + "</td>");
 				%>
 			</tr>
 			<tr id="text_info">
 				<%
-					out.println("<td>" + boardDTO.getWriter() + "</td>");
+					out.println("<td class='title'>" + boardDTO.getWriter() + "</td>");
 					out.println("<td>" + boardDTO.getDate() + "</td>");
 				%>
 				<td></td>
-				<td><%= boardDTO.getView() %></td>
-				<td><%= boardDTO.getLike() %></td>
-				<td>댓글수</td>
+				<td>조회(<%= boardDTO.getView() %>)</td>
+				<td>추천(<%= boardDTO.getLike() %>)</td>
+				<td>댓글(<%= commentCnt %>)</td>
 			</tr>
 			<tr>
 				<%
@@ -123,19 +129,24 @@
 
 
 	<table id="free_board_comment_list">
-		<%
-			ArrayList<FreeboardCommentDTO> freeboardCommentDTO = boardComment.getBoardList(clickText);
+			<%
+			commentCnt = 0;
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //날짜 포맷 설정
+			ArrayList<FreeboardCommentDTO> freeboardCommentDTOs = boardComment.getBoardList(clickText);
 			for (int i = 0; i < freeboardCommentDTO.size(); i++) {
-				// 					FreeboardCommentDTO comment = arr3.get(i);
+
+				Date date = simpleDateFormat.parse(freeboardCommentDTO.get(i).getCreatedAt());  //db에서 받아온 날짜를 형변환해서 str -> date 저장
+				String formattedDate = simpleDateFormat.format(date); 	//저장된 날짜를 설정된 날짜 포맷으로 변경
 				String textWithBreaks = freeboardCommentDTO.get(i).getText().replace("\n", "<br>");
 				out.println("<tr>");
-				out.println("<td>" + (i + 1) + "</td>"); // 일반적으로 댓글 번호는 1부터 시작합니다.
+				out.println("<td>" + (i + 1) + "</td>");
 				out.println("<td>" + freeboardCommentDTO.get(i).getUserID() + "</td>");
 				out.println("<td>" + textWithBreaks + "</td>");
-				out.println("<td>" + freeboardCommentDTO.get(i).getCreatedAt() + "</td>");
+				out.println("<td>" + formattedDate + "</td>"); //설정된 날짜 포맷 출력
 				out.println("</tr>");
-
+				commentCnt++;
 			}
+			out.println("<h4>댓글(" + commentCnt +")</h4>");
 		%>
 
 	</table>

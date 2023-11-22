@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 h1 {
-	font-size: 70px;
+	font-size: 50px;
 	color: #050c58;
 }
 
@@ -17,6 +17,9 @@ table{
 	margin: 0 auto;
 	margin-top: 80px;
 }
+#text_header .title{
+	font-size: 24px;
+}
 
 #text_info td:nth-child(1){
 	width: 150px;
@@ -25,19 +28,19 @@ table{
 	width: 150px;
 }
 #text_info td:nth-child(3){
-	width: 850px;
+	width: 700px;
 	padding-left: 15px;
 }
 #text_info td:nth-child(4){
-	width: 50px;
+	width: 100px;
 	text-align: center;
 }
 #text_info td:nth-child(5){
-	width: 50px;
+	width: 100px;
 	text-align: center;
 }
 #text_info td:nth-child(6){
-	width: 50px;
+	width: 100px;
 	text-align: center;
 }
 #text_header td{
@@ -54,7 +57,7 @@ table{
 }
 #text p {
 	word-break: break-word;
-	font-size: 24px;
+	font-size: 22px;
 }
 #free_board_btn{
 	margin-top: 10px;
@@ -100,11 +103,17 @@ table tr td input {
 }
 
 /*댓글*/
-#free_board_comment_list {
+h4{
 	width: 1300px;
 	margin: 0 auto;
 	margin-top: 20px;
-		word-break: break-word;
+/* 	border-bottom: 1px solid gray; */
+	margin-bottom: 20px;
+}
+#free_board_comment_list {
+	width: 1300px;
+	margin: 0 auto;
+	word-break: break-word;
 }
 #free_board_comment_list td {
 	height: 30px;
@@ -112,6 +121,10 @@ table tr td input {
 #free_board_comment_list tr {
 	border-bottom: 1px solid gray;
 }
+#free_board_comment_list tr:first-child {
+	border-top: 1px solid gray;
+}
+
 
 #free_board_comment_list td:nth-child(1) {
 	width: 30px;
