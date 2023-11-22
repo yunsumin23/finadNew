@@ -73,7 +73,7 @@ var password = '<%=session.getAttribute("password")%>';
 				if (searchQuery != null) {
 					ArrayList<BoardDTO> boardDTO = boardListSearch.getBoardList(searchType, searchQuery);
 					boardSize = boardDTO.size();
-					int itemsPerPage = 30; // 페이지당 아이템 수
+					int itemsPerPage = 15; // 페이지당 아이템 수
 					int totalItems = boardDTO.size(); // 총 아이템 수
 					int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage); // 전체 페이지 수
 					int currentPage = 1; // 현재 페이지, 기본값은 1로 설정
@@ -104,7 +104,7 @@ var password = '<%=session.getAttribute("password")%>';
 				} else if (searchQuery == null) {
 					ArrayList<BoardDTO> boardDTO = boardList.getBoardList();
 					boardSize = boardDTO.size();
-					int itemsPerPage = 30; // 페이지당 아이템 수
+					int itemsPerPage = 15; // 페이지당 아이템 수
 					int totalItems = boardDTO.size(); // 총 아이템 수
 					int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage); // 전체 페이지 수
 					int currentPage = 1; // 현재 페이지, 기본값은 1로 설정
@@ -191,7 +191,7 @@ var password = '<%=session.getAttribute("password")%>';
 	<div id=free_board_footer>
 				<section id="pageList">
 					<%
-					int itemsPerPage = 30; // 페이지당 아이템 수
+					int itemsPerPage = 15; // 페이지당 아이템 수
 					int totalItems = boardSize; // 총 아이템 수
 					int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage); // 전체 페이지 수
 					int currentPage = 1; // 현재 페이지, 기본값은 1로 설정
