@@ -17,8 +17,8 @@ public class CUserExtr implements ConInter { //기업 Extract == 추출이라는
 	}
 	@Override
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
-		String cid = rq.getParameter("userId");
 		CUserConn select = CUserConn.instance();
+		String cid = rq.getParameter("userId");
 		List<CompanyUserMypageDTO> list = select.dbSelect(cid);
 		rq.setAttribute("List", list);	
 		return null;

@@ -11,19 +11,20 @@
 		user_mypage.influUserId WHERE user.category LIKE
 		CONCAT('%',#{category},'%') ORDER BY user_mypage.subscribers DESC;
 	</select>
-	<select id="companyUserID" resultType="com.finad23.DTO.CompanyUserDTO" parameterType="com.finad23.DTO.CompanyUserMypageDTO">
+	<select id="companyUserID" resultType="com.finad23.DTO.CompanyUserMypageDTO" parameterType="com.finad23.DTO.CompanyUserMypageDTO">
 		SELECT * FROM project.company JOIN project.company_mypage ON project.company.companyId = project.company_mypage.companyId WHERE project.company.companyId = #{cid} LIMIT 0, 1000;
-	</select>
-	<select id="companyBoardID"
-		resultType="com.finad23.DTO.CompanyBoardDTO">
-		select * from project.companyboard  ORDER BY companyBoardNum DESC;
-		
 	</select>
 	<select id="companyBoardTextID"
 		resultType="com.finad23.DTO.CBoardVolunteerDTO" parameterType="com.finad23.DTO.CBoardVolunteerDTO">
 		SELECT * FROM project.companyboard join volunteer on companyboardNum = companyBoardNumber where companyboardNumber = #{vnum};
 		
 	</select>
+	<select id="companyBoardID"
+		resultType="com.finad23.DTO.CompanyBoardDTO">
+		select * from project.companyboard  ORDER BY companyBoardNum DESC;
+		
+	</select>
+	
 	<insert id="companyWriteID" parameterType="com.finad23.DTO.CompanyBoardDTO">
     insert into project.companyboard (title, companyName, companyInfo1, companyInfo2, companyInfo3, recruitmentDate1, recruitmentDate2,
     promotionDate1, promotionDate2, recruitmentNum, avgViewers, subscribers, sex, underachiever, promotionMoney,

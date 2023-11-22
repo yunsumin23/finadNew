@@ -9,7 +9,6 @@ import com.finad23.DTO.CBoardVolunteerDTO;
 import com.finad23.DTO.CompanyBoardDTO;
 
 
-
 public class CBoardTextConn {
 	
 	static CBoardTextConn select = new CBoardTextConn();

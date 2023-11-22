@@ -24,10 +24,10 @@
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
 		
-		List<CompanyUserDTO> list = (List<CompanyUserDTO>) request.getAttribute("List");
-		CompanyUserDTO CUserDTO = null;
-		for (CompanyUserDTO selected : list) {
-			if (selected.getcompanyId().equals(id)) {
+		List<CompanyUserMypageDTO> list = (List<CompanyUserMypageDTO>) request.getAttribute("List");
+		CompanyUserMypageDTO CUserDTO = null;
+		for (CompanyUserMypageDTO selected : list) {
+			if (selected.getCompanyId().equals(id)) {
 				CUserDTO = selected;
 				break;
 			}
@@ -125,13 +125,13 @@
 				</tr>
 				<tr>
 					<td class="title" rowspan="3">이전 광고 사례</td>
-					<td class="content" colspan="3">미구현</td> 
+					<td class="content" colspan="3"><%=CUserDTO.getPreviousAdvertising1() %><input type="hidden" name="previousPromotion1" value="<%=CUserDTO.getPreviousAdvertising1()%>" ></td> 
 				</tr>
 				<tr>
-					<td class="content" colspan="3">미구현</td>
+					<td class="content" colspan="3"><%=CUserDTO.getPreviousAdvertising2() %><input type="hidden" name="previousPromotion2" value="<%=CUserDTO.getPreviousAdvertising2()%>" ></td>
 				</tr>
 				<tr>
-					<td class="content" colspan="3">미구현</td>
+					<td class="content" colspan="3"><%=CUserDTO.getPreviousAdvertising3() %><input type="hidden" name="previousPromotion3" value="<%=CUserDTO.getPreviousAdvertising3()%>" ></td>
 				</tr>
 				<tr>
 					<td colspan="6"><textarea name="input_text" name="text" id="editor"></textarea></td>
