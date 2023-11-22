@@ -45,12 +45,12 @@
 	<%
 		}
 	%>
-	<!-- 	기업 회원만 작성 가능 하게 하는 조건문 [테스트를 위해 주석 처리] -->
-	<!-- 	기업 회원만 작성 가능 하게 하는 조건문 [테스트를 위해 주석 처리] -->
-	<%-- 		<%if(type==null || !type.equals("company")){%> --%>
-	<!-- 		<script>alert("권한이 없습니다")</script> -->
-	<%-- 		<%return; --%>
-	<%-- 	}%> --%>
+<!-- 		기업 회원만 작성 가능 하게 하는 조건문 [테스트를 위해 주석 처리] -->
+<!-- 		기업 회원만 작성 가능 하게 하는 조건문 [테스트를 위해 주석 처리] -->
+			<%if(type==null || !type.equals("company")){%>
+			<script>alert("권한이 없습니다")</script>
+			<%return;
+			}%> 
 
 	<div id="write_container">
 		<form action="company_board_write.finad?url=CBoardWrited" method="post" accept-charset="UTF-8">

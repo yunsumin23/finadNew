@@ -280,9 +280,6 @@ $(document).ready(function() {
     });
 });
 
-function resetSearch() {
-    document.getElementById('search_input').value = '';
-}
 function zoomIn(event) {
 	event.target.style.transform = "scale(1.2)";
 	event.target.style.zIndex = "1";

@@ -189,14 +189,29 @@
 			</tr>
 		</table>
 		
-
-		<form action="" id="submit_btn1" method="post">
-			<input type="submit" value="지원하기">
-		</form>
-		<form action="volunteer.finad?url=Volunteer" id="submit_btn1" method="post">
-			<input type="hidden" name="number" value="<%= clickText%>">
-			<input type="submit" value="지원자 목록">
-		</form>				
+		<%
+		if (type != null && !type.equals("company")) {
+		%>
+  			<form action="" id="submit_btn1" method="post">
+        		<input type="submit" value="지원하기">
+    		</form>
+		<%
+		} else {
+		%>
+    		<form action="volunteer.finad?url=Volunteer" id="submit_btn1" method="post">
+       			<input type="hidden" name="number" value="<%= clickText %>">
+       			<input type="hidden" name="promoMoney" value="<%= CBoardDTO.getPromotionMoney() %>">
+       			<input type="hidden" name="recruitment" value="<%= CBoardDTO.getRecruitmentNum() %>">
+       			<input type="hidden" name="promoType" value="<%= CBoardDTO.getPromotionType() %>">
+       			<input type="hidden" name="promoDate" value="<%= CBoardDTO.getPromotionDate1() %>">
+       			<input type="hidden" name="promoDate2" value="<%= CBoardDTO.getPromotionDate2() %>">
+       			
+       			
+        		<input type="submit" value="지원자 목록">
+    		</form>
+		<%
+		}
+		%>
 		<form action="company_board.finad?url=CBoard" id="submit_btn2" method="post">
 			<input type="submit" value="목록">
 		</form>

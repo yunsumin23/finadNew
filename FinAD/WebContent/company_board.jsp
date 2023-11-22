@@ -144,22 +144,17 @@
 		}
 	%>
 	</table>
-	<div id="company_board_write_btn">
-			<form action = "company_board.finad?url=CBoardWrite" onsubmit="return check_login();" method="post">
-				<input type="hidden" name="userId" value="<%= id %>">
-				<input type="submit" value="글쓰기">
-			</form>
-	</div>
 	
-<!-- 	기업 회원만 버튼 보이게 하는 조건문 [테스트를 위해 주석 처리] -->
-<!-- 	기업 회원만 버튼 보이게 하는 조건문 [테스트를 위해 주석 처리] -->
-<%-- 	<%if(type!=null && type.equals("company")){%> --%>
-<!-- 		<div id="company_board_write_btn"> -->
-<!-- 			<form action = "company_board_write.jsp" onsubmit="return check_login();"> -->
-<!-- 				<input type="submit" value="글쓰기"> -->
-<!-- 			</form> -->
-<!-- 		</div> -->
-<%-- 	<%}%> --%>
+	<%if (type != null && type.equals("company")) { %>
+    	<div id="company_board_write_btn">
+   			<form action="company_board.finad?url=CBoardWrite" method="post">
+   				<input type="hidden" name="userId" value="<%= id %>">
+        		<input type="submit" value="글쓰기3">
+    		</form>
+		</div>
+	<%
+	}
+	%>
 		
 	</div>
 	

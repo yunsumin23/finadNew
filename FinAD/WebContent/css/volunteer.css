@@ -1,32 +1,40 @@
-table {
-  border-collapse: collapse;
-}
 #volunteer_container{
 	width: 1300px;
 	margin: 0 auto;
 	margin-top: 80px;
 }
-
+/*지원자 리스트*/
 #volunteer_list{
+/* 	margin: 0 auto; */
 	margin-top: 25px;
+	border-collapse: collapse;
+}
+#volunteer_list td{
+	padding: 5px;
 }
 #volunteer_list th{
 	font-size: 24px;
 }
 #volunteer_list tr{
 	height: 30px;
+	padding: 5px;
 }
 #volunteer_list td:nth-child(1) {
 	width: 30px;
 	text-align: center;
 }
+/* #volunteer_list td:nth-child(2) { */
+/* 	width: 150px; */
+/* 	text-align: center; */
+/* } */
 #volunteer_list td:nth-child(2) {
 	width: 150px;
 	text-align: center;
 }
 #volunteer_list td:nth-child(3) {
-	width: 200px;
-	text-align: center;
+	width: 150px;
+	text-align: right;
+	padding-right: 15px;
 }
 #volunteer_list td:nth-child(4) {
 	width: 150px;
@@ -34,18 +42,44 @@ table {
 	padding-right: 15px;
 }
 #volunteer_list td:nth-child(5) {
-	width: 150px;
-	text-align: right;
-	padding-right: 15px;
-}
-#volunteer_list td:nth-child(6) {
-	width: 150px;
+	width: 100px;
 	text-align: center;
 }
 
-#volunteer_container #info_box{
+/* 게시글 정보 */
+#second_table{
+	padding-left: 112px;
+}
+#second_table_border{
+	border-radius: 9px;
+	border: 1px solid #c0c0c0;
+}
+#info_box{
+	width: 600px;
+	padding: 10px;
+	
+}
+#info_box_div{
+	float: left;
+}
+
+#info_box td:nth-child(1){
+	width:95px; 
+}
+#info_box td:nth-child(2){
+	width: 80px;
+}
+#info_box td:nth-child(3){
+	width: 200px;
+}
+#info_box td:nth-child(4){
+	width: 190px;
+}
+
+/* 그래프 */
+#volunteer_container #info_box2{
 	width: 1300px;
-	margin-top: 25px;
+	margin-top: 50px;
 	padding: 10px;
 	border-radius: 9px;
 	border: 1px solid #c0c0c0;
@@ -56,22 +90,40 @@ table {
 	width:450px;
 	height: 55px;
 	font-size: 22px;
-	padding: 3px;
 }
 
 .content4{
 	width:450px;
 	height: 55px;
 	font-size: 65px;
-	padding: 3px;
 }
 
 .info_title{
-	padding: 3px;
 	font-size: 16px;
 	color: #636363;
 }
 
+/*뒤로가기, 목록 버튼 */
+#list_btn_container{
+	width:500px;
+	margin: 0 auto;
+	text-align: center;
+}
+.list_btn{
+	text-align: center;
+	margin: 0 auto;
+    margin-top: 50px;
+    width: 200px;
+    height: 61px;
+    font-size: 25px;
+    color: white;
+    border: 1px solid #346aff;
+    border-radius: 3px;
+    background-color: #346aff;
+    cursor: pointer;
+}
+
+/*체크박스*/
 @supports(-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'],
   input[type='radio'] {
