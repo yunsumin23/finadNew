@@ -76,8 +76,8 @@
 					out.println("<td>" + boardDTO.getDate() + "</td>");
 				%>
 				<td></td>
-				<td>조회수</td>
-				<td>추천수</td>
+				<td><%= boardDTO.getView() %></td>
+				<td><%= boardDTO.getLike() %></td>
 				<td>댓글수</td>
 			</tr>
 			<tr>

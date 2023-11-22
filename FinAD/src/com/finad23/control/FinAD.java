@@ -82,7 +82,7 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 		}else if (url.equals("Volunteer")) {
 			inter = VolunteerExtr.instance();
 			try {
-				String cboardVol = inter.FinAD(rq, rs);
+				String volunteer = inter.FinAD(rq, rs);
 				RequestDispatcher re = rq.getRequestDispatcher("volunteer.jsp");
 				re.forward(rq, rs);
 			} catch (Exception e) {
