@@ -18,7 +18,8 @@ public class VolunteerExtr implements ConInter { //광고게시판 Extract == �
 	@Override
 	public String FinAD(HttpServletRequest rq, HttpServletResponse rs) throws Exception {
 		VolunteerConn select = VolunteerConn.instance();
-		List<CBoardVolunteerDTO> list = select.dbSelect();
+		int vnum = Integer.parseInt(rq.getParameter("number"));
+		List<CBoardVolunteerDTO> list = select.dbSelect(vnum);
 		rq.setAttribute("List", list);
 
 		return null;

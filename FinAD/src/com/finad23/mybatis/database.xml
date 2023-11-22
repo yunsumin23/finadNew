@@ -36,7 +36,7 @@
 	</insert>
 	<select id="cBoardVolID"
 		resultType="com.finad23.DTO.CBoardVolunteerDTO">
-		select * from project.volunteer;
+		select * from project.volunteer where companyboardNumber = #{vnum} ORDER BY time;
 	</select>
 	
 <select id="companyBoardSearchID" resultType="com.finad23.DTO.CompanyBoardDTO" parameterType="map">

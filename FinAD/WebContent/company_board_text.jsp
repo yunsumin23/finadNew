@@ -194,6 +194,7 @@
 			<input type="submit" value="지원하기">
 		</form>
 		<form action="volunteer.finad?url=Volunteer" id="submit_btn1" method="post">
+			<input type="hidden" name="number" value="<%= clickText%>">
 			<input type="submit" value="지원자 목록">
 		</form>				
 		<form action="company_board.finad?url=CBoard" id="submit_btn2" method="post">

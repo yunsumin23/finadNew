@@ -17,9 +17,11 @@ public class VolunteerConn {
 
 	SqlSessionFactory sqlSessionFactory = SqlConnect.getSqlSession();
 
-	public List<CBoardVolunteerDTO> dbSelect() {
+	public List<CBoardVolunteerDTO> dbSelect(int vnum) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<CBoardVolunteerDTO> list = sqlSession.selectList("cBoardVolID");
+		CBoardVolunteerDTO cvdto = new CBoardVolunteerDTO();
+		cvdto.setVnum(vnum);
+		List<CBoardVolunteerDTO> list = sqlSession.selectList("cBoardVolID", cvdto);
 		sqlSession.close();
 		return list;
 
