@@ -34,7 +34,7 @@
 		<ul class="rank_ul">
 			<li class="rank_li01">크리에이터 랭킹</li>
 			<%
-				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
+// 				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
 			%>
 
 		</ul>
@@ -149,7 +149,6 @@
 			<div class="list_01">
 				<div class="list_01_div01">
 					<input type="checkbox" name="list_name01" class="list_check" width="20px">
-					<p><%=i + 1%></p>
 					<p class="star">
 						<img src="img/star02.png" alt="" id="star01" onclick="img_change(this)">
 					</p>
