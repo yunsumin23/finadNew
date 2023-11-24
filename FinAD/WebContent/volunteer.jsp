@@ -13,6 +13,11 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 <title>volunteer.jsp</title>
 </head>
 <body>
@@ -68,7 +73,7 @@
 									int volunteerSex = list.get(i).getVolunteerSex();
 									String time = list.get(i).getTime();
 									out.println("<tr>");
-									out.println("<td><input type='checkbox' value=''></td>");
+									out.println("<td><input type='checkbox' name='vol_accept' value=''></td>");
 									// 									out.println("<td>" + companyBoardNumber + "</td>");
 									out.println("<td>" + volunteer + "</td>");
 									out.println("<td>" + volunteerViewer + "</td>");

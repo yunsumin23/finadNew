@@ -34,6 +34,7 @@ public class CBoardInsert implements ConInter {
 		String previousPromotion2 = rq.getParameter("previousPromotion2");
 		String previousPromotion3 = rq.getParameter("previousPromotion3");
 		String text = rq.getParameter("input_text");
+		String companyId = rq.getParameter("companyId");
 		
 		CompanyBoardDTO CBoardDTO = new CompanyBoardDTO();
 		CBoardDTO.setTitle(title);
@@ -67,6 +68,7 @@ public class CBoardInsert implements ConInter {
 		CBoardDTO.setPreviousPromotion2(previousPromotion2);
 		CBoardDTO.setPreviousPromotion3(previousPromotion3);
 		CBoardDTO.setText(text);
+		CBoardDTO.setCompanyId(companyId);
 		
 		CBoardInsertConn insert = CBoardInsertConn.instance();
 		insert.cBoardInsertConn(CBoardDTO);

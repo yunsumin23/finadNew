@@ -11,7 +11,15 @@ public class CompanyBoardDTO {
 	private int promotionMoney; //총 광고 진행비
 	private String promotionType, previousPromotion1, previousPromotion2, previousPromotion3; //광고 유형, 이전 광고 사례
 	private String text, companyWriteDate; //광고 내용, 작성일
+	private String companyId;
 	
+	
+	public String getCompanyId() {
+		return companyId;
+	}
+	public void setCompanyId(String companyId) {
+		this.companyId = companyId;
+	}
 	public int getCompanyBoardNum() {
 		return companyBoardNum;
 	}

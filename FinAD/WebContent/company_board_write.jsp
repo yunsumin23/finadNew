@@ -138,6 +138,7 @@
 				</tr>
 
 			</table>
+			<input type="hidden" name="companyId" value="<%= CUserDTO.getCompanyId() %>">
 			<input type="submit" id="submit_btn" value="완료">
 		</form>
 	</div>

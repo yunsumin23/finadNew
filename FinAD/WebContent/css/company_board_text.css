@@ -11,8 +11,8 @@
 	width: 1300px;
 	margin: 0 auto;
 }
-table{
-/* 	border-collapse:collapse */
+body #text_container #info_box {
+	border-collapse:separate;
 }
 
 .write_date{
@@ -135,3 +135,27 @@ td input[type="text"] {
     cursor: pointer;
 }
 
+/* 지원자 목록 */
+#vol_list {
+	padding: 10px;
+	text-align: right;
+}
+.modal-body{
+	margin: 20px;
+}
+.modal-body td{
+/* 	margin: 5px; */
+	padding: 5px;
+}
+.modal-body td:nth-child(1) {
+	width: 150px;	
+}
+.modal-body td:nth-child(2) {
+	width: 50px;	
+}.modal-body td:nth-child(3) {
+	width: 100px;	
+}.modal-body td:nth-child(4) {
+	width: 100px;	
+}.modal-body td:nth-child(5) {
+	width: 115px;	
+}
