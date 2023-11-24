@@ -33,9 +33,6 @@
 	<div class="rank_div">
 		<ul class="rank_ul">
 			<li class="rank_li01">크리에이터 랭킹</li>
-			<%
-// 				out.println("<li class='rank_li02'>총 " + creatorNum + "명의 크리에이터 검색</li>");
-			%>
 
 		</ul>
 	</div>

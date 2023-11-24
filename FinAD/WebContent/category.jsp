@@ -183,9 +183,8 @@
 								<button id="star_btn" name="star_btn">
 									<img src="img/star01.png" alt="" id="star01">
 								</button>
-								<input type="hidden" class="hidden_name" name="hidden_name"
-									value="<%=nickname%>"> <input type="hidden"
-									class="hidden_id" name="hidden_id" value="<%=id%>">
+								<input type="hidden" class="hidden_name" name="hidden_name" value="<%=nickname%>"> 
+								<input type="hidden" class="hidden_id" name="hidden_id" value="<%=id%>">
 							</form>
 						</div>
 						<%

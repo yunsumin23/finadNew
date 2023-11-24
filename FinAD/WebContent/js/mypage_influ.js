@@ -49,3 +49,11 @@ function zoomOut(event) {
     event.target.style.zIndex = 0;
     event.target.style.transition = "all 0.5s"
 }
+
+
+function showPopup() {
+	var id = document.querySelector("#hidden_id").value;
+	console.log(id);
+	window.open("volunCompany.finad23?id=" + id + "", "광고진행사항","width=400, height=300, left=100, top=50");
+}
+

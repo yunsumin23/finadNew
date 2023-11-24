@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 import com.finad23.DTO.BoardDTO;
+import com.finad23.DTO.CreatorVolun;
 import com.finad23.DTO.UserLikeDTO;
 import com.finad23.jjj.Influ_info;
 
@@ -266,4 +267,34 @@ public class FinadDAO {
 		
 		return info;
 	}
+	public ArrayList<CreatorVolun> volun(String id) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<CreatorVolun> list = new ArrayList<CreatorVolun>();
+		CreatorVolun Cvolun = null;
+//		System.out.println(id);
+		try {
+			String volun = "SELECT companyboard.companyName, companyboard.title, accept.influUserId, accept.accept1 " + 
+					"FROM project.companyboard " + 
+					"LEFT JOIN project.accept ON companyboard.companyBoardNum = accept.companyBoardNum " + 
+					"WHERE accept.influUserId = '" + id + "';";
+			pstmt = conn.prepareStatement(volun);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				Cvolun.setInfluUserId(rs.getString("influUserId"));
+				Cvolun.setCompanyName(rs.getString("companyName"));
+				Cvolun.setTitle(rs.getString("title"));
+				Cvolun.setAccept1(rs.getInt("accept1"));
+				list.add(Cvolun);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+			System.out.println("gd");
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return null;
+	}
+	
 }

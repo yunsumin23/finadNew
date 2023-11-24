@@ -52,9 +52,10 @@ $(document).ready(function () {
 			  nickname: nickname
 		  },
 		  success: function(response) {
-			  $("#star_btn").remove();
-			  var like = $(response).find(".list_0444");
-			  $(".list_01_div01").append(like);
+			  $("#star01").remove();
+			  var like = $(response).find(".list_01_div01");
+			  $("#star_btn").append(response);
+
 			  console.log("성공");
 		  },
 		  error: function(error) {

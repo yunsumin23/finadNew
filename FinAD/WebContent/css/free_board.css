@@ -3,7 +3,7 @@
 /* free_board */
 #table_header{
 	width: 1300px;
-	height:1100px;
+	height:700px;
 	margin: 0 auto;
 	margin-top: 80px; 
 	font-size: 18px;
@@ -85,7 +85,7 @@ table tr td:nth-child(6){
 #free_board_search {
 	width:340px;
 	margin: 0 auto;
-	margin-top: 120px;
+	margin-top: 20px;
 }
 select{
 	width:70px;
@@ -96,7 +96,7 @@ select{
 #rank1_table{
 	position: fixed;
 	left: 1250px;
-	top: 223px;
+	top: 323px;
 	font-size: 16px;
 	border: 3px solid #ff4646;
 	border-radius: 5px;
@@ -125,7 +125,7 @@ select{
 #rank2_table{
 	position: fixed;
 	left: 1250px;
-	top: 443px;
+	top: 543px;
 	font-size: 16px;
 	border: 3px solid #5b5bff;
 	border-radius: 5px;
@@ -171,7 +171,7 @@ select{
 #free_board_footer{
 	width: 880.7px;
 	margin-left: 301.5px;
-	margin-top: 150px;
+	margin-top: 100px;
 }
 #pageList{
 	text-align: center;

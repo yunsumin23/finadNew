@@ -224,8 +224,9 @@
 					out.println(user1.getIntroduc());
 				%>
 			</div>
-			<form action="" method="post">
-				<input type="submit" name="submit" value="광고진행사항" class="check_pro">
+			<form action="volunCompany.finad23" method="post">
+				<input type="hidden" name="hidden" value="<%= id %>" id="hidden_id">
+				<input type="button" name="popUp_btn" value="광고진행사항" class="check_pro" onclick="showPopup();";>
 			</form>
 		</div>
 	</div>

@@ -16,9 +16,14 @@
 		String password = (String) session.getAttribute("password");
 		String type = (String) session.getAttribute("type");
 		String category = request.getParameter("url");
-		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
+// 		List<Influ_info> list = (List<Influ_info>) request.getAttribute("List");
+		/* boolean like = (boolean) request.getAttribute("like"); */
 		UserLikeDTO userLikeDTO = null;
 	%>
-1234
+	<div class="list_01_div01">
+		<button id="star_btn" name="star_btn">
+			<img src="img/star01.png" alt="" id="star01">
+		</button>
+	</div>
 </body>
 </html>

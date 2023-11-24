@@ -149,7 +149,7 @@
     	<div id="company_board_write_btn">
    			<form action="company_board.finad?url=CBoardWrite" method="post">
    				<input type="hidden" name="userId" value="<%= id %>">
-        		<input type="submit" value="글쓰기3">
+        		<input type="submit" value="글쓰기">
     		</form>
 		</div>
 	<%
