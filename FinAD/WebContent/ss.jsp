@@ -46,10 +46,16 @@
 			<div class="list_01_div01">
 				<input type="checkbox" name="list_name01" class="list_check"">
 				<p></p>
+				<p></p>
 				<p class="star">
-					<img src="img/star02.png" alt="" id="star01"
-						onclick="img_change(this)">
-				</p>
+				<form>
+					<button id="star_btn" name="star_btn">
+						<img src="img/star02.png" alt="" id="star01">
+					</button>
+					<input type="hidden" class="hidden_name" name="hidden_name"
+						value="<%=nickname%>"> <input type="hidden"
+						class="hidden_id" name="hidden_id" value="<%=id%>">
+				</form>
 			</div>
 			<div class="list_01_div02">
 				<form action="creator.finad23" method="post" target="_blank">

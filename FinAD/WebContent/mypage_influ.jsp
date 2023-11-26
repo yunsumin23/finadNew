@@ -5,7 +5,8 @@
 <%@ page import="java.text.DecimalFormat"%>
 
 <%@ page import="com.finad23.jjj.Mypage_influ"%>
-
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.finad23.DTO.CreatorVolun" %>
 <%@ page import="java.util.HashMap"%>
 <jsp:useBean id="session1" class="com.finad23.jjj.Mypage"></jsp:useBean>
 <!DOCTYPE html>
@@ -225,8 +226,9 @@
 				%>
 			</div>
 			<form action="volunCompany.finad23" method="post">
-				<input type="hidden" name="hidden" value="<%= id %>" id="hidden_id">
-				<input type="button" name="popUp_btn" value="광고진행사항" class="check_pro" onclick="showPopup();";>
+				<input type="hidden" name="hidden" value="<%=id%>" id="hidden_id">
+				<input type="button" name="popUp_btn" value="광고진행사항"
+					class="check_pro" onclick="showPopup();">
 			</form>
 		</div>
 	</div>

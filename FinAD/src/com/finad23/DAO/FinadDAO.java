@@ -273,14 +273,15 @@ public class FinadDAO {
 		ArrayList<CreatorVolun> list = new ArrayList<CreatorVolun>();
 		CreatorVolun Cvolun = null;
 //		System.out.println(id);
+		String volun = "SELECT companyboard.companyName, companyboard.title, accept.influUserId, accept.accept1 " + 
+				"FROM project.companyboard " + 
+				"LEFT JOIN project.accept ON companyboard.companyBoardNum = accept.companyBoardNum " + 
+				"WHERE accept.influUserId = '" + id + "';";
 		try {
-			String volun = "SELECT companyboard.companyName, companyboard.title, accept.influUserId, accept.accept1 " + 
-					"FROM project.companyboard " + 
-					"LEFT JOIN project.accept ON companyboard.companyBoardNum = accept.companyBoardNum " + 
-					"WHERE accept.influUserId = '" + id + "';";
 			pstmt = conn.prepareStatement(volun);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			while(rs.next()) {
+				Cvolun = new CreatorVolun();
 				Cvolun.setInfluUserId(rs.getString("influUserId"));
 				Cvolun.setCompanyName(rs.getString("companyName"));
 				Cvolun.setTitle(rs.getString("title"));
@@ -294,7 +295,7 @@ public class FinadDAO {
 			close(rs);
 			close(pstmt);
 		}
-		return null;
+		return list;
 	}
 	
 }

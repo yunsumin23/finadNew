@@ -21,7 +21,7 @@ public class VolunAction implements FinadAction{
 		ActionForward forward = new ActionForward();
 		rq.setAttribute("list", list);
 		forward.setPath("/popup.jsp");
-//		System.out.println(id);
+		System.out.println(id);
 		return forward;
 	}
 
