@@ -50,8 +50,6 @@
 		}
 	%>
 	<div id="text_header">
-		<h1>광고게시판</h1>
-		<%-- <%=CBoardDTO.getId() %> --%>
 		<p>
 			<%
 				out.println("작성일 " + CBoardDTO.getCompanyWriteDate());

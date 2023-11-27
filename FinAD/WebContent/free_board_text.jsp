@@ -188,7 +188,7 @@
 
 				<td>
 					<form action="free_board_delete.jsp?number=<%=clickText%>"
-						method="post">
+						method="post" onsubmit="return check()">
 						<input type="submit" value="삭제">
 					</form>
 				</td>

@@ -36,6 +36,7 @@ body #text_container #info_box {
 	width:200px;
 	height: 55px;
 	font-size: 35px;
+	color:#346aff;
 	padding: 3px;
 }
 .info_title{
@@ -45,7 +46,7 @@ body #text_container #info_box {
 }
 #company_name{
 	font-size: 40px;
-	color: #ff8000;
+	color: #FF766B;
 /* 	font-weight: bold; */
 	text-align: right;
 }

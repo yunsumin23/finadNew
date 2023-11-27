@@ -101,3 +101,12 @@ function checkComment() {
     return true; // 폼 제출을 계속합니다.
 }
 
+function check() {
+	if (confirm("정말 삭제하시겠습니까?") == true){    //확인
+	    return true;
+	 }else{   //취소
+	     return false;
+
+	 }
+}
+

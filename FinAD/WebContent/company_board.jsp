@@ -33,8 +33,8 @@
 		<div id="written_table">
             <table border="1">
                 <tr>
-                    <th class="written_head">홍보 종류</th>
-                    <th class="written_head">홍보 기간</th>
+                    <th class="written_head">광고 종류</th>
+                    <th class="written_head">광고 기간</th>
                     <th class="written_head2" colspan="5">카테고리</th>
                 </tr>
                 <tr>
@@ -107,8 +107,8 @@
 			<th>회사명</th>
 			<th>모집 시작</th>
 			<th>모집 종료</th>
-			<th>광고 시작</th>
-			<th>광고 종료</th>
+<!-- 			<th>광고 시작</th> -->
+<!-- 			<th>광고 종료</th> -->
 			<th>광고 유형</th>
 			<th>작성일</th>
 		</tr>
@@ -133,8 +133,8 @@
 				out.println("<td>"+ companyName +"</td>");
 				out.println("<td>"+ recruitmentDate1 +"</td>");
 				out.println("<td>"+ recruitmentDate2 +"</td>");
-				out.println("<td>"+ promotionDate1 +"</td>");
-				out.println("<td>"+ promotionDate2 +"</td>");
+// 				out.println("<td>"+ promotionDate1 +"</td>");
+// 				out.println("<td>"+ promotionDate2 +"</td>");
 				out.println("<td>"+ promotionType +"</td>");
 				out.println("<td>"+ companyWriteDate +"</td>");
 				out.println("</tr>");
