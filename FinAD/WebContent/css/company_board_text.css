@@ -35,12 +35,12 @@ body #text_container #info_box {
 .title{
 	width:200px;
 	height: 55px;
-	font-size: 30px;
+	font-size: 35px;
 	padding: 3px;
 }
 .info_title{
 	padding: 3px;
-	font-size: 16px;
+	font-size: 28px;
 	color: #636363;
 }
 #company_name{
@@ -64,7 +64,7 @@ body #text_container #info_box {
 .content2{
 	width:450px;
 	height: 55px;
-	font-size: 22px;
+	font-size: 25px;
 	padding: 3px;
 }
 .content3{
@@ -94,6 +94,7 @@ td input[type="text"] {
 	height: 500px;
 	padding: 3px;
 	resize: none;
+	font-size: 30px;
 }
 #info_box{
 	width: 1300px;
@@ -158,4 +159,10 @@ td input[type="text"] {
 	width: 100px;	
 }.modal-body td:nth-child(5) {
 	width: 115px;	
+}
+
+.btn-primary {
+	width: 150px;
+	height: 50px;
+	font-size: 22px;
 }

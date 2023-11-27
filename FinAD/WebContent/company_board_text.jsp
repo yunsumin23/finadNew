@@ -51,10 +51,10 @@
 	%>
 	<div id="text_header">
 		<h1>광고게시판</h1>
-		<%=CBoardDTO.getId() %>
+		<%-- <%=CBoardDTO.getId() %> --%>
 		<p>
 			<%
-				out.println(CBoardDTO.getCompanyWriteDate());
+				out.println("작성일 " + CBoardDTO.getCompanyWriteDate());
 			%>
 		</p>
 	</div>
