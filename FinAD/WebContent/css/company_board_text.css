@@ -165,5 +165,5 @@ td input[type="text"] {
 .btn-primary {
 	width: 150px;
 	height: 50px;
-	font-size: 22px;
+	font-size: 22px !important;
 }

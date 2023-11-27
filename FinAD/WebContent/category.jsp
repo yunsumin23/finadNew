@@ -172,7 +172,7 @@
 						<p></p>
 <%-- 						<%=userLikeDTO.getId()%> --%>
 						<%
-							// 				if (id != null) {
+							 	if (id != null) {
 									if (userLikeDTO.getId() == id) {
 						%>
 						<div class="list_01_div01">
@@ -205,7 +205,7 @@
 						</div>
 						<%
 							}
-									// 									}
+									 									}
 						%>
 					</div>
 					<div class="list_01_div02">

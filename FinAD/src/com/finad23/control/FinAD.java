@@ -26,10 +26,6 @@ public class FinAD extends HttpServlet { // 서블릿 페이지 입니다.
 		String filter = rq.getParameter("filter");
 		String catesearch = rq.getParameter("catesearch");
 		// 카테고리 넘어갈 때 어떤 type인지에 따라 보여지는 크리에이터가 다르게 설정 해둔거임
-		System.out.println("url " + url);
-		System.out.println("cat " + cat);
-		System.out.println("filter " + filter);
-		System.out.println("catesearch " + catesearch);
 		ConInter inter = null;
 		
 		// 인터페이스용 주머니 입니다. 확인하시고 또 다시 만들지 마요
